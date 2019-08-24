@@ -16,3 +16,9 @@
 more apps share one project, use same manage.py
 ```
 - $>python3 manage.py startapp blog
+- settings.py
+```
+INSTALLED_APPS = [
+    'blog.apps.BlogConfig',
+]
+```
