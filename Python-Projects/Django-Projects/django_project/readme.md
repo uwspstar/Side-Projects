@@ -22,3 +22,9 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
 ]
 ```
+- $>python3 manage.py makemigrations
+### migrate DB
+- $>python3 manage.py migrate
+### createsuperuser
+- $>python3 manage.py createsuperuser
+### xing/uw..09
