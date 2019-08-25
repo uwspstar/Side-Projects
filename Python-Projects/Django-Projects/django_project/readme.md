@@ -28,3 +28,16 @@ INSTALLED_APPS = [
 ### createsuperuser
 - $>python3 manage.py createsuperuser
 ### xing/uw..09
+### create models inside models.py
+- $>python3 manage.py makemigrations
+### sqlmigrate
+- python3 manage.py sqlmigrate blog 0001
+- python3 manage.py migrate
+### sql query
+- $>python3 manage.py shell 
+```
+# Use exit() or Ctrl-D (i.e. EOF) to exit
+```
+### add models to admin.py
+### run project
+- python3 manage.py runserver
