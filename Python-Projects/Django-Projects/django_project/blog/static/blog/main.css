@@ -18,27 +18,19 @@ ul {
 }
 
 .bg-steel {
-  /* background-color: #5f788a; */
-  background-color: #f2f0f0;
+  background-color: #5f788a;
 }
 
 .navbar {
   border-bottom: rgb(121, 121, 121) solid 1px;
 }
 
-.navbar-brand {
-  color: #555555 !important;
-  font-size: 1.5rem !important;
-}
-
 .site-header .navbar-nav .nav-link {
-  /* color: #cbd5db; */
-  color: #3a3535;
+  color: #cbd5db;
 }
 
 .site-header .navbar-nav .nav-link:hover {
-  /* color: #ffffff; */
-  color: #000000;
+  color: #ffffff;
 }
 
 .site-header .navbar-nav .nav-link.active {

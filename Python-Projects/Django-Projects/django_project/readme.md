@@ -15,6 +15,7 @@
 ```
 more apps share one project, use same manage.py
 ```
+### create blog app
 - $>python3 manage.py startapp blog
 - settings.py
 ```
@@ -39,5 +40,16 @@ INSTALLED_APPS = [
 # Use exit() or Ctrl-D (i.e. EOF) to exit
 ```
 ### add models to admin.py
+```
+we can add post from UI, not need run sql query in shell
+```
 ### run project
 - python3 manage.py runserver
+
+### create user app
+- python3 manage.py startapp users
+```
+INSTALLED_APPS = [
+    'users.apps.UsersConfig',
+]
+```
