@@ -23,6 +23,11 @@
 ```
   inside project, active the virtual envir, type "exit" to exit shell
 ```
+### pipfile & pipfile.lock
+```
+- $>pipenv install
+- $>pipenv install --ignore-pipfile  ```# will use the pipfile.lock to install```
 
+```
 ### Django: The Web framework for perfectionists with deadlines
 - https://www.djangoproject.com/
