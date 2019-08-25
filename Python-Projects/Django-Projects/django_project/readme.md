@@ -3,7 +3,7 @@
 ### install pip3 
 - $>pip3 --version 
 ### install diango 
-- $>pip3 install diango 
+- $>pip3 install django 
 - $>django-admin 
 ### create startproject
 - $>django-admin startproject django_project 
@@ -53,3 +53,6 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
 ]
 ```
+
+### install 
+- pip3 install django-crispy-forms
