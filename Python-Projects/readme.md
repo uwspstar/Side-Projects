@@ -32,6 +32,8 @@
 ### Pydoc
 ```
 - $>pydoc3 math
+- $>pydoc3 -w math  ```write to html version```
+- $>pydoc3 -p 8088  ``` open at port 8080 ```
 ```
 ### Django: The Web framework for perfectionists with deadlines
 - https://www.djangoproject.com/
