@@ -13,6 +13,10 @@
 - $>pip3 uninstall requests
 - $>pip3 install requests~=2.9.0
 
+### pipenv
+
+- $>pip3 install pipenv
+- $>pipenv --venv
 
 ### Django: The Web framework for perfectionists with deadlines
 - https://www.djangoproject.com/
