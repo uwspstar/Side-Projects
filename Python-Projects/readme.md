@@ -19,9 +19,9 @@
 - $>pip3 install pipenv
 - $>pipenv --venv
 - $>pipenv shell 
-  ```
-    inside project, active the virtual envir, type "exit" to exit shell
-  ```
+```
+```
+  inside project, active the virtual envir, type "exit" to exit shell
 ```
 
 ### Django: The Web framework for perfectionists with deadlines
