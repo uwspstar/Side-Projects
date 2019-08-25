@@ -27,7 +27,7 @@
 ```
 - $>pipenv install
 - $>pipenv install --ignore-pipfile  ```# will use the pipfile.lock to install```
-
+- $>pipenv graph
 ```
 ### Django: The Web framework for perfectionists with deadlines
 - https://www.djangoproject.com/
