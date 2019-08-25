@@ -29,5 +29,9 @@
 - $>pipenv install --ignore-pipfile  ```# will use the pipfile.lock to install```
 - $>pipenv graph
 ```
+### Pydoc
+```
+- $>pydoc3 math
+```
 ### Django: The Web framework for perfectionists with deadlines
 - https://www.djangoproject.com/
