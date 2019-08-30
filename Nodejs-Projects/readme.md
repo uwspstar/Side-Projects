@@ -22,10 +22,17 @@ but you will have to do extra work for that. In
 contrast, Node applications are asynchronous by default.
 ```
 
- ### event queue. 
- ```
- Node is consistently monitoring this queue in the background. 
- When it finds an event in this queue it will take it out and process it. 
- This kind of architecture makes Node ideal for building applications 
- that include a lot of diskor network access.
- ```
+### event queue. 
+```
+Node is consistently monitoring this queue in the background. 
+When it finds an event in this queue it will take it out and process it. 
+This kind of architecture makes Node ideal for building applications 
+that include a lot of diskor network access.
+```
+- Window or document arguments
+```
+not defined. So, as I told you before, 
+in Node we don't have window or document arguments. 
+These are part of the run time environment that we get with browsers. 
+In Node we have other objects
+```
