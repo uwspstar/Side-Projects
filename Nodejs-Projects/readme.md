@@ -22,7 +22,7 @@ but you will have to do extra work for that. In
 contrast, Node applications are asynchronous by default.
 ```
 
- ###event queue. 
+ ### event queue. 
  ```
  Node is consistently monitoring this queue in the background. 
  When it finds an event in this queue it will take it out and process it. 
