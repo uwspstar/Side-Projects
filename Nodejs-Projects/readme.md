@@ -38,6 +38,7 @@ In Node we have other objects
 ```
 ### node excute the function with IIFE
 ```
-( fucntion(exports, require, module, __filename, __dirname)
-)
+( fucntion(exports, require, module, __filename, __dirname){
+ ...
+})
 ```
