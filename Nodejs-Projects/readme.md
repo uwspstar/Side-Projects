@@ -3,6 +3,7 @@
 Node is not a programming language.
 Node is NOT a framework, it is a runtime environment for executing JavaScript code
 ```
+### non-blocking, or asynchronous nature
 -  Node applications are highly-scalable and this is because of ```the non-blocking, or asynchronous nature of Node.```
 - a ```single thread``` allocated to handle a request. So a ```single thread``` is used to handle ```multiple requests.```
 - tradition blocking, or sychronous architecture (like ASP.NET or Rails) , a new thread to serve another client.
@@ -15,3 +16,16 @@ that thread is sitting there, waiting.
 It can't be used to serve another client.
 So, with a new thread to serve another client.
 ```
+```
+Of course in ASP.NET it is possible to use asynchronous architecture, 
+but you will have to do extra work for that. In
+contrast, Node applications are asynchronous by default.
+```
+
+ ###event queue. 
+ ```
+ Node is consistently monitoring this queue in the background. 
+ When it finds an event in this queue it will take it out and process it. 
+ This kind of architecture makes Node ideal for building applications 
+ that include a lot of diskor network access.
+ ```
