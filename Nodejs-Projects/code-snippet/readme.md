@@ -1,2 +1,4 @@
 - pipe
 - gZip
+- stream
+- JWT
