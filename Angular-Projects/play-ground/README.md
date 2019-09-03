@@ -1,5 +1,13 @@
 # PlayGround
 
+- ng g c posts/post-create --dry-run
+- Angular Cli https://malcoded.com/posts/angular-fundamentals-cli/
+- import module(s)
+- declare component(s)
+
+
+
+### Angular CLI
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
 
 ## Development server
