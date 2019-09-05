@@ -1,11 +1,14 @@
 # PlayGround
 
+- `npm install`
 - ng g c posts/post-create --dry-run
 - Angular Cli https://malcoded.com/posts/angular-fundamentals-cli/
 - import module(s)
 - declare component(s)
-
-
+-  `ng generate directive|pipe|service|class|guard|interface|enum|module`
+- `ng build`
+- `ng serve`
+- `ng test`
 
 ### Angular CLI
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
