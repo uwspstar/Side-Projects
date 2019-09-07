@@ -4,6 +4,7 @@
 # touple
 # BTS Tree
 
+```python3
 class Node:
     def __init__(self,data):
         self.right=self.left=None
@@ -42,3 +43,4 @@ for i in range(T):
     root=myTree.insert(root,data)
 height=myTree.getHeight(root)
 print(height) 
+```
