@@ -1,47 +1,12 @@
-- http://elementsofprogramminginterviews.com/sample/epilight_python_new.pdf
-# List
-# Dictionary
-# Set
-# touple
-# BTS Tree
-
-```python3
-class Node:
-    def __init__(self,data):
-        self.right=self.left=None
-        self.data = data
-class Solution:
-    def insert(self,root,data):
-        if root==None:
-            return Node(data)
-        else:
-            if data<=root.data:
-                cur=self.insert(root.left,data)
-                root.left=cur
-            else:
-                cur=self.insert(root.right,data)
-                root.right=cur
-        return root
-
-    def getHeight(self,root):
-        #Write your code here
-        if root:
-            leftDepth = self.getHeight(root.left)
-            rightDepth = self.getHeight(root.right)
-            
-            if leftDepth > rightDepth:
-                return leftDepth + 1
-            else: 
-                return rightDepth + 1
-        else:
-            return -1
-
-T=int(input())
-myTree=Solution()
-root=None
-for i in range(T):
-    data=int(input())
-    root=myTree.insert(root,data)
-height=myTree.getHeight(root)
-print(height) 
+- https://www.amazon.com/Elements-Programming-Interviews-Python-Insiders/dp/1537713949/
+### List (Array) 
 ```
+The time complexity to delete the element at index i from an array of length n is O(n−i).
+The same is true for inserting a new element (as opposed to updating an existing entry)
+```
+### tuple
+### Dictionary
+### Set
+### BTS Tree
+
+
