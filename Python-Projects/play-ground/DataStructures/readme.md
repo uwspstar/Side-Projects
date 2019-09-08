@@ -18,7 +18,7 @@ min(A), max(A),
 (bisect.bisect(A, 6), bisect.bisect_left(A, 6), and bisect.bisect_right(A, 6)),
 ```
 - the difference between B = A and B = list(A)
-- deep copy vs. shallow copy
+- ```deep copy``` vs. ```shallow copy```
 - copy.copy(A) differs from copy.deepcopy(A)
 - A.reverse() (in-place), reversed(A) (returns an iterator), 
 - A.sort() (in-place), sorted(A) (returns a copy)
@@ -30,7 +30,12 @@ min(A), max(A),
 (2.) an iterator over the input sequence,
 (3.) a logical condition over the iterator (this is optional),
 (4.) an expression that yields the elements of the derived list.
+
+[x**2 for a in range(6)] # [1, 4, 9, 16, 25], 
+and [x**2 for a in range(6) if x % 2 == 0] # [4,16].
 ```
+- ```quicksort``` is another Divide and Conquer sorting algorithm
+
 ### list vs tuple
 - The tuple type is very similar to the list type, with the constraint that it is immutable.
 
