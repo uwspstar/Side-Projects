@@ -23,6 +23,7 @@ min(A), max(A),
 - A.reverse() (in-place), reversed(A) (returns an iterator), 
 - A.sort() (in-place), sorted(A) (returns a copy)
 - ```del A[i]``` (deletes the i-th element), and del ```A[i:j]``` (removes the slice).
+- slice is A[i:j:k]
 
 ### list vs tuple
 - The tuple type is very similar to the list type, with the constraint that it is immutable.
