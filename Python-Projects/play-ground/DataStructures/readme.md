@@ -24,7 +24,13 @@ min(A), max(A),
 - A.sort() (in-place), sorted(A) (returns a copy)
 - ```del A[i]``` (deletes the i-th element), and del ```A[i:j]``` (removes the slice).
 - slice is A[i:j:k]
-
+-  A list comprehension consists of 
+```
+(1.) an input sequence, 
+(2.) an iterator over the input sequence,
+(3.) a logical condition over the iterator (this is optional),
+(4.) an expression that yields the elements of the derived list.
+```
 ### list vs tuple
 - The tuple type is very similar to the list type, with the constraint that it is immutable.
 
