@@ -1,5 +1,7 @@
 # PlayGround
-
+```
+console.dir(object)
+```
 - `npm install`
 - ng g c posts/post-create --dry-run
 - Angular Cli https://malcoded.com/posts/angular-fundamentals-cli/
