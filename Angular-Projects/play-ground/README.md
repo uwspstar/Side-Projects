@@ -3,6 +3,13 @@
 console.dir(object)
 ```
 - `npm install`
+- `npm install --save @angular/material @angular/cdk @angular/animations`
+```
+ng add @angular/material
+```
+```
+HammerJS is a popular library that helps you add support for touch gestures (e.g. swipe, pan, zoom, rotate) to your page. In this article, we will see how easy Angular 2 can work with HammerJS
+```
 - ng g c posts/post-create --dry-run
 - Angular Cli https://malcoded.com/posts/angular-fundamentals-cli/
 - import module(s)
