@@ -4,7 +4,10 @@
 
 - Abstract Data Type (ADT)
 ```
-An abstract data type is an abstraction of a data structure which provides only the interface to which a data structure mush adhere to.  the inter face does not give any specific details about how something should be implemented or in what programming language
+An abstract data type is an abstraction of a data structure 
+which provides only the interface to which a data structure mush adhere to.  
+the interface does not give any specific details about 
+how something should be implemented or in what programming language
 ```
 - List ( Dynamic Array, linked List)
 - Queue ( Linked List based Queue, array based Queue, Stack based Queue)
