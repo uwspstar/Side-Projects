@@ -1,5 +1,6 @@
 # Data Structures Easy to Advanced - Full Tutorial Course
 - https://www.youtube.com/watch?v=RBSGKlAvoiM&feature=em-uploademail
+- https://github.com/williamfiset/Algorithms
 
 - Abstract Data Type (ADT)
 ```
