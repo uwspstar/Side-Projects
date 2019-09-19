@@ -7,6 +7,7 @@
 //4 funMatrix [ [ 1, 2, 3 ], [ 8, 9, 4 ], [ 7, 6, 5 ] ]
 //5) LinkedList
 //6) evenOldArr [1,2,3,4] //[4,2,3,1]
+//7) lenthofLongestNoRepeatString "abcade" // 3 -> abc
 
 class Node {
     constructor(data, next = null) {
