@@ -12,6 +12,8 @@ An abstract data type is an abstraction of a data structure which provides only 
 ### Complexity Analysis
 - time
 - space
+
+### Big-O Notation
 ```
 Constant Time: O(1)
 Logarithmic Time: O(log(n))
@@ -22,4 +24,6 @@ Exponential Time: O(b^n), b>1
 Factorial Time: O(n!)
 
 ```
-
+- O(n + c) = O(n)
+- O(cn) = O(n) , c >0
+- f(n) = 7log(n)^3 + 15n^2+ 2n^3 + 8 // ```O(f(n)) = O(n^3)
