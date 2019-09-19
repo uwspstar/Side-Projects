@@ -30,3 +30,11 @@ Factorial Time: O(n!)
 - O(n + c) = O(n)
 - O(cn) = O(n) , c >0
 - f(n) = 7log(n)^3 + 15n^2+ 2n^3 + 8 // ```O(f(n)) = O(n^3)```
+- When and where is a static Array Used ?
+    - 1) storing and accessing sequential data
+    - 2) Temporarily storing objects
+    - 3) Used by IO routines as buffers
+    - 4) Lookup tables and inverse lookup tables
+    - 5) can be used to return multiple values from a function
+    - 6) Used in dynamic programming to cache answers to subproblems
+    
