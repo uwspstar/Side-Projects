@@ -22,8 +22,7 @@ Quadric Time: O(n^2)
 Cubic Time: O(n^3)
 Exponential Time: O(b^n), b>1
 Factorial Time: O(n!)
-
 ```
 - O(n + c) = O(n)
 - O(cn) = O(n) , c >0
-- f(n) = 7log(n)^3 + 15n^2+ 2n^3 + 8 // ```O(f(n)) = O(n^3)
+- f(n) = 7log(n)^3 + 15n^2+ 2n^3 + 8 // ```O(f(n)) = O(n^3)```
