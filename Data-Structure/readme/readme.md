@@ -60,4 +60,5 @@ Factorial Time: O(n!)
     - Used in Huffman coding (which is often used for lossless data compression)
     - Best First Search (BFS) algrorithms such as A use PQs to continuously grab the next most promising node.
     - Used by Minimum Spanning Tree (MST) algorithms
-    
+### Turnign Min PQ into Maz PQ
+    - an alternative method for numbers is to negate the numbers as you insert them into the PQ and negate them again when they are taken out. This has the same effect as negating the comparator.
