@@ -49,3 +49,15 @@ Factorial Time: O(n!)
     - can be used to model a pile of books or plates.
     - used behind the scenes to support recursion by keep track of previous function calls.
     - can be used to d a Depth First Search (DFS) on a graph
+### when you use Queue
+    - any waiting line models a queue, for example a lineup at a movie theatre.
+    - can be used to efficiently keep track of the x most recently added elements
+    - Web server request management where you want first come first serve.
+    - Breadth First Search (BFS) graph traversal
+### when you use PQ
+    - used in certain implemetations of Dijkstra's Shortest Path algorithm.
+    - Anytime you need the dynamically fetch the 'next best' or 'next worst' element
+    - Used in Huffman coding (which is often used for lossless data compression)
+    - Best First Search (BFS) algrorithms such as A use PQs to continuously grab the next most promising node.
+    - Used by Minimum Spanning Tree (MST) algorithms
+    
