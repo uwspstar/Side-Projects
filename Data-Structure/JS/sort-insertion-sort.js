@@ -1,4 +1,5 @@
 const arr = [0, 1, 5, 4, 3, 2, 6];
+
 const insertionSort = function (arr) {
     if (arr.length < 2) return arr;
 
