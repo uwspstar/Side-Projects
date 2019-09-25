@@ -1,1 +1,6 @@
-<p>user works!</p>
+<p>user works! {{users}}</p>
+<ul>
+    <li *ngFor="let user of users">
+        {{ user.firstName}} {{ user.age}}
+    </li>
+</ul>
