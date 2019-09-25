@@ -11,4 +11,5 @@ The AWS Cloud spans 69 Availability Zones within 22 geographic Regions around th
     - present to the client
     - You may get engaged through solution deployment too, or after that
 - building block approach & architect "hat"
+
 ### AWS VIRTUAL PRIVATE CLOUD (VPC)
