@@ -1,5 +1,10 @@
 <p>post-create works!</p>
 <mat-card>
+  <div>let’s looking for future {{ this.user.firstName }}.</div>
+  <div>let’s looking for future {{ showAge() }}.</div>
+</mat-card>
+
+<mat-card>
   <mat-form-field>
     <textarea matInput row=6 [(ngModel)]="enterValue"></textarea>
   </mat-form-field>
