@@ -4,6 +4,44 @@ https://jasonwatmore.com/post/2019/06/22/angular-8-jwt-authentication-example-tu
 
 ```
 this is follow up with the Jason Watmore's Tutorial
+=============================================
+src
+    app
+        _helpers
+            auth.guard.ts
+            error.interceptor.ts
+            fake-backend.ts
+            jwt.interceptor.ts
+            index.ts
+        _models
+            user.ts
+            index.ts
+        _services
+            authentication.service.ts
+            user.service.ts
+            index.ts
+        home
+            home.component.html
+            home.component.ts
+            index.ts
+        login
+            login.component.html
+            login.component.ts
+            index.ts
+        app.component.html
+        app.component.ts
+        app.module.ts
+        app.routing.ts
+    environments
+        environment.prod.ts
+        environment.ts
+    index.html
+    main.ts
+    polyfills.ts
+    styles.less
+package.json
+tsconfig.json
+=============================================
 ```
 
 
