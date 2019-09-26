@@ -4,14 +4,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 // used to create fake backend
-import { fakeBackendProvider } from './_helpers';
+import { fakeBackendProvider } from './_helpers/fake-backend';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
 
 import { AppComponent } from './app.component';
-import { appRoutingModule } from './app.routing';
-
-import { JwtInterceptor, ErrorInterceptor } from './_helpers';
-import { HomeComponent } from './home';
-import { LoginComponent } from './login';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { appRoutingModule } from './app-routing.module';
 
 
 
