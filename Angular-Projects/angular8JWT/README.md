@@ -44,7 +44,9 @@ tsconfig.json
 =============================================
 ```
 ```
-RxJS Subjects and Observables are used to store the current user object and notify other components when the user logs in and out of the app. 
+RxJS Subjects and Observables are used to store the current user object 
+and notify other components 
+when the user logs in and out of the app. 
 ```
 
 ## Angular CLI
