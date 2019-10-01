@@ -38,3 +38,35 @@ public class Account
     }
 }
 */
+using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class Tester
+{	
+    private double epsilon = 1e-6;
+
+    [Test]
+    public void AccountCannotHaveNegativeOverdraftLimit()
+    {
+        Account account = new Account(-20);
+        
+        Assert.AreEqual(0, account.OverdraftLimit, epsilon);
+    }
+    
+    [Test]
+    public void WithdrawCannotHaveNegativeOverdraftLimit()
+    {
+        Account account = new Account(-20); 
+        
+        Assert.AreEqual(false,account.Withdraw(-1.0));
+    }
+    
+    [Test]
+    public void DepositCannotHaveNegativeOverdraftLimit()
+    {
+        Account account = new Account(-20); 
+        
+        Assert.AreEqual(false, account.Deposit(-1.0));
+    }
+}
