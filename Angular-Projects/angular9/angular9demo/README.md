@@ -1,4 +1,6 @@
 # Angular9demo
+$> ng version
+$> sudo npm install -g @angular/cli@latest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.2.
 
