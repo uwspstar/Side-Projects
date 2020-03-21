@@ -1,4 +1,10 @@
-- https://www.youtube.com/watch?v=vjf774RKrLc&t=56s
+# Template
+- set up work folder
+```
+$ mkdir <workfoldername>
+$ cd <workfoldername>
+```
+- init project
 ```
 $ npm init --yes
 $ sudo npm install -g npm
