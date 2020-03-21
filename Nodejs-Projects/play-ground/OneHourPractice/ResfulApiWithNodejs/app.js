@@ -1,6 +1,7 @@
 const express = require('express');
-
 const app = express();
+const mongoose = require('mongoose');
+require('dotenv/config')
 
 //Middlewares
 //app.use(Auth);
@@ -23,6 +24,18 @@ app.get("/posts", (req, res) => {
     console.log("hello posts");
 
 })
-//Listen server
 
+
+//Connect to DB 
+mongoose
+    .connect(process.env.DB_CONNECTION, {
+        useUnifiedTopology: true,
+        useNewUrlParser: true,
+    })
+    .then(() => console.log("DB Connected !"))
+    .catch(err => {
+        console.log(`DB Connection Error: ${err.message}`);
+    });
+
+//Listen server
 app.listen(3000);
