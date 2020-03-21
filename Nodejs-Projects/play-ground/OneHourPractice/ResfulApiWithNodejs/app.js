@@ -2,8 +2,15 @@ const express = require('express');
 
 const app = express();
 
-//Routs
+//Middlewares
+//app.use(Auth);
 
+app.use("/posts", () => {
+    console.log("this is middle ware for /posts");
+})
+
+
+//Routs
 app.get("/", (req, res) => {
     res.send("hell world");
     console.log("hello response");
