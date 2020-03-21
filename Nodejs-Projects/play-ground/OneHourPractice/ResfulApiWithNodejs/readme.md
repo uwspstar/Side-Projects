@@ -2,3 +2,4 @@
 $ npm init --yes
 $ sudo npm install -g npm
 $ npm install express nodemon
+$ npm start
