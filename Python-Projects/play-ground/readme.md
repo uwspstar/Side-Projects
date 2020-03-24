@@ -1,1 +1,1 @@
-# all the project in here are just for practice purpose
+# all the projects in here are just for practice purpose
