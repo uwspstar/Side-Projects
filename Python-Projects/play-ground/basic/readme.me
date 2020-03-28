@@ -47,3 +47,26 @@ formatted = f"I've told you {x} times already!"
 ### formatted = "I've told you {} times already!".format(x)
 ### formatted = "I've told you %d times already!" % (x)
 ```
+### BOOLEAN AND CONDITIONAL LOGIC
+- User Input
+```
+name = input("Enter your name here: ")
+Enter your name here: 
+```
+- Comparison Operators ```==```, ```!=```, ```>```, ```<```, ```>=```, ```<=```
+- Logical Operators ```and```, ```or```, ```not```
+##### is vs. "=="
+- In python, "==" and "is" are very similar comparators, however they are not the same
+```
+a = [1, 2, 3]  # a list of numbers
+b = [1, 2, 3]
+a == b  # True
+a is b  # False
+
+c = b
+b is c  # True
+```
+- "is" is only truthy if the variables reference the same item in memory
+- ```$ touch age.py```
+
+
