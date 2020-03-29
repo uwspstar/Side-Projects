@@ -3,11 +3,45 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
 </head>
 
 <body>
+    <div class="container">
+        <h1>URL Shorter</h1>
+        <form action="/shortUrls" method="post" class="my-4 from-inline">
+            <label for="fullUrl" class="sr-only">URL</label>
+            <input required placeholder="Url" type="url" name="fulUrl" id="fullUrl" class="form-control col mr-2">
+            <button class="btn btn-success" type="submit">Shrink</button>
+        </form>
+
+        <table class="table table-striped table-responsive">
+            <thread>
+                <tr>
+                    <th>Full URL</th>
+                    <th>Short URL</th>
+                    <th>Clicks</th>
+                </tr>
+            </thread>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="http://google">http://google</a>
+                    </td>
+                    <td><a href="http://12345">http://12345</a></td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
 
 </body>
 

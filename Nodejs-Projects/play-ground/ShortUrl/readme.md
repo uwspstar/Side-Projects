@@ -1,3 +1,4 @@
+- https://www.youtube.com/watch?v=SLpUKAGnm-g
 ```
 $ touch readme.md
 $ touch .gitignore
@@ -10,3 +11,4 @@ $ cd views
 $ touch index.ejs
 ```
 - install extention "EJS language support"
+- add bootstripcdn
