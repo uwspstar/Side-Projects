@@ -119,7 +119,7 @@ or x in range(1, 101):
 ```
 tasks = ["Install Python", "Learn Python", "Take a break"]
 ```
-- list functions
+- len functions
 ```
 tasks = ["Install Python", "Learn Python", "Take a break"]
 
@@ -149,4 +149,28 @@ i = 0
 while i < len(numbers):
     print(numbers[i])
     i += 1
+```
+- append
+```
+first_list = [1, 2, 3, 4]
+
+first_list.append(5)
+
+print(first_list) # [1, 2, 3, 4, 5]
+```
+- extend
+```
+first_list = [1, 2, 3, 4]
+
+first_list.append(5, 6, 7, 8) # does not work!
+
+first_list.append([5, 6, 7, 8])
+
+print(first_list) # [1, 2, 3, 4,  [5, 6, 7, 8]]
+
+correct_list = [1, 2, 3, 4]
+
+correct_list.extend([5, 6, 7, 8])
+
+print(correct_list) # [1, 2, 3, 4, 5, 6, 7, 8]
 ```
