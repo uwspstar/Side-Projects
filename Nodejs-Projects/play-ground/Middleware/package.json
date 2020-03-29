@@ -1,5 +1,5 @@
 {
-  "name": "Middleware",
+  "name": "middleware",
   "version": "1.0.0",
   "description": "```$ npm init -y``` ```$ npm install express```",
   "main": "server.js",
