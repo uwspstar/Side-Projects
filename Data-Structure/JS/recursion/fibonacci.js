@@ -1,6 +1,6 @@
-// const fibonacciRecursive = function() {
-//     let result =
-// }
+/*
+EASY
+*/
 
 const fibonacci = function (n) {
     if (n <= 2) return 1;
