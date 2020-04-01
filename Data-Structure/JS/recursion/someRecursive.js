@@ -19,4 +19,4 @@ function someRecursive(array, callback) {
 
 console.log(someRecursive([4, 6, 8], val => val > 10));
 console.log(someRecursive([4, 6, 8], val => val % 2 !== 0)); //isOdd
-console.log(someRecursive([4, 6, 8], val => val % 2 === 0)); //isEven
+console.log(someRecursive([4, 6, 8], val => val % 2 === 0)); //isEven[UI][]
