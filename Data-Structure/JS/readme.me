@@ -49,3 +49,16 @@ While the left pointer comes before the right pointer:
     If the value is too large, move the right pointer down
 If you never find the value, return -1
 ```
+### sort
+- bubble sort
+- selection sort
+- insertion sort
+- The built-in sort method accepts an optional comparator function
+```
+function numberCompare(num1, num2) {
+  return num1 - num2;
+}
+
+[ 6, 4, 15, 10 ].sort(numberCompare);
+// [ 4, 6, 10, 15 ]
+```
