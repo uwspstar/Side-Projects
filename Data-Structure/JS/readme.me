@@ -27,3 +27,25 @@ hashMap[key] ? hashMap[key]++ : hashMap[key] = 1;
 - For arrays, use methods like slice, the spread operator, and concat that make copies of arrays so you do not mutate them
 - Remember that strings are immutable so you will need to use methods like slice, substr, or substring to make copies of strings
 - To make copies of objects use Object.assign, or the spread operator
+
+### Searching
+- arrays in JavaScript:
+    - indexOf
+    - includes
+    - find
+    - findIndex
+- Linear Search
+- Binary search is a much faster form of search
+- Binary search only works on sorted arrays!
+- Divide and Conquer
+- Binary Search Pseudocode
+```
+This function accepts a sorted array and a value
+Create a left pointer at the start of the array, and a right pointer at the end of the array
+While the left pointer comes before the right pointer:
+    Create a pointer in the middle
+    If you find the value you want, return the index
+    If the value is too small, move the left pointer up
+    If the value is too large, move the right pointer down
+If you never find the value, return -1
+```
