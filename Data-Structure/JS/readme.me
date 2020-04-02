@@ -62,3 +62,10 @@ function numberCompare(num1, num2) {
 [ 6, 4, 15, 10 ].sort(numberCompare);
 // [ 4, 6, 10, 15 ]
 ```
+- Before we sort, we must swap!
+```
+// ES2015
+const swap = (arr, idx1, idx2) => {
+  [arr[idx1],arr[idx2]] = [arr[idx2],arr[idx1]];
+}
+```
