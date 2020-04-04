@@ -1,3 +1,8 @@
+/*
+Selection Sort
+Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position 
+every time find the smallest, and replace it with the sort start positon, start from index[0]
+*/
 const selectionSort = function (arr) {
     if (arr.length < 2) return arr;
     for (let i = 0; i < arr.length; i++) {
