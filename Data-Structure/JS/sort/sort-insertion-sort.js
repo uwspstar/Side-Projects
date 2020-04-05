@@ -16,13 +16,13 @@ Now compare the second element with the one before it and swap if necessary.
 const insertSort = function (arr) {
     let i, j;
     for (i = 1; i < arr.length; i++) {
-        let current = arr[i];
-        for (j = i - 1; j >= 0; j--) {
+        let current = arr[i]; // start with second elment
+        for (j = i - 1; j >= 0; j--) { // sort left array
             if (current < arr[j]) {
                 arr[j + 1] = arr[j];
             } else break;
         }
-        arr[j + 1] = current;
+        arr[j + 1] = current; // find the rigth positon [j +1 ] to insert the element
     }
     return arr;
 }
