@@ -4,6 +4,8 @@ const arr = [0, 1, 5, 4, 3, 2, 6];
 Insertion Sort
 Builds up the sort by gradually creating a larger left half which is always sorted
 
+Insertion : start from second element, move to index , insert the elemment to left sorted array
+
 Insertion Sort Pseudocode
 
 - Start by picking the second element in the array
