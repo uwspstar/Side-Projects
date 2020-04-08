@@ -116,6 +116,7 @@ or x in range(1, 101):
         break
 ```
 ### List
+- A fundamental data structure for organizing data
 ```
 tasks = ["Install Python", "Learn Python", "Take a break"]
 ```
@@ -299,4 +300,25 @@ first_list[1:3] # [2, 3]
 first_list[:-1] # [1, 2, 3]
 
 first_list[1:-1] # [2, 3]
+```
+- check is item inside list
+```
+friends = ["Ashley", "Matt", "xsingw"]
+
+"Ashley" in friends # True
+
+"xing" in friends # False
+```
+- Tricks with Slices
+```
+string = "This is fun!"
+
+string[::-1]
+```
+- Modifying portions of lists
+```
+numbers = [1, 2, 3, 4, 5]
+numbers[1:3] = ['a','b','c'] # replace index 2 with a, b, c
+
+print(a) # [1, 'a', 'b', 'c', 4, 5]
 ```
