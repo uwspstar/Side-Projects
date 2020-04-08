@@ -1,4 +1,5 @@
 /*
+https://www.bigocheatsheet.com/
 https://visualgo.net/en/sorting?slide=1
 
 merge sort:
@@ -49,4 +50,12 @@ const merge = function (arr1, arr2) {
     return results;
 }
 
-console.log(merge([100, 200], [1, 2, 3, 5, 6]))
+const mergeSort = function (arr) {
+    if (arr.length < 2) return arr;
+    let mid = Math.floor(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
+// console.log(merge([100, 200], [1, 2, 3, 5, 6]))
+console.log(mergeSort([100, 200, 1, 2, 3, 5, 6]))
