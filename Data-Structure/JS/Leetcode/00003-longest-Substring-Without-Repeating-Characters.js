@@ -21,9 +21,34 @@ Explanation: The answer is "wke", with the length of 3.
 */
 
 // slide window problem
-const lengthOfLongestSubstring = function (s) {
+const lengthOfLongestSubstring = function (str) {
+    if (str.length < 2) return str;
+
+    let start = 0;
+    let end = 0;
+    let j = start;
+    let hashmap = {};
+    let max = 0;
+
+    while (j < str.length) {
+        if (hashmap[str[j]] !== undefined) {
+            hashmap[str[j]] = j;
+            start++;
+        } else {
+            hashmap[str[j]] = j;
+            end++;
+            console.log(hashmap.length);
+
+            max = Math.max(hashmap.length, max);
+        }
+        j++
+    }
+
+    return max;
 
 };
+
+console.log(lengthOfLongestSubstring("abcabcbb"))
 
 //"abcabcbb"
 //a ab abc abca
