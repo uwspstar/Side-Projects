@@ -27,23 +27,20 @@ const lengthOfLongestSubstring = function (str) {
     let start = 0;
     let end = 0;
     let j = start;
-    let hashmap = {};
+    let mySet = new Set();
     let max = 0;
 
     while (j < str.length) {
-        if (hashmap[str[j]] !== undefined) {
-            hashmap[str[j]] = j;
+        if (mySet.has(str[j])) {
             start++;
         } else {
-            hashmap[str[j]] = j;
+            mySet.add(str[j]);
             end++;
-            console.log(hashmap.length);
-
-            max = Math.max(hashmap.length, max);
+            max = Math.max(mySet.size, max);
         }
         j++
     }
-
+    console.log(mySet);
     return max;
 
 };
