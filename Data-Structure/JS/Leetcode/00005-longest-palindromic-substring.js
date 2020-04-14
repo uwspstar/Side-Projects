@@ -7,7 +7,7 @@ O(n^2)
 
 */
 
-const longestPalindrome = function (s) {
+const longestPalindrome = function (str) {
 
 };
 
