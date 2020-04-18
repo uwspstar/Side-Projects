@@ -16,3 +16,4 @@
 ```
 - touch server.js
 - install extension "REST Client"
+- touch request.rest
