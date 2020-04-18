@@ -1,3 +1,5 @@
+// binary Search arr is sorted
+
 // Original Solution
 function binarySearch(arr, elem) {
     var start = 0;
