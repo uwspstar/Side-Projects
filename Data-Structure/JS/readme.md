@@ -114,4 +114,6 @@ There is a family of sorting algorithms that can improve time complexity from O(
 ### searching
 - binary serarch (sorted arr, O(log n))
 - ```git bisect``` Use binary search to find the commit that introduced a bug
-- ```indexOf``` function is recursive.
+
+### Otehrs
+- split array in half ```const half = parseInt(array.length / 2);```
