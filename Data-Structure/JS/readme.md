@@ -112,5 +112,6 @@ FASTER SORTS
 There is a family of sorting algorithms that can improve time complexity from O(n^2  ) to O(n log n)
 ```
 ### searching
-- binary serarch (sorted arr ,O(log n))
+- binary serarch (sorted arr, O(log n))
+- ```git bisect``` Use binary search to find the commit that introduced a bug
 - ```indexOf``` function is recursive.
