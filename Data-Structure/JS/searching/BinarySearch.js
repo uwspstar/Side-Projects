@@ -34,3 +34,22 @@ function binarySearch(arr, elem) {
 }
 
 binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 103)
+
+/*
+
+function indexOf(arr, elem, offset = 0) {
+  // split array in half
+  const half = parseInt(arr.length / 2);
+  const current = array[half];
+
+  if(current === elem) {
+    return offset + half;
+  } else if(elem > current) {
+    const right = arr.slice(half);
+    return indexOf(right, elem, offset + half);
+  } else {
+    const left = arr.slice(0, half)
+    return indexOf(left, elem, offset);
+  }
+}
+*/

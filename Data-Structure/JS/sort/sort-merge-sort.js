@@ -21,7 +21,9 @@ While there are still values we haven't looked at...
     - If the value in the first array is larger than the value in the second array, push the value in the second array into our results and move on to the next value in the second array
     - Once we exhaust one array, push in all remaining values from the other array
 */
-
+/*
+ideally, when arr only has 1 elem, it is sorted, so continuesly divid the arr till the arr only has 1 elem.
+*/
 const merge = function (arr1, arr2) {
     let results = [];
     let i = 0;
