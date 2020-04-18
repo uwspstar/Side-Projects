@@ -1,6 +1,7 @@
 # Data Structures in JavaScript
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/
 - https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/
+
 ### HOW DO YOU IMPROVE?
 - Devise a plan for solving problems
 - Master common problem solving patterns
@@ -110,3 +111,6 @@ Selection Sort	O(n^2)	O(n^2)	O(n^2)	O(1)
 FASTER SORTS
 There is a family of sorting algorithms that can improve time complexity from O(n^2  ) to O(n log n)
 ```
+### searching
+- binary serarch (sorted arr ,O(log n))
+- ```indexOf``` function is recursive.
