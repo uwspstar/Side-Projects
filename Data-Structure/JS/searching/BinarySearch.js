@@ -1,4 +1,5 @@
 // binary Search arr is sorted
+// O(log n)
 
 // Original Solution
 function binarySearch(arr, elem) {
