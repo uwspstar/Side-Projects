@@ -1,4 +1,40 @@
 # Template
+### Queick start
+- touch readme.md
+- touch server.js
+- touch .env
+- touch .gitignore
+- touch request.rest
+```
+install "REST Client" Extension first
+```
+- npm init -y
+- npm install express
+- npm install -D dotenv nodemon
+- npm install ejs
+- npm install mongoose
+```
+view engine, need to create "view" folder
+```
+- mkdir views
+- touch views/index.ejs
+- touch views/login.ejs
+- touch views/register.ejs
+- npm install bcrypt
+```
+encryption
+```
+- npm install express-flash express-session
+```
+session
+```
+- npm install passport passport-local
+```
+passport local :  login with username and password
+```
+- touch passport-config.js
+
+### Simple way with mongoose
 - set up work folder
 ```
 $ mkdir <workfoldername>
@@ -11,7 +47,8 @@ $ sudo npm install -g npm
 ```
 - create api 
 ```
-$ npm install express nodemon
+$ npm install express 
+$ npm install -D nodemon
 ```
 - run project
 ```
@@ -23,7 +60,7 @@ $ npm install mongoose
 ```
 - hide connection string info
 ```
-$ npm install dotenv
+$ npm install -D dotenv
 ```
 ```
 mongodb+srv://<dbuser>:<dbuserpassword>@cluster0-ywywv.mongodb.net/<test>?retryWrites=true&w=majority
