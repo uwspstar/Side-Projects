@@ -15,6 +15,18 @@
 - Greedy Algorithms
 - Backtracking
 
+### TOP 10 interview Algorithms
+- Depth First Search. -stack
+- Breadth First Search. -queue
+- Matching Program
+- Hash Tables
+- Variable/Pointer multiple pointers , one pointer chase another pointer
+- reversing linklist (3 different pointers
+- Sorting experts /quick sort, merge sort, bubble sort, insert sort (nlogn)
+- Recursion
+- custom data structure
+- Binary Search , sort list, find the bug commit
+
 ### Data Structures in JavaScript: Arrays, HashMaps, and Lists 
 - https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/
 
