@@ -129,3 +129,5 @@ There is a family of sorting algorithms that can improve time complexity from O(
 
 ### Otehrs
 - split array in half ```const half = parseInt(array.length / 2);```
+- HashMap implemented with an array
+- https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/#HashMap-operations-time-complexity
