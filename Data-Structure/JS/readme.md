@@ -127,6 +127,12 @@ There is a family of sorting algorithms that can improve time complexity from O(
 - binary serarch (sorted arr, O(log n))
 - ```git bisect``` Use binary search to find the commit that introduced a bug
 
+### Differences between HashMap and Array
+
+- Search on an array is O(n) while on a HashMap is O(1)
+- Arrays can have duplicate values, while HashMap cannot have duplicated keys (but they can have duplicate values.)
+- The array has a key (index) that is always a number from 0 to max value, while in a HashMap you have control of the key and it can be whatever you want: number, string, or symbol.
+
 ### Otehrs
 - split array in half ```const half = parseInt(array.length / 2);```
 - HashMap implemented with an array
