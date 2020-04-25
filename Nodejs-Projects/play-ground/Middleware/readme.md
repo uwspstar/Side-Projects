@@ -12,6 +12,11 @@
 - create custom middleware for cross-cutting concerns, such as logging, authentication, etc.
 ```
 // Custom middleware (applied on all routes)
-app.use(function(req, res, next)) {   // ...  
-next();   }
+app.use(function(req, res, next)) {  // ...
+next();}
+```
+```
+// Custom middleware (applied on routes starting with /api/admin)
+app.use(‘/api/admin’, function(req, res, next)) { // ...
+next();}
 ```
