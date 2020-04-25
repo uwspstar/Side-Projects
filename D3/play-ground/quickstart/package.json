@@ -1,0 +1,21 @@
+{
+  "name": "quickstart",
+  "version": "1.0.0",
+  "description": "$ touch readme.md $ touch .gitignore - add node_modules inside .gitignore file $ npm init --yes $ npm install d3-fetch $ touch index.html $ touch style.css $ mkdir data",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "d3": "^5.16.0",
+    "http-server": "^0.12.1",
+    "jsdom": "^16.2.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}
