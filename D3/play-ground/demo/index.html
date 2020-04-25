@@ -11,20 +11,31 @@
 <body>
     <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia voluptatem temporibus quo magnam sunt
         officiis dolores ea culpa commodi rerum?</h2>
-    <ul>
-
-    </ul>
+    <ul></ul>
+    <svg width="300px" height="300px"></svg>
     <script>
-        const colors = ['redd', 'greenn', 'bluee'];
+        const colors = ['red', 'green', 'blue'];
         d3.select("h2").style("font-size", "20px");
-        const ullist =
-            d3.select("ul")
-                .selectAll("li")
-                .data(colors)
-                .enter()
-                .append("li")
-                .text(c => c);
-        ullist;
+
+        d3.select("ul")
+            .selectAll("li")
+            .data(colors)
+            .enter()
+            .append("li")
+            .text(c => c);
+
+        const nums = [20, 30, 50, 90, 20, -20];
+        const barheight = 30;
+        const barchart = d3.select("svg")
+            .selectAll("rect")
+            .data(nums)
+            .enter()
+            .append("rect")
+            .attr("width", d => d)
+            .attr("height", barheight - 4)
+            .attr("transform", (d, i) => "translate(100, " + i * barheight + ")");
+
+        barchart;
     </script>
 </body>
 
