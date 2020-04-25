@@ -11,9 +11,20 @@
 <body>
     <h2>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia voluptatem temporibus quo magnam sunt
         officiis dolores ea culpa commodi rerum?</h2>
+    <ul>
 
+    </ul>
     <script>
-        d3.select("h2").style("font-size", "50px");
+        const colors = ['redd', 'greenn', 'bluee'];
+        d3.select("h2").style("font-size", "20px");
+        const ullist =
+            d3.select("ul")
+                .selectAll("li")
+                .data(colors)
+                .enter()
+                .append("li")
+                .text(c => c);
+        ullist;
     </script>
 </body>
 
