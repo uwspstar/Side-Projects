@@ -6,6 +6,18 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 
 
+const isUniquWithSetFucntion = function (str) {
+    // Use Set to remove duplicate elements from the array 
+    if (str.length > 128) return false;
+    let arr = str.split('');
+    let myUniqueArr = [...new Set(arr)];
+    return arr.length === myUniqueArr.length;
+}
+
+console.log(isUniquWithSetFucntion("Aras"));
+console.log(isUniquWithSetFucntion("Arrays"));
+console.log(isUniquWithSetFucntion("Arrays and Strings xingwang"));
+
 const isUnique = function (str) {
     if (str.length > 128) return false;
     let mySet = new Set();
