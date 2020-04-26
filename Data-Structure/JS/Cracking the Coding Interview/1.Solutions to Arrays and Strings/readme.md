@@ -23,3 +23,8 @@ console.log([...new Set(numbers)])
 
 // [2, 3, 4, 5, 6, 7, 32]
 ```
+### JavaScript Bitwise Operators
+- https://www.w3schools.com/jsref/jsref_operators.asp
+- https://www.youtube.com/watch?v=mesu75PTDC8
+- https://www.youtube.com/watch?v=RRyxCmLX_ag
+- ```user permission```
