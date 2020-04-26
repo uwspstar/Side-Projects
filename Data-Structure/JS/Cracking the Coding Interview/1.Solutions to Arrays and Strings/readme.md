@@ -28,3 +28,11 @@ console.log([...new Set(numbers)])
 - https://www.youtube.com/watch?v=mesu75PTDC8
 - https://www.youtube.com/watch?v=RRyxCmLX_ag
 - ```user permission```
+```
+AND &
+OR |
+XOR ^
+NOT ~
+shift left <<
+shift right >>
+```
