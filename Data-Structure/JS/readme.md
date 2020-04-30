@@ -139,5 +139,6 @@ There is a family of sorting algorithms that can improve time complexity from O(
 - https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/#HashMap-operations-time-complexity
 
 ### others
-- reverse() only for array, 
+- reverse() only for array 
 ```var array = str.split('');```
+```var str = array.join('')```
