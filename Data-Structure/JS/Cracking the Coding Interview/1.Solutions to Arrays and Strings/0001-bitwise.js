@@ -1,3 +1,5 @@
+//not working, still need to figure out how this one work.
+
 const isUniqueBitsOpt = function (str) {
     let checker = 0;
     for (let i = 0; i < str.length; i++) {
