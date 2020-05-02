@@ -3,10 +3,31 @@
 - https://www.amazon.com/Exam-Ref-70-483-Programming-C/dp/0735676828/
 
 ### Objective 1.1: Implement multithreading and asynchronous processing
-- In current versions of Windows, each application runs in its own process. A process isolates an application from other applica- tions by giving it its own virtual memory and by ensuring that different processes can’t influ- ence each other. 
+- In current versions of Windows, each application runs in its own process. 
+- A process isolates an application from other applications by giving it its own virtual memory and by ensuring that different processes can’t influence each other. 
 - A thread is something like a virtualized CPU.
 - Each process runs in its own thread. 
 - If an application crashes or hits an infinite loop, only the application’s process is affected.
 - The ```Thread``` class can be found in the ```System.Threading namespace```
 - The ```Thread.Join``` method is called on the main thread to let it wait until the other thread finishes.
 - ```Thread.Sleep(0)``` ? It is used to signal to Windows that this thread is finished. In- stead of waiting for the whole time-slice of the thread to finish, it will immediately switch to another thread.
+- Both your process and your thread have a priority
+- A higher-priority thread should be used only when it’s absolutely neces- sary
+####  difference between fore- ground and background threads. 
+- Foreground threads can be used to keep an application alive. 
+- Only when all foreground threads end does the common language runtime (CLR) shut down your application. Background threads are then terminated.
+```
+public static void Main()
+{
+    Thread t = new Thread(new ThreadStart(ThreadMethod)); t.IsBackground = true;
+    t.Start();
+}
+
+public static void ThreadMethod()
+{
+    for (int i = 0; i < 10; i++) {
+    Console.WriteLine(“ThreadProc: {0}”, i);
+    Thread.Sleep(1000); }
+}
+```
+- If you run this application with the IsBackground property set to true, the application exits immediately. If you set it to false (creating a foreground thread), the application prints the ThreadProc message ten times.
