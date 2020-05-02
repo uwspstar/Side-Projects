@@ -6,6 +6,8 @@
 
 // use sort , However, if efficiency is very important, we can implement it a different way
 
+// check with your interviewer about the size of the character set. We assumed that the character set was ASCII
+
 const checkPermutations = function (str1, str2) {
 
     if (str1.length != str2.length) return false;
