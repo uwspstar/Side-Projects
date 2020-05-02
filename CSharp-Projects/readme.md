@@ -34,3 +34,4 @@ public static void ThreadMethod()
 - If you run this application with the IsBackground property set to true, the application exits immediately. If you set it to false (creating a foreground thread), the application prints the ThreadProc message ten times.
 - A better way to ```stop a thread``` is by using a shared variable that both your target and your calling thread can access.
 ### Thread pools
+- A thread pool is created to reuse those threads, similar to the way a database connection pooling works
