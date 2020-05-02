@@ -12,7 +12,8 @@
 - The ```Thread.Join``` method is called on the main thread to let it wait until the other thread finishes.
 - ```Thread.Sleep(0)``` ? It is used to signal to Windows that this thread is finished. In- stead of waiting for the whole time-slice of the thread to finish, it will immediately switch to another thread.
 - Both your process and your thread have a priority
-- A higher-priority thread should be used only when it’s absolutely neces- sary
+- A higher-priority thread should be used only when it’s absolutely necessary
+
 ####  difference between fore- ground and background threads. 
 - Foreground threads can be used to keep an application alive. 
 - Only when all foreground threads end does the common language runtime (CLR) shut down your application. Background threads are then terminated.
@@ -31,3 +32,5 @@ public static void ThreadMethod()
 }
 ```
 - If you run this application with the IsBackground property set to true, the application exits immediately. If you set it to false (creating a foreground thread), the application prints the ThreadProc message ten times.
+- A better way to ```stop a thread``` is by using a shared variable that both your target and your calling thread can access.
+### Thread pools
