@@ -4,3 +4,10 @@ EXAMPLE
 Input: "Mr John Smith ", 
 Output: "Mr%20John%20Smith"
 */
+
+//A common approach in string manipulation problems is to edit the string starting from the end and working backwards. This is useful because we have an extra buffer at the end, which allows us to change characters without worrying about what we're overwriting.
+
+const uRLify = function (str) {
+
+}
+console.log(uRLify('Mr John Smith'));
