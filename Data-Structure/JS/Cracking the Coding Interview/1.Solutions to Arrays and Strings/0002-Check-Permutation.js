@@ -12,6 +12,37 @@
 
 // The slice() method extracts a section of a string and returns it as a new string, without modifying the original string
 
+const checkPermutationsWithMap = function (str1, str2) {
+    //O(n+n) =  O(n)
+
+    if (str1.length != str2.length) return false;
+
+    let len = str1.length;
+    let map1 = new Map();
+    let map2 = new Map();
+
+    for (let i = 0; i < len; i++) {
+
+        map1.has(str1[i]) ? map1.set(str1[i], map1.get(str1[i]) + 1) : map1.set(str1[i], 1);
+        map2.has(str2[i]) ? map2.set(str2[i], map2.get(str2[i]) + 1) : map2.set(str2[i], 1);
+    }
+    console.log('map1 = ', map1);
+    console.log('map2 = ', map2);
+
+    for (let key of map1.keys()) {
+        if (map1.get(key) != map2.get(key)) return false;
+    }
+
+    return true;
+}
+
+console.log(checkPermutationsWithMap("doo", "ood")) //true
+console.log(checkPermutationsWithMap("adogs", "agod")) //false
+console.log(checkPermutationsWithMap("adogs", "magod")) //false
+console.log(checkPermutationsWithMap("aaaadog", "agodaaa")) //true
+console.log(checkPermutationsWithMap("doooog", "ogodoo")) //true
+console.log(checkPermutationsWithMap("dogab", "bagod")) //true
+
 const checkPermutations = function (str1, str2) {
     if (str1.length != str2.length) return false;
 
