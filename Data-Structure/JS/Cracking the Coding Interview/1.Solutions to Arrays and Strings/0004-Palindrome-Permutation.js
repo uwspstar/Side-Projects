@@ -3,6 +3,18 @@ Palindrome Permutation: Given a string, write a function to check if it is a per
 
 EXAMPLE
 Input: Tact Coa
-Output: True (permutations: "taco cat'; "atc o eta·; etc.)
+Output: True (permutations: "taco cat"; "atc o eta"; etc.)
 
 */
+const palindromePermutation = function (str) {
+
+    let len = str.length;
+    for (let i = 0; i < len / 2; i++) {
+        //console.log('i=', i,'str[i] = ', str[i], 'str[len - 1 - i] =', str[len - 1 - i])
+        if (str[i] != str[len - 1 - i]) return false
+    }
+    return true;
+}
+console.log(palindromePermutation("taco ocat")); //true
+console.log(palindromePermutation("taco cat")); //false
+console.log(palindromePermutation("atc o eta")); //false
