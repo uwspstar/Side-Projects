@@ -12,6 +12,7 @@
 
 // The slice() method extracts a section of a string and returns it as a new string, without modifying the original string
 
+// *** keep in mind, the workds order can be different ***
 const checkPermutationsWithMap = function (str1, str2) {
     //O(n+n) =  O(n)
 
