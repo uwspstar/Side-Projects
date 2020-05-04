@@ -1,12 +1,12 @@
 // str is ASCII code 
 // asking is ASCII code or UniqueCode
-// charCodeAt(); cheak ASCII code in js,  
+// charCodeAt(); check ASCII code in js,  
 // "ABC".charCodeAt(0)
 // use Set to save uniqu value
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 
 
-const isUniquWithSetFucntion = function (str) {
+const isUniqueWithSetFunction = function (str) {
     // Use Set to remove duplicate elements from the array 
     if (str.length > 128) return false;
     let arr = str.split('');
@@ -14,9 +14,9 @@ const isUniquWithSetFucntion = function (str) {
     return arr.length === myUniqueArr.length;
 }
 
-console.log(isUniquWithSetFucntion("Aras"));
-console.log(isUniquWithSetFucntion("Arrays"));
-console.log(isUniquWithSetFucntion("Arrays and Strings xingwang"));
+console.log(isUniqueWithSetFunction("Aras"));
+console.log(isUniqueWithSetFunction("Arrays"));
+console.log(isUniqueWithSetFunction("Arrays and Strings xingwang"));
 
 const isUnique = function (str) {
     if (str.length > 128) return false;
