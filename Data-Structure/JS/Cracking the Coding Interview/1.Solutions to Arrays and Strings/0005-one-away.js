@@ -7,6 +7,7 @@ pale, bale -> true
 pale, bae -> false
 */
 
+//O(n)
 const oneAway = function (str1, str2) {
 
     let len1 = str1.length;
