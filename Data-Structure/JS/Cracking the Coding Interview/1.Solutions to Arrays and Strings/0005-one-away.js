@@ -7,6 +7,8 @@ pale, bale -> true
 pale, bae -> false
 */
 
+//also can put ">" and "<" logic in same function
+
 //O(n)
 const oneAway = function (str1, str2) {
 
