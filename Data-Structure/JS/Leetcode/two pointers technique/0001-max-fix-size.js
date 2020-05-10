@@ -2,6 +2,7 @@
 arr = [1,3,5,8,0,2,4,9,-7]
 fix size = 3
 max is 16 = [3,5,8]
+- - https://www.youtube.com/watch?v=MK-NZ4hN7rs
 */
 
 const maxFixSize = function (arr, size) {
@@ -21,7 +22,7 @@ const maxFixSize = function (arr, size) {
     return maxSum;
 
 }
-console.log(maxFixSize([1, 3, 5, 8, 0, 2, 4, 9, -7], 1)) // 16
+console.log(maxFixSize([1, 3, 5, 8, 0, 2, 4, 9, -7], 1)) // 9
 console.log(maxFixSize([1, 3, 5, 8, 0, 2, 4, 9, -7], 3)) // 16
 console.log(maxFixSize([1, 3, 5, 8, 0, 2, 4, 9, 7], 3)) // 20
 console.log(maxFixSize([1, 3, 5, 8, 0, 2, 4, 9, -7], 4)) // 17
