@@ -1,3 +1,7 @@
 /*
-StringRotation:Assumeyouhaveamethodi5Sub5tringwhichchecksifonewordisasubstring of another. Given two strings, 51 and 52, write code to check if 52 is a rotation of 51 using only one call to i5Sub5tring (e.g., "waterbottle" is a rotation of" erbottlewat").
+StringRotation:Assume you have a method isSubstring which checks if one word is a substring of another. Given two strings, s1 and s2, write code to check if s2 is a rotation of s1 using only one call to isSubstring (e.g., "waterbottle" is a rotation of" erbottlewat").
 */
+const stringRotation = function (str1, str2) {
+
+    
+}
