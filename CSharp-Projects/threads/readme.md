@@ -14,3 +14,5 @@
 ### System.Threading
 - This class enables you to create new treads, manage their priority, and get their status.
 - Multiple threads might need to access a ```shared resource```. To keep the resource in a uncorrupted state and avoid race conditions, you must ```synchronize``` the thread access to it.
+### Exceptions in Managed Threads
+- There is no such thing as an unhandled exception on a thread pool thread. - When a task throws an exception that it does not handle, the runtime prints the exception stack trace to the console and then returns the thread to the thread pool.
