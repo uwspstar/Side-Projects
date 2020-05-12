@@ -13,3 +13,4 @@
 - Although there are certain ```performance hits```, but this ```improves the responsiveness``` of the system and gives the illusion that one CPU can ```execute multiple tasks``` at a time.
 ### System.Threading
 - This class enables you to create new treads, manage their priority, and get their status.
+- Multiple threads might need to access a ```shared resource```. To keep the resource in a uncorrupted state and avoid race conditions, you must ```synchronize``` the thread access to it.
