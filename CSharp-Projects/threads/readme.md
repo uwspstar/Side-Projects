@@ -1,5 +1,6 @@
 # threads
 - https://docs.microsoft.com/en-us/dotnet/standard/threading/managed-threading-basics
+- use of multi-threading might increase throughput along with the increased responsiveness.
 
 ### basic
 - In current versions of Windows, each application runs in its own ```process```. 
