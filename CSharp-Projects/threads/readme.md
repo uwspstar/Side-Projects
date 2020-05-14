@@ -11,8 +11,10 @@
 - After this ```period``` ends, the thread is ```paused``` and Windows switches to another thread. This is called ```context switching```.
 - Windows has to make sure that the whole context of the thread is saved and restored on each switch.
 - Although there are certain ```performance hits```, but this ```improves the responsiveness``` of the system and gives the illusion that one CPU can ```execute multiple tasks``` at a time.
+
 ### System.Threading
 - This class enables you to create new treads, manage their priority, and get their status.
 - Multiple threads might need to access a ```shared resource```. To keep the resource in a uncorrupted state and avoid race conditions, you must ```synchronize``` the thread access to it.
+
 ### Exceptions in Managed Threads
 - There is no such thing as an unhandled exception on a thread pool thread. - When a task throws an exception that it does not handle, the runtime prints the exception stack trace to the console and then returns the thread to the thread pool.
