@@ -10,5 +10,5 @@ $ mkdir views
 $ cd views 
 $ touch index.ejs
 ```
-- install extention "EJS language support"
+- install extension "EJS language support"
 - add bootstripcdn
