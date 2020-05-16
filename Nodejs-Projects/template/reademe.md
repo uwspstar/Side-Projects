@@ -1,5 +1,5 @@
 # Template
-### Queick start
+### Quick start
 - touch readme.md
 - touch server.js
 - touch .env
