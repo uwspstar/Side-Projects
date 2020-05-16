@@ -50,24 +50,23 @@ Associative arrays in PHP
 - Internally, the HashMap uses an Array, and it maps the labels to array indexes using a ```hash function```.
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
 
+- - The most common implementation of Maps is using an array and hash function.
+
 ##### HashMap
+- Conditional (ternary) operator
 ```
-// Conditional (ternary) operator
 hashMap[key] ? hashMap[key]++ : hashMap[key] = 1;
 ```
 ##### Set
+- remove duplicate elements from the array
 ```
-remove duplicate elements from the array
 // Use to remove duplicate elements from the array 
-
 const numbers = [2,3,4,4,2,3,3,4,4,5,5,6,6,7,5,32,3,4,5]
 
-console.log([...new Set(numbers)]) 
-
-// [2, 3, 4, 5, 6, 7, 32]
+console.log([...new Set(numbers)]) // [2, 3, 4, 5, 6, 7, 32]
 ```
+- case sensitive & duplicate omission
 ```
-//case sensitive & duplicate omission
 new Set("Firefox")  // Set(7) [ "F", "i", "r", "e", "f", "o", "x" ]
 new Set("firefox")  // Set(6) [ "f", "i", "r", "e", "o", "x" ]
 ```
