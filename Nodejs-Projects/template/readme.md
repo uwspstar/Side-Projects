@@ -4,10 +4,12 @@
 - touch server.js
 - touch .env
 - touch .gitignore
-- touch request.rest
+
 ```
 install "REST Client" Extension first
 ```
+- touch request.rest
+
 - npm init -y
 - npm install express
 - npm install -D dotenv nodemon
