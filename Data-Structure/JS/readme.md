@@ -75,7 +75,15 @@ new Set("firefox")  // Set(6) [ "f", "i", "r", "e", "o", "x" ]
 - In JavaScript, it would automatically increase the size of the array when needed.
 - JavaScript Array class is a global object that is used in the construction of arrays; which are high-level, ```list-like``` objects.
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
-
+```
+Function	  Runtime	Description
+array.push	  O(1)	Insert element to the end of the array
+array.pop 	  O(1)	Remove element to the end of the array
+array.shift	  O(n)	Remove element to the beginning of the array
+array.unshift	O(n)	Insert element(s) to the beginning of the array
+array.slice	  O(n)	Returns a copy of the array from beginning to end.
+array.splice	O(n)	Changes (add/remove) the array
+```
 ### recursion
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344106#overview
 - JSON.parse / JSON.stringify
