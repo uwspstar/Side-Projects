@@ -156,7 +156,7 @@ There is a family of sorting algorithms that can improve time complexity from O(
 - Arrays can have duplicate values, while HashMap cannot have duplicated keys (but they can have duplicate values.)
 - The array has a key (index) that is always a number from 0 to max value, while in a HashMap you have control of the key and it can be whatever you want: number, string, or symbol.
 
-### Otehrs
+### Others
 - split array in half ```const half = parseInt(array.length / 2);```
 - HashMap implemented with an array
 - https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/#HashMap-operations-time-complexity
