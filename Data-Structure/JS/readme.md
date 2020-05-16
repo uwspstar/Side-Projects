@@ -30,6 +30,8 @@
 ### Data Structures in JavaScript: Arrays, HashMaps, and Lists 
 - https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/
 
+### linear data structures: Arrays, Lists, Sets, Stacks, and Queues.
+
 ### Objects ,  hashmap vs set
 
 ```
@@ -72,6 +74,7 @@ new Set("firefox")  // Set(6) [ "f", "i", "r", "e", "o", "x" ]
 ### Array 
 - In JavaScript, it would automatically increase the size of the array when needed.
 - JavaScript Array class is a global object that is used in the construction of arrays; which are high-level, ```list-like``` objects.
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 ### recursion
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344106#overview
@@ -135,8 +138,6 @@ Bubble Sort	O(n)	O(n^2 )	O(n^2)	O(1)
 Insertion Sort	O(n)	O(n^2)	O(n^2)	O(1)
 Selection Sort	O(n^2)	O(n^2)	O(n^2)	O(1)
 ```
-### Array
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 
 ### sort 2
 - merge sort
@@ -147,7 +148,7 @@ FASTER SORTS
 There is a family of sorting algorithms that can improve time complexity from O(n^2  ) to O(n log n)
 ```
 ### searching
-- binary serarch (sorted arr, O(log n))
+- binary search (sorted arr, O(log n))
 - ```git bisect``` Use binary search to find the commit that introduced a bug
 
 ### Differences between HashMap and Array
@@ -156,6 +157,19 @@ There is a family of sorting algorithms that can improve time complexity from O(
 - Arrays can have duplicate values, while HashMap cannot have duplicated keys (but they can have duplicate values.)
 - The array has a key (index) that is always a number from 0 to max value, while in a HashMap you have control of the key and it can be whatever you want: number, string, or symbol.
 
+### ES6
+- https://adrianmejia.com/overview-of-javascript-es6-features-a-k-a-ecmascript-6-and-es2015/
+- var vs. let vs. const
+- Swapping values
+```
+let a = 1;
+let b = 2;
+
+
+[a, b] = [b, a];
+
+console.log(a, b); // 2 1
+```
 ### Others
 - split array in half ```const half = parseInt(array.length / 2);```
 - HashMap implemented with an array
