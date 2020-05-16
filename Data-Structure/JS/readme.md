@@ -32,7 +32,7 @@
 
 ### linear data structures: Arrays, Lists, Sets, Stacks, and Queues.
 
-### Objects ,  hashmap vs set
+### Objects ,  HashMap vs Set
 
 ```
 Objects
@@ -45,13 +45,17 @@ HashMaps in Java.
 Associative arrays in PHP
 ```
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+- In arrays, the data is referenced using a numeric index (relatively to the position).
+- However, HashMaps uses labels that could be a string, number, object or anything.
+- Internally, the HashMap uses an Array, and it maps the labels to array indexes using a ```hash function```.
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
 
+##### HashMap
 ```
 // Conditional (ternary) operator
 hashMap[key] ? hashMap[key]++ : hashMap[key] = 1;
 ```
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
-
+##### Set
 ```
 remove duplicate elements from the array
 // Use to remove duplicate elements from the array 
