@@ -60,6 +60,7 @@ hashMap[key] ? hashMap[key]++ : hashMap[key] = 1;
 ```
 ##### Set
 - remove duplicate elements from the array
+- Set (array without duplicates)
 ```
 // Use to remove duplicate elements from the array 
 const numbers = [2,3,4,4,2,3,3,4,4,5,5,6,6,7,5,32,3,4,5]
@@ -105,6 +106,8 @@ for (let index = 0; index < stringKey.length; index++) {
     hashValue += charCode;
   }
 ```
+### Linked Lists
+
 ### Dynamic Programming I: Fibonacci, Shortest Paths 
 - https://www.youtube.com/watch?v=OQ5jsbhAv_M&list=RDCMUCEBb1b_L6zDS3xTUrIALZOw&start_radio=1&t=12
 
