@@ -50,7 +50,8 @@ Associative arrays in PHP
 - Internally, the HashMap uses an Array, and it maps the labels to array indexes using a ```hash function```.
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
 
-- - The most common implementation of Maps is using an array and hash function.
+- The most common implementation of Maps is using an array and hash function.
+- use the ```Map``` rather than regular ```Object```, since the ```Map’s key``` could be ```anything``` while on ```Object’s key``` can only be ```string``` or ```number```. Also, Maps keeps the order of insertion.
 
 ##### HashMap
 - Conditional (ternary) operator
@@ -70,9 +71,18 @@ console.log([...new Set(numbers)]) // [2, 3, 4, 5, 6, 7, 32]
 new Set("Firefox")  // Set(7) [ "F", "i", "r", "e", "f", "o", "x" ]
 new Set("firefox")  // Set(6) [ "f", "i", "r", "e", "o", "x" ]
 ```
+### HashMap vs. Array
+- the main difference is that the Array’s index doesn’t have any relationship with the data.
+- Search on an array is O(n) while on a HashMap is O(1)
+- Arrays can have duplicate values 
+- HashMap cannot have duplicated keys (but they can have duplicate values.)
+- The array has a key (index) that is ```always a number``` from 0 to max value
+- In a HashMap you have control of the key and it can be whatever you want: number, string, or symbol.
+- The primary purpose of a HashMap is to reduce the search/access time of an Array from O(n) to O(1).
 
-### Dynamic Programming I: Fibonacci, Shortest Paths 
-- https://www.youtube.com/watch?v=OQ5jsbhAv_M&list=RDCMUCEBb1b_L6zDS3xTUrIALZOw&start_radio=1&t=12
+### Hash Function
+- Collisions in HashMaps are unavoidable when using an array-like underlying data structure.
+###### Rehash
 
 ### Array 
 - In JavaScript, it would automatically increase the size of the array when needed.
@@ -87,6 +97,17 @@ array.unshift	O(n)	Insert element(s) to the beginning of the array
 array.slice	  O(n)	Returns a copy of the array from beginning to end.
 array.splice	O(n)	Changes (add/remove) the array
 ```
+### String
+- str.charCodeAt(char)
+```
+for (let index = 0; index < stringKey.length; index++) {
+    const charCode = stringKey.charCodeAt(index);
+    hashValue += charCode;
+  }
+```
+### Dynamic Programming I: Fibonacci, Shortest Paths 
+- https://www.youtube.com/watch?v=OQ5jsbhAv_M&list=RDCMUCEBb1b_L6zDS3xTUrIALZOw&start_radio=1&t=12
+
 ### recursion
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344106#overview
 - JSON.parse / JSON.stringify
