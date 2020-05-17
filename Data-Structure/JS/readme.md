@@ -99,6 +99,7 @@ array.unshift	O(n)	Insert element(s) to the beginning of the array
 array.slice	  O(n)	Returns a copy of the array from beginning to end.
 array.splice	O(n)	Changes (add/remove) the array
 ```
+##### forEach
 - The ```forEach()``` method executes a provided function once for each array element.
 - ```forEach()``` executes the callback function once for each array element; unlike map() or reduce() it always returns the value undefined and is ```not chainable```
 - ```forEach() does not mutate``` the array on which it is called
@@ -107,6 +108,10 @@ array.splice	O(n)	Changes (add/remove) the array
 - In order to display the content of an array in the console, you can use ```console.table()```, which prints a formatted version of the array.
 - Since the thisArg parameter (this) is provided to forEach(), it is passed to callback each time it's invoked. The callback uses it as its this value.
 - If passing the callback function uses an arrow function expression, the thisArg parameter can be omitted, since all arrow functions lexically bind the this value.
+- forEach() does not make a copy of the array before iterating.
+### Polyfill
+##### Array.from()
+- The Array.from() method ```creates a new, shallow-copied Array``` instance from an array-like or iterable object.
 
 ### String
 - str.charCodeAt(char)
