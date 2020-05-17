@@ -86,6 +86,7 @@ new Set("firefox")  // Set(6) [ "f", "i", "r", "e", "o", "x" ]
 ###### Rehash
 
 ### Array 
+- Arrays ```cannot``` use strings as element indexes (as in an associative array) but ```must use integers```.
 - In JavaScript, it would automatically increase the size of the array when needed.
 - JavaScript Array class is a global object that is used in the construction of arrays; which are high-level, ```list-like``` objects.
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
@@ -107,7 +108,16 @@ for (let index = 0; index < stringKey.length; index++) {
   }
 ```
 ### Linked Lists
-
+- Node
+##### Node
+```
+class Node {
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+}
+```
 ### Dynamic Programming I: Fibonacci, Shortest Paths 
 - https://www.youtube.com/watch?v=OQ5jsbhAv_M&list=RDCMUCEBb1b_L6zDS3xTUrIALZOw&start_radio=1&t=12
 
