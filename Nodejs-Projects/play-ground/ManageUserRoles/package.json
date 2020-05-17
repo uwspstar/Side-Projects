@@ -1,0 +1,20 @@
+{
+  "name": "ManageUserRoles",
+  "version": "1.0.0",
+  "description": "- https://www.youtube.com/watch?v=jI4K7L-LI58&t=161s - $ touch readme.md - $ touch server.js - $ touch .gitignore",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "devStart": "nodemon server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
