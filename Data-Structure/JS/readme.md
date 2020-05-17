@@ -99,6 +99,12 @@ array.unshift	O(n)	Insert element(s) to the beginning of the array
 array.slice	  O(n)	Returns a copy of the array from beginning to end.
 array.splice	O(n)	Changes (add/remove) the array
 ```
+- The ```forEach()``` method executes a provided function once for each array element.
+- ```forEach()``` executes the callback function once for each array element; unlike map() or reduce() it always returns the value undefined and is ```not chainable```
+- ```forEach() does not mutate``` the array on which it is called
+
+
+
 ### String
 - str.charCodeAt(char)
 ```
