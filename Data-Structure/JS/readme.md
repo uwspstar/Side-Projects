@@ -102,7 +102,7 @@ array.splice	O(n)	Changes (add/remove) the array
 - The ```forEach()``` method executes a provided function once for each array element.
 - ```forEach()``` executes the callback function once for each array element; unlike map() or reduce() it always returns the value undefined and is ```not chainable```
 - ```forEach() does not mutate``` the array on which it is called
-
+- There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.
 
 
 ### String
