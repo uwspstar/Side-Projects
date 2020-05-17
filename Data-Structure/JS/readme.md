@@ -105,6 +105,8 @@ array.splice	O(n)	Changes (add/remove) the array
 - There is no way to stop or break a forEach() loop other than by throwing an exception. If you need such behavior, the forEach() method is the wrong tool.
 - forEach expects a synchronous function
 - In order to display the content of an array in the console, you can use ```console.table()```, which prints a formatted version of the array.
+- Since the thisArg parameter (this) is provided to forEach(), it is passed to callback each time it's invoked. The callback uses it as its this value.
+- If passing the callback function uses an arrow function expression, the thisArg parameter can be omitted, since all arrow functions lexically bind the this value.
 
 ### String
 - str.charCodeAt(char)
