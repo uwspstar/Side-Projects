@@ -116,6 +116,10 @@ array.splice	O(n)	Changes (add/remove) the array
 console.log(Array.from('foo')); // expected output: Array ["f", "o", "o"]
 console.log(Array.from([1, 2, 3], x => x + x)); // expected output: Array [2, 4, 6]
 ```
+- Array.from() lets you create Arrays from: ```array-like objects``` (objects with a length property and indexed elements); or iterable objects (objects such as Map and Set)
+
+
+
 ### String
 - str.charCodeAt(char)
 ```
@@ -132,6 +136,14 @@ class Node {
   constructor(value) {
     this.value = value;
     this.next = null;
+  }
+}
+```
+```
+class LinkedList {
+  constructor() {
+    this.head = null; // first/head/root element
+    this.size = 0; // total number of elements in the list
   }
 }
 ```
