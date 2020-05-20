@@ -2,7 +2,7 @@
 - $>python3 --version 
 ### install pip3 
 - $>pip3 --version 
-### install diango 
+### install django 
 - $>pip3 install django 
 - $>django-admin 
 ### create startproject
