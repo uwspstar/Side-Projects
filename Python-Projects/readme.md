@@ -1,6 +1,6 @@
 # Python-Projects
 
-### Pypi 
+### Pypi
 - same as npm
 
 ### pip3
