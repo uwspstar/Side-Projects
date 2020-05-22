@@ -6,3 +6,7 @@
 - self
 - Encapsulation
 - Abstraction
+- Private vs Public Variables
+```
+no true private, use underscore _ for name convention
+```
