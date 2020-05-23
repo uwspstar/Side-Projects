@@ -8,6 +8,15 @@ for num in numbers:
 
 print(doubled_numbers)  # [2, 4, 6, 8, 10]
 
+numbers = [1, 2, 3, 4, 5]
+doubled_numbers = [num * 2 for num in numbers]
+print(doubled_numbers)  # [2, 4, 6, 8, 10]
+
+name = 'ab'
+[char.upper() for char in name] # ['A', 'B']
+
+friends = ['ashley', 'matt', 'michael']
+[friend[0].upper() for friend in friends] # ['Ashley', 'Matt', 'Michael']
 
 # Tricks with Slices
 string = "This is fun!"
