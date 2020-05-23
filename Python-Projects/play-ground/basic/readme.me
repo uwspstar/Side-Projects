@@ -345,3 +345,16 @@ print(a) # [1, 'a', 'b', 'c', 4, 5]
 ### Iterators & Generators
 - ```Iterator``` - an object that can be iterated upon. An object which returns data, one element at a time when next() is called on it
 - ```Iterable``` -  An object which will return an Iterator when iter() is called on it.
+
+### Generators
+- Generators are iterators
+- Generators can be created with generator functions
+- Generator functions use the yield keyword
+- Generators can be created with generator expressions
+
+```
+Functions	                                Generator Functions
+uses                                        return	uses yield
+returns once	                            can yield multiple times
+When invoked, returns the return value	    When invoked, returns a generator
+```

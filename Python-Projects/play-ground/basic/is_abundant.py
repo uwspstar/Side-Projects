@@ -18,12 +18,34 @@ Non-Examples:
 15 (1 + 3 + 5 < 15)
 """
 
+
 def is_abundant(n):
     total = 0
-    for d in range(1,n):
+    for d in range(1, n):
         if n % d == 0:
             total += d
     return total > n
 
-is_abundant(12) # True
-is_abundant(4) # False
+
+def list_first_abundants(n):
+    abundant_nums = []
+    num = 1
+    while len(abundant_nums) < n:
+        if is_abundant(num):
+            abundant_nums.append(num)
+        num += 1
+    return abundant_nums
+
+
+def gen_first_abundants(n):
+    count = 0
+    num = 1
+    while count < n:
+        if is_abundant(num):
+            yield num
+            count += 1
+        num += 1
+
+
+is_abundant(12)  # True
+is_abundant(4)  # False
