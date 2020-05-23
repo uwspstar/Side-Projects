@@ -336,7 +336,12 @@ print(a) # [1, 'a', 'b', 'c', 4, 5]
 - Class methods are methods (with the @classmethod decorator) that are not concerned with instances, but the class itself.
 - Inheritance : In Python, inheritance works by passing the parent class as an argument to the definition of a child class:
 - Polymorphism : many (poly) forms (morph)
+- Python classes have special (also known as "magic") methods, that are dunders (i.e. double underscore-named).
 - reference the MRO three ways:
     - __mro__ attribute on the class
     - use the mro() method on the class
     - use the builtin help(cls) method
+
+### Iterators & Generators
+- ```Iterator``` - an object that can be iterated upon. An object which returns data, one element at a time when next() is called on it
+- ```Iterable``` -  An object which will return an Iterator when iter() is called on it.
