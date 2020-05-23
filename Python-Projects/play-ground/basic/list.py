@@ -25,6 +25,11 @@ numbers = [1, 2, 3, 4, 5]
 string_list = [str(num) for num in numbers]
 print(string_list)  # ['1', '2', '3', '4', '5']
 
+# LC with Conditional Logic
+numbers = [1, 2, 3, 4, 5, 6]
+evens = [num for num in numbers if num % 2 == 0]
+odds = [num for num in numbers if num % 2 != 0]
+
 # Tricks with Slices
 string = "This is fun!"
 string[::-1]
