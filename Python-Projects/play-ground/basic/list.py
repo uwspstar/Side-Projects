@@ -1,3 +1,23 @@
+# List Comprehension vs Looping
+numbers = [1, 2, 3, 4, 5]
+doubled_numbers = []
+
+for num in numbers:
+    doubled_number = num * 2
+    doubled_numbers.append(doubled_number)
+
+print(doubled_numbers)  # [2, 4, 6, 8, 10]
+
+
+# Tricks with Slices
+string = "This is fun!"
+string[::-1]
+
+numbers = [1, 2, 3, 4, 5]
+numbers[1:3] = ['a', 'b', 'c']
+print(numbers)  # [1, 'a', 'b', 'c', 4, 5]
+
+
 # Slicing
 # some_list[start:end:step]
 first_list = [1, 2, 3, 4]
