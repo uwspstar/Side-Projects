@@ -1,3 +1,8 @@
+# Nested Lists
+nested_list = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+nested_list[0][1]  # 2
+nested_list[1][-1]  # 6
+
 # List Comprehension vs Looping
 numbers = [1, 2, 3, 4, 5]
 doubled_numbers = []
@@ -29,6 +34,11 @@ print(string_list)  # ['1', '2', '3', '4', '5']
 numbers = [1, 2, 3, 4, 5, 6]
 evens = [num for num in numbers if num % 2 == 0]
 odds = [num for num in numbers if num % 2 != 0]
+
+[num*2 if num % 2 == 0 else num/2 for num in numbers]  # [0.5, 4, 1.5, 8, 2.5, 12]
+
+with_vowels = "This is so much fun!"
+''.join(char for char in with_vowels if char not in "aeiou")  # "Ths s s mch fn!"
 
 # Tricks with Slices
 string = "This is fun!"
