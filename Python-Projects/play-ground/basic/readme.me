@@ -358,3 +358,5 @@ uses                                        return	uses yield
 returns once	                            can yield multiple times
 When invoked, returns the return value	    When invoked, returns a generator
 ```
+- Calling next on a generator with nothing left to yield will throw a StopIteration error
+- When we loop over a generator, the loop will stop before the StopIteration error gets thrown
