@@ -6,12 +6,30 @@
 - Clients and servers communicate by exchanging individual messages (as opposed to a stream of data)
 - The messages sent by the client, usually a Web browser, are called requests and the messages sent by the server as an answer are called responses.
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+- The browser is ```always``` the entity ```initiating the request```. It is ```never``` the server (though some mechanisms have been added over the years to simulate server-initiated messages).
 
-## HTTP
+### Proxy server
+- Between the client and the server there are numerous entities, collectively called ```proxies```, which perform different operations and act as gateways or caches, for example.
+
+### Proxies may perform numerous functions:
+- caching (the cache can be public or private, like the browser cache)
+- filtering (like an antivirus scan or parental controls)
+- load balancing (to allow multiple servers to serve the different requests)
+- authentication (to control access to different resources)
+- logging (allowing the storage of historical information)
+
+### HTTP
 - https://developer.mozilla.org/en-US/docs/Web/HTTP
 - an application-layer protocol for transmitting hypermedia documents, such as HTML.
 - HTTP was designed for communication between web browsers and web servers, but it can also be used for other purposes.
 -  HTTP is a ```stateless protocol```, meaning that the server does not keep any data (state) between two requests
+- HTTP is stateless, but ```not sessionless```
+- But while the ```core of HTTP itself is stateless```, HTTP ```cookies``` allow the use of ```stateful sessions```. 
+- Using header extensibility, HTTP Cookies are added to the workflow, allowing session creation on each HTTP request to share the same context, or the same state.
+
+
+### HTTP and connections
+- Among the two most common transport protocols on the Internet, ```TCP is reliable``` and ```UDP isn't```. HTTP therefore ```relies on the TCP standard```, which is connection-based.
 
 
 ### Storage Inspector
