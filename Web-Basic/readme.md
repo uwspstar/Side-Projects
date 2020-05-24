@@ -31,6 +31,7 @@
 ### HTTP and connections
 - Among the two most common transport protocols on the Internet, ```TCP is reliable``` and ```UDP isn't```. HTTP therefore ```relies on the TCP standard```, which is connection-based.
 
+### HTTP flow
 
 ### Storage Inspector
 - https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector
