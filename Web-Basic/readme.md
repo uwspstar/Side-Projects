@@ -3,11 +3,16 @@
 
 # Client–server model
 - https://en.wikipedia.org/wiki/Client%E2%80%93server_model
+- Clients and servers communicate by exchanging individual messages (as opposed to a stream of data)
+- The messages sent by the client, usually a Web browser, are called requests and the messages sent by the server as an answer are called responses.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
 
 ## HTTP
 - https://developer.mozilla.org/en-US/docs/Web/HTTP
 - an application-layer protocol for transmitting hypermedia documents, such as HTML.
 - HTTP was designed for communication between web browsers and web servers, but it can also be used for other purposes.
+-  HTTP is a ```stateless protocol```, meaning that the server does not keep any data (state) between two requests
+
 
 ### Storage Inspector
 - https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector
