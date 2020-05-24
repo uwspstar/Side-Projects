@@ -15,3 +15,6 @@
 - ```Tracking``` Recording and analyzing user behavior
 - Cookies are sent with every request, so they can ```worsen performance``` (especially for mobile data connections). 
 - Modern APIs for client storage are the``` Web storage API``` (```localStorage``` and ```sessionStorage```) and ```IndexedDB```
+
+### Storage Inspector
+- https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector
