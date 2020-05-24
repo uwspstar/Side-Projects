@@ -3,12 +3,34 @@
 # https://realpython.com/python-vs-javascript/
 # Dictionaries are a fundamental data structure for organizing and describing data into key-value pairs,
 # Dictionaries are no ordering
+#  iterate over dictionaries using keys(), values() and items()
 
 # fromkeys : Creates key-value pairs from comma separated values:
 
 {}.fromkeys("a", "b")  # {'a': 'b'}
 {}.fromkeys(["email"], 'unknown')  # {'email': 'unknown'}
 {}.fromkeys("a", [1, 2, 3, 4, 5])  # {'a': [1, 2, 3, 4, 5]}
+
+# iterate
+numbers = dict(first=1, second=2, third=3)
+
+squared_numbers = {key: value ** 2 for key,value in numbers.items()}
+
+print(squared_numbers) # {'first': 1, 'second': 4, 'third': 9}
+
+{num: num**2 for num in [1,2,3,4,5]}
+
+str1 = "ABC"
+str2 = "123"
+combo = {str1[i]: str2[i] for i in range(0,len(str1))} 
+print(combo) # # {'A': '1', 'B': '2', 'C': '3'}
+
+num_list = [1,2,3,4]
+
+{ num:("even" if num % 2 == 0 else "odd") for num in num_list }
+
+# {1: 'odd', 2: 'even', 3: 'odd', 4: 'even'}
+
 
 # Dictionaries
 
