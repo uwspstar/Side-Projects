@@ -17,7 +17,7 @@
 ### pipenv
 ```
 - $>pip3 install pipenv
-- $>pipenv --venv
+- $>pipet --venv
 - $>pipenv shell 
 ```
 ```
@@ -37,3 +37,6 @@
 ```
 ### Django: The Web framework for perfectionists with deadlines
 - https://www.djangoproject.com/
+
+# Datatype Python vs JS
+- https://www.educba.com/python-vs-javascript/

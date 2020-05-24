@@ -6,6 +6,8 @@
 - self
 - Encapsulation
 - Abstraction
+- Inheritance
+- Polymorphism
 - Private vs Public Variables
 ```
 no true private, use underscore _ for name convention

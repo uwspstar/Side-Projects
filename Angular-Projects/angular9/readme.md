@@ -3,6 +3,7 @@
 - $>ng version
 - (use "git reset HEAD <file>..." to unstage)
 - network 'proxy' config is set properly.  See: 'npm help config'
+- https://cli.angular.io/
 ```
 $ npm install -g @angular/cli@next
 

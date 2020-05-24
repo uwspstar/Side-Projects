@@ -56,3 +56,4 @@ INSTALLED_APPS = [
 
 ### install 
 - pip3 install django-crispy-forms
+
