@@ -102,3 +102,20 @@ d.pop('e')  # KeyError
 d = dict(a=1, b=2, c=3, d=4, e=5)
 d.popitem()  # ('d', 4)
 d.popitem('a')  # TypeError: popitem() takes no arguments (1 given)
+
+# update
+first = dict(a=1, b=2, c=3, d=4, e=5)
+second = {}
+
+second.update(first)
+second  # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+# let's overwrite an existing key
+second['a'] = "AMAZING"
+second  # {'a': "AMAZING", 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+# if we update again
+second.update(first)  # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
+
+# the update overrides our values
+second  # {'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}
