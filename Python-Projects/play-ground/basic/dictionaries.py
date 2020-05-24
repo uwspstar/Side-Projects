@@ -1,7 +1,8 @@
 # Python : Dictionary keys are almost always numbers or strings, values can be anything!
 # JS : The Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value
 # https://realpython.com/python-vs-javascript/
-
+# Dictionaries are a fundamental data structure for organizing and describing data into key-value pairs,
+# Dictionaries are no ordering
 
 instructor = {
     "name": "Colt",
@@ -11,9 +12,14 @@ instructor = {
     "is_hilarious": False,
     44: "my favorite number!"
 }
+
 # Does a dictionary have a key?
-"name" in instructor # True
-"awesome" in instructor # False
+"name" in instructor  # True
+"awesome" in instructor  # False
+
+# Does a dictionary have a value?
+"Colt" in instructor.values()  # True
+"Nope!" in instructor.values()  # False
 
 # Accessing All Values in a Dictionary Use .values()
 
@@ -56,3 +62,14 @@ another_dictionary  # {'key': 'value'}
 
 instructor["name"]  # "Colt"
 instructor["thing"]  # KeyError
+
+# clear
+d = dict(a=1, b=2, c=3)
+d.clear()
+d  # {}
+
+# copy
+d = dict(a=1, b=2, c=3)
+c = d.copy()
+c  # {'a': 1, 'b': 2, 'c': 3}
+c is d  # False
