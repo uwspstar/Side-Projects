@@ -32,6 +32,13 @@
 - Among the two most common transport protocols on the Internet, ```TCP is reliable``` and ```UDP isn't```. HTTP therefore ```relies on the TCP standard```, which is connection-based.
 
 ### HTTP flow
+- Open a TCP connection
+- Send an HTTP message
+- Read the response sent by the server
+- Close or reuse the connection for further requests
+
+### HTTP messages
+- There are two types of HTTP messages, ```requests``` and ```responses```, each with its own format.
 
 ### Storage Inspector
 - https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector
