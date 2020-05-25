@@ -68,6 +68,7 @@
 - By making use of HTTP caching, Web sites become more responsive.
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
 - When a web cache has a requested resource in its store, it intercepts the request and returns its copy instead of re-downloading from the originating server.
+- The more we use cached resources, the better the responsiveness and the performance of a Web site will be.
 
 ### HTTP caching two main categories:
 - ```private``` or ```shared``` caches.
@@ -105,6 +106,13 @@
 - Before this expiration time, the resource is ```fresh```; after the expiration time, the resource is ```stale```. 
 - when the cache receives a request for a ```stale resource```, it forwards this request with a ```If-None-Match``` to check if it is in fact still fresh. If so, the server returns a ```304``` (Not Modified) header ```without sending the body``` of the requested resource, saving some bandwidth.
 - an example of this process with a shared cache proxy : https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
+- The freshness lifetime is calculated based on several headers. If a "Cache-control: max-age=N" header is specified, then the freshness lifetime is equal to N
+
+### Revved resources
+- a ```revision``` (or ```version```) number is added. That way each new revision of this resource is considered as a resource on its own that never changes and that can have an expiration time very far in the future,
+- This technique has an ```additional benefit```: updating two cached resources at the same time will not lead to the situation where the out-dated version of one resource is used in combination with the new version of the other one. This is very important when web sites have CSS stylesheets or JS scripts that have mutual dependencies, i.e., they depend on each other because they refer to the same HTML elements.
+
+
 
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
