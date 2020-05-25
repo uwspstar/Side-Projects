@@ -87,6 +87,13 @@
 ### Targets of caching operations
 - However, common HTTP caches are typically limited to caching responses to ```GET``` and may decline other methods. 
 
+### Cache-control header
+- The ```Cache-Control``` HTTP/1.1 general-header field is used to specify directives for caching mechanisms in ```both requests and responses```. 
+- ```Cache-Control: no-store``` : The cache should ```not``` store anything about the client request or server response.
+- ```Cache-Control: no-cache``` : A cache will send the request to the origin server for validation before releasing a cached copy.
+
+
+
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
 - The browser may store it and send it back with later requests to the same server.
