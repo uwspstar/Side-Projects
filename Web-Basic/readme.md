@@ -104,7 +104,7 @@
 ### cache eviction
 - Before this expiration time, the resource is ```fresh```; after the expiration time, the resource is ```stale```. 
 - when the cache receives a request for a ```stale resource```, it forwards this request with a ```If-None-Match``` to check if it is in fact still fresh. If so, the server returns a ```304``` (Not Modified) header ```without sending the body``` of the requested resource, saving some bandwidth.
-
+- an example of this process with a shared cache proxy : https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
 
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
