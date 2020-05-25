@@ -73,12 +73,19 @@
 - ```private``` or ```shared``` caches.
 - A ```shared cache``` is a cache that stores responses for reuse by ```more than one user```. 
 - A ```private cache``` is dedicated to a ```single user```. 
+- HTTP caching is optional, but reusing a cached resource is usually desirable.
 
 ### Private browser caches
 - A private cache is dedicated to a single user
 - This cache is used to make visited documents available for ```back/forward navigation```, ```saving, viewing-as-source```, etc
 - without requiring an additional trip to the server. 
 - It likewise improves offline browsing of cached content.
+
+### Shared proxy caches
+- A shared cache is a cache that stores responses to be reused by more than one user. 
+
+### Targets of caching operations
+- However, common HTTP caches are typically limited to caching responses to ```GET``` and may decline other methods. 
 
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
