@@ -91,7 +91,8 @@
 - The ```Cache-Control``` HTTP/1.1 general-header field is used to specify directives for caching mechanisms in ```both requests and responses```. 
 - ```Cache-Control: no-store``` : The cache should ```not``` store anything about the client request or server response.
 - ```Cache-Control: no-cache``` : A cache will send the request to the origin server for validation before releasing a cached copy.
-
+- ```Cache-Control: public``` : The ```"public"``` directive indicates that the response may be cached by any cache. This can be useful if pages with ```HTTP authentication```
+- ```Cache-Control: private``` : On the other hand, ```"private"``` indicates that the response is intended for a single user only and must not be stored by a shared cache
 
 
 ### cookie
