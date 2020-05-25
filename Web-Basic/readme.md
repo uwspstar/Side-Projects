@@ -122,6 +122,8 @@
 - The ```Last-Modified``` response header can be used as a weak validator.
 
 ### Varying responses
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
+- ```Vary: User-Agent``` : Because the User-Agent header value is different ("varies") for mobile and desktop clients, caches will not be used to serve mobile content mistakenly to desktop users or vice versa.
 
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
