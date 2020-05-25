@@ -64,6 +64,17 @@
 - IndexedDB
 - Extension Storage
 
+### HTTP caching
+- By making use of HTTP caching, Web sites become more responsive.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
+- When a web cache has a requested resource in its store, it intercepts the request and returns its copy instead of re-downloading from the originating server.
+
+### HTTP caching two main categories:
+- ```private``` or ```shared``` caches.
+- A ```shared cache``` is a cache that stores responses for reuse by ```more than one user```. 
+- A ```private cache``` is dedicated to a ```single user```. 
+
+
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
 - The browser may store it and send it back with later requests to the same server.
