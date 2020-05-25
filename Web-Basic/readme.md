@@ -112,7 +112,10 @@
 - a ```revision``` (or ```version```) number is added. That way each new revision of this resource is considered as a resource on its own that never changes and that can have an expiration time very far in the future,
 - This technique has an ```additional benefit```: updating two cached resources at the same time will not lead to the situation where the out-dated version of one resource is used in combination with the new version of the other one. This is very important when web sites have CSS stylesheets or JS scripts that have mutual dependencies, i.e., they depend on each other because they refer to the same HTML elements.
 
-
+### Cache validation
+- Revalidation is triggered when the user presses the ```reload button```. 
+- It is also triggered under normal browsing if the cached response includes the ```"Cache-control: must-revalidate" ``` header. 
+- Another factor is the cache validation preferences in the Advanced->Cache preferences panel. There is an option to force a validation each time a document is loaded.
 
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
