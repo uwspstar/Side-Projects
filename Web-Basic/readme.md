@@ -117,6 +117,12 @@
 - It is also triggered under normal browsing if the cached response includes the ```"Cache-control: must-revalidate" ``` header. 
 - Another factor is the cache validation preferences in the Advanced->Cache preferences panel. There is an option to force a validation each time a document is loaded.
 
+### ETags
+- can be used as a ```strong validator```.
+- The ```Last-Modified``` response header can be used as a weak validator.
+
+### Varying responses
+
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
 - The browser may store it and send it back with later requests to the same server.
