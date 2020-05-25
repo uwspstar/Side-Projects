@@ -93,8 +93,13 @@
 - ```Cache-Control: no-cache``` : A cache will send the request to the origin server for validation before releasing a cached copy.
 - ```Cache-Control: public``` : The ```"public"``` directive indicates that the response may be cached by any cache. This can be useful if pages with ```HTTP authentication```
 - ```Cache-Control: private``` : On the other hand, ```"private"``` indicates that the response is intended for a single user only and must not be stored by a shared cache
-- ```"max-age=<seconds>"```
+- ```Cache-Control: max-age=31536000``` : ```"max-age=<seconds>"```
+- ```Cache-Control: must-revalidate``` : ```"must-revalidate"``` directive, the cache must verify the status of the stale resources before using it and expired ones should ```not be used```
 
+### Pragma header
+- not a reliable replacement for the general HTTP/1.1 Cache-Control header
+- it does behave the same as Cache-Control: no-cache
+- Use Pragma only for ```backwards compatibility``` with ```HTTP/1.0``` clients
 
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
