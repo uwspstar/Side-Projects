@@ -43,6 +43,7 @@
 ### APIs based on HTTP
 - The most commonly used API based on HTTP is the ```XMLHttpRequest API```, which can be used to exchange data between a user agent and a server. 
 - The modern ```Fetch API``` provides the same features with a more powerful and flexible feature set.
+- server-sent events,
 
 ### XMLHttpRequest
 - https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
@@ -50,6 +51,9 @@
 
 ### Fetch API
 - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+
+### server-sent events
+- https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events
 
 ### Storage Inspector
 - https://developer.mozilla.org/en-US/docs/Tools/Storage_Inspector
