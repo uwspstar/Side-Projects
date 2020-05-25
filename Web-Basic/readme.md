@@ -101,6 +101,11 @@
 - it does behave the same as Cache-Control: no-cache
 - Use Pragma only for ```backwards compatibility``` with ```HTTP/1.0``` clients
 
+### cache eviction
+- Before this expiration time, the resource is ```fresh```; after the expiration time, the resource is ```stale```. 
+- when the cache receives a request for a ```stale resource```, it forwards this request with a ```If-None-Match``` to check if it is in fact still fresh. If so, the server returns a ```304``` (Not Modified) header ```without sending the body``` of the requested resource, saving some bandwidth.
+
+
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
 - The browser may store it and send it back with later requests to the same server.
