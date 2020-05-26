@@ -9,7 +9,7 @@
 - The browser is ```always``` the entity ```initiating the request```. It is ```never``` the server (though some mechanisms have been added over the years to simulate server-initiated messages).
 
 ### Proxy server
-- Between the client and the server there are numerous entities, collectively called ```proxies```, which perform different operations and act as gateways or caches, for example.
+- Between the client and the server there are numerous entities, collectively called ```proxies```, which perform different operations and act as ```gateways``` or ```caches```, for example.
 
 ### Proxies may perform numerous functions:
 - caching (the cache can be public or private, like the browser cache)
