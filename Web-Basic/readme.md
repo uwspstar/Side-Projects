@@ -73,7 +73,7 @@
 - ```private``` or ```shared``` caches.
 - A ```shared cache``` is a cache that stores responses for reuse by ```more than one user```. 
 - A ```private cache``` is dedicated to a ```single user```. 
-- HTTP caching is optional, but reusing a cached resource is usually desirable.
+- HTTP caching is ```optional```, but reusing a cached resource is usually desirable.
 
 ### Private browser caches
 - A private cache is dedicated to a single user
