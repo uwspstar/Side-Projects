@@ -98,7 +98,7 @@
 
 ### Pragma header
 - not a reliable replacement for the general HTTP/1.1 Cache-Control header
-- it does behave the same as Cache-Control: no-cache
+- it does behave the same as ```Cache-Control: no-cache```
 - Use Pragma only for ```backwards compatibility``` with ```HTTP/1.0``` clients
 
 ### cache eviction
