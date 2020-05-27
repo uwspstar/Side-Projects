@@ -112,7 +112,7 @@
 - This technique has an ```additional benefit```: updating two cached resources at the same time will not lead to the situation where the out-dated version of one resource is used in combination with the new version of the other one. This is very important when web sites have CSS stylesheets or JS scripts that have mutual dependencies, i.e., they depend on each other because they refer to the same HTML elements.
 
 ### Cache validation
-- Revalidation is triggered when the user presses the ```reload button```. 
+- ```Revalidation``` is triggered when the user presses the ```reload button```. 
 - It is also triggered under normal browsing if the cached response includes the ```"Cache-control: must-revalidate" ``` header. 
 - Another factor is the cache validation preferences in the Advanced->Cache preferences panel. There is an option to force a validation each time a document is loaded.
 
@@ -122,7 +122,7 @@
 
 ### Varying responses
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
-- ```Vary: User-Agent``` : Because the User-Agent header value is different ("varies") for mobile and desktop clients, caches will not be used to serve mobile content mistakenly to desktop users or vice versa.
+- ```Vary: User-Agent``` : Because the User-Agent header value is different ("varies") for mobile and desktop clients, caches will not be used to serve mobile content mistakenly to desktop users or ```vice versa```.
 
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
