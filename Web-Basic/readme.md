@@ -25,7 +25,7 @@
 -  HTTP is a ```stateless protocol```, meaning that the server does not keep any data (state) between two requests
 - HTTP is stateless, but ```not sessionless```
 - But while the ```core of HTTP itself is stateless```, HTTP ```cookies``` allow the use of ```stateful sessions```. 
-- Using header extensibility, HTTP Cookies are added to the workflow, allowing session creation on each HTTP request to share the same context, or the same state.
+- Using ```header extensibility```, HTTP Cookies are added to the workflow, allowing session creation on each HTTP request to share the same context, or the same state.
 
 ### HTTP and connections
 - Among the two most common transport protocols on the Internet, ```TCP is reliable``` and ```UDP isn't```. HTTP therefore ```relies on the TCP standard```, which is connection-based.
@@ -40,13 +40,13 @@
 - There are two types of HTTP messages, ```requests``` and ```responses```, each with its own format.
 
 ### APIs based on HTTP
-- The most commonly used API based on HTTP is the ```XMLHttpRequest API```, which can be used to exchange data between a user agent and a server. 
+- The most commonly used API based on HTTP is the ```XMLHttpRequest API```, which can be used to exchange data between a ```user agent``` and a ```server```. 
 - The modern ```Fetch API``` provides the same features with a more powerful and flexible feature set.
 - server-sent events,
 
 ### XMLHttpRequest
 - https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-- XMLHttpRequest (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. XMLHttpRequest is used heavily in AJAX programming.
+- ```XMLHttpRequest``` (XHR) objects are used to interact with servers. You can retrieve data from a URL without having to do a full page refresh. This enables a Web page to update just part of a page without disrupting what the user is doing. XMLHttpRequest is used heavily in ```AJAX``` programming.
 
 ### Fetch API
 - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
