@@ -68,6 +68,8 @@
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
 - When a web cache has a requested resource in its store, it intercepts the request and returns its copy instead of re-downloading from the originating server.
 - The more we use cached resources, the better the responsiveness and the performance of a Web site will be.
+- https://web.dev/http-cache/
+- https://www.mnot.net/cache_docs/
 
 ### HTTP caching two main categories:
 - ```private``` or ```shared``` caches.
@@ -122,7 +124,13 @@
 
 ### Varying responses
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching
-- ```Vary: User-Agent``` : Because the User-Agent header value is different ("varies") for mobile and desktop clients, caches will not be used to serve mobile content mistakenly to desktop users or ```vice versa```.
+- ```Vary: User-Agent``` : Because the User-Agent header value is different ("varies") for mobile and desktop clients, caches will ```not be used to serve mobile content``` mistakenly to desktop users or ```vice versa```.
+
+### What is the Difference between session and caching?
+- Session data is stored at the ```user level``` but caching data is stored at the ```application level``` and shared by all the users. 
+- Sessions may not improve performance whereas Cache will improve site performance. 
+- Items in cache can expire after given time to cache while items in session will stay till session expires.
+- https://redislabs.com/blog/cache-vs-session-store/
 
 ### cookie
 - An HTTP cookie (web cookie, browser cookie) is a small piece of data that a ```server sends to the user's web browser```. 
