@@ -236,6 +236,10 @@ For example, if Path=/docs is set, these paths match:
 /docs/Web/
 /docs/Web/HTTP
 ```
+### SameSite attribute
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies
+- ```Set-Cookie: mykey=myvalue; SameSite=Strict```
+- The SameSite attribute can have one of three values (case-insensitive):
 
 ### Document.location
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/location
