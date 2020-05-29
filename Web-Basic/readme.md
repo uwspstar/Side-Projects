@@ -172,6 +172,7 @@ Content-type: text/html
 Set-Cookie: yummy_cookie=choco
 Set-Cookie: tasty_cookie=strawberry
 ```
+- Set-Cookie in Nodejs https://nodejs.org/dist/latest-v8.x/docs/api/http.html#http_response_setheader_name_value
 
 ### Session cookie
 - Session cookies are removed when the client shuts down.
@@ -190,3 +191,16 @@ Set-Cookie: qwerty=219ffwef9w0f; Domain=somecompany.co.uk
 ```
 Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
 ```
+### Cookie prefixes
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
+
+### Document.cookie
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
+- Read all cookies accessible from this location ```allCookies = document.cookie;```
+- Write a new cookie ```document.cookie = newCookie;```
+
+### Cookies and Security
+- Common ways to steal cookies include using Social Engineering or by exploiting an XSS vulnerability in the application
+- https://humanwhocodes.com/blog/2009/05/12/cookies-and-security/
+
+### 
