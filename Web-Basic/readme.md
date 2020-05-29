@@ -193,7 +193,13 @@ Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
 ```
 ### Restrict access to cookies
 - There are a couple of ways to ensure that cookies are sent securely and are not accessed by unintended parties or scripts: the ```Secure``` attribute and the ```HttpOnly``` attribute
+- A cookie with the Secure attribute is sent to the server only with an encrypted request over the ```HTTPS``` protocol, never with unsecured HTTP. 
+- Even with Secure, sensitive information should never be stored in cookies, as they are inherently insecure and this attribute can't offer real protection
+- Insecure sites (with http: in the URL) can't set cookies with the Secure attribute
+- The benefit of using Secure is that the cookie data is encrypted while it is in transit over the network, and therefore can't be easily used by a ```man-in-the-middle``` attacker.
 
+### Man-in-the-middle attack (MitM)
+- https://developer.mozilla.org/en-US/docs/Glossary/MitM
 ### Cookie prefixes
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
 
