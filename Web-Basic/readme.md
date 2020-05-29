@@ -223,3 +223,10 @@ Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
 
 ### Define where cookies are sent
 - The ```Domain``` and ```Path``` attributes define the scope of the cookie: what URLs the cookies should be sent to.
+- The ```Domain``` attribute specifies which hosts are allowed to receive the cookie. 
+- If unspecified, it defaults to the host of the ```current document location```, ```excluding subdomains```. 
+- If Domain is specified, then subdomains are always included.
+
+
+### Document.location
+- https://developer.mozilla.org/en-US/docs/Web/API/Document/location
