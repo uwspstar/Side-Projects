@@ -226,7 +226,16 @@ Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
 - The ```Domain``` attribute specifies which hosts are allowed to receive the cookie. 
 - If unspecified, it defaults to the host of the ```current document location```, ```excluding subdomains```. 
 - If Domain is specified, then subdomains are always included.
+- For example, if Domain=mozilla.org is set, then cookies are included on subdomains like developer.mozilla.org.
+- The ```Path attribute``` indicates a URL path that must exist in the requested URL in order to send the Cookie header.
+- the Cookie header. The ```%x2F ("/")``` character is considered a directory separator, and subdirectories match as well.
+```
+For example, if Path=/docs is set, these paths match:
 
+/docs
+/docs/Web/
+/docs/Web/HTTP
+```
 
 ### Document.location
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/location
