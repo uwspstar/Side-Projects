@@ -71,6 +71,10 @@
 - https://web.dev/http-cache/
 - https://www.mnot.net/cache_docs/
 
+### There are two main reasons that Web caches are used:
+- To reduce latency
+- To reduce network traffic
+
 ### HTTP caching two main categories:
 - ```private``` or ```shared``` caches.
 - A ```shared cache``` is a cache that stores responses for reuse by ```more than one user```. 
@@ -143,6 +147,13 @@
 - ```Personalization``` User preferences, themes, and other settings
 - ```Tracking``` Recording and analyzing user behavior
 - Cookies are sent with every request, so they can ```worsen performance``` (especially for mobile data connections). 
-- Modern APIs for client storage are the``` Web storage API``` (```localStorage``` and ```sessionStorage```) and ```IndexedDB```
+### Modern APIs for client storage
+- the``` Web storage API``` (```localStorage``` and ```sessionStorage```) 
+- and ```IndexedDB```
 
+### Creating cookies
+- After receiving an HTTP request, a server can send a ```Set-Cookie``` header with the ```response```. 
+- The cookie is ```usually stored by the browser```, and then the cookie is sent with requests made to the ```same server``` inside a ```Cookie HTTP header```.
+- Additionally, restrictions to a specific domain and path can be set, limiting where the cookie is sent.
 
+### The Set-Cookie and Cookie headers
