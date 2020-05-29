@@ -155,13 +155,29 @@
 - After receiving an HTTP request, a server can send a ```Set-Cookie``` header with the ```response```. 
 - The cookie is ```usually stored by the browser```, and then the cookie is sent with requests made to the ```same server``` inside a ```Cookie HTTP header```.
 - Additionally, restrictions to a specific domain and path can be set, limiting where the cookie is sent.
+- confidential information should ```never be stored in HTTP Cookies```, as the entire mechanism is inherently insecure and ```doesn't encrypt``` any information.
 
 ### The Set-Cookie and Cookie headers
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
 - Set-Cookie: <cookie-name>=<cookie-value>
+- Set-Cookie: <cookie-name>=<cookie-value>; HttpOnly
+- Multiple attributes are also possible, for example:
+```
+Set-Cookie: <cookie-name>=<cookie-value>; Domain=<domain-value>; Secure; HttpOnly
+```
+- The Set-Cookie HTTP response header is used to send cookies from the server to the user agent, so the user agent can send them back to the server later.
 ```
 HTTP/2.0 200 OK
 Content-type: text/html
 Set-Cookie: yummy_cookie=choco
 Set-Cookie: tasty_cookie=strawberry
 ```
+
+### Session cookie
+- Session cookies are removed when the client shuts down.
+- Cookies are session cookies if they don't specify the ```Expires``` or ```Max-Age``` attributes
+
+### Permanent cookie
+- Instead of expiring when the client is closed, permanent cookies expire at a specific date (Expires) or after a specific length of time (Max-Age).
+
+### Invalid domains
