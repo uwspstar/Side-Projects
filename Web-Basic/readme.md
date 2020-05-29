@@ -200,6 +200,10 @@ Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
 
 ### Man-in-the-middle attack (MitM)
 - https://developer.mozilla.org/en-US/docs/Glossary/MitM
+- Don't just ignore certificate warnings. You could be connecting to a phishing server or an imposter server.
+- Sensitive sites ```without HTTPS encryption``` on public Wi-Fi networks aren't trustworthy.
+- Check for HTTPS in your address bar and ```ensure encryption``` is in-place before logging in.
+
 ### Cookie prefixes
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
 
