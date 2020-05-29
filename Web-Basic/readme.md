@@ -157,3 +157,10 @@
 - Additionally, restrictions to a specific domain and path can be set, limiting where the cookie is sent.
 
 ### The Set-Cookie and Cookie headers
+- Set-Cookie: <cookie-name>=<cookie-value>
+```
+HTTP/2.0 200 OK
+Content-type: text/html
+Set-Cookie: yummy_cookie=choco
+Set-Cookie: tasty_cookie=strawberry
+```
