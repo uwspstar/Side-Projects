@@ -191,6 +191,9 @@ Set-Cookie: qwerty=219ffwef9w0f; Domain=somecompany.co.uk
 ```
 Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
 ```
+### Restrict access to cookies
+- There are a couple of ways to ensure that cookies are sent securely and are not accessed by unintended parties or scripts: the ```Secure``` attribute and the ```HttpOnly``` attribute
+
 ### Cookie prefixes
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
 
