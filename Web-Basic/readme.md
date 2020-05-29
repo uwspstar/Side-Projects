@@ -181,3 +181,12 @@ Set-Cookie: tasty_cookie=strawberry
 - Instead of expiring when the client is closed, permanent cookies expire at a specific date (Expires) or after a specific length of time (Max-Age).
 
 ### Invalid domains
+- A cookie for a domain that does not include the server that set it should be rejected by the user agent.
+- The following cookie will be rejected if set by a server hosted on originalcompany.com:
+```
+Set-Cookie: qwerty=219ffwef9w0f; Domain=somecompany.co.uk
+```
+- A cookie for a sub domain of the serving domain will be rejected. The following cookie will be rejected if set by a server hosted on example.com:
+```
+Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
+```
