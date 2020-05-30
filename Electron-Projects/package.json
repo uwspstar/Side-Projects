@@ -1,0 +1,14 @@
+{
+  "name": "Electron-Projects",
+  "version": "1.0.0",
+  "description": "- https://www.udemy.com/course/electron-from-scratch/learn/lecture/19823646#overview - https://www.electronjs.org/",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
