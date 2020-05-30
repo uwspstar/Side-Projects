@@ -29,6 +29,8 @@ if (BrowserWindow.getAllWindows().length === 0) {
 ```
 ### Content-Security-Policy
 - <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+- <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
+
 
 ### first app
 - https://www.electronjs.org/docs/tutorial/first-app

@@ -5,9 +5,10 @@ function createWindow() {
         title: "image shrike",
         width: 800,
         height: 600,
+        icon: './assets/icons/icon.png'
     })
 
-    // mainWindow.loadFile('index.html')
+    mainWindow.loadFile('index.html')
     // mainWindow.loadURL('http://google.com')
     // console.log('${__dirname}', `${ __dirname }`)
     // mainWindow.loadURL(`file//${__dirname}/app/index.html`) //NOT working
