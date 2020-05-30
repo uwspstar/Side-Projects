@@ -253,6 +253,8 @@ For example, if Path=/docs is set, these paths match:
 
 ### Document.location
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/location
+- The ```Document.location``` read-only property returns a Location object, which contains information about the URL of the document and provides methods for changing that URL and loading another URL.
+- To retrieve just the URL as a string, the read-only ```document.URL``` property can also be used
 
 ### Other ways to store information in the browser
 - Another approach to storing data in the browser is the ```Web storage API```. 
