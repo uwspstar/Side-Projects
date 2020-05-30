@@ -5,7 +5,7 @@ function createWindow() {
         title: "image shrike",
         width: 800,
         height: 600,
-        icon: './assets/icons/icon.png'
+        icon: `${__dirname}/assets/icons/Icon_256x256.png`,
     })
 
     mainWindow.loadFile('index.html')

@@ -31,6 +31,11 @@ if (BrowserWindow.getAllWindows().length === 0) {
 - <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
 - <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'">
 
+### icon - absolute path
+- we used a ```relative path``` and it will work in ```development```, but it needs to be an ```absolute path``` when we package it later.
+- icon: `${__dirname}/assets/icons/Icon_256x256.png`,
+- use ```backtick``` and not single quotes.
+- Please do this for all projects and all windows to avoid an error when packaging
 
 ### first app
 - https://www.electronjs.org/docs/tutorial/first-app
