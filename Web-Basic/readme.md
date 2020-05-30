@@ -253,3 +253,8 @@ For example, if Path=/docs is set, these paths match:
 
 ### Document.location
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/location
+
+### Other ways to store information in the browser
+- Another approach to storing data in the browser is the ```Web storage API```. 
+- The ```window.sessionStorage``` and ```window.localStorage``` properties correspond to ```session``` and ```permanent cookies``` in duration, ```but have larger storage limits than cookies```, and are ```never sent to a server```. 
+- More structured and ```larger amounts of data``` can be stored using the ```IndexedDB API```, or a library built on it.
