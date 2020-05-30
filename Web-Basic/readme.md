@@ -246,5 +246,9 @@ For example, if Path=/docs is set, these paths match:
 - ```Set-Cookie: mykey=myvalue; SameSite=Strict```
 - The SameSite attribute can have one of three values (case-insensitive):
 
+### privacy
+- A cookie is associated with a domain. If this domain is the same as the domain of the page you are on, the cookie is said to be a ```first-party cookie```.
+- if the domain is different, it is said to be a ```third-party cookie```. 
+
 ### Document.location
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/location
