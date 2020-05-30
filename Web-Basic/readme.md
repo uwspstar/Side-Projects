@@ -207,16 +207,20 @@ Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
 ### Cookie prefixes
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie
 
-### Document.cookie
+### JavaScript access using Document.cookie
 - https://developer.mozilla.org/en-US/docs/Web/API/Document/cookie
 - Read all cookies accessible from this location ```allCookies = document.cookie;```
 - Write a new cookie ```document.cookie = newCookie;```
 - A cookie with the ```HttpOnly``` attribute is ```inaccessible``` to the JavaScript Document.cookie API; it is sent only to the server.
+- New cookies can be created via JavaScript using the Document.cookie property, and existing cookies can be accessed from JavaScript as well, if the HttpOnly flag is not set.
+- Cookies created via JavaScript cannot include the HttpOnly flag.
+- Cookies available to JavaScript can be stolen through XSS.
 
 ### Cookies and Security
 - Common ways to steal cookies include using Social Engineering or by exploiting an XSS vulnerability in the application
 - https://humanwhocodes.com/blog/2009/05/12/cookies-and-security/
 - cookies that persist server-side sessions don't need to be available to JavaScript, and should have the HttpOnly attribute. This precaution helps mitigate ```cross-site scripting (XSS)``` attacks.
+
 
 ### Cross-site scripting (XSS)
 - https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#Cross-site_scripting_(XSS)
