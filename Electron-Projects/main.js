@@ -1,5 +1,10 @@
 const { app, BrowserWindow } = require('electron')
 
+process.env.NODE_ENV = 'dev'
+const isDev = process.env.NODE_ENV === 'dev' ? true : false
+const isMac = process.platform === 'darwin' ? true : false
+
+
 function createWindow() {
     const mainWindow = new BrowserWindow({
         title: "image shrike",
