@@ -7,8 +7,10 @@
 ### basic
 - Electron apps are developed in JavaScript
 - using the same principles and methods found in Node.js development. 
+- All APIs and features found in Electron are accessible through the ```electron module```
 
 ### first app
+- https://www.electronjs.org/docs/tutorial/first-app
 - npm init -y
 - touch .gitignore
 - npm install --save-dev electron
