@@ -18,6 +18,17 @@
 - This method will be called when Electron has finished initialization and is ready to create browser windows. 
 - Some APIs can only be used after this event occurs.
 
+### app.on('window-all-closed', () => {...})
+- Quit when all windows are closed
+
+### app.on('activate', () => {...})
+```
+if (BrowserWindow.getAllWindows().length === 0) {
+    createWindow()
+  }
+```
+### Content-Security-Policy
+- <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
 
 ### first app
 - https://www.electronjs.org/docs/tutorial/first-app
