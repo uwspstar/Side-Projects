@@ -4,6 +4,10 @@
 - Electron uses web pages as its GUI, so you could also see it as a minimal Chromium browser, controlled by JavaScript.
 - As far as development is concerned, an Electron application is essentially a Node.js application.
 
+### basic
+- Electron apps are developed in JavaScript
+- using the same principles and methods found in Node.js development. 
+
 ### first app
 - npm init -y
 - touch .gitignore
@@ -21,3 +25,5 @@
 node_modules
 ```
 - touch main.js
+- touch index.html
+
