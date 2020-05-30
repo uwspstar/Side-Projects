@@ -5,10 +5,13 @@
   "main": "main.js",
   "dependencies": {},
   "devDependencies": {
-    "electron": "^9.0.0"
+    "electron": "^9.0.0",
+    "nodemon": "^2.0.4"
   },
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "nodemon --exec electron ."
+
   },
   "keywords": [],
   "author": "",

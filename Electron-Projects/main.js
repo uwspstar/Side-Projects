@@ -11,7 +11,7 @@ function createWindow() {
         width: 800,
         height: 600,
         icon: `${__dirname}/assets/icons/Icon_256x256.png`,
-        resizable: false
+        resizable: isDev
     })
 
     mainWindow.loadFile('index.html')
@@ -27,7 +27,7 @@ app.whenReady().then(createWindow)
 app.on('window-all-closed', () => {
     // On macOS it is common for applications and their menu bar
     // to stay active until the user quits explicitly with Cmd + Q
-    if (process.platform !== 'darwin') {
+    if (!isMac !== 'darwin') {
         app.quit()
     }
 })
