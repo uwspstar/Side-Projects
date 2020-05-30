@@ -9,6 +9,16 @@
 - using the same principles and methods found in Node.js development. 
 - All APIs and features found in Electron are accessible through the ```electron module```
 
+### openDevTools()
+- ```win.webContents.openDevTools()``` 
+- Open the DevTools.
+
+### app.whenReady().then(createWindow)
+- ```app.whenReady().then(createWindow)``` 
+- This method will be called when Electron has finished initialization and is ready to create browser windows. 
+- Some APIs can only be used after this event occurs.
+
+
 ### first app
 - https://www.electronjs.org/docs/tutorial/first-app
 - npm init -y
