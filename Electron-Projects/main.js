@@ -11,6 +11,7 @@ function createWindow() {
         width: 800,
         height: 600,
         icon: `${__dirname}/assets/icons/Icon_256x256.png`,
+        resizable: false
     })
 
     mainWindow.loadFile('index.html')
