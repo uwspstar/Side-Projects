@@ -220,7 +220,8 @@ Set-Cookie: sessionId=e8bb43229de9; Domain=foo.example.com
 - Common ways to steal cookies include using Social Engineering or by exploiting an XSS vulnerability in the application
 - https://humanwhocodes.com/blog/2009/05/12/cookies-and-security/
 - cookies that persist server-side sessions don't need to be available to JavaScript, and should have the HttpOnly attribute. This precaution helps mitigate ```cross-site scripting (XSS)``` attacks.
-
+- Use the HttpOnly attribute to prevent access to cookie values via JavaScript.
+- Cookies that are used for sensitive information (such as indicating authentication) should have a short lifetime, with the SameSite attribute set to Strict or Lax.
 
 ### Cross-site scripting (XSS)
 - https://developer.mozilla.org/en-US/docs/Web/Security/Types_of_attacks#Cross-site_scripting_(XSS)
