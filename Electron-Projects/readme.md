@@ -64,6 +64,8 @@ node_modules
 - https://www.electronjs.org/docs/api
 ###  BrowserWindow
 - https://www.electronjs.org/docs/api/browser-window#browserwindow
+- ```Using ready-to-show event```
+- https://www.electronjs.org/docs/api/browser-window#using-ready-to-show-event
 
 ### Transparent window
 - https://www.electronjs.org/docs/api/frameless-window#transparent-window
@@ -94,6 +96,11 @@ accelerator: 'CmdOrCtr+W',
 
 ### Global Shortcuts
 - https://www.electronjs.org/docs/api/global-shortcut
+
+- ```globalShortcut.register(accelerator, callback)```
+ ```globalShortcut.register(acceleratorArray, callback)```
+- https://www.electronjs.org/docs/api/global-shortcut#globalshortcutregisteraccelerator-callback
+
 - The shortcut is global; it will work even if the app does not have the keyboard focus.
 - You should NOT use this module until the ready event of the app module is emitted.
 - ```globalShortcut.isRegistered('CommandOrControl+X')```
