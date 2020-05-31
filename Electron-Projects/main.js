@@ -8,7 +8,7 @@ let mainWindow
 
 function createWindow() {
     mainWindow = new BrowserWindow({
-        title: "image shrike",
+        title: 'image shrike',
         width: 800,
         height: 600,
         //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
@@ -24,9 +24,11 @@ function createWindow() {
 const menu = [
     ...(isMac ? [{ role: 'appMenu' }] : []),
     {
-        label: "File",
+        label: 'File',
         submenu: [{
-            label: "Quit",
+            label: 'Quit',
+            //accelerator: isMac ? 'Command+W' : 'Ctrl+W',
+            accelerator: 'CmdOrCtr+W',
             click: () => app.quit()
         }]
     }]

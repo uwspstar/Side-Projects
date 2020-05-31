@@ -59,7 +59,8 @@ node_modules
 ```
 - touch main.js
 - touch index.html
-- note : 
+
+### menu : 
 ```
 instead of using
 
@@ -70,4 +71,13 @@ if (isMac) {
 using
 ...(isMac ? [{ role: 'appMenu' }] : []),
 
+```
+### shortcut 
+- with ```accelerator``` 
+```
+accelerator: isMac ? 'Command+W' : 'Ctrl+W',
+
+same
+
+accelerator: 'CmdOrCtr+W',
 ```
