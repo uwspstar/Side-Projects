@@ -81,6 +81,12 @@ node_modules
 - ```devTools```
 - ```session```
 - ```partition```
+- ```webSecurity``` : ```same-origin policy ```
+
+### Instance Events
+- Objects created with new BrowserWindow emit the events
+- https://www.electronjs.org/docs/api/browser-window#instance-events
+
 ### Parent and child windows
 - https://www.electronjs.org/docs/api/browser-window#parent-and-child-windows
 
