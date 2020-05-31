@@ -66,6 +66,9 @@ node_modules
 ### API
 - https://www.electronjs.org/docs/api
 
+### Debugging the Main Process in VSCode
+- https://www.electronjs.org/docs/tutorial/debugging-main-process-vscode#debugging-the-main-process-in-vscode
+
 ###  BrowserWindow
 - https://www.electronjs.org/docs/api/browser-window#browserwindow
 - ```BrowserWindow``` is an ```EventEmitter```.
@@ -98,6 +101,15 @@ node_modules
 
 ### backgroundColor
 - ```let win = new BrowserWindow({ backgroundColor: '#2e2c29' })```
+### win.loadURL(url[, options])
+- https://www.electronjs.org/docs/api/browser-window#winloadurlurl-options
+- The url can be a remote address (e.g. http://) or a path to a local HTML file using the file:// protocol.
+
+### win.loadFile(filePath[, options])
+- https://www.electronjs.org/docs/api/browser-window#winloadfilefilepath-options
+
+### win.setProgressBar(progress[, options])
+- https://www.electronjs.org/docs/api/browser-window#winsetprogressbarprogress-options
 
 ### menu : 
 ```
