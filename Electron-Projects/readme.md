@@ -75,6 +75,12 @@ node_modules
 ### new BrowserWindow([options])
 - https://www.electronjs.org/docs/api/browser-window#new-browserwindowoptions
 
+### webPreferences
+- https://www.electronjs.org/docs/api/browser-window#new-browserwindowoptions
+- ```nodeIntegration```
+- ```devTools```
+- ```session```
+- ```partition```
 ### Parent and child windows
 - https://www.electronjs.org/docs/api/browser-window#parent-and-child-windows
 

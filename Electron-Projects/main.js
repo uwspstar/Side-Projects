@@ -12,6 +12,7 @@ function createWindow() {
         width: 800,
         height: 600,
         center: true,
+        fullscreen: false,
         //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
         resizable: isDev,
         backgroundColor: '#ee0000',
