@@ -59,4 +59,15 @@ node_modules
 ```
 - touch main.js
 - touch index.html
+- note : 
+```
+instead of using
 
+if (isMac) {
+    menu.unshift({ role: 'appMenu' })
+}
+
+using
+...(isMac ? [{ role: 'appMenu' }] : []),
+
+```
