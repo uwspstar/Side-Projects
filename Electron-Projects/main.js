@@ -13,7 +13,7 @@ function createWindow() {
         height: 600,
         //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
         resizable: isDev,
-        backgroundColor: 'red',
+        backgroundColor: '#2e2c29',
         webPreferences: {
             nodeIntegration: true //make document.write(process.versions.node) work
         }

@@ -66,10 +66,15 @@ node_modules
 - https://www.electronjs.org/docs/api/browser-window#browserwindow
 - ```Using ready-to-show event```
 - https://www.electronjs.org/docs/api/browser-window#using-ready-to-show-event
-
+### Parent and child windows
+- https://www.electronjs.org/docs/api/browser-window#parent-and-child-windows
+### Modal windows
+- https://www.electronjs.org/docs/api/browser-window#modal-windows
 ### Transparent window
 - https://www.electronjs.org/docs/api/frameless-window#transparent-window
 
+### backgroundColor
+- ```let win = new BrowserWindow({ backgroundColor: '#2e2c29' })```
 ### menu : 
 ```
 instead of using
