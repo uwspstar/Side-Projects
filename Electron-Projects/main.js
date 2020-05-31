@@ -11,6 +11,7 @@ function createWindow() {
         title: 'image shrike',
         width: 800,
         height: 600,
+        center: true,
         //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
         resizable: isDev,
         backgroundColor: '#2e2c29',
