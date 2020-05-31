@@ -4,6 +4,9 @@
 - Electron uses web pages as its GUI, so you could also see it as a minimal Chromium browser, controlled by JavaScript.
 - As far as development is concerned, an Electron application is essentially a Node.js application.
 
+### API
+- https://www.electronjs.org/docs/api
+
 ### basic
 - Electron apps are developed in JavaScript
 - using the same principles and methods found in Node.js development. 
@@ -62,11 +65,15 @@ node_modules
 
 ### API
 - https://www.electronjs.org/docs/api
+
 ###  BrowserWindow
 - https://www.electronjs.org/docs/api/browser-window#browserwindow
 - ```BrowserWindow``` is an ```EventEmitter```.
 - ```Using ready-to-show event```
+
 - https://www.electronjs.org/docs/api/browser-window#using-ready-to-show-event
+### new BrowserWindow([options])
+- https://www.electronjs.org/docs/api/browser-window#new-browserwindowoptions
 
 ### Parent and child windows
 - https://www.electronjs.org/docs/api/browser-window#parent-and-child-windows
