@@ -89,7 +89,17 @@ same
 
 accelerator: 'CmdOrCtr+W',
 ```
+- On ```Linux``` and ```Windows```, the Command key does not have any effect so use ```CommandOrControl``` which represents Command on macOS and Control on Linux and Windows to define some accelerators
+- https://www.electronjs.org/docs/api/accelerator
+
 ### Global Shortcuts
+- https://www.electronjs.org/docs/api/global-shortcut
+- The shortcut is global; it will work even if the app does not have the keyboard focus.
+- You should NOT use this module until the ready event of the app module is emitted.
+- ```globalShortcut.isRegistered('CommandOrControl+X')```
+- ```globalShortcut.unregister('CommandOrControl+X')```
+- ```globalShortcut.unregisterAll()```
+
 ```
 const { app, BrowserWindow, Menu, globalShortcut } = require('electron')
 
@@ -97,4 +107,29 @@ const { app, BrowserWindow, Menu, globalShortcut } = require('electron')
 
 globalShortcut.register('CmdOrCtrl+R', () => mainWindow.reload())
     globalShortcut.register(isMac ? 'Command+Alt+I' : 'Ctrl+Shift+I', () => mainWindow.toggleDevTools())
+```
+```
+const { app, globalShortcut } = require('electron')
+
+app.whenReady().then(() => {
+  // Register a 'CommandOrControl+X' shortcut listener.
+  const ret = globalShortcut.register('CommandOrControl+X', () => {
+    console.log('CommandOrControl+X is pressed')
+  })
+
+  if (!ret) {
+    console.log('registration failed')
+  }
+
+  // Check whether a shortcut is registered.
+  console.log(globalShortcut.isRegistered('CommandOrControl+X'))
+})
+
+app.on('will-quit', () => {
+  // Unregister a shortcut.
+  globalShortcut.unregister('CommandOrControl+X')
+
+  // Unregister all shortcuts.
+  globalShortcut.unregisterAll()
+})
 ```

@@ -41,7 +41,8 @@ const menu = [
     }]
 // app.whenReady().then(createWindow)
 
-app.on('ready', () => {
+//app.on('ready', () => { // same as app.whenReady().
+app.whenReady().then(() => {
     createWindow()
 
     const mainMenu = Menu.buildFromTemplate(menu)
