@@ -42,7 +42,8 @@ if (BrowserWindow.getAllWindows().length === 0) {
 - npm init -y
 - touch .gitignore
 - npm install --save-dev electron
-- npm i -D nodemon
+- npm i -D nodemon 
+- https://github.com/remy/nodemon#nodemon
 - update package.json
 ```
 "main": "main.js",

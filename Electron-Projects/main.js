@@ -10,7 +10,7 @@ function createWindow() {
         title: "image shrike",
         width: 800,
         height: 600,
-        icon: `${__dirname}/assets/icons/Icon_256x256.png`,
+        //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
         resizable: isDev
     })
 
@@ -31,7 +31,6 @@ app.on('window-all-closed', () => {
         app.quit()
     }
 })
-
 
 app.on('activate', () => {
     // On macOS it's common to re-create a window in the app when the
