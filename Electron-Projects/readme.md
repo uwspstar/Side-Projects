@@ -60,6 +60,14 @@ node_modules
 - touch main.js
 - touch index.html
 
+### API
+- https://www.electronjs.org/docs/api
+###  BrowserWindow
+- https://www.electronjs.org/docs/api/browser-window#browserwindow
+
+### Transparent window
+- https://www.electronjs.org/docs/api/frameless-window#transparent-window
+
 ### menu : 
 ```
 instead of using
@@ -80,4 +88,13 @@ accelerator: isMac ? 'Command+W' : 'Ctrl+W',
 same
 
 accelerator: 'CmdOrCtr+W',
+```
+### Global Shortcuts
+```
+const { app, BrowserWindow, Menu, globalShortcut } = require('electron')
+
+...
+
+globalShortcut.register('CmdOrCtrl+R', () => mainWindow.reload())
+    globalShortcut.register(isMac ? 'Command+Alt+I' : 'Ctrl+Shift+I', () => mainWindow.toggleDevTools())
 ```

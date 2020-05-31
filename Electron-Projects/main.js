@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu } = require('electron')
+const { app, BrowserWindow, Menu, globalShortcut } = require('electron')
 
 process.env.NODE_ENV = 'dev'
 const isDev = process.env.NODE_ENV === 'dev' ? true : false
@@ -12,13 +12,20 @@ function createWindow() {
         width: 800,
         height: 600,
         //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
-        resizable: isDev
+        resizable: isDev,
+        backgroundColor: 'red',
+        webPreferences: {
+            nodeIntegration: true //make document.write(process.versions.node) work
+        }
     })
 
     mainWindow.loadFile('index.html')
     // mainWindow.loadURL('http://google.com')
     // console.log('${__dirname}', `${ __dirname }`)
     // mainWindow.loadURL(`file//${__dirname}/app/index.html`) //NOT working
+    // mainWindow.loadURL(`file://${__dirname}/app/index.html`)
+
+
 }
 
 const menu = [
@@ -28,7 +35,7 @@ const menu = [
         submenu: [{
             label: 'Quit',
             //accelerator: isMac ? 'Command+W' : 'Ctrl+W',
-            accelerator: 'CmdOrCtr+W',
+            accelerator: 'CmdOrCtrl+W',
             click: () => app.quit()
         }]
     }]
@@ -39,6 +46,9 @@ app.on('ready', () => {
 
     const mainMenu = Menu.buildFromTemplate(menu)
     Menu.setApplicationMenu(mainMenu)
+
+    globalShortcut.register('CmdOrCtrl+R', () => mainWindow.reload())
+    globalShortcut.register(isMac ? 'Command+Alt+I' : 'Ctrl+Shift+I', () => mainWindow.toggleDevTools())
 
     mainWindow.on('closed', () => mainWindow === null)
 })
