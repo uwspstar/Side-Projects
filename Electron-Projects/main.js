@@ -20,7 +20,6 @@ function createWindow() {
     // mainWindow.loadURL(`file//${__dirname}/app/index.html`) //NOT working
 }
 
-
 app.whenReady().then(createWindow)
 
 // Quit when all windows are closed.

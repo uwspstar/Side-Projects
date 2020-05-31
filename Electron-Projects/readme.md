@@ -44,6 +44,7 @@ if (BrowserWindow.getAllWindows().length === 0) {
 - npm install --save-dev electron
 - npm i -D nodemon 
 - https://github.com/remy/nodemon#nodemon
+- // need run command + R to reload electron window
 - update package.json
 ```
 "main": "main.js",
