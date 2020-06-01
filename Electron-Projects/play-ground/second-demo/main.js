@@ -9,13 +9,14 @@ let mainWindow
 function createWindow() {
     mainWindow = new BrowserWindow({
         title: 'image shrike',
-        width: 800,
+        width: 600,
         height: 600,
         center: true,
         fullscreen: false,
+        resizable: false,
         //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
         resizable: isDev,
-        backgroundColor: '#ee0000',
+        backgroundColor: '#ffffff',
         webPreferences: {
             nodeIntegration: true //make document.write(process.versions.node) work
         }
