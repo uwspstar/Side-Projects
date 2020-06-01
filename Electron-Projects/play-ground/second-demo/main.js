@@ -9,18 +9,21 @@ let mainWindow
 function createWindow() {
     mainWindow = new BrowserWindow({
         title: 'image shrike',
-        width: 600,
+        width: isDev ? 1000 : 500,
         height: 600,
         center: true,
         fullscreen: false,
-        resizable: false,
         //icon: `${__dirname}/assets/icons/Icon_256x256.png`,
-        resizable: isDev,
+        resizable: false,
         backgroundColor: '#ffffff',
         webPreferences: {
             nodeIntegration: true //make document.write(process.versions.node) work
         }
     })
+
+    if (isDev) {
+        mainWindow.webContents.openDevTools() // open DevTools 
+    }
 
     mainWindow.loadFile('index.html')
     // mainWindow.loadURL('http://google.com')
