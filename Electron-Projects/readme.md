@@ -111,7 +111,8 @@ node_modules
 ### win.setProgressBar(progress[, options])
 - https://www.electronjs.org/docs/api/browser-window#winsetprogressbarprogress-options
 
-### menu : 
+### menu
+- https://www.electronjs.org/docs/api/menu#class-menu
 ```
 instead of using
 
