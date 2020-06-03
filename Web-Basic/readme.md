@@ -265,6 +265,9 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - More structured and ```larger amounts of data``` can be stored using the ```IndexedDB API```, or a library built on it.
 
 ### Cross-Origin Resource Sharing (CORS)
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
+- uses additional HTTP headers to tell browsers to give a web application running at one origin
 ### origin
+- https://developer.mozilla.org/en-US/docs/Glossary/origin
 - Web content's origin is defined by the scheme (protocol), host (domain), and port of the URL used to access it. 
 - Two objects have the same origin only when the scheme, host, and port all match.
