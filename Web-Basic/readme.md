@@ -1,4 +1,3 @@
-
 # Web Basic
 - https://developer.mozilla.org/en-US/docs/Web
 
@@ -264,3 +263,8 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - Another approach to storing data in the browser is the ```Web storage API```. 
 - The ```window.sessionStorage``` and ```window.localStorage``` properties correspond to ```session``` and ```permanent cookies``` in duration, ```but have larger storage limits than cookies```, and are ```never sent to a server```. 
 - More structured and ```larger amounts of data``` can be stored using the ```IndexedDB API```, or a library built on it.
+
+### Cross-Origin Resource Sharing (CORS)
+### origin
+- Web content's origin is defined by the scheme (protocol), host (domain), and port of the URL used to access it. 
+- Two objects have the same origin only when the scheme, host, and port all match.
