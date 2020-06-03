@@ -33,7 +33,7 @@
 ### linear data structures: Arrays, Lists, Sets, Stacks, and Queues.
 
 ### Objects ,  HashMap vs Set
-
+- using ```const map = new Map();``` instead of using ```const map = {};```
 ```
 Objects
 JavaScript objects can be thought of as simple collections of name-value pairs. As such, they are similar to:
@@ -57,6 +57,21 @@ Associative arrays in PHP
 - Conditional (ternary) operator
 ```
 hashMap[key] ? hashMap[key]++ : hashMap[key] = 1;
+```
+- using ```const map = new Map();``` instead of using ```const map = {};```
+### Map
+- const map = new Map()
+```
+for (let [key, value] of map) {
+  console.log(`${key} = ${value}`);
+}
+```
+- const plainObjMap = {}
+```
+for (let key of Object.keys(plainObjMap)) {
+  const value = plainObjMap[key];
+  console.log(`${key} = ${value}`);
+}
 ```
 ##### Set
 - remove duplicate elements from the array
