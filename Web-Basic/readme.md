@@ -268,6 +268,7 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 - A web application executes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, or port) from its own.
 - uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. 
+- ```XMLHttpRequest``` and the ```Fetch API``` follow the ```same-origin policy```. This means that a web application using those APIs can only request resources from the same origin the application was loaded from unless the response from other origins includes the right CORS headers.
 
 ### origin
 - https://developer.mozilla.org/en-US/docs/Glossary/origin
