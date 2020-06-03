@@ -270,7 +270,26 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. 
 - ```XMLHttpRequest``` and the ```Fetch API``` follow the ```same-origin policy```. This means that a web application using those APIs can only request resources from the same origin the application was loaded from unless the response from other origins includes the right CORS headers.
 
+### Access-Control-Allow-Origin
+- The HTTP response headers
+- ```Access-Control-Allow-Origin: <origin> | *```
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin
+
+### Access-Control-Expose-Headers
+- The ```Access-Control-Expose-Headers``` header lets a ```server whitelist``` headers that browsers are allowed to access.
+- ```Access-Control-Expose-Headers: <header-name>[, <header-name>]*```
+
 ### origin
+- The HTTP request headers
+- The Origin header indicates the origin of the cross-site access request or preflight request. 
+- ```Origin: <origin>``` : The origin value can be null, or a URI.
 - https://developer.mozilla.org/en-US/docs/Glossary/origin
 - Web content's origin is defined by the scheme (protocol), host (domain), and port of the URL used to access it. 
 - Two objects have the same origin only when the scheme, host, and port all match.
+- Modern browsers use ```CORS in APIs``` such as ```XMLHttpRequest``` or ```Fetch``` to mitigate the risks of ```cross-origin HTTP requests```.
+
+### HTTP messages 
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Messages
+- are how data is exchanged between a server and a client. 
+- There are two types of messages: ```requests``` sent by the client to trigger an action on the server, and ```responses```, the answer from the server.
+- HTTP messages are composed of textual information encoded in ASCII, and span over multiple lines. 
