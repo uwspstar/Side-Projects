@@ -266,7 +266,9 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 
 ### Cross-Origin Resource Sharing (CORS)
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
-- uses additional HTTP headers to tell browsers to give a web application running at one origin
+- A web application executes a cross-origin HTTP request when it requests a resource that has a different origin (domain, protocol, or port) from its own.
+- uses additional HTTP headers to tell browsers to give a web application running at one origin, access to selected resources from a different origin. 
+
 ### origin
 - https://developer.mozilla.org/en-US/docs/Glossary/origin
 - Web content's origin is defined by the scheme (protocol), host (domain), and port of the URL used to access it. 
