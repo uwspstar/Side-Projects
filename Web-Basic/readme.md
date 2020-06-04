@@ -333,3 +333,24 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 ### WebSockets
 ### A typical HTTP session
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Session
+- In client-server protocols, like HTTP, sessions consist of three phases:
+### sessions consist of three phases:
+- 1. The client establishes a TCP connection (or the appropriate connection if the transport layer is not TCP).
+- 2. The client sends its request, and waits for the answer.
+- 3. The server processes the request, sending back its answer, providing a status code and appropriate data.
+
+### Establishing a connection
+### HTTP request methods
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
+- ```GET``` The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
+- ```HEAD``` The HEAD method asks for a response identical to that of a GET request, but ```without the response body```.
+- ```POST``` The POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
+- ```PUT``` The PUT method ```replaces all``` current representations of the target resource with the request payload.
+- ```DELETE``` The DELETE method deletes the specified resource.
+- ```CONNECT``` The CONNECT method establishes a tunnel to the server identified by the target resource.
+- ```OPTIONS``` The OPTIONS method is used to describe the ```communication options``` for the target resource.
+- ```TRACE``` The TRACE method performs a message loop-back test along the path to the target resource.
+- ```PATCH``` The PATCH method is used to apply partial modifications to a resource.
+
+### Response status codes
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
