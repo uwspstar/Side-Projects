@@ -17,3 +17,18 @@
 
 ### Browser APIs 
 - ```Browser APIs``` are built into your web browser, and are able to expose data from the surrounding computer environment, or do useful complex things.
+- Geolocation API
+- Canvas and WebGL APIs
+- Audio and Video APIs like HTMLMediaElement and WebRTC
+
+### Third party APIs
+- Twitter API 
+- Google Maps API and OpenStreetMap API
+
+### Browser security
+### JavaScript running order
+
+### DOM (Document Object Model) API
+- https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model
+
+ 
