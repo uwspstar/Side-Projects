@@ -349,8 +349,13 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - ```DELETE``` The DELETE method deletes the specified resource.
 - ```CONNECT``` The CONNECT method establishes a tunnel to the server identified by the target resource.
 - ```OPTIONS``` The OPTIONS method is used to describe the ```communication options``` for the target resource.
-- ```TRACE``` The TRACE method performs a message loop-back test along the path to the target resource.
-- ```PATCH``` The PATCH method is used to apply partial modifications to a resource.
+### ```TRACE``` 
+- The TRACE method performs a message loop-back test along the path to the target resource.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/TRACE
+
+### ```PATCH``` 
+- The PATCH method is used to apply ```partial modifications``` to a resource.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PATCH
 
 ### Response status codes
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
