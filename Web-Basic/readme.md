@@ -388,6 +388,14 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 ### Response status codes
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 
+### Responses are grouped in five classes:
+
+- 1. Informational responses (100–199),
+- 2. Successful responses (200–299),
+- 3. Redirects (300–399),
+- 4. Client errors (400–499),
+- 5. and Server errors (500–599).
+
 ### Proxy server
 - https://developer.mozilla.org/en-US/docs/Glossary/Proxy_server
 - A proxy server is an intermediate program or computer used when navigating through different networks of the Internet. 
