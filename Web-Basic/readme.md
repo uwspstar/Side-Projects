@@ -293,3 +293,19 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - are how data is exchanged between a server and a client. 
 - There are two types of messages: ```requests``` sent by the client to trigger an action on the server, and ```responses```, the answer from the server.
 - HTTP messages are composed of textual information encoded in ASCII, and span over multiple lines. 
+
+### HTTP headers
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
+- HTTP headers let the client and the server pass additional information with an HTTP request or response. 
+- An HTTP header consists of its case-insensitive name followed by a colon (:), then by its value. Whitespace before the value is ignored
+
+### Authentication
+- ```WWW-Authenticate``` Defines the authentication method that should be used to access a resource.
+- ```Authorization``` Contains the credentials to authenticate a user-agent with a server.
+- ```Proxy-Authenticate``` Defines the authentication method that should be used to access a resource behind a proxy server.
+- ```Proxy-Authorization``` Contains the credentials to authenticate a user agent with a proxy server.
+
+### Caching
+### Conditionals
+### Connection management
+### Content negotiation
