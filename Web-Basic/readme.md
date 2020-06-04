@@ -323,3 +323,9 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - ```Referer``` The address of the previous web page from which a link to the currently requested page was followed.
 - ```Referrer-Policy``` Governs which referrer information sent in the Referer header should be included with requests made.
 - ```User-Agent``` Contains a characteristic string that allows the network protocol peers to identify the application type, operating system, software vendor or software version of the requesting software user agent. See also the Firefox user agent string reference.
+### Response context
+- ```Allow``` Lists the set of HTTP request methods supported by a resource.
+- ```Server``` Contains information about the software used by the origin server to handle the request.
+### Range requests
+### Security
+### Server-sent events
