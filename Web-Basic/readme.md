@@ -293,7 +293,7 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - are how data is exchanged between a server and a client. 
 - There are two types of messages: ```requests``` sent by the client to trigger an action on the server, and ```responses```, the answer from the server.
 - HTTP messages are composed of textual information encoded in ASCII, and span over multiple lines. 
-
+### Headers
 ### HTTP headers
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers
 - HTTP headers let the client and the server pass additional information with an HTTP request or response. 
@@ -329,3 +329,7 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 ### Range requests
 ### Security
 ### Server-sent events
+### Transfer coding
+### WebSockets
+### A typical HTTP session
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Session
