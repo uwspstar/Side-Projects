@@ -346,9 +346,18 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 - ```HEAD``` The HEAD method asks for a response identical to that of a GET request, but ```without the response body```.
 - ```POST``` The POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
 - ```PUT``` The PUT method ```replaces all``` current representations of the target resource with the request payload.
-- ```DELETE``` The DELETE method deletes the specified resource.
-- ```CONNECT``` The CONNECT method establishes a tunnel to the server identified by the target resource.
-- ```OPTIONS``` The OPTIONS method is used to describe the ```communication options``` for the target resource.
+### ```DELETE``` 
+- The DELETE method deletes the specified resource.
+
+### ```CONNECT``` 
+- The CONNECT method establishes a ```tunnel``` to the server identified by the target resource.
+- The HTTP CONNECT method starts two-way communications with the requested resource. It can be used to open a tunnel.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/CONNECT
+
+### ```OPTIONS``` 
+- The OPTIONS method is used to describe the ```communication options``` for the target resource.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/OPTIONS
+
 ### ```TRACE``` 
 - The TRACE method performs a message loop-back test along the path to the target resource.
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/TRACE
@@ -359,3 +368,12 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 
 ### Response status codes
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
+
+### Proxy server
+- https://developer.mozilla.org/en-US/docs/Glossary/Proxy_server
+- A proxy server is an intermediate program or computer used when navigating through different networks of the Internet. 
+
+### Secure Sockets Layer (SSL)
+- https://developer.mozilla.org/en-US/docs/Glossary/SSL
+- Secure Sockets Layer, or SSL, was the ```old standard``` security technology for creating an encrypted network link between a server and client, ensuring all data passed is private and secure. 
+- The current version of SSL is version 3.0, released by Netscape in 1999, and has been superseded by the ```Transport Layer Security (TLS) protocol```.
