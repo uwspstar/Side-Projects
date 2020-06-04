@@ -309,3 +309,17 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 ### Conditionals
 ### Connection management
 ### Content negotiation
+### Controls
+### Cookies
+### CORS
+### Do Not Track
+### Downloads
+### Message body information
+### Proxies
+### Redirects
+### Request context
+- ```From``` Contains an Internet email address for a human user who controls the requesting user agent.
+- ```Host``` Specifies the domain name of the server (for virtual hosting), and (optionally) the TCP port number on which the server is listening.
+- ```Referer``` The address of the previous web page from which a link to the currently requested page was followed.
+- ```Referrer-Policy``` Governs which referrer information sent in the Referer header should be included with requests made.
+- ```User-Agent``` Contains a characteristic string that allows the network protocol peers to identify the application type, operating system, software vendor or software version of the requesting software user agent. See also the Firefox user agent string reference.
