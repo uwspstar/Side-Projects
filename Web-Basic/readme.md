@@ -331,23 +331,42 @@ document.location = 'http://www.mozilla.org' // Equivalent to document.location.
 ### Server-sent events
 ### Transfer coding
 ### WebSockets
+
 ### A typical HTTP session
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Session
 - In client-server protocols, like HTTP, sessions consist of three phases:
+
 ### sessions consist of three phases:
-- 1. The client establishes a TCP connection (or the appropriate connection if the transport layer is not TCP).
-- 2. The client sends its request, and waits for the answer.
-- 3. The server processes the request, sending back its answer, providing a status code and appropriate data.
+- 1. The client establishes a TCP connection (or the appropriate connection if the transport layer is not TCP). Opening a connection in HTTP means initiating a connection in the underlying transport layer, usually this is TCP.
+- 2. The client sends its request, and waits for the answer. Once the connection is established, the user-agent can send the request, a user-agent is typically a web browser, but can be anything else, a crawler, for example
+- 3. The server processes the request, sending back its answer, providing a status code and appropriate data. After the connected agent has sent its request, the web server processes it, and ultimately returns a response. 
 
 ### Establishing a connection
 ### HTTP request methods
 - https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods
-- ```GET``` The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
-- ```HEAD``` The HEAD method asks for a response identical to that of a GET request, but ```without the response body```.
-- ```POST``` The POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
-- ```PUT``` The PUT method ```replaces all``` current representations of the target resource with the request payload.
+
+### The difference between PUT and POST 
+- is that ```PUT``` is idempotent: calling it once or several times successively has the same effect (that is ```no side effect```), where successive identical ```POST``` may have additional effects, like passing an order several times.
+
+### ```GET``` 
+- The GET method requests a representation of the specified resource. Requests using GET should only retrieve data.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET
+
+### ```HEAD``` 
+- The HEAD method asks for a response identical to that of a GET request, but ```without the response body```.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/HEAD
+
+### ```POST``` 
+- The POST method is used to submit an entity to the specified resource, often causing a change in state or side effects on the server.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/POST
+
+### ```PUT``` 
+- The PUT method ```replaces all``` current representations of the target resource with the request payload.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/PUT
+
 ### ```DELETE``` 
 - The DELETE method deletes the specified resource.
+- https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE
 
 ### ```CONNECT``` 
 - The CONNECT method establishes a ```tunnel``` to the server identified by the target resource.
