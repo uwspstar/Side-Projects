@@ -2,6 +2,9 @@
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/
 - https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/
 
+### Six Data Types that are primitives
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+
 ### HOW DO YOU IMPROVE?
 - Devise a plan for solving problems
 - Master common problem solving patterns
@@ -60,6 +63,7 @@ Associative arrays in PHP
 hashMap[key] ? hashMap[key]++ : hashMap[key] = 1;
 ```
 - using ```const map = new Map();``` instead of using ```const map = {};```
+
 ### Map
 - const map = new Map()
 ```
