@@ -2,8 +2,35 @@
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/
 - https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/
 
-### Six Data Types that are primitives
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+### Data Type
+- - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+- Six Data Types that are primitives
+```
+undefined : typeof instance === "undefined"
+Boolean : typeof instance === "boolean"
+Number : typeof instance === "number"
+String : typeof instance === "string"
+BigInt : typeof instance === "bigint"
+Symbol : typeof instance === "symbol"
+```
+- null : typeof instance === "object".
+- Object : typeof instance === "object".
+```
+data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakSet, new Date
+
+```
+- Function non data structure, though it also answers for typeof operator: typeof instance === "function".
+
+### data structures:
+- new Object, 
+- new Array, 
+- new Map, 
+- new Set, 
+- new WeakMap, 
+- new WeakSet, 
+- new Date
+
+### Keyed collections: Maps, Sets, WeakMaps, WeakSets
 
 ### HOW DO YOU IMPROVE?
 - Devise a plan for solving problems
