@@ -29,6 +29,7 @@
 
 ### Data Structures in JavaScript: Arrays, HashMaps, and Lists 
 - https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/
+- using new Nap() instead of using {}
 
 ### linear data structures: Arrays, Lists, Sets, Stacks, and Queues.
 
