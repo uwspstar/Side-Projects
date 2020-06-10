@@ -5,3 +5,5 @@
 ### Deno
 - A ```secure``` ```runtime``` for ```JavaScript``` and ```TypeScript```.
 - Deno Runtime And ```V8 Engine```
+- Deno ```TypeScript``` that uses ```V8``` and is built in ```Rust```.
+- Has built-in utilities like a dependency inspector (deno info) and a code formatter (deno fmt).
