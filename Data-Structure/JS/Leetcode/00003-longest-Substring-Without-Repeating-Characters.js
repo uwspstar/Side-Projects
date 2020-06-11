@@ -7,6 +7,7 @@ Example 1:
 Input: "abcabcbb"
 Output: 3 
 Explanation: The answer is "abc", with the length of 3. 
+
 Example 2:
 
 Input: "bbbbb"
@@ -22,35 +23,40 @@ Explanation: The answer is "wke", with the length of 3.
 
 // slide window problem
 const lengthOfLongestSubstring = function (str) {
-    if (str.length < 2) return str;
 
-    let start, end = 0;
-    let j = start;
-    let mySet = new Set();
-    let max = 0;
+    if (str.length < 2) return str.length
 
-    while (j < str.length) {
-        if (mySet.has(str[j])) {
-            start++;
+    let mySet = new Set()
+    let start = 0
+    let end = 0
+    let max = 0
+
+/*
+a b c a b c b b
+  e
+s   
+*/
+
+    while (start < str.length && end < str.length) {
+
+        if (mySet.has(str[end])) {
+            mySet.delete(str[start])
+            start++
         } else {
-            mySet.add(str[j]);
-            end++;
-            max = Math.max(mySet.size, max);
+            mySet.add(str[end]);
+            max = Math.max(max, end - start + 1)
+            end++
         }
-        j++
+
     }
-    console.log(mySet);
-    return max;
+    return max
 
 };
 
 console.log(lengthOfLongestSubstring("abcabcbb"))
+console.log(lengthOfLongestSubstring("bbbbb"))
+console.log(lengthOfLongestSubstring("pwwkew"))
 
-//"abcabcbb"
-//a ab abc abca
-//b bc bca bcab
-//c ca cab cabc
-//a ab abc abcb
-//b bc bcb
-//c cb cbb
-//b bb
+
+
+
