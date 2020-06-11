@@ -48,9 +48,4 @@ console.log(lengthOfLongestSubstring("bbbb"))
 console.log(lengthOfLongestSubstring("bbcd"))
 //"abcabcbb"
 //a ab abc abca
-//b bc bca bcab
-//c ca cab cabc
-//a ab abc abcb
-//b bc bcb
-//c cb cbb
-//b bb
+
