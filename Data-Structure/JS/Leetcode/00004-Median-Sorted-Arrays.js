@@ -21,9 +21,13 @@ nums2 = [3, 4]
 The median is (2 + 3)/2 = 2.5
 
 */
- 
+
 // log (m+n) mean using binary search
- 
-const findMedianSortedArrays = function(nums1, nums2) {
+
+const findMedianSortedArrays = function (arr1, arr2) {
+    if (arr1.length > arr2.length)
+        return findMedianSortedArrays(arr2, arr1)
     
+        
+    // (arr1.length + arr2.length) / 2 cut arr1 at m + arr
 };
