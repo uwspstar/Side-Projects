@@ -33,7 +33,7 @@ const lengthOfLongestSubstring = function (str) {
 
 /*
 a b c a b c b b
-  e
+    e
 s   
 */
 
