@@ -1,8 +1,10 @@
 /*
-- https://www.youtube.com/watch?v=do7ibYtv5nk
-- https://www.youtube.com/watch?v=KB9IcSCDQ9k
 4. Median of Two Sorted Arrays
 Hard
+
+- https://www.youtube.com/watch?v=do7ibYtv5nk
+- https://www.youtube.com/watch?v=KB9IcSCDQ9k
+
 
 There are two sorted arrays nums1 and nums2 of size m and n respectively.
 
@@ -26,8 +28,8 @@ The median is (2 + 3)/2 = 2.5
 
 const findMedianSortedArrays = function (arr1, arr2) {
     if (arr1.length > arr2.length)
-        return findMedianSortedArrays(arr2, arr1)
-    
-        
+        return findMedianSortedArrays(arr2, arr1)  
     // (arr1.length + arr2.length) / 2 cut arr1 at m + arr
+   
+
 };
