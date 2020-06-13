@@ -1,6 +1,6 @@
 /*
 https://www.youtube.com/watch?v=y2BD4MJqV20
-https://www.youtube.com/watch?v=m2Mk9JN5T4A&list=PLvyIyKZVcfAk4vxVK-QQYha7VfE4SLm9q&index=5
+https://www.youtube.com/watch?v=g3R-pjUNa3k
 
 Given a string s, find the longest palindromic substring in s. You may assume that the maximum length of s is 1000.
 O(n^2)
@@ -17,6 +17,7 @@ Example 2: Input: "cbbd" Output: "bb"
 */
 
 const longestPalindrome = function (str) {
+    if (str.length < 2) return str
 
 };
 
