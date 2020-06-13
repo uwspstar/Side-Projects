@@ -25,9 +25,10 @@ const longestPalindrome = function (str) {
 //a b c b a
 const isPalindrome = function (str) {
 
-    let mid = str.length / 2  
-    for (let i = 0; i <=mid; i++) {
-        if (str[mid - i] != str[mid + i]) return false
+    let mid = parseInt(str.length / 2) 
+    let len = str.length
+    for (let i = 0; i <= mid; i++) {
+        if (str[i] != str[len - i - 1]) return false
     }
     return true
 }
