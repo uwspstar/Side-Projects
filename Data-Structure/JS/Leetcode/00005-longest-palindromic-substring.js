@@ -19,7 +19,18 @@ Example 2: Input: "cbbd" Output: "bb"
 const longestPalindrome = function (str) {
     if (str.length < 2) return str
 
+    //isPalindrome
 };
+
+//a b c b a
+const isPalindrome = function (str) {
+
+    let mid = str.length / 2  
+    for (let i = 0; i <=mid; i++) {
+        if (str[mid - i] != str[mid + i]) return false
+    }
+    return true
+}
 
 console.log(longestPalindrome("cbbd")) //babab
 console.log(longestPalindrome("racecar")) //racecar
