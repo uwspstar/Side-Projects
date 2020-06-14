@@ -11,6 +11,9 @@
 - Greedy Algorithms
 - Backtracking
 
+### BigO
+- indexOf is O(n)
+
 ### Data Type
 - - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 - Six Data Types that are primitives

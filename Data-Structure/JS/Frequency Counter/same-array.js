@@ -5,6 +5,8 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 
+//O(n^2) 
+// indexOf is O(n)
 const same = function (arr1, arr2) {
     if (arr1.length != arr2.length) return false
 
