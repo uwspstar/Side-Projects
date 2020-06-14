@@ -2,6 +2,15 @@
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/
 - https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/
 
+### SOME PATTERNS...
+- Frequency Counter
+- Multiple Pointers
+- Sliding Window
+- Divide and Conquer
+- Dynamic Programming
+- Greedy Algorithms
+- Backtracking
+
 ### Data Type
 - - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 - Six Data Types that are primitives
@@ -36,14 +45,7 @@ data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakS
 - Devise a plan for solving problems
 - Master common problem solving patterns
 
-### SOME PATTERNS...
-- Frequency Counter
-- Multiple Pointers
-- Sliding Window
-- Divide and Conquer
-- Dynamic Programming
-- Greedy Algorithms
-- Backtracking
+
 
 ### TOP 10 interview Algorithms
 - Depth First Search. -stack
