@@ -48,6 +48,7 @@ data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakS
 - Map.prototype.set(key, value)
 - Map.prototype.keys()
 - Map.prototype.values()
+- Map.prototype.forEach(callbackFn[, thisArg])
 
 ### Objects vs. Maps
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
@@ -60,8 +61,6 @@ data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakS
 ### HOW DO YOU IMPROVE?
 - Devise a plan for solving problems
 - Master common problem solving patterns
-
-
 
 ### TOP 10 interview Algorithms
 - Depth First Search. -stack
