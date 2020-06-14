@@ -43,6 +43,8 @@ data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakS
 - new Date
 
 ### Keyed collections: Maps, Sets, WeakMaps, WeakSets
+- When to Use Map instead of Plain JavaScript Object https://dmitripavlutin.com/maps-vs-plain-objects-javascript/
+- The Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value.
 
 ### HOW DO YOU IMPROVE?
 - Devise a plan for solving problems

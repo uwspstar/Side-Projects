@@ -13,10 +13,23 @@ const same = function (arr1, arr2) {
     let obj2 = new Map()
 
     for (let i = 0; i < arr1.length; i++) {
+        if (!obj1.has(arr1[i])) {
+            obj1.set(arr1[i], 1)
+        } else {
+            obj1.set(arr1[i], obj1(arr1[i]) + 1)
+        }
 
+        if (!obj2.has(arr2[i])) {
+            obj2.set(arr2[i], 1)
+        } else {
+            obj2.set(arr2[i], obj2(arr2[i]) + 1)
+        }
     }
+
+    console.log(obj1)
+    console.log(obj2)
 }
 
-console.log(same([1, 2, 3], [4, 1, 9])) // true
-console.log(same([1, 2, 3], [1, 9])) // false
-console.log(same([1, 2, 1], [4, 4, 1])) // false
+console.log(same([1, 2, 3, 2], [4, 4, 1, 9])) // true
+//console.log(same([1, 2, 3], [1, 9])) // false
+//console.log(same([1, 2, 1], [4, 4, 1])) // false
