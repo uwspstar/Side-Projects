@@ -10,6 +10,7 @@
 // Map.prototype.set(key, value)
 // Map.prototype.keys()
 // Map.prototype.values()
+// Map.prototype.forEach(callbackFn[, thisArg])
 
 const same = function (arr1, arr2) {
     if (arr1.length != arr2.length) return false
@@ -31,10 +32,18 @@ const same = function (arr1, arr2) {
         }
     }
 
+    for (let key of obj1.keys()) {
+        if (!obj2.has(key ** 2)) return false
+        if (obj2.get(key ** 2) !== obj1.get(key)) return false
+    }
+
     console.log(obj1)
     console.log(obj2)
-}
 
+    return true;
+}
+console.log(same([1, 2, 2, 3, 3], [9, 4, 1, 4, 9])) // true
+console.log(same([1, 2, 3], [4, 1, 9])) // true
 console.log(same([1, 2, 3, 2], [4, 4, 1, 9])) // true
-//console.log(same([1, 2, 3], [1, 9])) // false
-//console.log(same([1, 2, 1], [4, 4, 1])) // false
+console.log(same([1, 2, 3], [1, 9])) // false
+console.log(same([1, 2, 1], [4, 4, 1])) // false
