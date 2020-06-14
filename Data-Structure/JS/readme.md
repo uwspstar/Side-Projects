@@ -42,8 +42,19 @@ data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakS
 - new WeakSet, 
 - new Date
 
-### Keyed collections: Maps, Sets, WeakMaps, WeakSets
+### new Map()
+- Map.prototype.get(key)
+- Map.prototype.has(key)
+- Map.prototype.set(key, value)
+- Map.prototype.keys()
+- Map.prototype.values()
+
+### Objects vs. Maps
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 - When to Use Map instead of Plain JavaScript Object https://dmitripavlutin.com/maps-vs-plain-objects-javascript/
+
+
+### Keyed collections: Maps, Sets, WeakMaps, WeakSets
 - The Map object holds key-value pairs and remembers the original insertion order of the keys. Any value (both objects and primitive values) may be used as either a key or a value.
 
 ### HOW DO YOU IMPROVE?
