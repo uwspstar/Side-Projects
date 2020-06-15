@@ -2,6 +2,9 @@
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/
 - https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/
 
+### Standard built-in objects
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
+
 ### SOME PATTERNS...
 - Frequency Counter
 - Multiple Pointers
@@ -51,13 +54,25 @@ data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakS
 - Map.prototype.keys()
 - Map.prototype.values()
 - Map.prototype.forEach(callbackFn[, thisArg])
+- Use Array.from() // transform a map into a 2D key-value Array.from(myMap)
+- Array.from(myMap.keys())
 
 ### new Set()
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
 - Set.prototype.size
+- Set.prototype.add(value)
 - Set.prototype.forEach()
 - Set.prototype.has()
-- Set.prototype.values()
+- Set.prototype.keys() // same as the values() method.
+- Set.prototype.values() // ame as the keys() method.
+- let myArr = Array.from(mySet) // convert Set object to an Array object, with Array.from
+- converting between Set and Array
+```
+mySet2 = new Set([1, 2, 3, 4])
+mySet2.size    // 4
+[...mySet2]    // [1, 2, 3, 4]
+```
+
 ### Objects vs. Maps
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 - When to Use Map instead of Plain JavaScript Object https://dmitripavlutin.com/maps-vs-plain-objects-javascript/
