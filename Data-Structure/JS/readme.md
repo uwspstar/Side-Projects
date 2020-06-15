@@ -43,6 +43,8 @@ data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakS
 - new Date
 
 ### new Map()
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
+- Map.prototype.size
 - Map.prototype.get(key)
 - Map.prototype.has(key)
 - Map.prototype.set(key, value)
@@ -50,6 +52,12 @@ data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakS
 - Map.prototype.values()
 - Map.prototype.forEach(callbackFn[, thisArg])
 
+### new Set()
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set
+- Set.prototype.size
+- Set.prototype.forEach()
+- Set.prototype.has()
+- Set.prototype.values()
 ### Objects vs. Maps
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 - When to Use Map instead of Plain JavaScript Object https://dmitripavlutin.com/maps-vs-plain-objects-javascript/
