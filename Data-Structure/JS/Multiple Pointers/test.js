@@ -1,20 +1,16 @@
-// find first pair of nums sum as zero for a sorted array
-//
-const sumZero = function (arr) {
-    if (arr.length < 2) return false;
+// sorted array
+// so the same num will be connected each other
 
-    let start = 0
-    let end = arr.length - 1
-
-    while (start < end) {
-
-        if (arr[start] + arr[end] === 0) return [arr[start], arr[end]]
-
-        arr[start] + arr[end] > 0 ? end-- : start++
+const uniqueValue = function (arr) {
+    let i = 0;
+    for (let j = 1; j < arr.length; j++) {
+        if (arr[i] !== arr[j]) {
+            i++;
+            arr[i] = arr[j];
+        }
     }
-
-    return false
+    return i + 1;
 }
-console.log(sumZero([-5, -4, -3, -2, 1, 0, -1, 3, 4]))
-console.log(sumZero([-5, -4, -3, -2, 1, 0, -1, 2, 3]))
-console.log(sumZero([-5, -2, -1, 0, 3, 4]))
+console.log(uniqueValue([1, 1, 1, 1, 5, 5]));
+console.log(uniqueValue([1, 1, 2, 3, 3, 4, 5, 5, 5, 6]));
+console.log(uniqueValue([1, 2, 3, 4, 5, 6]));

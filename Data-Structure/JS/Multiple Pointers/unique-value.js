@@ -12,9 +12,9 @@ const uniqueValue = function (arr) {
 console.log(uniqueValue([1, 1, 2, 3, 3, 4, 5, 5, 5, 6]));
 
 /*
-i
+ i
 [1,1,2,3,3,4,5,5,5,6]
-    j
+   j
 
    i
 [1,2,2,3,3,4,5,5,5,6]
