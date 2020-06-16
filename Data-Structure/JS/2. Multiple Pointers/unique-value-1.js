@@ -1,3 +1,7 @@
+// sorted array
+// so the same num will be connected each other
+// use same array, save space
+
 const uniqueValue = function (arr) {
     let i = 0;
     for (let j = 1; j < arr.length; j++) {
@@ -8,15 +12,6 @@ const uniqueValue = function (arr) {
     }
     return i + 1;
 }
-
+console.log(uniqueValue([1, 1, 1, 1, 5, 5]));
 console.log(uniqueValue([1, 1, 2, 3, 3, 4, 5, 5, 5, 6]));
-
-/*
- i
-[1,1,2,3,3,4,5,5,5,6]
-   j
-
-   i
-[1,2,2,3,3,4,5,5,5,6]
-     j
-*/
+console.log(uniqueValue([1, 2, 3, 4, 5, 6]));
