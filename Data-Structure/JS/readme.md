@@ -19,20 +19,19 @@
 
 ### Data Type
 - - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
-- Six Data Types that are primitives
-```
-undefined : typeof instance === "undefined"
-Boolean : typeof instance === "boolean"
-Number : typeof instance === "number"
-String : typeof instance === "string"
-BigInt : typeof instance === "bigint"
-Symbol : typeof instance === "symbol"
-```
+
+### Six Data Types that are primitives
+- undefined : typeof instance === "undefined"
+- Boolean : typeof instance === "boolean"
+- Number : typeof instance === "number"
+- String : typeof instance === "string"
+- BigInt : typeof instance === "bigint"
+- Symbol : typeof instance === "symbol"
 - null : typeof instance === "object".
 - Object : typeof instance === "object".
+
 ```
 data structures: new Object, new Array, new Map, new Set, new WeakMap, new WeakSet, new Date
-
 ```
 - Function non data structure, though it also answers for typeof operator: typeof instance === "function".
 
