@@ -1,3 +1,6 @@
+// slow version
+// O(n^2)
+
 const maxSubArraySum = function (arr, num) {
 
     if (arr.length < num) return null
