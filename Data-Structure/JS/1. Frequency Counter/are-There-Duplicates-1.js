@@ -5,12 +5,7 @@ Implement a function called, areThereDuplicates which accepts a variable number 
 */
 const areThereDuplicates = function (...arr) {
     if (arr.length < 2) return false
-    let set = new Set()
-    for (let i = 0; i < arr.length; i++) {
-        if (set.has(arr[i])) return true
-        else set.add(arr[i])
-    }
-    return false
+    return (arr.length !== (new Set(arr)).size)
 }
 
 console.log(areThereDuplicates(1, 2, 3)) // false
