@@ -6,8 +6,9 @@ Your solution MUST have AT LEAST the following complexities:
 Time Complexity - O(N + M) Space Complexity - O(1) 
 */
 const isSubsequence = function (arr1, arr2) {
-    
+
 }
+
 isSubsequence('hello', 'hello world'); // true
 isSubsequence('sing', 'sting'); // true
 isSubsequence('abc', 'abracadabra'); // true
