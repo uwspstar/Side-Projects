@@ -19,7 +19,7 @@ const maxSubarraySum = function (arr, num) {
     let temp = max
     for (let i = num; i < arr.length; i++) {
         temp  += arr[i] - arr[i - num]
-        console.log('i =',i,'max =', max, 'temp = ', temp,'arr[i] = ', arr[i], 'arr[i - num] =', arr[i - num])
+        // console.log('i =',i,'max =', max, 'temp = ', temp,'arr[i] = ', arr[i], 'arr[i - num] =', arr[i - num])
 
         max = Math.max(temp, max)
     }
