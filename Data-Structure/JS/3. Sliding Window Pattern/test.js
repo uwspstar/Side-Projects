@@ -7,7 +7,14 @@ This function should return the minimal length of a contiguous subarray of which
 Time Complexity - O(n) Space Complexity - O(1)
 */
 
-const minSubArrayLen = function (arr, num) {
+const minSubArrayLen = function (arr, sum) {
+
+    if (arr.length === 0) return 0
+    let start = 0
+    let total = 0 
+    while (start < arr.length) {
+        total += arr[start]
+    }
 
 }
 
