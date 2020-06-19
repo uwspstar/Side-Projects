@@ -14,6 +14,7 @@ const minSubArrayLen = function (arr, sum) {
     let total = 0 
     while (start < arr.length) {
         total += arr[start]
+        if (total > sum)
     }
 
 }
