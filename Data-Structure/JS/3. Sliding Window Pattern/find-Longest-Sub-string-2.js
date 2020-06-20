@@ -8,31 +8,22 @@ arr = arr.slice(start, end)
 include start , not include end
 */
 
-const findLongestSubstring = function (str) {
-    if (str.length === 0) return 0
+function findLongestSubstring(str) {
+    let longest = 0;
+    let seen = {};
+    let start = 0;
 
-    let start = 0
-    let end = 0
-    let maxLen = -Infinity
-    let arr = []
-
-    while (start < str.length) {
-        //'rithmschool'
-        let index = arr.indexOf(str[start])
-
-        if (index > -1) {
-            end = index
-            arr = arr.slice(end + 1, start)
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i];
+        if (seen[char]) {
+            start = Math.max(start, seen[char]);
         }
-
-        arr.push(str[start])
-        maxLen = Math.max(maxLen, arr.length)
-
-        start++
-
+        // index - beginning of substring + 1 (to include current in count)
+        longest = Math.max(longest, i - start + 1);
+        // store the index of the next char so as to not double count
+        seen[char] = i + 1;
     }
-
-    return maxLen === -Infinity ? 0 : maxLen
+    return longest;
 }
 
 console.log(findLongestSubstring('rithmschool')) // 7

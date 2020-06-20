@@ -19,7 +19,6 @@ const findLongestSubstring = function (str) {
     while (start < str.length) {
         //'rithmschool'
         let index = arr.indexOf(str[start])
-
         if (index > -1) {
             end = index
             arr = arr.slice(end + 1, start)
@@ -43,5 +42,3 @@ console.log(findLongestSubstring('thecatinthehat')) // 7
 console.log(findLongestSubstring('bbbbbb')) // 1
 console.log(findLongestSubstring('longestsubstring')) // 8
 console.log(findLongestSubstring('thisishowwedoit')) // 6
-
-
