@@ -18,6 +18,18 @@
 - https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
 - 2 pointers, one indicating the index corresponding beginning of the window, and one indicating the end of the window.
 - usually want to keep track of the previous best solution you’ve found if any, and some other current information about the window that takes up O(1) space
+### Sliding Window- fast / slow
+- bit flip
+- mini,um window substring
+- consecutive subarray sum
+### Sliding Window- fast / lag
+- house robber
+### Sliding Window- fast / catchup
+- max consecutive sum
+- buy sell stocks
+### Sliding Window- front / back
+- rainwater
+- sorted two sum
 
 ### Frequency Counter
 
