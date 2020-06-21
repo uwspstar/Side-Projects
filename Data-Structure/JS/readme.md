@@ -21,7 +21,7 @@
 - usually want to keep track of the previous best solution you’ve found if any, and some other current information about the window that takes up O(1) space
 ### Sliding Window- fast / slow
 - bit flip
-- mini,um window substring
+- minium window substring
 - consecutive subarray sum
 ### Sliding Window- fast / lag
 - house robber
