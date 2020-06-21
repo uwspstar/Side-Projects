@@ -1,4 +1,10 @@
 /*
+https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
+
+fast/Catchup
+This is very similar to the first kind, except, instead of incrementing the slow pointer up, you simply move it up the fast pointer’s location and then keep moving the fast pointer up. It sort of “jumps” to the index of the fast pointer when a certain condition is met.
+
+
 Sliding Window - findLongestSubstring
 Write a function called findLongestSubstring, which accepts a string and returns the length of the longest substring with all distinct characters.
 Time Complexity - O(n)
@@ -6,6 +12,7 @@ Time Complexity - O(n)
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
 arr = arr.slice(start, end)
 include start , not include end
+
 */
 
 const findLongestSubstring = function (str) {

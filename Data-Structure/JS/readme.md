@@ -16,7 +16,10 @@
 
 ### Sliding Window
 - https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
+- 2 pointers, one indicating the index corresponding beginning of the window, and one indicating the end of the window.
+- usually want to keep track of the previous best solution you’ve found if any, and some other current information about the window that takes up O(1) space
 
+### Frequency Counter
 
 ### BigO
 - indexOf is O(n)

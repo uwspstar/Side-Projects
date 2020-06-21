@@ -1,47 +1,19 @@
 /*
-Sliding Window - findLongestSubstring
-Write a function called findLongestSubstring, which accepts a string and returns the length of the longest substring with all distinct characters.
-Time Complexity - O(n)
+https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66 
 
-- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
-arr = arr.slice(start, end)
-include start , not include end
+So in the Minimum Window Substring problem, once you have a substring that contains all the characters you’re looking for, then you want to start shrinking it by moving the slow pointer up until you no longer have a valid substring (meaning you no longer have all the characters you’re looking for)
+
+https://leetcode.com/problems/minimum-window-substring/
+
+76. Minimum Window Substring
+Hard 
+
+Share
+Given a string S and a string T, find the minimum window in S which will contain all the characters in T in complexity O(n).
+
+exp:  Input: S = "ADOBECODEBANC", T = "ABC" Output: "BANC"
+ 
+
+If there is no such window in S that covers all characters in T, return the empty string "".
+If there is such window, you are guaranteed that there will always be only one unique minimum window in S.
 */
-
-const findLongestSubstring = function (str) {
-    if (str.length === 0) return 0
-
-    let start = 0
-    let end = 0
-    let maxLen = -Infinity
-    let arr = []
-
-    while (start < str.length) {
-        //'rithmschool'
-        let index = arr.indexOf(str[start])
-
-        if (index > -1) {
-            end = index
-            arr = arr.slice(end + 1, start)
-        }
-
-        arr.push(str[start])
-        maxLen = Math.max(maxLen, arr.length)
-
-        start++
-
-    }
-
-    return maxLen === -Infinity ? 0 : maxLen
-}
-
-console.log(findLongestSubstring('rithmschool')) // 7
-
-console.log(findLongestSubstring('')) // 0
-console.log(findLongestSubstring('thisisawesome')) // 6
-console.log(findLongestSubstring('thecatinthehat')) // 7
-console.log(findLongestSubstring('bbbbbb')) // 1
-console.log(findLongestSubstring('longestsubstring')) // 8
-console.log(findLongestSubstring('thisishowwedoit')) // 6
-
-
