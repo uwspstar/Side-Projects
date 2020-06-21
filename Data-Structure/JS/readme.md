@@ -14,6 +14,7 @@
 - Greedy Algorithms
 - Backtracking
 
+- https://medium.com/outco/the-algorithm-of-an-algorithm-28043fe47b51
 ### Sliding Window
 - https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
 - 2 pointers, one indicating the index corresponding beginning of the window, and one indicating the end of the window.
