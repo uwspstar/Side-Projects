@@ -1,4 +1,7 @@
 /*
+https://leetcode.com/problems/house-robber/
+https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
+
 198. House Robber
 Easy 
  
