@@ -5,7 +5,7 @@
 
 // two loop, first loop save to hash table
 // second loop find the first 
-const firstNoneRepeatItem = function (str) {
+const firstNoneRepeatItem1 = function (str) {
 
     let hashMap = {};
     for (let i = 0; i < str.length; i++) {
@@ -29,13 +29,18 @@ const firstNoneRepeatItem = function (str) {
     }
     return -1;
 }
-const firstNoneRepeatItem2 = function (str) {
+
+const firstNoneRepeatItem = function (str) {
     if (str.length === 0) return null
+
     let map = new Map()
     for (let i = 0; i < str.length; i++) {
-       map.get(str[i]) ? map.set(key, map.get(str[i]) + 1) : map.set(key, 1) 
+        let key = str[i];
+        map.has(key) ? map.set(key, map.get(key) + 1) : map.set(key, 1)
     }
-    for (let key in map.keys()) {
+    console.log(map)
+    // key, value all using of
+    for (let key of map.keys()) {
         if (map.get(key) === 1) return key
     }
     return -1
@@ -44,4 +49,4 @@ const firstNoneRepeatItem2 = function (str) {
 console.log(firstNoneRepeatItem("aaa")); // -1
 console.log(firstNoneRepeatItem("aaabcccd")); //b
 console.log(firstNoneRepeatItem("aaabcccd")); //b
-console.log(firstNoneRepeatItem("aaabbcdcede")); //c
+console.log(firstNoneRepeatItem("aaabbcdcede")); // -1
