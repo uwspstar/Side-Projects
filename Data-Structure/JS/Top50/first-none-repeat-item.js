@@ -29,7 +29,19 @@ const firstNoneRepeatItem = function (str) {
     }
     return -1;
 }
+const firstNoneRepeatItem2 = function (str) {
+    if (str.length === 0) return null
+    let map = new Map()
+    for (let i = 0; i < str.length; i++) {
+       map.get(str[i]) ? map.set(key, map.get(str[i]) + 1) : map.set(key, 1) 
+    }
+    for (let key in map.keys()) {
+        if (map.get(key) === 1) return key
+    }
+    return -1
 
-console.log(firstNoneRepeatItem("aaabcccd"));
-console.log(firstNoneRepeatItem("aaabcccd"));
-console.log(firstNoneRepeatItem("aaabbcdcede"));
+}
+console.log(firstNoneRepeatItem("aaa")); // -1
+console.log(firstNoneRepeatItem("aaabcccd")); //b
+console.log(firstNoneRepeatItem("aaabcccd")); //b
+console.log(firstNoneRepeatItem("aaabbcdcede")); //c
