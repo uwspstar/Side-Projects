@@ -26,9 +26,3 @@ function AnagramPalindrome(str) {
     }
     return numOdds < 2
 }
-
-console.log(AnagramPalindrome('mom'))
-console.log(AnagramPalindrome('racecar'))
-console.log(AnagramPalindrome('dad'))
-console.log(AnagramPalindrome('bbaabb'))
-console.log(AnagramPalindrome('asdffdsa'))
