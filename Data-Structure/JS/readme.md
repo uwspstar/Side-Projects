@@ -1,6 +1,7 @@
 # Data Structures in JavaScript
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/
 - https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/
+### Code clarity here is more important than saving a few lines on the whiteboard.
 
 ### Standard built-in objects
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
@@ -15,6 +16,7 @@
 - Backtracking
 
 - https://medium.com/outco/the-algorithm-of-an-algorithm-28043fe47b51
+
 ### Sliding Window
 - https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
 - 2 pointers, one indicating the index corresponding beginning of the window, and one indicating the end of the window.
