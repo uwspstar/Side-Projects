@@ -1,4 +1,6 @@
 /*
+https://www.toptal.com/developers/sorting-algorithms
+
 BubbleSort Pseudocode
 Let's visualize this!
 
