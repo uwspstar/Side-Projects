@@ -295,6 +295,7 @@ While the left pointer comes before the right pointer:
 If you never find the value, return -1
 ```
 ### sort 1
+- https://www.toptal.com/developers/sorting-algorithms
 - bubble sort
 - selection sort
 - insertion sort
