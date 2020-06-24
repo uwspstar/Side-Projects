@@ -3,9 +3,9 @@
 // each loop, start with 0, and move the end with the biggest
 /*
 [5, 4, 3, 2] --step 0
-[4, 3, 2, 5] --step 1
-[3, 2, 4, 5] --step 2
-[2, 3, 4, 5] --step 3
+[4, 3, 2, 5] --step 1 , sort 3, 2, 4, 5
+[3, 2, 4, 5] --step 2 , only sort 3, 2, 4
+[2, 3, 4, 5] --step 3 , only sort 3, 2
 */
 const bubbleSort = function (arr) {
 
