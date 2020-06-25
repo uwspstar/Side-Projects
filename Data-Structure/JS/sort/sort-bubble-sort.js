@@ -29,6 +29,25 @@ const bubbleSort = function (arr) {
 
 console.log(bubbleSort(arr));
 
+
+const bubbleSort2 = function (arr) {
+  let len = arr.length
+  if (len < 2) return arr
+
+  for (let i = 0; i < len - 1; i++) {
+    let swap = false
+    for (let j = 0; j < len - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+        swap = true;
+      }
+    }
+    if (!swap) break
+  }
+  return arr
+}
+
+
 /*
 // UNOPTIMIZED VERSION OF BUBBLE SORT
 function bubbleSort(arr){

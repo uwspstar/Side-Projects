@@ -30,17 +30,21 @@ const bubbleSort2 = function (arr) {
 }
 // [5, 3, 2, 6, 9, 1]
 const bubbleSort = function (arr) {
-    let len = arr.length 
+    let len = arr.length
     if (len < 2) return arr
-    for (let i = 0; i < len - 1; i++)
+
+    for (let i = 0; i < len - 1; i++) {
+        let swap = false
         for (let j = 0; j < len - 1 - i; j++) {
             if (arr[j] > arr[j + 1]) {
                 [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+                swap = true;
             }
         }
-
+        if (!swap) break
+    } 
     return arr
 }
 
-console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0])) //[2,3,5,6,9]
+console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0, 10,11,12])) //[2,3,5,6,9]
 
