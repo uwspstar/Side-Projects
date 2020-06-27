@@ -1,3 +1,42 @@
+const isBalanceWithMap = function (str) {
+
+    if (str.length % 2 !== 0) return false
+    let map = new Map () 
+    map.set("(", ")")
+    map.set("{", "}")
+    map.set("[", "]")
+    let stack = []
+    for (let i = 0; i < str.length; i++) {
+        if (map.get(str[i])) {
+            stack.push(str[i])
+        } else {
+            let lastKey = stack.pop()
+            if (map.get(lastKey) !== str[i]) return false
+        } 
+    }
+    return stack.length === 0 
+}
+
+console.log(isBalanceWithMap("[]{}()"))
+console.log(isBalanceWithMap("[}()"))
+console.log(isBalanceWithMap("[{()}]"))
+console.log(isBalanceWithMap(")[{()}]("))
+/*
+
+const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
+
+console.log(plants.pop());
+// expected output: "tomato"
+
+console.log(plants);
+// expected output: Array ["broccoli", "cauliflower", "cabbage", "kale"]
+
+plants.pop();
+
+console.log(plants);
+// expected output: Array ["broccoli", "cauliflower", "cabbage"]
+
+
 const isBalance = function (str) {
     let stack = [];
     let map = {
@@ -5,7 +44,7 @@ const isBalance = function (str) {
       "{" : "}",
       "[" : "]"
     }
-    
+
     let arr = [...str];
     for(let i = 0; i < arr.length; i++) {
       if (arr[i] === "(" || arr[i] === "{" || arr[i] === "[") {
@@ -17,18 +56,18 @@ const isBalance = function (str) {
         }
       }
     }
-  
+
     return stack.length === 0
   }
-  
 
-/*
+
+
 
 const twoSum = function (arr, target) {
     let set = new Set()
     for (let i = 0; i < arr.length; i++) {
         let num = target - arr[i]
-        if (set.has(num))  return true 
+        if (set.has(num))  return true
         set.add(arr[i])
     }
     return false
@@ -55,8 +94,8 @@ const twoSum = function (arr, target) {
 
 function reveresStrRecursive(str) {
     if (str.length < 2) return str
-    //return reverse(str.substring(1, str.length)) + str[0];
-    return reverse(str.slice(1, str.length)) + str[0];
+    //return reveresStrRecursive(str.substring(1, str.length)) + str[0];
+    return reveresStrRecursive(str.slice(1, str.length)) + str[0];
 }
 console.log(reveresStrRecursive('awesome'))
 
