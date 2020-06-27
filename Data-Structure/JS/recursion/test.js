@@ -1,17 +1,36 @@
+//swap only work for array, not for string
+
+function reveresStrRecursive(str) {
+    if (str.length < 2) return str
+    return reverse(str.substring(1, str.length)) + str[0];
+}
+console.log(reveresStrRecursive('awesome'))
+
+
 function reverse(str) {
     if (str.length < 2) return str
     let mid = parseInt(str.length / 2)
+    let arr = str.split('')
     for (let i = 0; i < mid; i++) {
-        str[i] = str[str.length - 1 - i]
+        [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[i]]
     }
-    return str
+    return arr.join('')
 }
 console.log(reverse('awesome'))
 
+function reverseStr2(str) {
+    let result = ''
+    for (let i = str.length - 1; i >= 0; i--) {
+        result += str[i]
+    }
+    return result
+}
+console.log(reverseStr2('awesome'))
+
 function reverseStr(str) {
-    let arr = str.split('').reverse().join()
+    let arr = str.split('').reverse()
     // only arr has reverse function
-    return str
+    return arr.join('')
 }
 console.log(reverseStr('awesome'))
 

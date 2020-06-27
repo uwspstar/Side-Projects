@@ -1,6 +1,9 @@
 /*
 reverse
 Write a recursive function called reverse which accepts a string and returns a new string in reverse.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
 */
 
 function reverse(str) {
