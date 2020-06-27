@@ -1,11 +1,64 @@
+const isBalance = function (str) {
+    let stack = [];
+    let map = {
+      "(" : ")",
+      "{" : "}",
+      "[" : "]"
+    }
+    
+    let arr = [...str];
+    for(let i = 0; i < arr.length; i++) {
+      if (arr[i] === "(" || arr[i] === "{" || arr[i] === "[") {
+        stack.push(arr[i]);
+      } else {
+        let last = stack.pop();
+        if(map[last] !== arr[i]) {
+          return false
+        }
+      }
+    }
+  
+    return stack.length === 0
+  }
+  
+
+/*
+
+const twoSum = function (arr, target) {
+    let set = new Set()
+    for (let i = 0; i < arr.length; i++) {
+        let num = target - arr[i]
+        if (set.has(num))  return true 
+        set.add(arr[i])
+    }
+    return false
+}
+
+console.log(twoSum([-1, 7, 11, 15], 14));
+console.log(twoSum([-1, 7, 11, 15], 13));
+console.log(twoSum([2, 7, 11, 15], 13));
+
+const twoSum = function (arr, target) {
+    let mySet = new Set();
+    for (let i = 0; i < arr.length; i++) {
+      if(mySet.has(target - arr[i])) return true;
+      mySet.add(arr[i]);
+    }
+    return false;
+  }
+
+
+
+
 //swap only work for array, not for string
+
 
 function reveresStrRecursive(str) {
     if (str.length < 2) return str
-    return reverse(str.substring(1, str.length)) + str[0];
+    //return reverse(str.substring(1, str.length)) + str[0];
+    return reverse(str.slice(1, str.length)) + str[0];
 }
 console.log(reveresStrRecursive('awesome'))
-
 
 function reverse(str) {
     if (str.length < 2) return str
@@ -37,7 +90,7 @@ console.log(reverseStr('awesome'))
   // reverse('awesome') // 'emosewa'
   // reverse('rithmschool') // 'loohcsmhtir'
 
-/*
+
 
 // fib(4) // 3
 // fib(10) // 55
