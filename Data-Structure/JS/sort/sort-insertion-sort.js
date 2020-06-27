@@ -27,3 +27,19 @@ const insertionSort = function (arr) {
     return arr;
 }
 console.log(insertionSort(arr));
+
+/*
+mark first element as sorted
+
+for each unsorted element X
+
+  'extract' the element X
+
+  for j = lastSortedIndex down to 0
+
+    if current element j > X
+
+      move sorted element to the right by 1
+
+    break loop and insert X here
+*/

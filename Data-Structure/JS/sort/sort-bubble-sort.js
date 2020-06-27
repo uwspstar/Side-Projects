@@ -131,5 +131,23 @@ const bubbleSort = function (arr) {
   return arr
 }
 
-console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0])) //[2,3,5,6,9]
+console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0])) 
 
+
+
+/*
+
+do
+
+  swapped = false
+
+  for i = 1 to indexOfLastUnsortedElement-1
+
+    if leftElement > rightElement
+
+      swap(leftElement, rightElement)
+
+      swapped = true
+
+while swapped
+*/
