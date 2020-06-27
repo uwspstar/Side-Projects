@@ -1,14 +1,36 @@
+function reverse(str) {
+    if (str.length < 2) return str
+    let mid = parseInt(str.length / 2)
+    for (let i = 0; i < mid; i++) {
+        str[i] = str[str.length - 1 - i]
+    }
+    return str
+}
+console.log(reverse('awesome'))
+
+function reverseStr(str) {
+    let arr = str.split('').reverse().join()
+    // only arr has reverse function
+    return str
+}
+console.log(reverseStr('awesome'))
+
+  // reverse('awesome') // 'emosewa'
+  // reverse('rithmschool') // 'loohcsmhtir'
+
+/*
+
 // fib(4) // 3
 // fib(10) // 55
 // fib(28) // 317811
 // fib(35) // 9227465
 
 function fib(n) {
-    // add whatever parameters you deem necessary - good luck! 
+    // add whatever parameters you deem necessary - good luck!
     let result = []
     function help(num) {
         if (num <= 2) return 1
-        if (result[num] !== undefined) return result[num]  
+        if (result[num] !== undefined) return result[num]
         return result[num] = help(num - 1) + help(num - 2)
     }
     help(n)
@@ -16,8 +38,6 @@ function fib(n) {
 }
 
 console.log(fib(35))
-
-/*
 
 // SAMPLE INPUT/OUTPUT
 // recursiveRange(6) // 21 =  6 + 5 + 4 + 3 + 2 + 1
