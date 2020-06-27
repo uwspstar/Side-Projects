@@ -1,4 +1,5 @@
 
+/*
 const selectionSort = function (arr) {
 
     if (arr.length < 2) return arr
@@ -18,7 +19,6 @@ const selectionSort = function (arr) {
 }
 console.log(selectionSort([5, 3, 2, 6, 9, 1, 0]))
 
-/*
 const bubbleSort = function (arr) {
     if (arr.length < 2) return arr
 
