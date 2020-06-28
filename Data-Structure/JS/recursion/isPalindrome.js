@@ -1,6 +1,8 @@
 /*
 isPalindrome
 Write a recursive function called isPalindrome which returns true if the string passed to it is a palindrome (reads the same forward and backward). Otherwise it returns false.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
 */
 
 const isPalindrome = function (str) {
@@ -33,3 +35,23 @@ console.log(isPalindrome("amanaplanacanalpandemonium"));
 // isPalindrome('tacocat') // true
 // isPalindrome('amanaplanacanalpanama') // true
 // isPalindrome('amanaplanacanalpandemonium') // false
+
+
+function isPalindrome(str) {
+    if (str.length < 2) return true
+    let str2 = str.split('').reverse().join('')
+    if (str !== str2) return false
+    return true
+}
+
+const isPalindromeRecursive = function (str) {
+    if (str.length === 1) return true
+    if (str.length === 2) return str[0] === str[1]
+    // str.slice(beginIndex[, endIndex])
+    if (str.slice(0, 1) === str.slice(-1)) return isPalindromeRecursive(str.slice(1, -1))
+    return false
+}
+
+console.log(isPalindromeRecursive('tacocat'))
+console.log(isPalindromeRecursive('amanaplanacanalpanama'))
+console.log(isPalindromeRecursive('amanaplanacanalpandemonium'))

@@ -1,3 +1,56 @@
+// SAMPLE INPUT / OUTPUT
+// const isOdd = val => val % 2 !== 0;
+
+// someRecursive([1,2,3,4], isOdd) // true
+// someRecursive([4,6,8,9], isOdd) // true
+// someRecursive([4,6,8], isOdd) // false
+// someRecursive([4,6,8], val => val > 10); // false
+
+function someRecursive(){
+    // add whatever parameters you deem necessary - good luck!
+  }
+
+/*
+
+// isPalindrome('awesome') // false
+// isPalindrome('foobar') // false
+// isPalindrome('tacocat') // true
+// isPalindrome('amanaplanacanalpanama') // true
+// isPalindrome('amanaplanacanalpandemonium') // false
+function isPalindrome(str){
+    if(str.length === 1) return true;
+    if(str.length === 2) return str[0] === str[1];
+    if(str[0] === str.slice(-1)) return isPalindrome(str.slice(1,-1))
+    return false;
+}
+const isPalindrome = function (str) {
+    if (str.length === 1) return true
+    if (str.length === 2) return str[0] === str[1]
+    // str.slice(beginIndex[, endIndex])
+    if (str.slice(0,1) === str.slice(-1)) return isPalindrome(str.slice(1,-1))
+    return false
+}
+
+console.log(isPalindromeRecursive('tacocat'))
+console.log(isPalindromeRecursive('amanaplanacanalpanama'))
+console.log(isPalindromeRecursive('amanaplanacanalpandemonium'))
+
+function isPalindrome(str) {
+  if (str.length < 2) return true
+  let str2 = str.split('').reverse().join('')
+  if (str !== str2) return false
+  return true
+}
+console.log(isPalindrome('tacocat'))
+console.log(isPalindrome('amanaplanacanalpanama'))
+console.log(isPalindrome('amanaplanacanalpandemonium'))
+
+function reverseStr (str) {
+    let arr = str.split('').reverse().join()
+    // only arr has reverse function
+    return str
+}
+ 
 const isBalanceWithMap = function (str) {
 
     if (str.length % 2 !== 0) return false
@@ -21,8 +74,7 @@ console.log(isBalanceWithMap("[]{}()"))
 console.log(isBalanceWithMap("[}()"))
 console.log(isBalanceWithMap("[{()}]"))
 console.log(isBalanceWithMap(")[{()}]("))
-/*
-
+ 
 const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
 
 console.log(plants.pop());

@@ -1,13 +1,5 @@
-// isPalindrome('awesome') // false
-// isPalindrome('foobar') // false
-// isPalindrome('tacocat') // true
-// isPalindrome('amanaplanacanalpanama') // true
-// isPalindrome('amanaplanacanalpandemonium') // false
 
-function isPalindrome() {
-  // add whatever parameters you deem necessary - good luck!
-}
-/*
+
 const isBalance = function (str) {
   let stack = [];
   let map = {
@@ -53,6 +45,7 @@ console.log(isBalance("[}()"))
 console.log(isBalance("[{()}]"))
 console.log(isBalance(")[{()}]("))
  
+/*
 const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
 
 console.log(plants.pop());
