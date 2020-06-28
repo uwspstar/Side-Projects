@@ -34,13 +34,13 @@ We will use nested loops to perform the sorting.
 const insertionSort = function (arr) {
     let i, j;
     for (i = 1; i < arr.length; i++) {
-        let current = arr[i]; // start with second elment
+        let current = arr[i]; // start with second element
         for (j = i - 1; j >= 0; j--) { // sort left array
             if (current < arr[j]) {
                 arr[j + 1] = arr[j];
             } else break;
         }
-        arr[j + 1] = current; // find the rigth positon [j +1 ] to insert the element
+        arr[j + 1] = current; // find the right position [j +1 ] to insert the element
     }
     return arr;
 }
