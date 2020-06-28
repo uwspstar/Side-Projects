@@ -1,7 +1,7 @@
 /*
 https://www.bigocheatsheet.com/
 https://visualgo.net/en/sorting?slide=1
-
+https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
  
 There is no draft requirement for JS to use a specific sorting algorithm. As many have mentioned here, 
 Mozilla uses merge sort. 

@@ -1,5 +1,6 @@
 /*
 https://www.toptal.com/developers/sorting-algorithms
+https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
 
 BubbleSort Pseudocode
 Let's visualize this!
