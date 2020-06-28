@@ -21,7 +21,7 @@ However, In Chrome's v8 source code, as of today, it uses QuickSort and Insertio
 
 In the insertion sort algorithm, we make the code believe that an item in the array is a sorted list. The algorithm then compares all the items in the array before it and decides where that “sorted list” needs to be inserted in the array.
 
-https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
+*** https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
 
 We will use nested loops to perform the sorting. Here’s how the loops will work.
 First, we will take an element from the array and check if its greater or smaller than the element next to it. The outer for loop will start from the second element of the array and will run for the entire length of the array.
