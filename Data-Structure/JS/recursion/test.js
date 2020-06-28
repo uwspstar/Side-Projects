@@ -6,11 +6,19 @@
 // someRecursive([4,6,8], isOdd) // false
 // someRecursive([4,6,8], val => val > 10); // false
 
-function someRecursive(){
-    // add whatever parameters you deem necessary - good luck!
-  }
+function someRecursive(arr, callback) {
+    if (arr.length === 0) return false
+    if (callback(arr[0])) return true
+    return someRecursive(arr.slice(1), callback) 
+}
 
 /*
+function someRecursive(array, callback) {
+    if (array.length === 0) return false;
+    if (callback(array[0])) return true;
+    return someRecursive(array.slice(1),callback);
+}
+
 
 // isPalindrome('awesome') // false
 // isPalindrome('foobar') // false
@@ -50,11 +58,11 @@ function reverseStr (str) {
     // only arr has reverse function
     return str
 }
- 
+
 const isBalanceWithMap = function (str) {
 
     if (str.length % 2 !== 0) return false
-    let map = new Map () 
+    let map = new Map ()
     map.set("(", ")")
     map.set("{", "}")
     map.set("[", "]")
@@ -65,16 +73,16 @@ const isBalanceWithMap = function (str) {
         } else {
             let lastKey = stack.pop()
             if (map.get(lastKey) !== str[i]) return false
-        } 
+        }
     }
-    return stack.length === 0 
+    return stack.length === 0
 }
 
 console.log(isBalanceWithMap("[]{}()"))
 console.log(isBalanceWithMap("[}()"))
 console.log(isBalanceWithMap("[{()}]"))
 console.log(isBalanceWithMap(")[{()}]("))
- 
+
 const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
 
 console.log(plants.pop());
