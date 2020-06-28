@@ -1,3 +1,62 @@
+// O(N^2)
+// each loop, remember the smallest item index, and swap the position, each loop to put the smallest item in left side, 
+const selectionSort = function (arr) {
+    if (arr.length < 2) return arr
+    for (let i = 0; i < arr.length; i++) {
+        // smallest index init increase 
+        let smallestItemIndex = i
+        // let j = smallestItemIndex + 1 is better let j = smallestItemIndex, first item is smallestItemIndex
+        for (let j = smallestItemIndex + 1; j < arr.length; j++) {
+            if (arr[j] < arr[smallestItemIndex]) {
+                smallestItemIndex = j
+            }
+        }
+        if (smallestItemIndex !== i) {
+            [arr[i], arr[smallestItemIndex]] = [arr[smallestItemIndex], arr[i]]
+        }
+    }
+
+    return arr
+}
+
+console.log(selectionSort([5, 3, 2, 6, 9, 1, 0]))
+/*
+const bubbleSort = function (arr) {
+    // left point, right point, each time find the biggest and put right side
+    if (arr.length < 2) return arr
+    for (let i = arr.length - 1; i >= 0; i--) {
+        let swap = false
+        for (let j = 0; j < i; j++) {
+            // if arr[j] < arr[j + 1] return arr will be descending
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+                swap = true
+            }
+        }
+        if (!swap) break  // right side has been sorted
+    }
+    return arr
+
+}
+console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0]))
+
+
+
+
+const isPalindrome = function (str) {
+    if (str.length === 1) return true // base case 1 has odd
+    if (str.length === 2) return  // base case 2 has even
+    if (str[0] === str.slice(-1)) return isPalindrome(str.slice(1, -1))
+    return false
+}
+
+console.log(isPalindrome('tacocat'))
+console.log(isPalindrome('amanaplanacanalpanama'))
+console.log(isPalindrome('amanaplanacanalpandemonium'))
+
+
+
+
 // SAMPLE INPUT / OUTPUT
 // const isOdd = val => val % 2 !== 0;
 
@@ -6,13 +65,14 @@
 // someRecursive([4,6,8], isOdd) // false
 // someRecursive([4,6,8], val => val > 10); // false
 
+
+
 function someRecursive(arr, callback) {
     if (arr.length === 0) return false
     if (callback(arr[0])) return true
-    return someRecursive(arr.slice(1), callback) 
+    return someRecursive(arr.slice(1), callback)
 }
 
-/*
 function someRecursive(array, callback) {
     if (array.length === 0) return false;
     if (callback(array[0])) return true;

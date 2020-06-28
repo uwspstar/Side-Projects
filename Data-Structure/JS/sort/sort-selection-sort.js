@@ -12,6 +12,29 @@ If the "minimum" is not the value (index) you initially began with, swap the two
 Repeat this with the next element until the array is sorted.
 
 */
+// O(N^2)
+// each loop, remember the smallest item index, and swap the position, each loop to put the smallest item in left side, 
+const selectionSort = function (arr) {
+    if (arr.length < 2) return arr
+    for (let i = 0; i < arr.length; i++) {
+        // smallest index init increase 
+        let smallestItemIndex = i
+        // let j = smallestItemIndex + 1 is better let j = smallestItemIndex, first item is smallestItemIndex
+        for (let j = smallestItemIndex + 1; j < arr.length; j++) {
+            if (arr[j] < arr[smallestItemIndex]) {
+                smallestItemIndex = j
+            }
+        }
+        if (smallestItemIndex !== i) {
+            [arr[i], arr[smallestItemIndex]] = [arr[smallestItemIndex], arr[i]]
+        }
+    }
+
+    return arr
+}
+
+console.log(selectionSort([5, 3, 2, 6, 9, 1, 0]))
+
 const selectionSort = function (arr) {
     let len = arr.length
     if (len < 2) return arr

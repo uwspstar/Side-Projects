@@ -3,7 +3,16 @@ isPalindrome
 Write a recursive function called isPalindrome which returns true if the string passed to it is a palindrome (reads the same forward and backward). Otherwise it returns false.
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
+
 */
+
+const isPalindrome = function (str) {
+    if (str.length === 1) return true // base case 1 has odd 
+    if (str.length === 2) return  // base case 2 has even
+    if (str[0] === str.slice(-1)) return isPalindrome(str.slice(1, -1))
+    return false
+}
+
 
 const isPalindrome = function (str) {
     if (str.length === 1) return true;
