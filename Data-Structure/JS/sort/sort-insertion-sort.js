@@ -1,6 +1,8 @@
 const arr = [0, 1, 5, 4, 3, 2, 6];
 
 /*
+https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344156#overview 
+
 Insertion Sort
 Builds up the sort by gradually creating a larger left half which is always sorted
 
