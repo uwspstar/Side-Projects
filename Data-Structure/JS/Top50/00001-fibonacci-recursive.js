@@ -1,3 +1,4 @@
+// 1 : regular loop
 const fibonacci = function (n) {
     if (n <= 2) return 1;
     let result = [1, 1];
@@ -7,9 +8,10 @@ const fibonacci = function (n) {
     return result[n - 1];
 }
 
-const fibonacci = function (n) {
+// 2 : recursive
+const fibonacciRecursive = function (n) {
     if (n < 3) return 1
-    return fibonacci(n-1) + fibonacci(n-2)
+    return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
 }
 
-console.log(fibonacci(7)) // [1, 1, 2, 3, 5, 8, 13]
+console.log(fibonacciRecursive(7)) // [1, 1, 2, 3, 5, 8, 13]
