@@ -61,6 +61,6 @@ const isPalindromeRecursive = function (str) {
     return false
 }
 
-console.log(isPalindromeRecursive('tacocat'))
-console.log(isPalindromeRecursive('amanaplanacanalpanama'))
-console.log(isPalindromeRecursive('amanaplanacanalpandemonium'))
+console.log(isPalindromeRecursive('tacocat')) // true
+console.log(isPalindromeRecursive('amanaplanacanalpanama')) // true
+console.log(isPalindromeRecursive('amanaplanacanalpandemonium')) //false

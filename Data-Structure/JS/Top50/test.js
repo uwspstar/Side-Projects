@@ -6,12 +6,20 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 
 */
 
-const isPalindrome = function (str) {
-    if (str.length === 1) return true // base case 1 has odd 
-    if (str.length === 2) return  // base case 2 has even
-    if (str[0] === str.slice(-1)) return isPalindrome(str.slice(1, -1))
-    return false
+const isPalindromeMeetInMiddle = function (str) {
+     if (str.length === 1) return false
+     let mid = parseInt(str.length / 2)
+     for (let i = 0; i <= mid; i++) {
+         if (str[i] !== str[str.length - 1 - i]) return false
+     }
+     return true
 }
+
+console.log(isPalindromeMeetInMiddle('tacocat'))
+console.log(isPalindromeMeetInMiddle('amanaplanacanalpanama'))
+console.log(isPalindromeMeetInMiddle('amanaplanacanalpandemonium'))
+
+
 /*
 // pair : means key - value , so we can use two pointers from left and right
 // but isBalance cannot use is, example isBalance("[]{}()")
