@@ -1,3 +1,6 @@
+
+/*
+
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 // toUpperCase() NOT toUpper()
 // shift() vs unshift()
@@ -22,7 +25,7 @@ function capitalizeWords(array) {
   //console.log(capitalizeWords(['car', 'taco', 'banana']))
 
 
-/*
+
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
 
 function flatten(arr) {

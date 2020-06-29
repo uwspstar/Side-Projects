@@ -1,4 +1,5 @@
-
+// pair : means key - value , so we can use two pointers from left and right
+// but isBalance cannot use is, example isBalance("[]{}()")
 
 const isBalance = function (str) {
   let stack = [];
@@ -58,7 +59,11 @@ plants.pop();
 
 console.log(plants);
 // expected output: Array ["broccoli", "cauliflower", "cabbage"]
+
 */
+
+// pair : means key - value , so we can use two pointers from left and right
+
 
 const isBalanceWithMap = function (str) {
 
