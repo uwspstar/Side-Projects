@@ -1,5 +1,6 @@
 const arr = [0, 1, 5, 4, 3, 2, 6];
 
+
 /*
 https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344156#overview 
 
@@ -33,6 +34,25 @@ We will use nested loops to perform the sorting.
 4. The inner loop will also reset every time the outer loop’s iterating variable’s value increases.
 5. As for the actual sorting, we will compare the outer loops element with the inner loops element. If the outer loop’s element is smaller, then we will move it to the position of the inner loop’s element and vice versa. To do this we will use the array’s slice method ( the insert part )
 */
+
+//assume left is sorted, start second item
+const insertionSort = function (arr) {
+    if (arr.length === 1) return arr
+    //assume left is sorted, start second item
+    for (let i = 1; i < arr.length; i++) { 
+        let current = arr[i]
+        let j = i - 1
+        for (; j >= 0; j--) {
+            if (arr[j] > current) {
+                arr[j + 1] = arr[j]
+            } else break
+        }
+        arr[j + 1] = current
+    }
+    return arr
+}
+console.log(insertionSort([2, 4, 6, 3, 7, 0])) // [ 0, 2, 3, 4, 6, 7 ]
+
 const insertionSort = function (arr) {
     let i, j;
     for (i = 1; i < arr.length; i++) {

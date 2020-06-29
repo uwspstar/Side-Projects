@@ -3,11 +3,14 @@ https://www.bigocheatsheet.com/
 https://visualgo.net/en/sorting?slide=1
 https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
  
+Divide and Conquer! This is the principle behind the working of the merge sort algorithm. 
+
+While the bubble and insertion sort algorithms use iteration, merge sort uses recursion. 
+
 There is no draft requirement for JS to use a specific sorting algorithm. As many have mentioned here, 
 Mozilla uses merge sort. 
 However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort, for smaller arrays. The ECMAscript standard does not specify which sort algorithm is to be used
  
-
 
 merge sort:
 It's a combination of two things - merging and sorting
