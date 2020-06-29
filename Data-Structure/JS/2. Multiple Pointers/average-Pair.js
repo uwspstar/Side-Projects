@@ -4,11 +4,12 @@ Write a function called averagePair. Given a sorted array of integers and a targ
 
 Bonus Constraints: Time: O(N) Space: O(1)
 
-check two sum example, different it is sorted array
+check "two sum" example, different it is sorted array
+check "missing number", sorted array
 */
 
 const averagePair = function (arr, num) {
-    if (arr.length < 1) return false
+    if (arr.length < 2) return false  // need a pair (two items)
     let start = 0
     let end = arr.length - 1
     while (start < end) {
