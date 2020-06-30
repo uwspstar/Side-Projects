@@ -1,4 +1,8 @@
 /*
+O(N^2)
+Random items sort, very slow
+https://www.toptal.com/developers/sorting-algorithms
+
 Selection Sort ( select smallest each time)
 Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position 
 every time find the smallest, and replace it with the sort start position, start from index[0]

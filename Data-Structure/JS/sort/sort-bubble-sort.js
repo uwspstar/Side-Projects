@@ -5,7 +5,8 @@ https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
 BubbleSort Pseudocode
 Let's visualize this!
 
-Start looping from with a variable called i the end of the array towards the beginning
+O(N^2)
+Start out loop from with a variable called i the end of the array towards the beginning
 Start an inner loop with a variable called j from the beginning until i - 1
 If arr[j] is greater than arr[j+1], swap those two values!
 Return the sorted array
