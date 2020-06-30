@@ -1,3 +1,21 @@
+const selectionSort = function (arr) {
+    if (arr.length < 2) return arr
+    for (let i = 0; i < arr.length; i++) {
+        let smallIndex = i
+        for (let j = i; j < arr.length; j++) {
+            if (arr[j] < arr[smallIndex]) {
+                smallIndex = j
+            } 
+        }
+        if (smallIndex !== i) {
+            [arr[i], arr[smallIndex]] = [arr[smallIndex], arr[i]]
+        }
+    }
+    return arr
+}
+console.log(selectionSort([5, 3, 2, 6, 9, 1, 0]))
+
+/*
 const bubbleSort = function (arr) {
     if (arr.length < 2) return arr
     for (let i = arr.length - 1; i >=0; i--) {
@@ -10,11 +28,11 @@ const bubbleSort = function (arr) {
         }
         if (!swap) break
     }
-    return arr 
+    return arr
 }
 
-console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0])) 
-/*
+console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0]))
+
 const selectionSort = function (arr) {
 
     if (arr.length < 2) return arr
@@ -28,7 +46,7 @@ const selectionSort = function (arr) {
         }
         if (smallIndex !== i) {
             [arr[i], arr[smallIndex]] = [arr[smallIndex], arr[i]]
-        } 
+        }
     }
     return arr
 }

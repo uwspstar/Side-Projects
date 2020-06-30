@@ -17,7 +17,8 @@ Repeat this with the next element until the array is sorted.
 
 */
 // O(N^2)
-// each loop, remember the smallest item index, and swap the position, each loop to put the smallest item in left side, 
+// each loop, remember the smallest item index, and swap the position,
+// each loop to put the smallest item in left side, 
 const selectionSort = function (arr) {
     if (arr.length < 2) return arr
     for (let i = 0; i < arr.length; i++) {
