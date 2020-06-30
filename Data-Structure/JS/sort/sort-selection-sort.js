@@ -62,7 +62,8 @@ const selectionSort1 = function (arr) {
     if (arr.length < 2) return arr;
     for (let i = 0; i < arr.length; i++) {
         let smallIdx = i;
-        for (let j = smallIdx + 1; j < arr.length; j++) {
+        // j should use j = smallIdx + 1
+        for (let j = smallIdx + 1; j < arr.length; j++) {          
             if (arr[smallIdx] > arr[j]) {
                 smallIdx = j;
             }

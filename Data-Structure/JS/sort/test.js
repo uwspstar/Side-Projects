@@ -1,11 +1,29 @@
+const insertionSort = function (arr) {
+    if (arr.length < 2) return arr
+    for (let i = 1; i < arr.length; i++) {
+        let current = arr[i]
+        let j = i - 1
+        for (; j >= 0; j--) {
+            if (arr[j] > current) {
+                arr[j + 1] = arr[j]
+            } else break;
+        }
+        arr[j + 1] = current 
+    }
+    return arr
+}
+
+console.log(insertionSort([5, 3, 2, 6, 9, 1, 0]))
+
+/*
 const selectionSort = function (arr) {
     if (arr.length < 2) return arr
     for (let i = 0; i < arr.length; i++) {
         let smallIndex = i
-        for (let j = i; j < arr.length; j++) {
+        for (let j = i + 1; j < arr.length; j++) {
             if (arr[j] < arr[smallIndex]) {
                 smallIndex = j
-            } 
+            }
         }
         if (smallIndex !== i) {
             [arr[i], arr[smallIndex]] = [arr[smallIndex], arr[i]]
@@ -15,7 +33,7 @@ const selectionSort = function (arr) {
 }
 console.log(selectionSort([5, 3, 2, 6, 9, 1, 0]))
 
-/*
+
 const bubbleSort = function (arr) {
     if (arr.length < 2) return arr
     for (let i = arr.length - 1; i >=0; i--) {

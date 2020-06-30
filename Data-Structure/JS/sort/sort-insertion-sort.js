@@ -1,6 +1,3 @@
-const arr = [0, 1, 5, 4, 3, 2, 6];
-
-
 /*
 https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344156#overview 
 
@@ -15,8 +12,6 @@ Insertion Sort Pseudocode
 Now compare the second element with the one before it and swap if necessary.
 - Continue to the next element and if it is in the incorrect order, iterate through the sorted portion (i.e. the left side) to place the element in the correct place.
 - Repeat until the array is sorted
-
-
  
 There is no draft requirement for JS to use a specific sorting algorithm. As many have mentioned here, 
 Mozilla uses merge sort. 
@@ -43,6 +38,7 @@ const insertionSort = function (arr) {
         let current = arr[i]
         let j = i - 1
         for (; j >= 0; j--) {
+            // always compar j item with current value
             if (arr[j] > current) {
                 arr[j + 1] = arr[j]
             } else break
