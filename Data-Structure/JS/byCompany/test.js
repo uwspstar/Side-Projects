@@ -1,3 +1,9 @@
+const findClosestPointsOrigin = function (points, k) {
+    if (points.length <= k) return points
+    
+
+}
+
 /*
 Given a list of points and a number k, find the k closest points to the origin.
 
@@ -7,7 +13,7 @@ findClosestPointsOrigin([[1, 1], [3, 3], [2, 2], [4, 4], [-1, -1]], 3)
 const findClosestPointsOrigin = function (points, k)
 
 points = [p1,p2,p3,...,pn]
-*/
+
 
 
 // 2 : concept with arr selection sort
@@ -100,3 +106,4 @@ var kClosest = function(points, K) {
     quickSelect(0, points.length-1, K)
     return points.slice(0,K)
 };
+*/

@@ -1,3 +1,6 @@
+
+
+/*
 const insertionSort = function (arr) {
     if (arr.length < 2) return arr
     for (let i = 1; i < arr.length; i++) {
@@ -15,7 +18,7 @@ const insertionSort = function (arr) {
 
 console.log(insertionSort([5, 3, 2, 6, 9, 1, 0]))
 
-/*
+
 const selectionSort = function (arr) {
     if (arr.length < 2) return arr
     for (let i = 0; i < arr.length; i++) {
