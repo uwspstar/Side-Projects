@@ -1,6 +1,19 @@
 const bubbleSort = function (arr) {
-    
+    if (arr.length < 2) return arr
+    for (let i = arr.length - 1; i >=0; i--) {
+        let swap = false
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[i]) {
+                [arr[j], arr[i]] = [arr[i], arr[j]]
+                swap = true
+            }
+        }
+        if (!swap) break
+    }
+    return arr 
 }
+
+console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0])) 
 /*
 const selectionSort = function (arr) {
 
