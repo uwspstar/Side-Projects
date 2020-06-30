@@ -1,8 +1,24 @@
 const findClosestPointsOrigin = function (points, k) {
     if (points.length <= k) return points
-    
-
+    //try to use selectionSort
+    for (let i = 0; i < k; i++) {
+        let smallIndex = i;
+        for (let j = i + 1; j < points.length; j++) {
+            let dis1 = points[j][0] * points[j][0] + points[j][1] * points[j][1]
+            let dis2 = points[smallIndex][0] * points[smallIndex][0] + points[smallIndex][1] * points[smallIndex][1]
+            if (dis1 < dis2) {
+                smallIndex = j
+            }
+        }
+        if (smallIndex !== i) {
+            [points[smallIndex], points[i]] = [points[i], points[smallIndex]]
+        }
+    }
+    return points.slice(0,k)
 }
+
+console.log(findClosestPointsOrigin([[1, 1], [3, 3], [2, 2], [4, 4], [-1, -1]], 3)) // [[-1, -1], [1, 1], [2, 2]]
+console.log(findClosestPointsOrigin([[1, 3], [-2, 2]], 1))
 
 /*
 Given a list of points and a number k, find the k closest points to the origin.
@@ -72,16 +88,16 @@ var kClosest = function(points, K) {
         points[a] = points[b]
         points[b] = temp
     }
-    
+
     function distance(point) {
         return point[0] * point[0] + point[1] * point[1]
     }
-    
+
     function partition(left, right) {
         let searchIdx = left
         let pivotIdx = left
         let pivotDist = distance(points[right])
-        
+
         while(searchIdx < right) {
             let dist = distance(points[searchIdx])
             if(dist <= pivotDist) {
@@ -93,7 +109,7 @@ var kClosest = function(points, K) {
         swap(pivotIdx, right)
         return pivotIdx
     }
-    
+
     function quickSelect(left,right, target) {
         let pivot = partition(left,right)
         if(pivot == target-1) return
