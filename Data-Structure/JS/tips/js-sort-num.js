@@ -7,3 +7,4 @@ numbers.sort(function (a, b) {
 console.log(numbers);
 
 // [1, 2, 3, 4, 5]
+// https://www.tutorialspoint.com/which-algorithm-does-the-javascript-arrayhashsort-function-use

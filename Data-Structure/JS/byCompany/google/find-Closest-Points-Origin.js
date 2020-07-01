@@ -10,7 +10,7 @@ points = [p1,p2,p3,...,pn]
 */
 
 // 1 : loop all point get distance as key value
- 
+
 function getKeyByValue(map, searchValue) {
   for (let [key, value] of map.entries()) {
     if (value === searchValue)
@@ -36,7 +36,7 @@ const findClosestPointsOrigin = function (points, k) {
   console.log('valueArr = ', map)
   // need customer sort function for nums
   let arr = valueArr.sort(function (a, b) {
-      return a - b;
+    return a - b;
   })
   arr = arr.slice(0, 3)
   console.log('arr = ', arr)
@@ -46,7 +46,7 @@ const findClosestPointsOrigin = function (points, k) {
     map.delete(p) //bugs : if two value same
     console.log('p = ', p)
     result.push(p)
-  } 
+  }
   return result
 }
 
@@ -54,27 +54,27 @@ console.log(findClosestPointsOrigin([[1, 1], [3, 3], [2, 2], [4, 4], [-1, -1]], 
 
 
 // 2 : use selectionSort 
-const findClosestPointsOrigin = function (points, k) {
+const findClosestPointsOriginWithSelectionSort = function (points, k) {
   if (points.length <= k) return points
   //try to use selectionSort
   for (let i = 0; i < k; i++) {
-      let smallIndex = i;
-      for (let j = i + 1; j < points.length; j++) {
-          let dis1 = points[j][0] * points[j][0] + points[j][1] * points[j][1]
-          let dis2 = points[smallIndex][0] * points[smallIndex][0] + points[smallIndex][1] * points[smallIndex][1]
-          if (dis1 < dis2) {
-              smallIndex = j
-          }
+    let smallIndex = i;
+    for (let j = i + 1; j < points.length; j++) {
+      let dis1 = points[j][0] * points[j][0] + points[j][1] * points[j][1]
+      let dis2 = points[smallIndex][0] * points[smallIndex][0] + points[smallIndex][1] * points[smallIndex][1]
+      if (dis1 < dis2) {
+        smallIndex = j
       }
-      if (smallIndex !== i) {
-          [points[smallIndex], points[i]] = [points[i], points[smallIndex]]
-      }
+    }
+    if (smallIndex !== i) {
+      [points[smallIndex], points[i]] = [points[i], points[smallIndex]]
+    }
   }
-  return points.slice(0,k)
+  return points.slice(0, k)
 }
 
-console.log(findClosestPointsOrigin([[1, 1], [3, 3], [2, 2], [4, 4], [-1, -1]], 3)) // [[-1, -1], [1, 1], [2, 2]]
-console.log(findClosestPointsOrigin([[1, 3], [-2, 2]], 1))
+console.log(findClosestPointsOriginWithSelectionSort([[1, 1], [3, 3], [2, 2], [4, 4], [-1, -1]], 3)) // [[-1, -1], [1, 1], [2, 2]]
+console.log(findClosestPointsOriginWithSelectionSort([[1, 3], [-2, 2]], 1))
 
 /*
 973. K Closest Points to Origin
@@ -93,12 +93,12 @@ We have a list of points on the plane.  Find the K closest points to the origin 
 
 You may return the answer in any order.  The answer is guaranteed to be unique (except for the order that it is in.)
 
- 
+
 
 Example 1:
 
 Input: points = [[1,3],[-2,2]], K = 1 Output: [[-2,2]]
-Explanation: 
+Explanation:
 The distance between (1, 3) and the origin is sqrt(10).
 The distance between (-2, 2) and the origin is sqrt(8).
 Since sqrt(8) < sqrt(10), (-2, 2) is closer to the origin.
@@ -107,7 +107,7 @@ Example 2:
 
 Input: points = [[3,3],[5,-1],[-2,4]], K = 2 Output: [[3,3],[-2,4]]
 (The answer [[-2,4],[3,3]] would also be accepted.)
- 
+
 
 Note:
 
