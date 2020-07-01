@@ -8,7 +8,14 @@ const quickSort = function (arr, left, right) {
     return arr
 }
 
+function pivot (arr, start = 0, end = arr.length -1) {
+    // find the right position for the 1st item
+    let pivot = arr[0]
+    let pi =  0
+    
 
+    return pi
+}
 
 /*
 const insertionSort = function (arr) {
