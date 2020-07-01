@@ -11,4 +11,21 @@ There is no draft requirement for JS to use a specific sorting algorithm. As man
 Mozilla uses merge sort. 
 However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort, for smaller arrays. The ECMAscript standard does not specify which sort algorithm is to be used
 
+https://www.geeksforgeeks.org/quick-sort/
+
+Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
+
+Always pick first element as pivot.
+Always pick last element as pivot (implemented below)
+Pick a random element as pivot.
+Pick median as pivot.
+
 */
+
+const quickSort = function (arr, left, right) {
+    if (left < right)
+    let pi = pivot (arr, left, right)
+    quickSort (arr, left, pi - 1)
+    quickSort (arr, pi + 1, right)
+    return arr
+}

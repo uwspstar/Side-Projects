@@ -1,5 +1,15 @@
 
 
+const quickSort = function (arr, left, right) {
+    if (left < right)
+    let pi = pivot (arr, left, right)
+    quickSort (arr, left, pi - 1)
+    quickSort (arr, pi + 1, right)
+    return arr
+}
+
+
+
 /*
 const insertionSort = function (arr) {
     if (arr.length < 2) return arr
