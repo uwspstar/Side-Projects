@@ -1,10 +1,11 @@
 
 
 const quickSort = function (arr, left = 0, right = arr.length - 1) {
-    if (left < right)
+    if (left < right) {
         let pi = pivot(arr, left, right)
-    quickSort(arr, left, pi - 1)
-    quickSort(arr, pi + 1, right)
+        quickSort(arr, left, pi - 1)
+        quickSort(arr, pi + 1, right)
+    }
     return arr
 }
 
@@ -22,15 +23,18 @@ function pivot(arr, start = 0, end = arr.length - 1) {
         if (pivot > arr[i]) {
             swapIdx++;
             swap(arr, swapIdx, i);
+            console.log('pivot =', pivot, 'arr[i] =', arr[i], 'swapIdx = ', swapIdx, 'arr =', arr)
         }
     }
-
     // Swap the pivot from the start the swapPoint
     swap(arr, start, swapIdx);
+    console.log('pivot =', pivot,'swapIdx = ', swapIdx, 'arr =', arr)
     return swapIdx;
 }
 
+console.log(quickSort([5, 3, 2, 6, 0]))
 /*
+
 const insertionSort = function (arr) {
     if (arr.length < 2) return arr
     for (let i = 1; i < arr.length; i++) {
