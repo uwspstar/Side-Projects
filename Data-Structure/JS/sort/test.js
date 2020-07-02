@@ -1,4 +1,17 @@
-
+// ordered array
+const binarySearch = function (arr, num) {
+    if (arr.length < 2) return arr[0] === num
+    let start = 0
+    let end = arr.length
+    let mid = Math.floor((start + end) / 2)
+    while (start < end) {    
+        if (arr[mid] === num) return arr[mid]
+        arr[mid] > num ? mid = end : mid = start        
+    }
+}
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 3))
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 6))
+console.log(binarySearch([1, 2, 3, 4, 5, 6], -1))
 /*
 
 bubbleSort // outer loop and inner loop, each time find the biggest

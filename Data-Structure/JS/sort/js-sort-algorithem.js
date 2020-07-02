@@ -35,8 +35,9 @@ Examples of quadratic algorithms:
 - Sorting items in a collection using bubble sort, insertion sort, or selection sort.
 - Find all possible ordered pairs in an array.
 
-
-
+O(logN)
+- git bisect <subcommand> <options> // git binary search
+- binary search (ordered array)
 
 
 */
