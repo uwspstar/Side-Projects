@@ -72,3 +72,42 @@ const mergeSort = function (arr) {
 }
 // console.log(merge([100, 200], [1, 2, 3, 5, 6]))
 console.log(mergeSort([100, 200, 1, 2, 3, 5, 6]))
+
+
+// merge two sorted array
+const merge = function (arr1, arr2) {
+    if (arr1.length === 0) return arr2
+    if (arr2.length === 0) return arr1
+    let i = 0
+    let j = 0
+    let result = []
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] <= arr2[j]) {
+            result.push(arr1[i])
+            i++
+        } else {
+            result.push(arr2[j])
+            j++
+        }
+    }
+
+    while (i < arr1.length) {
+        result.push(arr1[i])
+        i++
+    }
+    while (j < arr2.length) {
+        result.push(arr2[j])
+        j++
+    }
+    return result;
+}
+
+const mergeSort = function (arr) {
+    if (arr.length < 2) return arr; // base case : for recursive, it is needed
+    let mid = parseInt(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+    return merge(left, right)
+}
+
+console.log(mergeSort([5, 3, 2, 6, 0, 4, -1, 9]))

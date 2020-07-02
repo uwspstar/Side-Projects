@@ -1,3 +1,60 @@
+
+const getPivotIndex = function () {
+    const swap = (arr, i, j) => {
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+
+
+}
+
+const quickSort = function (arr, left = 0, right = arr.length - 1) {
+    if (arr.length < 2) return arr
+    while (left < right) {
+        let pi = getPivotIndex(arr, left, right)
+        quickSort(arr, left, pi - 1)
+        quickSort(arr, pi + 1, right)
+    }
+}
+/*
+// merge two sorted array
+const merge = function (arr1, arr2) {
+    if (arr1.length === 0) return arr2
+    if (arr2.length === 0) return arr1
+    let i = 0
+    let j = 0
+    let result = []
+    while (i < arr1.length && j < arr2.length) {
+        if (arr1[i] <= arr2[j]) {
+            result.push(arr1[i])
+            i++
+        } else {
+            result.push(arr2[j])
+            j++
+        }
+    }
+
+    while (i < arr1.length) {
+        result.push(arr1[i])
+        i++
+    }
+    while (j < arr2.length) {
+        result.push(arr2[j])
+        j++
+    }
+    return result;
+}
+
+const mergeSort = function (arr) {
+    if (arr.length < 2) return arr; // base case : for recursive, it is needed
+    let mid = parseInt(arr.length / 2)
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+    return merge(left, right)
+}
+
+console.log(mergeSort([5, 3, 2, 6, 0, 4, -1, 9]))
+
+
 // ordered array
 // use two pointers
 const binarySearch = function (arr, num) {
@@ -19,7 +76,7 @@ console.log(binarySearch([1, 2, 3, 4, 5, 6], 6)) // true
 console.log(binarySearch([1, 2, 3, 4, 5, 6], -1)) // false
 
 
-/*
+
 
 bubbleSort // outer loop and inner loop, each time find the biggest
 selectionSort // find the smallestIndex, swap at the end, two loop
