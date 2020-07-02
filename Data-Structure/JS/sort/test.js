@@ -1,5 +1,5 @@
 
-const getPivotIndex = function () {
+const getPivotIndex = function (arr, start = 0, end = arr.length - 1) {
     const swap = (arr, i, j) => {
         [arr[i], arr[j]] = [arr[j], arr[i]]
     }
