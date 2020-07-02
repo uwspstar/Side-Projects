@@ -22,8 +22,21 @@ O(n)	        Linear	        # Find max element in unsorted array,
                                 # Duplicate elements in array with Hash Map
 O(n log n)	    Linearithmic	# Sorting elements in array with merge sort
 O(n^2)	        Quadratic	    # Duplicate elements in array **(naïve)**,
-                                # Sorting array with bubble sort
+                                # Sorting array with bubble sort, insertion sort, or selection sort
 O(n^3)	        Cubic	        # 3 variables equation solver
 O(2^n)	        Exponential	    # Find all subsets
 O(n!)	        Factorial	    # Find all permutations of a given set/string
+-------------------------------------------------------------------------------------
+
+
+Examples of quadratic algorithms:
+
+- Check if a collection has duplicated values.
+- Sorting items in a collection using bubble sort, insertion sort, or selection sort.
+- Find all possible ordered pairs in an array.
+
+
+
+
+
 */

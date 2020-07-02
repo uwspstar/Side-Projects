@@ -1,10 +1,12 @@
 
+/*
+
 bubbleSort // outer loop and inner loop, each time find the biggest
 selectionSort // find the smallestIndex, swap at the end, two loop
 insertionSort // two loop, left side is sorted, insert
 mergeSort // find mid, merge two sorted arrays
 quickSort // find pivot index, sort left and right
-/*
+
 
 //[ 5, 3, 2, 6, 0, 4 ]
 const quickSort = function (arr, left = 0, right = arr.length - 1) {
