@@ -1,5 +1,8 @@
 
 /*
+Default sort() in JavaScript uses insertion sort by V8 Engine of Chrome, 
+and Merge sort by Mozilla Firefox and Safari.
+
 There is no draft requirement for JS to use a specific sorting algorithm.
 
 Mozilla uses merge sort.

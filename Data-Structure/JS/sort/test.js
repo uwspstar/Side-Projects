@@ -3,6 +3,13 @@ const getPivotIndex = function (arr, start = 0, end = arr.length - 1) {
     const swap = (arr, i, j) => {
         [arr[i], arr[j]] = [arr[j], arr[i]]
     }
+    let pivot = arr [start]
+    let swapIdx = start
+    for (let i = start + 1; i <= end; i++) {
+        if (arr[i] > arr[swapIdx]) {
+            
+        }
+    }
 }
 
 const quickSort = function (arr, left = 0, right = arr.length - 1) {
