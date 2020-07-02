@@ -1,8 +1,9 @@
 
-
+//[ 5, 3, 2, 6, 0, 4 ]
 const quickSort = function (arr, left = 0, right = arr.length - 1) {
-    if (left < right) {
+    if (left < right) {    
         let pi = pivot(arr, left, right)
+        console.log("pi = ", pi, 'left = ', left, 'right = ', right)
         quickSort(arr, left, pi - 1)
         quickSort(arr, pi + 1, right)
     }
@@ -32,7 +33,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {
     return swapIdx;
 }
 
-console.log(quickSort([5, 3, 2, 6, 0]))
+console.log(quickSort([5, 3, 2, 6, 0, 4]))
 /*
 
 const insertionSort = function (arr) {
