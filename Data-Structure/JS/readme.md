@@ -1,6 +1,8 @@
 # Data Structures in JavaScript
 - https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/
 - https://adrianmejia.com/most-popular-algorithms-time-complexity-every-programmer-should-know-free-online-tutorial-course/
+- https://www.youtube.com/watch?v=IgeJmTKQlKs&list=PLpPXw4zFa0uKKhaSz87IowJnOTzh9tiBk&index=2
+
 ### Code clarity here is more important than saving a few lines on the whiteboard.
 
 ### Standard built-in objects
