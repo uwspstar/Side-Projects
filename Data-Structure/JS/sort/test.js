@@ -1,7 +1,14 @@
 
+bubbleSort // outer loop and inner loop, each time find the biggest
+selectionSort // find the smallestIndex, swap at the end, two loop
+insertionSort // two loop, left side is sorted, insert
+mergeSort // find mid, merge two sorted arrays
+quickSort // find pivot index, sort left and right
+/*
+
 //[ 5, 3, 2, 6, 0, 4 ]
 const quickSort = function (arr, left = 0, right = arr.length - 1) {
-    if (left < right) {    
+    if (left < right) {
         let pi = pivot(arr, left, right)
         console.log("pi = ", pi, 'left = ', left, 'right = ', right)
         quickSort(arr, left, pi - 1)
@@ -11,7 +18,7 @@ const quickSort = function (arr, left = 0, right = arr.length - 1) {
 }
 
 function pivot(arr, start = 0, end = arr.length - 1) {
-    // find the right position for the 1st item  
+    // find the right position for the 1st item
     const swap = (arr, idx1, idx2) => {
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
     };
@@ -34,7 +41,7 @@ function pivot(arr, start = 0, end = arr.length - 1) {
 }
 
 console.log(quickSort([5, 3, 2, 6, 0, 4]))
-/*
+
 
 const insertionSort = function (arr) {
     if (arr.length < 2) return arr
