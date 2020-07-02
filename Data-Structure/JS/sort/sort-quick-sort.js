@@ -1,5 +1,8 @@
 /*
 https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
+https://www.guru99.com/quicksort-in-javascript.html
+https://www.youtube.com/watch?v=ZHVk2blR45Q
+
 
 Quick Sort
 Like merge sort, exploits the fact that arrays of 0 or 1 element are always sorted
@@ -20,17 +23,15 @@ Always pick last element as pivot (implemented below)
 Pick a random element as pivot.
 Pick median as pivot.
 
-*/
+how Quick sort works in simple words.
 
-const quickSort = function (arr, left, right) {
-    
-    if (left < right) {
-        let pi = getPivotIndex(arr, left, right)
-        quickSort(arr, left, pi - 1)
-        quickSort(arr, pi + 1, right)
-    } 
-    return arr
-}
+First select an element which is to be called as pivot element.
+Next, compare all array elements with the selected pivot element and arrange them in such a way that, elements less than the pivot element are to it's left and greater than pivot is to it's right.
+Finally, perform the same operations on left and right side elements to the pivot element.
+
+But before going forward with the Quick sort, selecting the pivot element plays a major role. If you select the first element as the pivot element, then it gives worst performance in the sorted array. So, it is always advisable to pick the middle element (length of the array divided by 2) as the pivot element and we do the same
+
+*/
 
 // find the pivot index
 function getPivotIndex(arr, start = 0, end = arr.length - 1) {
@@ -53,4 +54,14 @@ function getPivotIndex(arr, start = 0, end = arr.length - 1) {
     // Swap the pivot from the start the swapPoint
     swap(arr, start, swapIdx);
     return swapIdx;
+}
+
+const quickSort = function (arr, left, right) {
+
+    if (left < right) {
+        let pi = getPivotIndex(arr, left, right)
+        quickSort(arr, left, pi - 1)
+        quickSort(arr, pi + 1, right)
+    }
+    return arr
 }
