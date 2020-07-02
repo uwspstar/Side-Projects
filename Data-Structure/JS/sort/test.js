@@ -3,8 +3,6 @@ const getPivotIndex = function () {
     const swap = (arr, i, j) => {
         [arr[i], arr[j]] = [arr[j], arr[i]]
     }
-
-
 }
 
 const quickSort = function (arr, left = 0, right = arr.length - 1) {
@@ -15,6 +13,8 @@ const quickSort = function (arr, left = 0, right = arr.length - 1) {
         quickSort(arr, pi + 1, right)
     }
 }
+
+
 /*
 // merge two sorted array
 const merge = function (arr1, arr2) {
