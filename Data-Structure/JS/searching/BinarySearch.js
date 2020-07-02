@@ -1,4 +1,5 @@
 // binary Search arr is sorted
+// use two pointers
 // O(log n)
 
 // Original Solution
@@ -34,6 +35,26 @@ function binarySearch(arr, elem) {
 }
 
 binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 103)
+
+// ordered array
+// use two pointers
+const binarySearch = function (arr, num) {
+  if (arr.length < 2) return arr[0] === num
+  let start = 0
+  let end = arr.length - 1
+  let mid = Math.floor((start + end) / 2) // let mid = parseInt(arr.length / 2);
+  while (start <= end) { 
+      
+      if (arr[mid] === num) return true
+      arr[mid] > num ? mid = end-- : mid = start++
+      // console.log('mid =', mid,'start =', start,'end =', end)
+      mid = Math.floor((start + end) / 2)   
+  }
+  return false
+}
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 3)) // true
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 6)) // true
+console.log(binarySearch([1, 2, 3, 4, 5, 6], -1)) // false
 
 /*
 

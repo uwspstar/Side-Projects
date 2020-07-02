@@ -1,17 +1,24 @@
 // ordered array
+// use two pointers
 const binarySearch = function (arr, num) {
     if (arr.length < 2) return arr[0] === num
     let start = 0
-    let end = arr.length
+    let end = arr.length - 1
     let mid = Math.floor((start + end) / 2)
-    while (start < end) {    
-        if (arr[mid] === num) return arr[mid]
-        arr[mid] > num ? mid = end : mid = start        
+    while (start <= end) {
+        if (arr[mid] === num) return true
+        arr[mid] > num ? mid = end-- : mid = start++
+        // console.log('mid =', mid,'start =', start,'end =', end)
+        mid = Math.floor((start + end) / 2)
     }
+    return false
 }
-console.log(binarySearch([1, 2, 3, 4, 5, 6], 3))
-console.log(binarySearch([1, 2, 3, 4, 5, 6], 6))
-console.log(binarySearch([1, 2, 3, 4, 5, 6], -1))
+console.log(binarySearch([2, 5, 6, 9, 13, 15, 28, 30], 103)) //false
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 3)) // true
+console.log(binarySearch([1, 2, 3, 4, 5, 6], 6)) // true
+console.log(binarySearch([1, 2, 3, 4, 5, 6], -1)) // false
+
+
 /*
 
 bubbleSort // outer loop and inner loop, each time find the biggest
