@@ -62,6 +62,7 @@ const merge = function (arr1, arr2) {
     return results;
 }
 
+// find the mid
 const mergeSort = function (arr) {
     if (arr.length < 2) return arr;
     let mid = Math.floor(arr.length / 2) //let mid = parseInt(arr.length / 2)

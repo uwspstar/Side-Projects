@@ -23,14 +23,17 @@ Pick median as pivot.
 */
 
 const quickSort = function (arr, left, right) {
-    if (left < right)
-        let pi = pivot(arr, left, right)
-    quickSort(arr, left, pi - 1)
-    quickSort(arr, pi + 1, right)
+    
+    if (left < right) {
+        let pi = getPivotIndex(arr, left, right)
+        quickSort(arr, left, pi - 1)
+        quickSort(arr, pi + 1, right)
+    } 
     return arr
 }
 
-function pivot(arr, start = 0, end = arr.length - 1) {
+// find the pivot index
+function getPivotIndex(arr, start = 0, end = arr.length - 1) {
     // find the right position for the 1st item  
     const swap = (arr, idx1, idx2) => {
         [arr[idx1], arr[idx2]] = [arr[idx2], arr[idx1]];
