@@ -1,5 +1,8 @@
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
 /*
+https://blog.logrocket.com/interesting-use-cases-for-javascript-bitwise-operators/
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
+
 
 let FLAG_A = 1; // 0001
 let FLAG_B = 2; // 0010
