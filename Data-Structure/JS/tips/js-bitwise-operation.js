@@ -22,3 +22,10 @@ right shift	    a >> b	Shifts a in binary representation b (< 32) bits to the ri
 Zero-fill 
 right shift	    a >>> b  	Shifts a in binary representation b (< 32) bits to the right, discarding bits shifted off, and shifting in 0s from the left.
 */
+
+/*
+
+Bitwise shifting any number x to the left by y bits yields x * 2 ** y.
+So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
+
+*/
