@@ -28,3 +28,10 @@ Bitwise shifting any number x to the left by y bits yields x * 2 ** y.
 So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
 
 */
+
+/*
+(A & 0) === 0
+(A & ~A) === 0
+(A & A) === A
+(A & -1) === A
+*/
