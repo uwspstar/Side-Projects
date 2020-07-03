@@ -134,6 +134,7 @@ const bubbleSort = function (arr) {
 }
 
 console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0])) 
+console.log(bubbleSort([3,2,3,1,2,4,5,5,6])) 
 
 
 
