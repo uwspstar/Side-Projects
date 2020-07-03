@@ -1,0 +1,24 @@
+// https://blog.logrocket.com/interesting-use-cases-for-javascript-bitwise-operators/
+// https://codeburst.io/using-javascript-bitwise-operators-in-real-life-f551a731ff5
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
+/*
+Operator	    Description	Example	        Same as	Result	Decimal
+&	AND	        x = 5 & 1	0101 & 0001	    0001	 1
+|	OR	        x = 5 | 1	0101 | 0001	    0101	 5
+~	NOT	        x = ~ 5	    ~0101	        1010	 10
+^	XOR	        x = 5 ^ 1	0101 ^ 0001	    0100	 4
+<<	Left shift	x = 5 << 1	0101 << 1	    1010	 10
+>>	Right shift	x = 5 >> 1	0101 >> 1	    0010	  2
+*/
+/*
+operator	    Usage	Description
+Bitwise AND	    a & b	Returns a 1 in each bit position for which the corresponding bits of both operands are 1s.
+Bitwise OR	    a | b	Returns a 1 in each bit position for which the corresponding bits of either or both operands are 1s.
+Bitwise XOR	    a ^ b	Returns a 1 in each bit position for which the corresponding bits of either but not both operands are 1s.
+Bitwise NOT	    ~ a	Inverts the bits of its operand.
+Left shift	    a << b	Shifts a in binary representation b (< 32) bits to the left, shifting in 0s from the right.
+Sign-propagating 
+right shift	    a >> b	Shifts a in binary representation b (< 32) bits to the right, discarding bits shifted off.
+Zero-fill 
+right shift	    a >>> b  	Shifts a in binary representation b (< 32) bits to the right, discarding bits shifted off, and shifting in 0s from the left.
+*/
