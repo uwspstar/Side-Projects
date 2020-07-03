@@ -1,4 +1,40 @@
 
+const bubbleSort = function (arr) {
+
+    if (arr.length < 2) return arr;
+    // use two point, from left and right
+    for (let i = arr.length - 1; i >= 0; i--) {
+      for (let j = 0; j <= i; j++) {
+        if (arr[j] > arr[j + 1]) {
+          [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+        }
+      }
+      console.log(arr, i);
+    }
+    return arr;
+  }
+  
+//console.log(bubbleSort([3,2,3,1,2,4,5,5,6])) 
+
+var findKthLargest = function(arr, k) {
+    //let count = 0
+    for (let i = arr.length - 1; i >=arr.length - 1 - k; i--) {
+        for (let j = 0; j <= i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+            }
+        }
+        //count++
+        //if (k === count) break
+
+    }    
+    //console.log('k =',k,'count =',count,'arr =',arr, arr[arr.length - k])
+    return arr.slice(-k)[0]
+};
+
+console.log(findKthLargest([3,2,3,1,2,4,5,5,6],4)) 
+
+/*
 const getPivotIndex = function (arr, start = 0, end = arr.length - 1) {
     const swap = (arr, i, j) => {
         [arr[i], arr[j]] = [arr[j], arr[i]]
@@ -22,7 +58,7 @@ const quickSort = function (arr, left = 0, right = arr.length - 1) {
 }
 
 
-/*
+
 // merge two sorted array
 const merge = function (arr1, arr2) {
     if (arr1.length === 0) return arr2
