@@ -16,9 +16,9 @@ Bitwise OR	    a | b	Returns a 1 in each bit position for which the correspondin
 Bitwise XOR	    a ^ b	Returns a 1 in each bit position for which the corresponding bits of either but not both operands are 1s.
 Bitwise NOT	    ~ a	Inverts the bits of its operand.
 Left shift	    a << b	Shifts a in binary representation b (< 32) bits to the left, shifting in 0s from the right.
-Sign-propagating 
+Sign-propagating
 right shift	    a >> b	Shifts a in binary representation b (< 32) bits to the right, discarding bits shifted off.
-Zero-fill 
+Zero-fill
 right shift	    a >>> b  	Shifts a in binary representation b (< 32) bits to the right, discarding bits shifted off, and shifting in 0s from the left.
 */
 
@@ -34,4 +34,10 @@ So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
 (A & ~A) === 0
 (A & A) === A
 (A & -1) === A
+
+(A | 0) === A
+(A | ~A) === -1
+(A | A) === A
+(A | -1) === -1
+
 */
