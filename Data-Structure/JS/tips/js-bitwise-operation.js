@@ -1,5 +1,4 @@
 // https://blog.logrocket.com/interesting-use-cases-for-javascript-bitwise-operators/
-// https://codeburst.io/using-javascript-bitwise-operators-in-real-life-f551a731ff5
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Bitwise_Operators
 /*
 Operator	    Description	Example	        Same as	Result	Decimal
