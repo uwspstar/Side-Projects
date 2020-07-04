@@ -23,6 +23,7 @@ const findKthLargest = (nums, k) => {
 
     while (start <= end) {
         let idx = (start + end) >> 1
+        // (A >> B) => Math.floor(A / (2 ** B)) => Math.floor(A / Math.pow(2, B))
         let final = partition(nums, start, end, idx)
 
         if (final === len - k) {
