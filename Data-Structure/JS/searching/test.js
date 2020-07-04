@@ -11,6 +11,8 @@ const searchMathStr = function (long, short) {
     return count;
 }
 console.log("lorie loled", "lol")
+console.log("lorie loled", "ri")
+console.log("lorie loled", "l")
 
 /*
 
