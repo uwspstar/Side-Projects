@@ -1,12 +1,6 @@
-// Array.prototype.find()
-// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-
 //The find() method returns the value of the first element in the provided array that satisfies the provided testing function.
 //not indexOf()
 //The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
-
-const found = [5, 12, 8, 130, 44].find(element => element > 10);
-console.log(found); // expected output: 12
 
 /*
 If you need the index of the found element in the array, use findIndex().
