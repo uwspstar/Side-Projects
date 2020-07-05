@@ -1,4 +1,9 @@
 
+const arr = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]; 
+// find even
+console.log(arr.filter(num => num & 1))
+
+/*
 function getKeyByValue(map, searchValue) {
     for (let [key, value] of map.entries()) {
       if (value === searchValue) // first match
@@ -27,8 +32,6 @@ console.log(getKeyByValue(people, 'john'))
 console.log(getKeyByValue(people, 'abode'))
 console.log(getKeyListByValue(people, 'abode'))
 
-
-/*
 console.log("aaa".padStart(2, '0'));
 console.log("a".padStart(2, '0'));
 
