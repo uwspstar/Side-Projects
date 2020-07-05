@@ -9,7 +9,7 @@ const reverseStr = function (str) {
         i++;
         j--;
     }
-    return arr.join('')
+    return arr.join('') // not using join(), it is arr not str
 }
 
 console.log(reverseStr("abcde"))

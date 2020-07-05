@@ -1,19 +1,35 @@
-const reverseStr = function (str) {
-    let mid = str.length >> 1
+
+console.log(('abcdef'.split('').reverse().join(''))
+
+
+/*
+
+function reverseStr2(str) {
+    if (str.length < 2) return str
+    let mid = parseInt(str.length / 2)
     let arr = str.split('')
     for (let i = 0; i < mid; i++) {
-        swap(arr, arr[i], arr[str.length - 1 - i])
+        let j = arr.length - 1 - i;
+        [arr[i], arr[j]] = [arr[j], arr[i]]
     }
     return arr.join('')
 }
 
-function swap(arr, i, j) {
-    return [arr[i], arr[j]] = [arr[j], arr[i]]
+const reverseStr = function (str) {
+    function swap(arr, i, j) {
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+    let mid = str.length >> 1
+    let arr = str.split('')
+    for (let i = 0; i < mid; i++) {
+        swap(arr, i, arr.length - 1 - i)  // with index, not using  swap(arr, arr[i], arr[arr.length - 1 - i])
+    }
+    return arr.join('')
 }
 
-console.log(reverseStr("abcd"))
+console.log(reverseStr("abcdef"))
 
-/*
+
 console.log([4, 2, 5, 1, 3].sort((a,b)=> a - b))
 
 
