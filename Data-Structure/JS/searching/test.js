@@ -3,16 +3,17 @@ const searchMathStr = function (long, short) {
     let count = 0;
     for (let i = 0; i < long.length; i++) {
         for (let j = 0; j < short.length; j++) {
-            console.log('i=',i,'j=',j,'short[j]=', short[j],'long[i + j]=',long[i + j])
+            console.log('i=', i, 'j=', j, 'short[j]=', short[j], 'long[i + j]=', long[i + j])
             if (short[j] !== long[i + j]) break;
             if (j === short.length - 1) count++;// find one math increase
+            console.log('count =', count)
         }
     }
     return count;
 }
-console.log("lorie loled", "lol")
-console.log("lorie loled", "ri")
-console.log("lorie loled", "l")
+console.log(searchMathStr("lorie loled", "lol")) // 1
+console.log(searchMathStr("lorie loled", "ri")) // 1
+console.log(searchMathStr("lorie loled", "l")) // 3
 
 /*
 
