@@ -1,7 +1,38 @@
+
+function getKeyByValue(map, searchValue) {
+    for (let [key, value] of map.entries()) {
+      if (value === searchValue) // first match
+        return key;
+    }
+  }
+  
+  const getKeyListByValue  = function getKeyListByValue(map, searchValue) {
+    let result = []
+    for (let [key, value] of map.entries()) {
+      if (value === searchValue) {
+        result.push(key) // find all match should be different keys, value can be same
+      }    
+    }
+    return result
+  }
+
+let people = new Map();
+people.set('1', 'john');
+people.set('2', 'jasmine');
+people.set('3', 'abode');
+people.set('4', 'abode');
+people.set('5', 'abode');
+
+console.log(getKeyByValue(people, 'john'))
+console.log(getKeyByValue(people, 'abode'))
+console.log(getKeyListByValue(people, 'abode'))
+
+
+/*
 console.log("aaa".padStart(2, '0'));
 console.log("a".padStart(2, '0'));
 
-/*
+
 const removeDuplication = function (arr) {
     if (arr.length < 2) return arr
     let mySet = new Set()
