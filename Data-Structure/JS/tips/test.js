@@ -1,8 +1,20 @@
-
-console.log(('abcdef'.split('').reverse().join(''))
-
+console.log("aaa".padStart(2, '0'));
+console.log("a".padStart(2, '0'));
 
 /*
+const removeDuplication = function (arr) {
+    if (arr.length < 2) return arr
+    let mySet = new Set()
+    for (let i = 0; i < arr.length; i++) {
+        if (!mySet.has(arr[i])) mySet.add(arr[i])
+    }
+    return [...mySet]
+}
+console.log([...new Set([ 'a', 'b', 'c', 'a', 'e', 'c' ])])
+console.log(removeDuplication([ 'a', 'b', 'c', 'a', 'e', 'c' ]))
+
+
+console.log('abcdef'.split('').reverse().join(''))
 
 function reverseStr2(str) {
     if (str.length < 2) return str

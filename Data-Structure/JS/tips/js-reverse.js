@@ -1,3 +1,5 @@
+// reverse function can run O(N)
+
 function reverseStr(str) {
     return str.split('').reverse().join('') // not join() return arr, not string
     // only arr has reverse function
