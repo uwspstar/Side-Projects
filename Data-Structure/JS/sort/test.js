@@ -1,3 +1,30 @@
+// find the smallest index and swap later
+const selectionSort = function (arr) {
+
+    function swap(arr, i, j) {
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+
+    if (arr.length < 2) return arr
+    for (let i = 0; i < arr.length - 1; i++) {
+        let smallIndex = i
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[smallIndex]) {
+                smallIndex = j
+            }
+        }
+        if (smallIndex !== i) {
+            swap(arr, i, smallIndex)
+        }
+    }
+    return arr
+}
+
+console.log(selectionSort([5, 3, 2, 6, 0, 4, -1, 9]))
+
+/*
+
+// O(N^2)
 const bubbleSort = function (arr) {
     function swap(arr, i, j) {
         [arr[i], arr[j]] = [arr[j], arr[i]]
@@ -18,7 +45,7 @@ const bubbleSort = function (arr) {
 
 console.log(bubbleSort([5, 3, 2, 6, 0, 4, -1, 9]))
 
-/*
+
 const bubbleSort = function (arr) {
 
     if (arr.length < 2) return arr;
