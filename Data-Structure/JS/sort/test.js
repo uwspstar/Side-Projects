@@ -1,3 +1,15 @@
+const quickSort = function (arr, left, right) {
+    if (arr.length < 2) return arr
+    while (left < right) {
+        let pi = getPivotIndex(arr, left, right)
+        quickSort(arr, left, pi - 1)
+        quickSort(arr, pi + 1, right)
+    }
+    return arr
+}
+
+
+/*
 const merge = function (arr1, arr2) {
     if (arr1.length === 0) return arr2
     if (arr2.length === 0) return arr1

@@ -9,8 +9,6 @@ Like merge sort, exploits the fact that arrays of 0 or 1 element are always sort
 Works by selecting one element (called the "pivot") and finding the index where the pivot should end up in the sorted array
 Once the pivot is positioned appropriately, quick sort can be applied on either side of the pivot
 
- 
-There is no draft requirement for JS to use a specific sorting algorithm. As many have mentioned here, 
 Mozilla uses merge sort. 
 However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort, for smaller arrays. The ECMAscript standard does not specify which sort algorithm is to be used
 
@@ -23,13 +21,19 @@ Always pick last element as pivot (implemented below)
 Pick a random element as pivot.
 Pick median as pivot.
 
+Select right pivot effect performance
+
 how Quick sort works in simple words.
 
 First select an element which is to be called as pivot element.
 Next, compare all array elements with the selected pivot element and arrange them in such a way that, elements less than the pivot element are to it's left and greater than pivot is to it's right.
 Finally, perform the same operations on left and right side elements to the pivot element.
 
-But before going forward with the Quick sort, selecting the pivot element plays a major role. If you select the first element as the pivot element, then it gives worst performance in the sorted array. So, it is always advisable to pick the middle element (length of the array divided by 2) as the pivot element and we do the same
+But before going forward with the Quick sort, selecting the pivot element plays a major role. 
+
+If you select the first element as the pivot element, then it gives WORST performance in the sorted array. 
+
+So, it is always advisable to pick the middle element (length of the array divided by 2) as the pivot element and we do the same
 
 */
 
