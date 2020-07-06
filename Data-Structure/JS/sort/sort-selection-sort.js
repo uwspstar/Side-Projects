@@ -19,6 +19,31 @@ Repeat this with the next element until the array is sorted.
 // O(N^2)
 // each loop, remember the smallest item index, and swap the position,
 // each loop to put the smallest item in left side, 
+// find the smallest item index, and swap later
+const selectionSort = function (arr) {
+
+    function swap(arr, i, j) {
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+
+    if (arr.length < 2) return arr
+    for (let i = 0; i < arr.length - 1; i++) {
+        let smallIndex = i
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[smallIndex]) {
+                smallIndex = j
+            }
+        }
+        if (smallIndex !== i) {
+            swap(arr, i, smallIndex)
+        }
+    }
+    return arr
+}
+
+// O(N^2)
+// each loop, remember the smallest item index, and swap the position,
+// each loop to put the smallest item in left side, 
 const selectionSort = function (arr) {
     if (arr.length < 2) return arr
     for (let i = 0; i < arr.length; i++) {

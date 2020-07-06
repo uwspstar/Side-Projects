@@ -1,8 +1,10 @@
 /*
 https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344156#overview 
 
-Insertion Sort
+Insertion Sort 
 Builds up the sort by gradually creating a larger left half which is always sorted
+
+the left side is sorted
 
 Insertion : start from second element, move to index , insert the element to left sorted array
 
@@ -13,9 +15,8 @@ Now compare the second element with the one before it and swap if necessary.
 - Continue to the next element and if it is in the incorrect order, iterate through the sorted portion (i.e. the left side) to place the element in the correct place.
 - Repeat until the array is sorted
  
-There is no draft requirement for JS to use a specific sorting algorithm. As many have mentioned here, 
 Mozilla uses merge sort. 
-However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort, for smaller arrays. The ECMAscript standard does not specify which sort algorithm is to be used
+However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort 
 
 In the insertion sort algorithm, we make the code believe that an item in the array is a sorted list. The algorithm then compares all the items in the array before it and decides where that “sorted list” needs to be inserted in the array.
 
