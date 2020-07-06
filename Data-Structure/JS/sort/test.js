@@ -5,26 +5,28 @@ const merge = function (arr1, arr2) {
     let i = 0
     let j = 0
     while (i < arr1.length && j < arr2.length) {
-        if (arr[i] < arr[j]) {
-            result.push(arr[i])
+        if (arr1[i] < arr2[j]) {
+            result.push(arr1[i])
             i++
         } else {
-            result.push(arr[j])
+            result.push(arr2[j])
             j++
         }
     }
     while (i < arr1.length) {
-        result.push(arr[i])
+        result.push(arr1[i])
         i++
     }
     while (j < arr2.length) {
-        result.push(arr[j])
+        result.push(arr2[j])
         j++
     }
     return result
 }
 
 console.log(merge([1, 3, 5], [2, 4, 6]))
+console.log(merge([], [2, 4, 6]))
+console.log(merge([1, 3, 5], []))
 
 /*
 const insertionSort = function (arr) {
