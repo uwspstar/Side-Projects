@@ -64,6 +64,18 @@ console.log(merge([1, 3, 5], [2, 4, 6]))
 console.log(merge([], [2, 4, 6]))
 console.log(merge([1, 3, 5], []))
 
+
+const mergeSort = function (arr) {
+    if (arr.length < 2) return arr
+    let mid = arr.length >> 1 // not (0 + arr.length - 1) / 2
+    let left = mergeSort(arr.slice(0, mid))
+    let right = mergeSort(arr.slice(mid))
+    return merge(left, right)
+}
+
+console.log(mergeSort([1, 3, 5, 2, 4, 6]))
+
+
 const merge = function (arr1, arr2) {
     let results = [];
     let i = 0;

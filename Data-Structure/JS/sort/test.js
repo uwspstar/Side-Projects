@@ -23,13 +23,13 @@ const merge = function (arr1, arr2) {
     }
     return result
 }
-console.log(merge([1, 3, 5], [2, 4, 6]))
-console.log(merge([], [2, 4, 6]))
-console.log(merge([1, 3, 5], []))
+//console.log(merge([1, 3, 5], [2, 4, 6]))
+//console.log(merge([], [2, 4, 6]))
+//console.log(merge([1, 3, 5], []))
 
 const mergeSort = function (arr) {
     if (arr.length < 2) return arr
-    let mid = (0 + arr.length - 1) >> 1
+    let mid = arr.length >> 1 // not (0 + arr.length - 1) / 2
     let left = mergeSort(arr.slice(0, mid))
     let right = mergeSort(arr.slice(mid))
     return merge(left, right)
