@@ -1,3 +1,9 @@
+function getPivotIndex(arr, start = 0, end = arr.length - 1) {
+    const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]]
+    let pivot = arr[start];
+    let swapIdx = start;
+
+}
 const quickSort = function (arr, left, right) {
     if (arr.length < 2) return arr
     while (left < right) {
