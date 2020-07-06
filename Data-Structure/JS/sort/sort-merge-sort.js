@@ -7,7 +7,6 @@ Divide and Conquer! This is the principle behind the working of the merge sort a
 
 While the bubble and insertion sort algorithms use iteration, merge sort uses recursion. 
 
-There is no draft requirement for JS to use a specific sorting algorithm. As many have mentioned here, 
 Mozilla uses merge sort. 
 However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort, for smaller arrays. The ECMAscript standard does not specify which sort algorithm is to be used
  
@@ -16,7 +15,7 @@ merge sort:
 It's a combination of two things - merging and sorting
 
 Try out bubble sort on an array of 100000 elements, it will take quite some time!
-There is a family of sorting algorithms that can improve time complexity from O(n  ) to O(n log n)
+There is a family of sorting algorithms that can improve time complexity from O(n^2) to O(n log n)
 
 In order to implement merge sort, it's useful to first implement a function responsible for merging two sorted arrays
 
@@ -34,6 +33,32 @@ While there are still values we haven't looked at...
 /*
 ideally, when arr only has 1 elem, it is sorted, so continues divide the arr till the arr only has 1 elem.
 */
+const merge = function (arr1, arr2) {
+    if (arr1.length === 0) return arr2
+    if (arr2.length === 0) return arr1
+    let result = []
+    let i = 0
+    let j = 0
+    while (i < arr1.length && j < arr2.length) {
+        if (arr[i] < arr[j]) {
+            result.push(arr[i])
+            i++
+        } else {
+            result.push(arr[j])
+            j++
+        }
+    }
+    while (i < arr1.length) {
+        result.push(arr[i])
+        i++
+    }
+    while (j < arr2.length) {
+        result.push(arr[j])
+        j++
+    }
+    return result
+}
+
 const merge = function (arr1, arr2) {
     let results = [];
     let i = 0;

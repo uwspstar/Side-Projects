@@ -1,3 +1,32 @@
+const merge = function (arr1, arr2) {
+    if (arr1.length === 0) return arr2
+    if (arr2.length === 0) return arr1
+    let result = []
+    let i = 0
+    let j = 0
+    while (i < arr1.length && j < arr2.length) {
+        if (arr[i] < arr[j]) {
+            result.push(arr[i])
+            i++
+        } else {
+            result.push(arr[j])
+            j++
+        }
+    }
+    while (i < arr1.length) {
+        result.push(arr[i])
+        i++
+    }
+    while (j < arr2.length) {
+        result.push(arr[j])
+        j++
+    }
+    return result
+}
+
+console.log(merge([1, 3, 5], [2, 4, 6]))
+
+/*
 const insertionSort = function (arr) {
     if (arr.length < 2) return arr
     //[3, 6, 4] 4 is current
@@ -18,7 +47,7 @@ const insertionSort = function (arr) {
 
 console.log(insertionSort([5, 3, 2, 6, 0, 4, -1, 9]))
 
-/*
+
 // find the smallest item index, and swap later
 const selectionSort = function (arr) {
 
