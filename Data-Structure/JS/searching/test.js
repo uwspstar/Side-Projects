@@ -1,3 +1,7 @@
+
+
+
+/*
 // ("lorie loled", "lol")
 const searchMathStr = function (long, short) {
     let count = 0;
@@ -15,7 +19,7 @@ console.log(searchMathStr("lorie loled", "lol")) // 1
 console.log(searchMathStr("lorie loled", "ri")) // 1
 console.log(searchMathStr("lorie loled", "l")) // 3
 
-/*
+
 
 function binarySearch(arr, num) {
     let start = 0

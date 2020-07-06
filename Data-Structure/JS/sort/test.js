@@ -1,3 +1,22 @@
+const bubbleSort = function (arr) {
+    function swap(arr, i, j) {
+        [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
+    if (arr.length < 2) return arr
+    for (let i = arr.length - 1; i >= 0; i++) {
+        let isSwap = false
+        for (let j = 0; j < i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr, j, j + 1)
+                isSwap = true
+            }
+        }
+        if (!isSwap) break;
+    }
+    return arr
+}
+
+console.log(bubbleSort([5, 3, 2, 6, 0, 4, -1, 9]))
 
 /*
 const bubbleSort = function (arr) {
@@ -14,8 +33,8 @@ const bubbleSort = function (arr) {
     }
     return arr;
   }
-  
-//console.log(bubbleSort([3,2,3,1,2,4,5,5,6])) 
+
+//console.log(bubbleSort([3,2,3,1,2,4,5,5,6]))
 
 var findKthLargest = function(arr, k) {
     //let count = 0
@@ -28,12 +47,12 @@ var findKthLargest = function(arr, k) {
         //count++
         //if (k === count) break
 
-    }    
+    }
     //console.log('k =',k,'count =',count,'arr =',arr, arr[arr.length - k])
     return arr.slice(-k)[0]
 };
 
-console.log(findKthLargest([3,2,3,1,2,4,5,5,6],4)) 
+console.log(findKthLargest([3,2,3,1,2,4,5,5,6],4))
 
 
 const getPivotIndex = function (arr, start = 0, end = arr.length - 1) {
@@ -44,7 +63,7 @@ const getPivotIndex = function (arr, start = 0, end = arr.length - 1) {
     let swapIdx = start
     for (let i = start + 1; i <= end; i++) {
         if (arr[i] > arr[swapIdx]) {
-            
+
         }
     }
 }
