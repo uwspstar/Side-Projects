@@ -368,3 +368,6 @@ console.log(a, b); // 2 1
 ```var array = str.split('');```
 ```var str = array.join('')```
 - Because even though the ```if-block``` is not executed, the expression ```var x``` is hoisted.
+
+### Expressions and operators
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators

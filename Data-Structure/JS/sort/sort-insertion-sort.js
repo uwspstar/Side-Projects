@@ -37,11 +37,31 @@ We will use nested loops to perform the sorting.
 //[3, 6, 4] -> [3, 6, 6] -> [3, 4, 6]
 //    j  i  ->               j  j+1
 //------------------------------------
+
+const insertionSort = function (arr) {
+    if (arr.length < 2) return arr
+    //[3, 6, 4] 4 is current
+    //left is sorted
+    //assume the current is init biggest, compare with all left side, find where need to insert
+    for (let i = 1; i < arr.length; i++) {
+        let current = arr[i]
+        let j = i - 1
+        for (; j >= 0; j--) {
+            if (arr[j] > current) {
+                arr[j + 1] = arr[j]
+            } else break;
+        }
+        arr[j + 1] = current // arr[j] break inner loop
+    }
+    return arr
+}
+
+// arr[j] > current ? arr[j + 1] = arr[j] : break  // syntax error
 const insertionSort = function (arr) {
     if (arr.length === 1) return arr
     //assume left is sorted, start second item
-   
-    for (let i = 1; i < arr.length; i++) { 
+
+    for (let i = 1; i < arr.length; i++) {
         let current = arr[i]
         let j = i - 1
         for (; j >= 0; j--) {

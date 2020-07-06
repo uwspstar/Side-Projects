@@ -2,20 +2,21 @@ const insertionSort = function (arr) {
     if (arr.length < 2) return arr
     //[3, 6, 4] 4 is current
     //left is sorted
+    //assume the current is init biggest, compare with all left side, find where need to insert
     for (let i = 1; i < arr.length; i++) {
         let current = arr[i]
         let j = i - 1
         for (; j >= 0; j--) {
-            if (arr[j] > arr[j + 1]) {
+            if (arr[j] > current) {
                 arr[j + 1] = arr[j]
             } else break;
         }
-        arr[j + 1] = current
+        arr[j + 1] = current // arr[j] break inner loop
     }
     return arr
 }
 
-
+console.log(insertionSort([5, 3, 2, 6, 0, 4, -1, 9]))
 
 /*
 // find the smallest item index, and swap later
