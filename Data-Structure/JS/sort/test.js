@@ -1,4 +1,5 @@
 
+/*
 const bubbleSort = function (arr) {
 
     if (arr.length < 2) return arr;
@@ -34,7 +35,7 @@ var findKthLargest = function(arr, k) {
 
 console.log(findKthLargest([3,2,3,1,2,4,5,5,6],4)) 
 
-/*
+
 const getPivotIndex = function (arr, start = 0, end = arr.length - 1) {
     const swap = (arr, i, j) => {
         [arr[i], arr[j]] = [arr[j], arr[i]]

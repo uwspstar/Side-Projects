@@ -17,7 +17,7 @@ const arr = [0, 1, 5, 4, 3, 2, 6];
 const bubbleSort = function (arr) {
 
   if (arr.length < 2) return arr;
-  // use two point, from left and right
+  // use two points, from left and right
   for (let i = arr.length - 1; i >= 0; i--) {
     for (let j = 0; j <= i; j++) {
       if (arr[j] > arr[j + 1]) {
@@ -121,9 +121,11 @@ const bubbleSort2 = function (arr) {
 }
 // [5, 3, 2, 6, 9, 1]
 const bubbleSort = function (arr) {
+
   let len = arr.length
   if (len < 2) return arr
-  for (let i = 0; i < len - 1; i++)
+  //O(N^2)
+  for (let i = 0; i < len - 1; i++) // each time find the biggest one put to the right
     for (let j = 0; j < len - 1 - i; j++) {
       if (arr[j] > arr[j + 1]) {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
