@@ -32,9 +32,15 @@ We will use nested loops to perform the sorting.
 */
 
 //assume left is sorted, start second item
+//------------------------------------
+//       4            4         4
+//[3, 6, 4] -> [3, 6, 6] -> [3, 4, 6]
+//    j  i  ->               j  j+1
+//------------------------------------
 const insertionSort = function (arr) {
     if (arr.length === 1) return arr
     //assume left is sorted, start second item
+   
     for (let i = 1; i < arr.length; i++) { 
         let current = arr[i]
         let j = i - 1
@@ -59,7 +65,7 @@ const insertionSort = function (arr) {
                 arr[j + 1] = arr[j];
             } else break;
         }
-        arr[j + 1] = current; // find the right position [j +1 ] to insert the element
+        arr[j + 1] = current; // find the right position [j + 1 ] to insert the element
     }
     return arr;
 }
