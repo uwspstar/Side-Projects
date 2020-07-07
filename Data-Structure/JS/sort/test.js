@@ -11,10 +11,10 @@ const getPivotIndex = function (arr, low, high) {
     swap(arr, high, smallIndex)
     return smallIndex
 }
-const quickSort = function (arr, low, high) {
+const quickSort = function (arr, low = 0, high = arr.length - 1) {
     if (arr.length < 2) return arr
     if (low < high) {
-        let pi = getPivotIndex(arr, low, hight)
+        let pi = getPivotIndex(arr, low, high)
         quickSort(arr, low, pi - 1)
         quickSort(arr, pi + 1, high)
     }
