@@ -1,8 +1,15 @@
-function getPivotIndex(arr, start = 0, end = arr.length - 1) {
+function getPivotIndex(arr, left,  right) {
     const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]]
-    let pivot = arr[start];
-    let swapIdx = start;
-
+    //[2, 6, 0, 4]
+    let pivot = arr[right];
+    let swapIdx = left;
+    for (let i = left; i <=right; i++) {
+        if (arr[i] < pivot) {
+            swap(arr,swapIdx, i)
+            swapIdx++
+        }
+    }
+    swap(arr,swapIdx, right)
 }
 const quickSort = function (arr, left, right) {
     if (arr.length < 2) return arr
@@ -13,7 +20,7 @@ const quickSort = function (arr, left, right) {
     }
     return arr
 }
-
+console.log(quickSort([1, 3, 5, 2, 4, 6, 0, -1]))
 
 /*
 const merge = function (arr1, arr2) {
