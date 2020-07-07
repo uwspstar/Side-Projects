@@ -1,4 +1,5 @@
 /*
+https://www.geeksforgeeks.org/quick-sort/
 https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
 https://www.guru99.com/quicksort-in-javascript.html
 https://www.youtube.com/watch?v=ZHVk2blR45Q
