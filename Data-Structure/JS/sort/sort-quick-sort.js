@@ -5,6 +5,8 @@ https://www.guru99.com/quicksort-in-javascript.html
 https://www.youtube.com/watch?v=ZHVk2blR45Q
 https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F
 
+*** pivot left smaller than pivot (may not in order)
+*** pivot right bigger than pivot (may not in order)
 
 Quick Sort
 Like merge sort, exploits the fact that arrays of 0 or 1 element are always sorted
@@ -38,6 +40,35 @@ If you select the first element as the pivot element, then it gives WORST perfor
 So, it is always advisable to pick the middle element (length of the array divided by 2) as the pivot element and we do the same
 
 */
+
+function getPivotIndex(arr, left, right) {
+    const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]]
+    //[2, 6, 0, 4]
+    let pivot = arr[right];
+    let swapIdx = left;
+    for (let i = left; i < right; i++) {
+        if (arr[i] < pivot) {
+            swap(arr, swapIdx, i)
+            swapIdx++
+        }
+    }
+    swap(arr, swapIdx, right)
+    //console.log('swapIdx', swapIdx)
+    return swapIdx
+}
+// need left = 0, right = arr.length - 1, incase only has arr
+const quickSort = function (arr, left = 0, right = arr.length - 1) {
+    if (arr.length < 2) return arr
+    if (left < right) { //**** NOT while (left < right)
+        let pi = getPivotIndex(arr, left, right)
+        quickSort(arr, left, pi - 1)
+        quickSort(arr, pi + 1, right)
+    }
+    return arr
+}
+
+console.log(quickSort([10, 80, 30, 90, 40, 50, 70]))
+console.log(quickSort([1, 3, 5, 2, 4, 6, 0, -1]))
 
 // find the pivot index
 function getPivotIndex(arr, start = 0, end = arr.length - 1) {
@@ -100,4 +131,43 @@ function partition(a, left, right, pivotIndex)
          quicksort(a, left, pivotNewIndex-1)
          quicksort(a, pivotNewIndex+1, right)
 
+
+
+Illustration of partition() :
+
+arr = [10, 80, 30, 90, 40, 50, 70]
+Idx =:  0   1   2   3   4   5   6 
+
+left = 0, right =  6, pivot = arr[right] = 70
+Initialize index of smaller element, i = left
+
+Traverse elements from j = left to right-1
+j = 0 : Since arr[j] = 10 < pivot, do swap(arr[i], arr[j]) and i++
+             i = 1 
+arr[] = [10, 80, 30, 90, 40, 50, 70] // No change as i and j  are same
+
+j = 1 : Since arr[j] = 80 > pivot, do nothing // No change in i and arr[]
+
+j = 2 : Since arr[j] = 30 < pivot, do swap(arr[i], arr[j]) and i++
+                i = 2   
+arr = [10, 30, 80, 90, 40, 50, 70] // We swap 80 and 30 
+
+j = 3 : Since arr[j] = 90 > pivot, do nothing // No change in i and arr[]
+
+j = 4 : Since arr[j] = 40 < pivot, do swap(arr[i], arr[j]) and i++
+                   i = 3
+arr = [10, 30, 40, 90, 80, 50, 70] // 80 and 40 Swapped
+
+j = 5 : Since arr[j] = 50 < pivot, do swap(arr[i], arr[j]) and i++
+                        i = 4 
+arr = [10, 30, 40, 50, 80, 90, 70] // 90 and 50 Swapped 
+
+We come out of loop
+Finally we place pivot at correct position by swapping
+arr[i] and arr[right] (or pivot) 
+arr = [10, 30, 40, 50, 70, 90, 80] // 80 and 70 Swapped 
+
+Now 70 is at its correct place. All elements smaller than
+70 are before it and all elements greater than 70 are after
+it.
 */
