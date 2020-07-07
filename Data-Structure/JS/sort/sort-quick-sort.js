@@ -39,6 +39,24 @@ If you select the first element as the pivot element, then it gives WORST perfor
 
 So, it is always advisable to pick the middle element (length of the array divided by 2) as the pivot element and we do the same
 
+https://en.wikipedia.org/wiki/Quicksort
+
+algorithm quicksort(A, lo, hi) is
+    if lo < hi then
+        p := partition(A, lo, hi)
+        quicksort(A, lo, p - 1)
+        quicksort(A, p + 1, hi)
+
+algorithm partition(A, lo, hi) is
+    pivot := A[hi]
+    i := lo
+    for j := lo to hi do
+        if A[j] < pivot then
+            swap A[i] with A[j]
+            i := i + 1
+    swap A[i] with A[hi]
+    return i
+    
 */
 
 function getPivotIndex(arr, left, right) {
@@ -136,21 +154,21 @@ function partition(a, left, right, pivotIndex)
 Illustration of partition() :
 
 arr = [10, 80, 30, 90, 40, 50, 70]
-Idx =:  0   1   2   3   4   5   6 
+Idx =:  0   1   2   3   4   5   6
 
 left = 0, right =  6, pivot = arr[right] = 70
 Initialize index of smaller element, i = left
 
 Traverse elements from j = left to right-1
 j = 0 : Since arr[j] = 10 < pivot, do swap(arr[i], arr[j]) and i++
-             i = 1 
+             i = 1
 arr[] = [10, 80, 30, 90, 40, 50, 70] // No change as i and j  are same
 
 j = 1 : Since arr[j] = 80 > pivot, do nothing // No change in i and arr[]
 
 j = 2 : Since arr[j] = 30 < pivot, do swap(arr[i], arr[j]) and i++
-                i = 2   
-arr = [10, 30, 80, 90, 40, 50, 70] // We swap 80 and 30 
+                i = 2
+arr = [10, 30, 80, 90, 40, 50, 70] // We swap 80 and 30
 
 j = 3 : Since arr[j] = 90 > pivot, do nothing // No change in i and arr[]
 
@@ -159,13 +177,13 @@ j = 4 : Since arr[j] = 40 < pivot, do swap(arr[i], arr[j]) and i++
 arr = [10, 30, 40, 90, 80, 50, 70] // 80 and 40 Swapped
 
 j = 5 : Since arr[j] = 50 < pivot, do swap(arr[i], arr[j]) and i++
-                        i = 4 
-arr = [10, 30, 40, 50, 80, 90, 70] // 90 and 50 Swapped 
+                        i = 4
+arr = [10, 30, 40, 50, 80, 90, 70] // 90 and 50 Swapped
 
 We come out of loop
 Finally we place pivot at correct position by swapping
-arr[i] and arr[right] (or pivot) 
-arr = [10, 30, 40, 50, 70, 90, 80] // 80 and 70 Swapped 
+arr[i] and arr[right] (or pivot)
+arr = [10, 30, 40, 50, 70, 90, 80] // 80 and 70 Swapped
 
 Now 70 is at its correct place. All elements smaller than
 70 are before it and all elements greater than 70 are after
