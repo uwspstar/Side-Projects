@@ -33,6 +33,28 @@ While there are still values we haven't looked at...
 /*
 ideally, when arr only has 1 elem, it is sorted, so continues divide the arr till the arr only has 1 elem.
 */
+
+function merge(left, right) {
+    var result = [];
+    while (left.length > 0 && right.length > 0) {
+        if (left[0] < right[0]) {
+            result.push(left.shift());
+        } else {
+            result.push(right.shift());
+        }
+    }
+    return result.concat(left, right);
+}
+
+function mergeSort(arr) {
+    if (arr.length < 2) return arr
+    var middle = arr.length >> 1 //Math.floor(arr.length / 2);
+    var left = mergeSort(arr.slice(0, middle))
+    var right = mergeSort(arr.slice(middle))
+    return merge(left, right)
+}
+
+
 const merge = function (arr1, arr2) {
     if (arr1.length === 0) return arr2
     if (arr2.length === 0) return arr1
