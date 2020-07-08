@@ -1,14 +1,14 @@
 const insertionSort = function (arr) {
     //[1, 6, 7, 5] -> [1, 6, 7, 7] -> []
-      
+
     if (arr.length < 2) return arr
     for (let i = 1; i < arr.length; i++) {
         let current = arr[i]
         let j = i - 1
-        for (; j >=0; j--) {
-            if (arr[j] >  current) {
+        for (; j >= 0; j--) {
+            if (arr[j] > current) {
                 arr[j + 1] = arr[j]
-            }
+            } else break; //******
         }
         arr[j + 1] = current
     }
@@ -16,7 +16,7 @@ const insertionSort = function (arr) {
 }
 
 console.log(insertionSort([1, 6, 7, 5]))
-console.log(insertionSort([1, 6, 7, 5]))
+console.log(insertionSort([10, 80, 30, 90, 40, 50, 70]))
 
 /*
 const getPivotIndex = function (arr, low, high) {
@@ -42,8 +42,8 @@ const quickSort = function (arr, low = 0, high = arr.length - 1) {
     return arr
 }
 */
-console.log(quickSort([10, 80, 30, 90, 40, 50, 70]))
-console.log(quickSort([1, 3, 5, 2, 4, 6, 0, -1]))
+//console.log(quickSort([10, 80, 30, 90, 40, 50, 70]))
+//console.log(quickSort([1, 3, 5, 2, 4, 6, 0, -1]))
 
 /*
 function getPivotIndex(arr, left, right) {
