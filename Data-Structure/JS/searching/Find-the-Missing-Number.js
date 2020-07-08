@@ -10,7 +10,25 @@ Input: arr[] = {1, 2, 3, 5} Output: 4
 Explanation: The missing number from 1 to 5 is 4
 */
 
-// 1: ask if the arr is sorted, if it is sorted, O(N) + O(N)
+// 1: cannot sort first
+// use sumTotal = n / 2 * (n  + 1)
+const findMissingNumber = function (arr) {
+    let n = arr.length + 1;
+    if (arr.length === 0) return 1;
+    let sumTotal = n / 2 * (n + 1);
+    let sum = 0;
+    console.log(sumTotal);
+    // O(N)
+    for (let i = 0; i < arr.length; i++) {
+        sum += arr[i];
+    }
+    console.log(sum);
+    return sumTotal - sum;
+}
+console.log(findMissingNumber([1, 2, 4, 6, 3, 7, 8]))
+//[1, 2, 3, 4, 5, 6, 7] //sum = 28
+
+// 2: ask if the arr is sorted, if it is sorted, O(N) + O(N)
 const findMissingNumberSorted = function (arr) {
     if (arr.length === 0) return 1;
     //if (arr.length === 1) return arr[0] === 1 ? 0 : 1 
@@ -22,22 +40,4 @@ const findMissingNumberSorted = function (arr) {
     }
     return 1;
 }
-console.log(findMissingNumberSorted([1, 2, 4, 6, 3, 7, 8]))
-
-// 2: cannot sort first
-// use sumTotal = n / 2 * (n  + 1)
-const findMissingNumber = function (arr) {
-    let n = arr.length + 1
-    if (arr.length === 0) return 1
-    let sumTotal = n / 2 * (n + 1)
-    let sum = 0
-    console.log(sumTotal)
-    // O(N)
-    for (let i = 0; i < arr.length; i++) {
-        sum += arr[i]
-    }
-    console.log(sum)
-    return sumTotal - sum
-}
-console.log(findMissingNumber([1, 2, 4, 6, 3, 7, 8]))
-//[1, 2, 3, 4, 5, 6, 7] //sum = 28
+console.log(findMissingNumberSorted([1, 2, 4, 6, 3, 7, 8]));
