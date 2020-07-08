@@ -2,18 +2,20 @@ const binarySearch = function (arr, num) {
     if (arr.length === 0) return -1;
     let start = 0;
     let end = arr.length - 1;
-    while (start < end) {
-        let mid = (start + end) >> 1;
+    let mid = (start + end) >> 1
+    while (start <= end) { // NOT start < end, need start <= end,
+        //let mid = (start + end) >> 1; // more space, put outside same some space
+        //console.log('start = ', start, 'end = ', end, 'mid=', mid)
         if (arr[mid] === num) return mid;
-        if (arr[mid] > num) {
-            end = mid - 1;
-        } else start = mid + 1
+        arr[mid] > num ? end = mid - 1 : start = mid + 1
+        mid = (start + end) >> 1;
     }
     return -1
 
 }
-
-console.log(binarySearch([1, 3, 5, 6, 7], 5));
+console.log(binarySearch([-1], 5));
+console.log(binarySearch([1, 3, 5], 5));
+console.log(binarySearch([-1, 0, 1, 3, 5, 6, 7, 10, 20, 30, 50], 5));
 
 /*
 const getPivotIndex = function (arr, low, high) {
