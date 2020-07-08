@@ -1,3 +1,21 @@
+const binarySearch = function (arr, num) {
+    if (arr.length === 0) return -1;
+    let start = 0;
+    let end = arr.length - 1;
+    while (start < end) {
+        let mid = (start + end) >> 1;
+        if (arr[mid] === num) return mid;
+        if (arr[mid] > num) {
+            end = mid - 1;
+        } else start = mid + 1
+    }
+    return -1
+
+}
+
+console.log(binarySearch([1, 3, 5, 6, 7], 5));
+
+/*
 const getPivotIndex = function (arr, low, high) {
     const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]];
     let pivot = arr[high];
@@ -25,7 +43,7 @@ const quickSort = function (arr, low = 0, high = arr.length - 1) {
 console.log(quickSort([1, 6, 7, 5]));
 console.log(quickSort([10, 80, 30, 90, 40, 50, 70]));
 
-/*
+
 const merge = function (left, right) {
     if (left.length === 0) return right;
     if (right.length === 0) return left;
