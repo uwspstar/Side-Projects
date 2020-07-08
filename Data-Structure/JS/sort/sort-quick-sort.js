@@ -60,30 +60,54 @@ algorithm partition(A, lo, hi) is
 */
 
 const getPivotIndex = function (arr, low, high) {
-    const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]]
-    let pivot = arr[high]
-    let smallIndex = low
+    const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]];
+    let pivot = arr[high];
+    let smallIndex = low;
     for (let i = low; i < high; i++) {
         if (arr[i] < pivot) {
-            swap(arr, i, smallIndex)
-            smallIndex++
+            swap(arr, i, smallIndex);
+            smallIndex++;
         }
     }
-    swap(arr, high, smallIndex)
-    return smallIndex
+    swap(arr, high, smallIndex);
+    return smallIndex;
 }
 const quickSort = function (arr, low = 0, high = arr.length - 1) {
-    if (arr.length < 2) return arr
+    if (arr.length < 2) return arr;
     if (low < high) {
-        let pi = getPivotIndex(arr, low, high)
-        quickSort(arr, low, pi - 1)
-        quickSort(arr, pi + 1, high)
+        let pi = getPivotIndex(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
     }
-    return arr
+    return arr;
 }
-console.log(quickSort([10, 80, 30, 90, 40, 50, 70]))
-console.log(quickSort([1, 3, 5, 2, 4, 6, 0, -1]))
+console.log(quickSort([10, 80, 30, 90, 40, 50, 70]));
+console.log(quickSort([1, 3, 5, 2, 4, 6, 0, -1]));
 
+const getPivotIndex = function (arr, low, high) {
+    const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]];
+    let pivot = arr[high];
+    let pivotIndex = low;
+    //[7, 3, 5] -> [3, 7, 5] -> [3, 5, 7]
+    for (let i = low; i < high; i++) {
+        if (arr[i] < pivot) {
+            swap(arr, i, pivotIndex);
+            pivotIndex++;
+        }
+    }
+    swap(arr, high, pivotIndex);
+    return pivotIndex;
+}
+
+const quickSort = function (arr, low = 0, high = arr.length - 1) {
+    if (arr.length < 2) return arr;
+    if (low < high) {
+        let pi = getPivotIndex(arr, low, high);
+        quickSort(arr, low, pi - 1);
+        quickSort(arr, pi + 1, high);
+    }
+    return arr;
+}
 
 function getPivotIndex(arr, left, right) {
     const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]]
@@ -92,23 +116,23 @@ function getPivotIndex(arr, left, right) {
     let swapIdx = left;
     for (let i = left; i < right; i++) {
         if (arr[i] < pivot) {
-            swap(arr, swapIdx, i)
-            swapIdx++
+            swap(arr, swapIdx, i);
+            swapIdx++;
         }
     }
-    swap(arr, swapIdx, right)
+    swap(arr, swapIdx, right);
     //console.log('swapIdx', swapIdx)
-    return swapIdx
+    return swapIdx;
 }
 // need left = 0, right = arr.length - 1, incase only has arr
 const quickSort = function (arr, left = 0, right = arr.length - 1) {
-    if (arr.length < 2) return arr
+    if (arr.length < 2) return arr;
     if (left < right) { //**** NOT while (left < right)
         let pi = getPivotIndex(arr, left, right)
-        quickSort(arr, left, pi - 1)
-        quickSort(arr, pi + 1, right)
+        quickSort(arr, left, pi - 1);
+        quickSort(arr, pi + 1, right);
     }
-    return arr
+    return arr;
 }
 
 console.log(quickSort([10, 80, 30, 90, 40, 50, 70]))
