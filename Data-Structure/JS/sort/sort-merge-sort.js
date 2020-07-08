@@ -43,7 +43,6 @@ function merge(left, right) {
             result.push(right.shift());
         }
     }
-    // return result.push([...left], [...right]);
     return result.concat(left, right);
 }
 
