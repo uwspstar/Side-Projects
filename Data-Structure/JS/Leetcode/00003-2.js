@@ -28,24 +28,24 @@ a b c a b c b b
   j
 */
 const lengthOfLongestSubstring = function (str) {
-    if (str.length < 2) return str.length
-    let mySet = new Set()
-    let result = 0
+    if (str.length < 2) return str.length;
+    let mySet = new Set();
+    let result = 0;
     for (let i = 0, j = 0; i < str.length; i++) {
         if (mySet.has(str[i])) {
-            mySet.delete(str[i])
-            j++
+            mySet.delete(str[i]);
+            j++;
         } else {
-            mySet.add(str[i])
-            result = Math.max(mySet.size, result)
+            mySet.add(str[i]);
+            result = Math.max(mySet.size, result);
         }
     }
     return result;
 };
 
-console.log(lengthOfLongestSubstring("abcabcbb"))
-console.log(lengthOfLongestSubstring("bbbb"))
-console.log(lengthOfLongestSubstring("bbcd"))
+console.log(lengthOfLongestSubstring("abcabcbb"));
+console.log(lengthOfLongestSubstring("bbbb"));
+console.log(lengthOfLongestSubstring("bbcd"));
 //"abcabcbb"
 //a ab abc abca
 

@@ -24,38 +24,38 @@ Explanation: The answer is "wke", with the length of 3.
 // slide window problem
 const lengthOfLongestSubstring = function (str) {
 
-    if (str.length < 2) return str.length
+    if (str.length < 2) return str.length;
 
-    let mySet = new Set()
-    let start = 0
-    let end = 0
-    let max = 0
+    let mySet = new Set();
+    let start = 0;
+    let end = 0;
+    let max = 0;
 
-/*
-a b c a b c b b
-    e
-s   
-*/
+    /*
+    a b c a b c b b
+        e
+    s   
+    */
 
     while (start < str.length && end < str.length) {
 
         if (mySet.has(str[end])) {
-            mySet.delete(str[start])
-            start++
+            mySet.delete(str[start]);
+            start++;
         } else {
             mySet.add(str[end]);
-            max = Math.max(max, end - start + 1)
-            end++
+            max = Math.max(max, end - start + 1);
+            end++;
         }
 
     }
-    return max
+    return max;
 
 };
 
-console.log(lengthOfLongestSubstring("abcabcbb"))
-console.log(lengthOfLongestSubstring("bbbbb"))
-console.log(lengthOfLongestSubstring("pwwkew"))
+console.log(lengthOfLongestSubstring("abcabcbb"));
+console.log(lengthOfLongestSubstring("bbbbb"));
+console.log(lengthOfLongestSubstring("pwwkew"));
 
 
 

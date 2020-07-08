@@ -34,6 +34,32 @@ While there are still values we haven't looked at...
 ideally, when arr only has 1 elem, it is sorted, so continues divide the arr till the arr only has 1 elem.
 */
 
+const merge = function (left, right) {
+    if (left.length === 0) return right;
+    if (right.length === 0) return left;
+    // The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array
+    let result = [];
+    while (left.length > 0 && right.length > 0) {
+        left[0] < right[0] ? result.push(left.shift())
+            : result.push(right.shift());
+    }
+    return result.concat(left, right);
+}
+
+const mergeSort = function (arr) {
+    if (arr.length < 2) return arr;
+    let mid = arr.length >> 1;
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
+console.log(mergeSort([1, 6, 7, 5]));
+console.log(mergeSort([10, 80, 30, 90, 40, 50, 70]));
+
+
+
+
+
 function merge(left, right) {
     var result = [];
     while (left.length > 0 && right.length > 0) {
