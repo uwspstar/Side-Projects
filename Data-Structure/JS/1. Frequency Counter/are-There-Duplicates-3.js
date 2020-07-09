@@ -4,10 +4,10 @@ Implement a function called, areThereDuplicates which accepts a variable number 
 
 */
 const areThereDuplicates = function () {
-    if (arguments.length < 2) return false
-    return arguments.length !== (new Set(arguments)).size
+    if (arguments.length < 2) return false;
+    return arguments.length !== (new Set(arguments)).size;
 }
 
-console.log(areThereDuplicates(1, 2, 3)) // false
-console.log(areThereDuplicates(1, 2, 2))// true 
-console.log(areThereDuplicates('a', 'b', 'c', 'a')) // true 
+console.log(areThereDuplicates(1, 2, 3)); // false
+console.log(areThereDuplicates(1, 2, 2));// true 
+console.log(areThereDuplicates('a', 'b', 'c', 'a')); // true 
