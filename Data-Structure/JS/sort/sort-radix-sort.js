@@ -1,5 +1,6 @@
 //https://brilliant.org/wiki/radix-sort/#
 // https://cs.slides.com/colt_steele/intermediate-sorting-algorithms#/31/0/0
+//基数排序的时间复杂度是 O(k * n)}，其中n是排序元素个数 k是数字位数。
 
 function getDigit(num, i) {
     return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
