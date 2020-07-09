@@ -17,13 +17,13 @@ console.log(power(3, 3)); // 27
 // power(2,4) // 16
 
 function power(n, p) {
-    if (p === 0) return 1
-    if (p === 1) return n
-    if (n <= 1) return n
+    if (p === 0) return 1;
+    if (p === 1) return n;
+    if (n <= 1) return n;
     return n * power(n, p - 1)
 }
 //base, exponent
-console.log(power(2, 0)) 
-console.log(power(2, 2))
-console.log(power(2, 4))
+console.log(power(2, 0)); 
+console.log(power(2, 2));
+console.log(power(2, 4));
 console.log(power(3, 3));
