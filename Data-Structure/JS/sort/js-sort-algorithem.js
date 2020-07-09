@@ -46,4 +46,11 @@ O(logN)
 - binary search (ordered array)
 
 
+
+Bubble Sort - O(n^2)
+Insertion Sort - O(n^2)
+Selection Sort - O(n^2)
+Quick Sort - O(n log (n))
+Merge Sort - O(n log (n))
+
 */
