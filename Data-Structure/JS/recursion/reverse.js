@@ -14,39 +14,39 @@ function reverse(str) {
 console.log(reverse("hello world"));
 
 function reveresStrRecursive(str) {
-    if (str.length < 2) return str
+    if (str.length < 2) return str;
     //return reverse(str.substring(1, str.length)) + str[0];
     return reverse(str.slice(1, str.length)) + str[0];
 }
-console.log(reveresStrRecursive('awesome'))
+console.log(reveresStrRecursive('awesome'));
 
 
 function reverse(str) {
-    if (str.length < 2) return str
-    let mid = parseInt(str.length / 2)
-    let arr = str.split('')
+    if (str.length < 2) return str;
+    let mid = str.length >>1; // parseInt(str.length / 2)
+    let arr = str.split(''); // only arr can swap
     for (let i = 0; i < mid; i++) {
-        [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[i]]
+        [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[i]];
     }
-    return arr.join('')
+    return arr.join('');
 }
-console.log(reverse('awesome'))
+console.log(reverse('awesome'));
 
 function reverseStr2(str) {
-    let result = ''
+    let result = '';
     for (let i = str.length - 1; i >= 0; i--) {
-        result += str[i]
+        result += str[i];
     }
-    return result
+    return result;
 }
-console.log(reverseStr2('awesome'))
+console.log(reverseStr2('awesome'));
 
 function reverseStr(str) {
-    let arr = str.split('').reverse()
+    let arr = str.split('').reverse();
     // only arr has reverse function
-    return arr.join('')
+    return arr.join('');
 }
-console.log(reverseStr('awesome'))
+console.log(reverseStr('awesome'));
 
   // reverse('awesome') // 'emosewa'
   // reverse('rithmschool') // 'loohcsmhtir'
