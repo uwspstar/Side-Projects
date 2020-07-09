@@ -4,6 +4,7 @@
 //The find() method returns the value of the first element in the provided array that satisfies the provided testing function.
 //not indexOf()
 //The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+// use filter() to find all items match the condition
 
 const num = [5, 12, 8, 130, 44].find(num => num > 10);
 console.log(num); // expected output: 12
