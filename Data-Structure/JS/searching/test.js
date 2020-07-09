@@ -1,4 +1,19 @@
-
+const searchMatchStr = function (str, word) {
+    if (str.length < word.length) return -1;
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < word.length; j++) {
+            if (word[j] !== str[i + j]) break;
+            if (j === word.length - 1) count++;
+        }
+    }
+    return count;
+}
+console.log(searchMatchStr("lorie loled", "ll"));
+console.log(searchMatchStr("lorie loled", "l"));
+console.log(searchMatchStr("lorie loled", "lo"));
+console.log(searchMatchStr("lorie loled", "lol"));
+/*
 const findMissingNum = function (arr) {
     if (arr.length === 0) return -1;
     //1+2+3+...+n = n/2 * (1+n)
@@ -14,7 +29,7 @@ const findMissingNum = function (arr) {
 }
 console.log(findMissingNum([1, 2, 4, 5]))
 console.log(findMissingNum([1, 2, 3, 4, 6, 7, 8]))
-/*
+
 // ("lorie loled", "lol")
 const searchMathStr = function (long, short) {
     let count = 0;

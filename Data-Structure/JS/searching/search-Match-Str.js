@@ -12,7 +12,6 @@ const searchMathStr = function (long, short) {
     return count;
 }
 
-
 function naiveSearch(long, short) {
     var count = 0;
     for (var i = 0; i < long.length; i++) {
