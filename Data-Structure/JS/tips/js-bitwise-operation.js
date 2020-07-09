@@ -67,4 +67,6 @@ So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
 (A >> B) => Math.floor(A / (2 ** B)) => Math.floor(A / Math.pow(2, B))
 (170 >> 3) => Math.floor(170 / (2 ** 3)) => Math.floor(170 / 8) => 21
 (-170 >> 3) => Math.floor(-170 / (2 ** 3)) => Math.floor(-170 / 8) => -22
+let mid = arr.length >> 1;
+
 */

@@ -1,6 +1,24 @@
 // two pointer
 // O(N^2)
 // ("lorie loled", "lol")
+
+const searchMatchStr = function (str, word) {
+    if (str.length < word.length) return -1;
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        for (let j = 0; j < word.length; j++) {
+            if (word[j] !== str[i + j]) break;
+            if (j === word.length - 1) count++;
+        }
+    }
+    return count;
+}
+console.log(searchMatchStr("lorie loled", "ll"));
+console.log(searchMatchStr("lorie loled", "l"));
+console.log(searchMatchStr("lorie loled", "lo"));
+console.log(searchMatchStr("lorie loled", "lol"));
+
+
 const searchMathStr = function (long, short) {
     let count = 0;
     for (let i = 0; i < long.length; i++) {
@@ -22,5 +40,4 @@ function naiveSearch(long, short) {
     }
     return count;
 }
-
 naiveSearch("lorie loled", "lol")

@@ -18,9 +18,9 @@ function flatten(oldArr) {
     var newArr = [];
     for (var i = 0; i < oldArr.length; i++) {
         if (Array.isArray(oldArr[i])) {
-            newArr = newArr.concat(flatten(oldArr[i]))
+            newArr = newArr.concat(flatten(oldArr[i]));
         } else {
-            newArr.push(oldArr[i])
+            newArr.push(oldArr[i]);
         }
     }
     return newArr;
@@ -31,16 +31,16 @@ console.log(flatten([1, 2, 3, [4, 5]]));
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/isArray
 
 function flatten(arr) {
-    let result = []
+    let result = [];
     const help = function (myArr) {
         for (let i = 0; i < myArr.length; i++) {
-            Array.isArray(myArr[i]) ? help(myArr[i]) : result.push(myArr[i])
+            Array.isArray(myArr[i]) ? help(myArr[i]) : result.push(myArr[i]);
         }
     }
-    help(arr)
-    return result
+    help(arr);
+    return result;
 }
-console.log(flatten([1, 2, 3, [4, 5]]))
-console.log(flatten([1, [2, [3, 4], [[5]]]]))
-console.log(flatten([[1], [2], [3]]))
-console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]))
+console.log(flatten([1, 2, 3, [4, 5]]));
+console.log(flatten([1, [2, [3, 4], [[5]]]]));
+console.log(flatten([[1], [2], [3]]));
+console.log(flatten([[[[1], [[[2]]], [[[[[[[3]]]]]]]]]]));
