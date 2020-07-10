@@ -32,40 +32,42 @@ const checkPermutationsWithMap = function (str1, str2) {
     return true;
 }
 
+//use indexOf()
 const checkPermutations = function (str1, str2) {
     if (str1.length != str2.length) return false;
-
     let len = str1.length;
-
     for (let i = 0; i < len; i++) {
-        //console.log('i = ', i, 'str2.indexOf(str1[i]) = ', str2.indexOf(str1[i]));
+        let position = str2.indexOf(str1[i]);
+        if (position < 0) return false;
+        str2 = str2.slice(0, position) + str2.slice(position + 1);
+    }
+    return str2.length === 0;
+}
 
+const checkPermutations = function (str1, str2) {
+    if (str1.length != str2.length) return false;
+    let len = str1.length;
+    for (let i = 0; i < len; i++) {
         let position = str2.indexOf(str1[i]);
         if (position < 0) {
             return false;
         } else {
             str2 = str2.slice(0, position) + str2.slice(position + 1, str2.length);
-            //console.log('position =', position, 'str1[i] =', str1[i], 'str2 = ', str2);
         }
     }
     return str2.length === 0;
 }
 
-console.log(checkPermutations("doo", "ood")) //true
-console.log(checkPermutations("adogs", "agod")) //false
-console.log(checkPermutations("adogs", "magod")) //false
-
 const checkPermutationsWithHashMapCheckKey = function (str1, str2) {
 
     if (str1.length != str2.length) return false;
 
-    let hashmap1 = {};
+    let hashmap1 = {}; //object
     let hashmap2 = {};
     let len = str1.length;
 
     for (let i = 0; i < len; i++) {
         hashmap1[str1[i]] != undefined ? (hashmap1[str1[i]] = hashmap1[str1[i]] + 1) : (hashmap1[str1[i]] = 1);
-
         hashmap2[str2[i]] != undefined ? (hashmap2[str2[i]] = hashmap2[str2[i]] + 1) : (hashmap2[str2[i]] = 1);
     }
 
@@ -87,35 +89,14 @@ const checkPermutationsJsonStringify = function (str1, str2) {
 
         hashmap2[str2[i]] != undefined ? hashmap2[str2[i]] = hashmap2[str2[i]] + 1 : hashmap2[str2[i]] = 1;
     }
-    //console.log('hashmap1', hashmap1);
-    //console.log('hashmap2', hashmap2)
-
     // return JSON.stringify(hashmap1) == JSON.stringify(hashmap2)
     // not working, because the order is different
-
-
 }
 
-
+//use sort 
 const checkPermutationswithSort = function (str1, str2) {
     if (str1.length != str2.length) return false;
     let s1 = str1.split('').sort().join('');
     let s2 = str2.split('').sort().join('');
     return s1 == s2;
-}
-
-// O(n) isReverseString is subset of the Permutations string
-const isReverseString = function (str1, str2) {
-
-    if (str1.length != str2.length) {
-        return false;
-    }
-    let len = str1.length;
-
-    for (let i = 0; i < len; i++) {
-        // console.log('str1[i] = ', str1[i], ' str2[len - i] = ', str2[len - 1 - i]);
-
-        if (str1[i] != str2[len - 1 - i]) return false;
-    }
-    return true;
 }
