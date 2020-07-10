@@ -9,7 +9,7 @@
 // ASCII is a 7-bit code, representing 128 different characters. 
 
 const isUnique = function (str) {
-    if (str.length > 128) return false
+    if (str.length > 128) return false;
     if (str.length === 1) return true;
     return str.length === (new Set(str.split(''))).size;
 }
