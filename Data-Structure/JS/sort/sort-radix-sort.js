@@ -21,6 +21,8 @@ function mostDigits(nums) {
   return maxDigits;
 }
 
+//Array.from({ length: 10 }, () => []); creat 10 empty sub arr
+
 function radixSort(nums) {
   let maxDigitCount = mostDigits(nums);
   for (let k = 0; k < maxDigitCount; k++) {
