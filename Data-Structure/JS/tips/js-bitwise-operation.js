@@ -61,6 +61,8 @@ So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
 
 (A << B) => A * (2 ** B) => A * Math.pow(2, B)
 (170 << 3) => 170 * (2 ** 3) => 170 * 8 => 1360
+1 << val => 1 * (2 ** val)
+
 
 (A >> B) => Math.floor(A / (2 ** B)) => Math.floor(A / Math.pow(2, B))
 (170 >> 3) => Math.floor(170 / (2 ** 3)) => Math.floor(170 / 8) => 21

@@ -33,6 +33,6 @@ const isUnique1 = function (str) {
     return arr.length === set.size;
 }
 
-console.log(isUnique("Aras"));
+console.log(isUnique("ras"));
 //console.log(isUnique("Arrays"));
 //console.log(isUnique("Arrays and Strings xingwang"));
