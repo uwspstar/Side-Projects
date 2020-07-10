@@ -1,6 +1,8 @@
-//https://brilliant.org/wiki/radix-sort/#
+// https://brilliant.org/wiki/radix-sort/#
 // https://cs.slides.com/colt_steele/intermediate-sorting-algorithms#/31/0/0
-//基数排序的时间复杂度是 O(k * n)}，其中n是排序元素个数 k是数字位数。
+// 基数排序的时间复杂度是 O(k * n)}，其中n是排序元素个数 k是数字位数。
+// https://www.geeksforgeeks.org/radix-sort/
+// https://www.youtube.com/watch?v=Nz1KZXbghj8
 
 function getDigit(num, i) {
     return Math.floor(Math.abs(num) / Math.pow(10, i)) % 10;
@@ -108,4 +110,31 @@ for each digit placing
     while bucket is non-empty
 
       restore element to list
+*/
+/*
+
+Array.prototype.radixSort = function() {
+  let arr = this.slice(0)
+  const max = Math.max(...arr)
+  let digit = `${max}`.length
+  let start = 1
+  let buckets = []
+  while(digit > 0) {
+    start *= 10
+    for(let i = 0; i < arr.length; i++) {
+      const index = arr[i] % start
+      !buckets[index] && (buckets[index] = [])
+      buckets[index].push(arr[i])
+    }
+    arr = []
+    for(let i = 0; i < buckets.length; i++) {
+      buckets[i] && (arr = arr.concat(buckets[i]))
+    }
+    buckets = []
+    digit --
+  }
+  return arr
+}
+const arr = [1, 10, 100, 1000, 98, 67, 3, 28, 67, 888, 777]
+console.log(arr.radixSort())
 */
