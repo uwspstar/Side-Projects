@@ -1,5 +1,5 @@
 
-const isUnique = function (str) {
+const isUniqueForAllLowerCase = function (str) {
     if (str.length > 128) return false;
     if (str.length === 1) return true;
     let checker = 0;
@@ -7,9 +7,11 @@ const isUnique = function (str) {
         let a = 'a'
         let val = str.charCodeAt(i) - a.codePointAt(0);
         let temp = checker & (1 << val);
-        console.log('codePointAt(1)=', 'a'.codePointAt(0), 'str.charCodeAt(i)=', str.charCodeAt(i), 'val=', val, '1 << val=', 1 << val, 'temp=', temp);
+        //console.log('codePointAt(1)=', 'a'.codePointAt(0), 'str.charCodeAt(i)=', str.charCodeAt(i), 'val=', val, '1 << val=', 1 << val, 'temp=', temp);
         if (temp > 0) return false;
-        checker |= (1 << val);
+        //checker = checker | (1 << val);
+        checker |= (1 << val); // a[0] |= b same as a[0] = a[0] | b
+        
     }
     return true;
 }
