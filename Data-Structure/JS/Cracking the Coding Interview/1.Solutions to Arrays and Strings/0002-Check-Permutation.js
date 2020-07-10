@@ -1,3 +1,6 @@
+// ask is case sensitive
+// ask if whitespace is significant
+
 //Given two strings, write a method to decide if one is a permutation of the other.
 // confirm if the permutation comparison is case sensitive. 
 // If two strings are permutations, then we know they have the same characters, but in different orders. 
