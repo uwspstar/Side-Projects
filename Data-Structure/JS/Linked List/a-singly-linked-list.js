@@ -1,4 +1,6 @@
 // typic
+// console.log(JSON.stringify(linkedList))
+
 class Node {
     constructor(val) {
         this.val = val;
