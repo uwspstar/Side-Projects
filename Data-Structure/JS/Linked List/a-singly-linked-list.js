@@ -1,5 +1,10 @@
 // typic
 // console.log(JSON.stringify(linkedList))
+// *** always let current = this.head; 
+// cannot use "const current = this.head;"
+// compar with Array
+// always set current =  this.head; start searching with head
+
 
 class Node {
     constructor(val) {
@@ -8,9 +13,6 @@ class Node {
     }
 }
 
-// let current = this.head; // cannot use "const current = this.head;"
-// compar with Array
-// always set current =  this.head; start searching with head
 
 
 class SinglyLinkedList {
@@ -49,21 +51,43 @@ class SinglyLinkedList {
                 if (current.next !== null) current = current.next;
                 count++;
             }
-            //console.log('current =',current)
             node.next = current.next;
             current.next = node;
+        }
+        return this;
+    }
+    //1--2--3
+    remove(index) {
+
+        if (index === 0) {
+            this.head = this.head.next;
+        } else {
+            let current = this.head;
+            let pre = this.head;
+            let count = 0
+            while (count < index) {
+                if (current.next) {
+                    pre = current;
+                    current = current.next;
+                }
+                count++
+            }
+            pre.next = current.next;
         }
         return this;
     }
 }
 
 let linkedList = new SinglyLinkedList(5);
+//console.log(JSON.stringify(linkedList))
 linkedList.append(10);
-//linkedList.append(20);
-//linkedList.prepend(1);
-//linkedList.insert(1, -1)
-linkedList.insert(2, 4);
+linkedList.append(20);
+linkedList.prepend(1);
 console.log(JSON.stringify(linkedList))
+linkedList.insert(2, 4);
 linkedList.insert(0, 100);
-//console.table(linkedList);
+console.log(JSON.stringify(linkedList))
+linkedList.remove(0);
+console.log(JSON.stringify(linkedList))
+linkedList.remove(1);
 console.log(JSON.stringify(linkedList))

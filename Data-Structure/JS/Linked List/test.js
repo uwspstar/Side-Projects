@@ -73,7 +73,7 @@ let linkedList = new SinglyLinkedList(5);
 linkedList.append(10);
 linkedList.append(20);
 linkedList.prepend(1);
-console.log(JSON.stringify(linkedList))
+//console.log(JSON.stringify(linkedList))
 linkedList.insert(2, 4);
 linkedList.insert(0, 100);
 console.log(JSON.stringify(linkedList))
