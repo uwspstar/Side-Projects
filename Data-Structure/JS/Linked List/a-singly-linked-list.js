@@ -12,10 +12,12 @@ class Node {
 // compar with Array
 // always set current =  this.head; start searching with head
 
+
 class SinglyLinkedList {
     constructor(val) {
         this.head = new Node(val);
     }
+
 
     prepend(val) {
         const node = new Node(val);
@@ -35,10 +37,33 @@ class SinglyLinkedList {
             current.next = node;
         }
     }
+
+    insert(index, val) {
+        if (index === 0) {
+            this.prepend(val);
+        } else {
+            const node = new Node(val);
+            let current = this.head;
+            let count = 0;
+            while (count < index) {
+                if (current.next !== null) current = current.next;
+                count++;
+            }
+            //console.log('current =',current)
+            node.next = current.next;
+            current.next = node;
+        }
+        return this;
+    }
 }
 
 let linkedList = new SinglyLinkedList(5);
-//linkedList.append(10);
+linkedList.append(10);
 //linkedList.append(20);
-linkedList.prepend(1);
-console.log(linkedList);
+//linkedList.prepend(1);
+//linkedList.insert(1, -1)
+linkedList.insert(2, 4);
+console.log(JSON.stringify(linkedList))
+linkedList.insert(0, 100);
+//console.table(linkedList);
+console.log(JSON.stringify(linkedList))
