@@ -8,17 +8,20 @@ class Node {
 
 // let current = this.head; // cannot use "const current = this.head;"
 // compar with Array
+// always set current =  this.head; start searching with head
 
 class SinglyLinkedList {
     constructor(val) {
         this.head = new Node(val);
     }
+
     prepend(val) {
         const node = new Node(val);
-        const current  =  this.head;
+        let current = this.head;
         node.next = current;
         this.head = node;
     }
+
     append(val) {
         const node = new Node(val);
         if (this.head === null) this.head = node;
@@ -33,7 +36,7 @@ class SinglyLinkedList {
 }
 
 let linkedList = new SinglyLinkedList(5);
-linkedList.append(10);
-linkedList.append(20);
+//linkedList.append(10);
+//linkedList.append(20);
 linkedList.prepend(1);
 console.log(linkedList);
