@@ -28,15 +28,17 @@ While there are still values we haven't looked at...
     - If the value in the first array is smaller than the value in the second array, push the value in the first array into our results and move on to the next value in the first array
     - If the value in the first array is larger than the value in the second array, push the value in the second array into our results and move on to the next value in the second array
     - Once we exhaust one array, push in all remaining values from the other array
-*/
-/*
+ 
 ideally, when arr only has 1 elem, it is sorted, so continues divide the arr till the arr only has 1 elem.
 */
+
+// pop()   - push()
+// shift() - unshift()
+// The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array
 
 const merge = function (left, right) {
     if (left.length === 0) return right;
     if (right.length === 0) return left;
-    // The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array
     let result = [];
     while (left.length > 0 && right.length > 0) {
         left[0] < right[0] ? result.push(left.shift())
@@ -57,8 +59,6 @@ console.log(mergeSort([10, 80, 30, 90, 40, 50, 70]));
 
 
 
-
-
 function merge(left, right) {
     var result = [];
     while (left.length > 0 && right.length > 0) {
@@ -72,11 +72,11 @@ function merge(left, right) {
 }
 
 function mergeSort(arr) {
-    if (arr.length < 2) return arr
-    var middle = arr.length >> 1 //Math.floor(arr.length / 2);
-    var left = mergeSort(arr.slice(0, middle))
-    var right = mergeSort(arr.slice(middle))
-    return merge(left, right)
+    if (arr.length < 2) return arr;
+    var middle = arr.length >> 1; //Math.floor(arr.length / 2);
+    var left = mergeSort(arr.slice(0, middle));
+    var right = mergeSort(arr.slice(middle));
+    return merge(left, right);
 }
 
 
