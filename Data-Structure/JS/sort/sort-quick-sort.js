@@ -8,10 +8,11 @@ https://zh.wikipedia.org/wiki/%E5%BF%AB%E9%80%9F%E6%8E%92%E5%BA%8F
 *** pivot left smaller than pivot (may not in order)
 *** pivot right bigger than pivot (may not in order)
 
-Quick Sort
-Like merge sort, exploits the fact that arrays of 0 or 1 element are always sorted
-Works by selecting one element (called the "pivot") and finding the index where the pivot should end up in the sorted array
-Once the pivot is positioned appropriately, quick sort can be applied on either side of the pivot
+Quick Sort O(nlogn)
+- Like merge sort, exploits the fact that arrays of 0 or 1 element are always sorted
+(base case)
+- Works by selecting one element (called the "pivot") and finding the index where the pivot should end up in the sorted array
+- Once the pivot is positioned appropriately, quick sort can be applied on either side of the pivot
 
 Mozilla uses merge sort. 
 However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort, for smaller arrays. The ECMAscript standard does not specify which sort algorithm is to be used
@@ -20,22 +21,23 @@ https://www.geeksforgeeks.org/quick-sort/
 
 Like Merge Sort, QuickSort is a Divide and Conquer algorithm. It picks an element as pivot and partitions the given array around the picked pivot. There are many different versions of quickSort that pick pivot in different ways.
 
+
 Always pick first element as pivot.
-Always pick last element as pivot (implemented below)
+Always pick last element as pivot (implemented below) I use this one
 Pick a random element as pivot.
 Pick median as pivot.
 
-Select right pivot effect performance
+"Select right pivot will effect sort performance"
 
-how Quick sort works in simple words.
+How Quick sort works in simple words.
 
-First select an element which is to be called as pivot element.
-Next, compare all array elements with the selected pivot element and arrange them in such a way that, elements less than the pivot element are to it's left and greater than pivot is to it's right.
-Finally, perform the same operations on left and right side elements to the pivot element.
+- First select an element which is to be called as pivot element.
+- Next, compare all array elements with the selected pivot element and arrange them in such a way that, elements less than the pivot element are to it's left and greater than pivot is to it's right.
+- Finally, perform the same operations on left and right side elements to the pivot element.
 
-But before going forward with the Quick sort, selecting the pivot element plays a major role. 
+- But before going forward with the Quick sort, selecting the pivot element plays a major role. 
 
-If you select the first element as the pivot element, then it gives WORST performance in the sorted array. 
+- If you select the first element as the pivot element, then it gives WORST performance in the sorted array. 
 
 So, it is always advisable to pick the middle element (length of the array divided by 2) as the pivot element and we do the same
 
@@ -72,27 +74,26 @@ const getPivotIndex = function (arr, low, high) {
     swap(arr, high, smallIndex);
     return smallIndex;
 }
+
 const quickSort = function (arr, low = 0, high = arr.length - 1) {
     if (arr.length < 2) return arr;
     if (low < high) {
         let pi = getPivotIndex(arr, low, high);
-        quickSort(arr, low, pi - 1);
+        quickSort(arr, low, pi - 1); // pi is in right position already
         quickSort(arr, pi + 1, high);
     }
     return arr;
 }
-console.log(quickSort([10, 80, 30, 90, 40, 50, 70]));
-console.log(quickSort([1, 3, 5, 2, 4, 6, 0, -1]));
 
 const getPivotIndex = function (arr, low, high) {
     const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]];
-    let pivot = arr[high];
-    let pivotIndex = low;
+    let pivot = arr[high];// always select last one as pivot
+    let pivotIndex = low; // important
     //[7, 3, 5] -> [3, 7, 5] -> [3, 5, 7]
     for (let i = low; i < high; i++) {
         if (arr[i] < pivot) {
             swap(arr, i, pivotIndex);
-            pivotIndex++;
+            pivotIndex++; // important
         }
     }
     swap(arr, high, pivotIndex);
@@ -134,9 +135,6 @@ const quickSort = function (arr, left = 0, right = arr.length - 1) {
     }
     return arr;
 }
-
-console.log(quickSort([10, 80, 30, 90, 40, 50, 70]))
-console.log(quickSort([1, 3, 5, 2, 4, 6, 0, -1]))
 
 // find the pivot index
 function getPivotIndex(arr, start = 0, end = arr.length - 1) {
