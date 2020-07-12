@@ -26,7 +26,8 @@ class SinglyLinkedList {
         let slow = this.head;
         while (fast.next) {
             fast = fast.next.next;
-            slow = slow.next
+            slow = slow.next;
+            console.log('fast =', fast, 'slow =', slow);
         }
         return slow;
     }
