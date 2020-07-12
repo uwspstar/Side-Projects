@@ -152,7 +152,7 @@ const merge = function (arr1, arr2) {
 // find the mid
 const mergeSort = function (arr) {
     if (arr.length < 2) return arr;
-    let mid = Math.floor(arr.length / 2) //let mid = parseInt(arr.length / 2)
+    let mid = Math.floor(arr.length / 2); //let mid = parseInt(arr.length / 2)
     let left = mergeSort(arr.slice(0, mid));
     let right = mergeSort(arr.slice(mid));
     return merge(left, right);

@@ -27,7 +27,7 @@ right shift	    a >>> b  	Shifts a in binary representation b (< 32) bits to the
 
 Bitwise shifting any number x to the left by y bits yields x * 2 ** y.
 So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
- 
+
 (0 & 0) === 0     // 0 x 0 = 0
 (0 & 1) === 0     // 0 x 1 = 0
 (1 & 0) === 0     // 1 x 0 = 0
@@ -59,12 +59,15 @@ So e.g.: 9 << 3 translates to: 9 * (2 ** 3) = 9 * (8) = 72.
 (A ^ -1) === ~A
 
 
+----------------------------------------------
 (A << B) => A * (2 ** B) => A * Math.pow(2, B)
+(A << 1) => A * (2 ** 1) => A * Math.pow(2, 1) =  2A
 (170 << 3) => 170 * (2 ** 3) => 170 * 8 => 1360
-1 << val => 1 * (2 ** val)
+1 << val => 1 * (2 ** val) => 2 ** val
 
-
+----------------------------------------------------------------------------------------
 (A >> B) => Math.floor(A / (2 ** B)) => Math.floor(A / Math.pow(2, B))
+(A >> 1) => => Math.floor(A / (2 ** 1)) => Math.floor(A / Math.pow(2, 1)) =  Math.floor(A / 2)
 (170 >> 3) => Math.floor(170 / (2 ** 3)) => Math.floor(170 / 8) => 21
 (-170 >> 3) => Math.floor(-170 / (2 ** 3)) => Math.floor(-170 / 8) => -22
 let mid = arr.length >> 1;
