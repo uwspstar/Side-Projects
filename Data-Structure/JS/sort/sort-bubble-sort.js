@@ -38,7 +38,7 @@ const bubbleSort = function (arr) {
 console.log(bubbleSort(arr));
 
 
-const bubbleSort = function (arr) {
+const bubbleSort2 = function (arr) {
   const swap = (arr, i, j) => {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   };
@@ -53,7 +53,7 @@ const bubbleSort = function (arr) {
   return arr;
 }
 
-const bubbleSort = function (arr) {
+const bubbleSort3 = function (arr) {
 
   if (arr.length < 2) return arr;
   // use two points, from left and right
@@ -68,7 +68,7 @@ const bubbleSort = function (arr) {
   return arr;
 }
 
-const bubbleSort2 = function (arr) {
+const bubbleSort4 = function (arr) {
   let len = arr.length;
   if (len < 2) return arr;
 
@@ -141,34 +141,19 @@ bubbleSort([8,1,2,3,4,5,6,7]);
 */
 
 
-const bubbleSort2 = function (arr) {
-  let swap = true
+const bubbleSort5 = function (arr) {
+  let swap = true;
   do {
-    swap = false
+    swap = false;
     for (let i = 0; i < arr.length - 1; i++) {
       if (arr[i] > arr[i + 1]) {
         [arr[i], arr[i + 1]] = [arr[i + 1], arr[i]]
-        swap = true
+        swap = true;
       }
     }
   }
-  while (swap)
-  return arr
-}
-// [5, 3, 2, 6, 9, 1]
-const bubbleSort = function (arr) {
-
-  let len = arr.length
-  if (len < 2) return arr
-  //O(N^2)
-  for (let i = 0; i < len - 1; i++) // each time find the biggest one put to the right
-    for (let j = 0; j < len - 1 - i; j++) {
-      if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
-      }
-    }
-
-  return arr
+  while (swap);
+  return arr;
 }
 
 console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0]))
