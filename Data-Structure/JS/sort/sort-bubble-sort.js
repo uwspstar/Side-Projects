@@ -135,11 +135,8 @@ function bubbleSort(arr){
   }
   return arr;
 }
-
-
 bubbleSort([8,1,2,3,4,5,6,7]);
 */
-
 
 const bubbleSort5 = function (arr) {
   let swap = true;
@@ -156,8 +153,8 @@ const bubbleSort5 = function (arr) {
   return arr;
 }
 
-console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0]))
-console.log(bubbleSort([3, 2, 3, 1, 2, 4, 5, 5, 6]))
+console.log(bubbleSort([5, 3, 2, 6, 9, 1, 0]));
+console.log(bubbleSort([3, 2, 3, 1, 2, 4, 5, 5, 6]));
 
 
 

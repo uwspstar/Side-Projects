@@ -42,6 +42,8 @@ const selectionSort = function (arr) {
     return arr;
 }
 
+console.log(selectionSort([5, 3, 2, 6, 9, 1, 0]));
+
 const selectionSort2 = function (arr) {
 
     function swap(arr, i, j) {
@@ -63,49 +65,44 @@ const selectionSort2 = function (arr) {
     return arr;
 }
 
-// O(N^2)
-// each loop, remember the smallest item index, and swap the position,
-// each loop to put the smallest item in left side, 
-const selectionSort = function (arr) {
-    if (arr.length < 2) return arr
+const selectionSort3 = function (arr) {
+    if (arr.length < 2) return arr;
     for (let i = 0; i < arr.length; i++) {
         // smallest index init increase 
-        let smallestItemIndex = i
+        let smallestItemIndex = i;
         // let j = smallestItemIndex + 1 is better let j = smallestItemIndex, first item is smallestItemIndex
         for (let j = smallestItemIndex + 1; j < arr.length; j++) {
             if (arr[j] < arr[smallestItemIndex]) {
-                smallestItemIndex = j
+                smallestItemIndex = j;
             }
         }
         if (smallestItemIndex !== i) {
-            [arr[i], arr[smallestItemIndex]] = [arr[smallestItemIndex], arr[i]]
+            [arr[i], arr[smallestItemIndex]] = [arr[smallestItemIndex], arr[i]];
         }
     }
 
-    return arr
+    return arr;
 }
 
-console.log(selectionSort([5, 3, 2, 6, 9, 1, 0]))
-
-const selectionSort = function (arr) {
-    let len = arr.length
-    if (len < 2) return arr
+const selectionSort4 = function (arr) {
+    let len = arr.length;
+    if (len < 2) return arr;
     for (let i = 0; i < len; i++) {
-        let smallIndex = i
+        let smallIndex = i;
         for (let j = i + 1; j < len; j++) { // j = i + 1
             if (arr[j] < arr[smallIndex]) {
-                smallIndex = j
+                smallIndex = j;
             }
         }
         if (smallIndex !== i) {
-            [arr[i], arr[smallIndex]] = [arr[smallIndex], arr[i]]
+            [arr[i], arr[smallIndex]] = [arr[smallIndex], arr[i]];
         }
 
     }
-    return arr
+    return arr;
 }
 
-const selectionSort1 = function (arr) {
+const selectionSort5 = function (arr) {
     if (arr.length < 2) return arr;
     for (let i = 0; i < arr.length; i++) {
         let smallIdx = i;
@@ -120,7 +117,7 @@ const selectionSort1 = function (arr) {
     return arr;
 }
 
-const selectionSort2 = function (arr) {
+const selectionSort6 = function (arr) {
     let len = arr.length
     if (len < 2) return arr
     for (let i = 0; i < len; i++) {
@@ -130,14 +127,11 @@ const selectionSort2 = function (arr) {
                 smallIndex = j
             }
         }
-        [arr[i], arr[smallIndex]] = [arr[smallIndex], arr[i]]
+        [arr[i], arr[smallIndex]] = [arr[smallIndex], arr[i]];
     }
     return arr
 }
 
-console.log(selectionSort([5, 3, 2, 6, 9, 1, 0])) //[0, 1, 2, 3, 5, 6, 9]
-console.log(selectionSort([5, 4, 3, 2, 1])) //[2,3,5,6,9]
-console.log(selectionSort([5, 3, 2, 6, 9])) //[2,3,5,6,9]
 
 /*
 repeat (numOfElements - 1) times
