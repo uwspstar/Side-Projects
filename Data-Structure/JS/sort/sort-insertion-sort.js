@@ -2,9 +2,7 @@
 https://www.udemy.com/course/js-algorithms-and-data-structures-masterclass/learn/lecture/8344156#overview 
 
 Insertion Sort 
-Builds up the sort by gradually creating a larger left half which is always sorted
-
-the left side is sorted
+Builds up the sort by gradually creating a larger left half which is always sorted the left side is sorted
 
 Insertion : start from second element, move to index , insert the element to left sorted array
 
@@ -25,8 +23,8 @@ https://blog.bitsrc.io/a-guide-to-sorting-algorithms-in-javascript-5b32da4eae1e
 We will use nested loops to perform the sorting. 
 
 1. First, we will take an element from the array and check if its greater or smaller than the element next to it. 
-2. The outer for loop will start from the second element of the array and will run for the entire length of the array.
-3. The inner loop will start from the beginning of the array and will run until the current element of the outer loop. 
+2. The outer for loop will start from the second element of the array and will run for the entire length of the array. i = 1; i++
+3. The inner loop will start from the beginning of the array and will run until the current element of the outer loop. j = i -1 ; j--
 4. The inner loop will also reset every time the outer loop’s iterating variable’s value increases.
 5. As for the actual sorting, we will compare the outer loops element with the inner loops element. If the outer loop’s element is smaller, then we will move it to the position of the inner loop’s element and vice versa. To do this we will use the array’s slice method ( the insert part )
 */
@@ -39,64 +37,43 @@ We will use nested loops to perform the sorting.
 //------------------------------------
 
 const insertionSort = function (arr) {
-    if (arr.length < 2) return arr
+    if (arr.length < 2) return arr;
     //[3, 6, 4] 4 is current
     //left is sorted
     //assume the current is init biggest, compare with all left side, find where need to insert
     for (let i = 1; i < arr.length; i++) {
-        let current = arr[i]
-        let j = i - 1
+        let current = arr[i];
+        let j = i - 1;
         for (; j >= 0; j--) {
             if (arr[j] > current) {
-                arr[j + 1] = arr[j]
+                arr[j + 1] = arr[j];
             } else break;  // need else break, left side always sorted
         }
-        arr[j + 1] = current // arr[j] break inner loop
+        arr[j + 1] = current; // arr[j] break inner loop
     }
-    return arr
-}
-
-const insertionSort = function (arr) {
-    //[1, 6, 7, 5] -> [1, 6, 7, 7] 
-    if (arr.length < 2) return arr
-    for (let i = 1; i < arr.length; i++) {
-        let current = arr[i]
-        let j = i - 1
-        for (; j >= 0; j--) {
-            if (arr[j] > current) {
-                arr[j + 1] = arr[j]
-            } else break; //******
-        }
-        arr[j + 1] = current
-    }
-    return arr
+    return arr;
 }
 
 console.log(insertionSort([1, 6, 7, 5]))
 console.log(insertionSort([10, 80, 30, 90, 40, 50, 70]))
 
-
-// arr[j] > current ? arr[j + 1] = arr[j] : break  // syntax error
-const insertionSort = function (arr) {
-    if (arr.length === 1) return arr
-    //assume left is sorted, start second item
-
+const insertionSort2 = function (arr) {
+    //[1, 6, 7, 5] -> [1, 6, 7, 7] 
+    if (arr.length < 2) return arr;
     for (let i = 1; i < arr.length; i++) {
-        let current = arr[i]
-        let j = i - 1
+        let current = arr[i];
+        let j = i - 1;
         for (; j >= 0; j--) {
-            // always compar j item with current value
             if (arr[j] > current) {
-                arr[j + 1] = arr[j]
-            } else break
+                arr[j + 1] = arr[j];
+            } else break; //******
         }
-        arr[j + 1] = current
+        arr[j + 1] = current;
     }
-    return arr
+    return arr;
 }
-console.log(insertionSort([2, 4, 6, 3, 7, 0])) // [ 0, 2, 3, 4, 6, 7 ]
 
-const insertionSort = function (arr) {
+const insertionSort3 = function (arr) {
     let i, j;
     for (i = 1; i < arr.length; i++) {
         let current = arr[i]; // start with second element
