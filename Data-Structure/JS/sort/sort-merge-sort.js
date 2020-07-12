@@ -36,6 +36,7 @@ ideally, when arr only has 1 elem, it is sorted, so continues divide the arr til
 // shift() - unshift()
 // The shift() method removes the first element from an array and "returns that removed element". This method changes the length of the array. same as pop() : 
 // The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
+// slice(start, end) : using shallow copy, reference same memory address with original arr 
 
 const merge = function (left, right) {
     if (left.length === 0) return right;
