@@ -10,9 +10,7 @@ While the bubble and insertion sort algorithms use iteration, merge sort uses re
 Mozilla uses merge sort. 
 However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort, for smaller arrays. The ECMAscript standard does not specify which sort algorithm is to be used
  
-
-merge sort:
-It's a combination of two things - merging and sorting
+merge sort: It's a combination of two things - "merging" and "sorting"
 
 Try out bubble sort on an array of 100000 elements, it will take quite some time!
 There is a family of sorting algorithms that can improve time complexity from O(n^2) to O(n log n)
@@ -24,7 +22,8 @@ Given two arrays which are sorted, this helper function should create a new arra
 This function should run in O(n + m) time and O(n + m) space and should not modify the parameters passed to it.
 
 Merging Arrays Pseudocode
-Create an empty array, take a look at the smallest values in each input array
+- need extra space let result = [] to hold the merge result;
+Create an empty array ( let result = [] ), take a look at the smallest values in each input array
 While there are still values we haven't looked at...
     - If the value in the first array is smaller than the value in the second array, push the value in the first array into our results and move on to the next value in the first array
     - If the value in the first array is larger than the value in the second array, push the value in the second array into our results and move on to the next value in the second array
