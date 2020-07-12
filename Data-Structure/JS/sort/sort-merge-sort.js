@@ -34,7 +34,8 @@ ideally, when arr only has 1 elem, it is sorted, so continues divide the arr til
 
 // pop()   - push()
 // shift() - unshift()
-// The shift() method removes the first element from an array and returns that removed element. This method changes the length of the array
+// The shift() method removes the first element from an array and "returns that removed element". This method changes the length of the array. same as pop() : 
+// The pop() method removes the last element from an array and returns that element. This method changes the length of the array.
 
 const merge = function (left, right) {
     if (left.length === 0) return right;
@@ -81,19 +82,19 @@ function mergeSort(arr) {
 
 
 const merge = function (arr1, arr2) {
-    if (arr1.length === 0) return arr2
-    if (arr2.length === 0) return arr1
+    if (arr1.length === 0) return arr2;
+    if (arr2.length === 0) return arr1;
 
-    let result = []
-    let i = 0
-    let j = 0
+    let result = [];
+    let i = 0;
+    let j = 0;
     while (i < arr1.length && j < arr2.length) {
         if (arr1[i] < arr2[j]) {
-            result.push(arr1[i])
-            i++
+            result.push(arr1[i]);
+            i++;
         } else {
-            result.push(arr2[j])
-            j++
+            result.push(arr2[j]);
+            j++;
         }
     }
     while (i < arr1.length) {
