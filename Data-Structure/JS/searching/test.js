@@ -1,3 +1,7 @@
+console.log(5 >> 1) // 5 / 2 ** 1
+console.log(Math.floor(5 / 2)) // 5 / 2 ** 1
+console.log(4 / 2) // 5 / 2 ** 1
+/*
 const searchMatchStr = function (str, word) {
     if (str.length < word.length) return -1;
     let count = 0;
@@ -13,7 +17,7 @@ console.log(searchMatchStr("lorie loled", "ll"));
 console.log(searchMatchStr("lorie loled", "l"));
 console.log(searchMatchStr("lorie loled", "lo"));
 console.log(searchMatchStr("lorie loled", "lol"));
-/*
+
 const findMissingNum = function (arr) {
     if (arr.length === 0) return -1;
     //1+2+3+...+n = n/2 * (1+n)

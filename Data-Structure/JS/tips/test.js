@@ -1,4 +1,22 @@
 
+let str = "The rain in SPAIN stays mainly in the plain";
+let wd = "ain";
+var res = new RegExp(wd, 'g')
+console.table(str.match(res)); // expected output: Array ["T", "I"]
+
+/*
+let str = "lorie loled";
+let word = "lo";
+let len = str.length;
+var re = new RegExp(word, 'g')
+str.match(re);
+str.search(word);
+str.replace(word, '').length;
+
+
+let arr = Array.from('foo mind'); // [ "f", "o", "o", " ", "m", "i", "n", "d" ]
+console.table(arr);
+
 const json = '{"result":true, "count":42}';
 const obj = JSON.parse(json);
 
@@ -6,8 +24,8 @@ console.log(obj.count);// expected output: 42
 console.log(obj.result);
 console.table(obj);
 
-/*
-const arr = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]; 
+
+const arr = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
 // find odd
 console.log(arr.filter(num => num & 1))
 // find even
@@ -21,13 +39,13 @@ function getKeyByValue(map, searchValue) {
         return key;
     }
   }
-  
+
   const getKeyListByValue  = function getKeyListByValue(map, searchValue) {
     let result = []
     for (let [key, value] of map.entries()) {
       if (value === searchValue) {
         result.push(key) // find all match should be different keys, value can be same
-      }    
+      }
     }
     return result
   }

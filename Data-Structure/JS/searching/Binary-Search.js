@@ -6,16 +6,19 @@
 
 const binarySearch = function (arr, num) {
   if (arr.length === 0) return -1;
+
   let start = 0;
   let end = arr.length - 1;
-  let mid = (start + end) >> 1
+  let mid = (start + end) >> 1;
+
   while (start <= end) { // NOT start < end, need start <= end,
     //let mid = (start + end) >> 1; // more space, put outside same some space
     //console.log('start = ', start, 'end = ', end, 'mid=', mid)
     if (arr[mid] === num) return mid;
-    arr[mid] > num ? end = mid - 1 : start = mid + 1
+    arr[mid] > num ? end = mid - 1 : start = mid + 1;
     mid = (start + end) >> 1;
   }
+
   return -1
 
 }
@@ -45,17 +48,19 @@ function binarySearch(arr, elem) {
 // Refactored Version
 function binarySearch(arr, num) {
   if (arr.length === 0) return -1;
-  let start = 0
-  let end = arr.length - 1
-  let mid = (start + end) >> 1
+  let start = 0;
+  let end = arr.length - 1;
+  let mid = (start + end) >> 1;
   while (start <= end) { //<=
-    if (arr[mid] === num) return mid
-    arr[mid] > num ? mid = end-- : mid = start++
-    mid = (start + end) >> 1
+    if (arr[mid] === num) return mid;
+    arr[mid] > num ? mid = end-- : mid = start++;
+    mid = (start + end) >> 1;
   }
   return arr[mid] === num ? mid : -1;
 }
 
+//[1, 2, 3, 4, 5] mid = (0 + 4) / 2 = 2
+//[1, 2, 3, 4, 5] mid = (5) / 2 = 2.5 >> 1
 const binarySearch = function (arr, num) {
   if (arr.length === 0) return -1;
   let start = 0;

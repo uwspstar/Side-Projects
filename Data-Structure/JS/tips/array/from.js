@@ -1,7 +1,9 @@
 /*
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from
 
-Array.from() static method creates a new, shallow-copied Array instance from an array-like or iterable object.
+"shallow-copied" : only memory address
+
+Array.from() static method creates a new, "shallow-copied" Array instance from an array-like or iterable object.
 
 Array.from() lets you create Arrays from:
 
