@@ -3,7 +3,8 @@ const json = '{"result":true, "count":42}';
 const obj = JSON.parse(json);
 
 console.log(obj.count);// expected output: 42
-console.table(obj.result);
+console.log(obj.result);
+console.table(obj);
 
 /*
 const arr = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]; 
