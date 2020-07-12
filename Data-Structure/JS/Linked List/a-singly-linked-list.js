@@ -76,6 +76,16 @@ class SinglyLinkedList {
         }
         return this;
     }
+
+    size() {
+        let count = 1;
+        let current = this.head.next;
+        while (current !== null) {
+            count++;
+            current = current.next;
+        }
+        return count;
+    }
 }
 
 let linkedList = new SinglyLinkedList(5);
