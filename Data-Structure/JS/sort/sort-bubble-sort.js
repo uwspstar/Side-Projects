@@ -15,32 +15,36 @@ Return the sorted array
 const arr = [0, 1, 5, 4, 3, 2, 6];
 
 const bubbleSort = function (arr) {
-  if (arr.length < 2) return arr
+  if (arr.length < 2) return arr;
 
   const swap = (arr, i, j) => {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   };
 
   for (let i = arr.length - 1; i >= 0; i++) {
-    let isSwap = false
+    let isSwap = false;
     for (let j = 0; j < i; j++) {
       if (arr[j] > arr[j + 1]) {
-        swap(arr, j, j + 1)
-        isSwap = true
+        swap(arr, j, j + 1);
+        isSwap = true;
       }
     }
     if (!isSwap) break;
   }
-  return arr
+
+  return arr;
 }
+
+console.log(bubbleSort(arr));
+
 
 const bubbleSort = function (arr) {
   const swap = (arr, i, j) => {
     [arr[i], arr[j]] = [arr[j], arr[i]];
   };
 
-  for (let i = arr.length; i > 0; i--) {
-    for (let j = 0; j < i - 1; j++) {
+  for (let i = arr.length - 1; i >= 0; i--) {
+    for (let j = 0; j < i; j++) {
       if (arr[j] > arr[j + 1]) {
         swap(arr, j, j + 1);
       }
@@ -64,24 +68,21 @@ const bubbleSort = function (arr) {
   return arr;
 }
 
-console.log(bubbleSort(arr));
-
-
 const bubbleSort2 = function (arr) {
-  let len = arr.length
-  if (len < 2) return arr
+  let len = arr.length;
+  if (len < 2) return arr;
 
   for (let i = 0; i < len - 1; i++) {
-    let swap = false
+    let swap = false;
     for (let j = 0; j < len - 1 - i; j++) {
       if (arr[j] > arr[j + 1]) {
-        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]]
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
         swap = true;
       }
     }
-    if (!swap) break
+    if (!swap) break;
   }
-  return arr
+  return arr;
 }
 
 
