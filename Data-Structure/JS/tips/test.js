@@ -1,4 +1,11 @@
 
+const json = '{"result":true, "count":42}';
+const obj = JSON.parse(json);
+
+console.log(obj.count);// expected output: 42
+console.table(obj.result);
+
+/*
 const arr = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]; 
 // find odd
 console.log(arr.filter(num => num & 1))
@@ -6,7 +13,7 @@ console.log(arr.filter(num => num & 1))
 console.log(arr.filter(num => !(num & 1)))
 console.log(arr.filter(num => (num % 2 === 0)))
 
-/*
+
 function getKeyByValue(map, searchValue) {
     for (let [key, value] of map.entries()) {
       if (value === searchValue) // first match
