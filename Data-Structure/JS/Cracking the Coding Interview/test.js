@@ -1,9 +1,23 @@
+const witnesses = function (arr) {
+    if (arr.length < 2) return 1;
+    let highest = 0
+    let count = 0;
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] > highest) {
+            highest = arr[i];
+            count++;
+        }
+    }
+    return count;
+}
+console.table(witnesses([3, 6, 3, 4, 1]));
+console.table(witnesses([3]));
+console.table(witnesses([3, 7, 4, 5, 6, 2]));
 
-
-
+/*
 const rotateMatrix = function (arr) {
     // i = row; j = column;
-     
+
     let row = arr.length;
     let column = arr[0].length;
     //step 1
@@ -24,7 +38,7 @@ let arr = [
     [1, 2, 3], [4, 5, 6], [7, 8, 9]
 ]
 console.log(rotateMatrix(arr)); //[[7, 4, 1],[8, 5, 2],[9, 6, 3]]
-/*
+
 const checkPermutations = function (str1, str2) {
     if (str1.length != str2.length) return false;
     let len = str1.length;
