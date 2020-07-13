@@ -1,6 +1,29 @@
 
 
 
+const rotateMatrix = function (arr) {
+    // i = row; j = column;
+     
+    let row = arr.length;
+    let column = arr[0].length;
+    //step 1
+    for (let i = 0; i < row; i++) {
+        for (let j = 0; j < column; j++) {
+            [arr[i][j]]
+        }
+    }
+    return arr;
+    //step 2
+    for (let i = 0; i < row; i++) {
+        [arr[i], arr[row - i]] = [arr[row - i], arr[i]]
+    }
+    return arr;
+
+}
+let arr = [
+    [1, 2, 3], [4, 5, 6], [7, 8, 9]
+]
+console.log(rotateMatrix(arr)); //[[7, 4, 1],[8, 5, 2],[9, 6, 3]]
 /*
 const checkPermutations = function (str1, str2) {
     if (str1.length != str2.length) return false;
