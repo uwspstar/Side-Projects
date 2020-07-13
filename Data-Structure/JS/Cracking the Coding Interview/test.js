@@ -1,5 +1,7 @@
 
 
+
+/*
 const checkPermutations = function (str1, str2) {
     if (str1.length != str2.length) return false;
     let len = str1.length;
@@ -15,7 +17,7 @@ const checkPermutations = function (str1, str2) {
 console.log(checkPermutations("doo", "ood")) //true
 console.log(checkPermutations("adogs", "agod")) //false
 console.log(checkPermutations("adogs", "magod")) //false
-/*
+
 const isUniqueForAllLowerCase = function (str) {
     if (str.length > 128) return false;
     if (str.length === 1) return true;
