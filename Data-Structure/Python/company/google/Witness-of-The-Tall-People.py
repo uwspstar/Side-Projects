@@ -5,3 +5,7 @@ def witness(nums):
         if num > highest:
             highest = num
             count += 1
+    return count
+
+
+print(witness([3, 6, 3, 4, 1]))
