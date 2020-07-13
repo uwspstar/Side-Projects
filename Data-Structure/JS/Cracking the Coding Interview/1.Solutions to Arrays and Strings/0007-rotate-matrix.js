@@ -8,7 +8,18 @@ Rotate Matrix: Given an image represented by an NxN matrix, where each pixel in 
 ]
 
 step1 : switch position cross line, such as 4 and 2, 7 and 3, and 8 and 6
+[
+    [1, 2, 3],     [1, 4, 7],
+    [4, 5, 6], --> [2, 5, 8],
+    [7, 8, 9]      [3, 6, 9]
+]
 step2 : switch each line first element and last element
+
+[
+    [1, 2, 3],     [1, 4, 7],     [1, 4, 7],
+    [4, 5, 6], --> [2, 5, 8], --> [2, 5, 8],
+    [7, 8, 9]      [3, 6, 9]      [3, 6, 9]
+]
 */
 
 const rotateMatrix = function (arr) {
