@@ -22,7 +22,7 @@ const palindrome = function (str) {
     let len = str.length;
     for (let i = 0; i < len / 2; i++) {
         //console.log('i=', i,'str[i] = ', str[i], 'str[len - 1 - i] =', str[len - 1 - i])
-        if (str[i] != str[len - 1 - i]) return false
+        if (str[i] != str[len - 1 - i]) return false;
     }
     return true;
 }
