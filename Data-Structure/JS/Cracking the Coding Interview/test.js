@@ -1,3 +1,25 @@
+const stringRotation = function (str1, str2) {
+    if (str1.length !== str1.length) return false;
+    let p1 = 0;
+    let p2 = 0;
+    // "bwaterbottle"
+    // "erbottlebwat"
+    while (p1 < arr.length && p2 < arr.length) {
+        if (str1[p1] !== str2[p2]) {
+            p2++;
+        }
+        else {
+            let tmp = str.slice(p2) + str.slice(0, p2);
+            if (tmp = str1) return true;
+            p2++;
+        }
+    }
+    return false;
+
+}
+console.table(stringRotation('bwaterbottle', 'bottlebwater'));
+
+/*
 const witnesses = function (arr) {
     if (arr.length < 2) return 1;
     let highest = 0
@@ -14,7 +36,6 @@ console.table(witnesses([3, 6, 3, 4, 1]));
 console.table(witnesses([3]));
 console.table(witnesses([3, 7, 4, 5, 6, 2]));
 
-/*
 const rotateMatrix = function (arr) {
     // i = row; j = column;
 
