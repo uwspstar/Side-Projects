@@ -17,14 +17,14 @@ class LinkedList {
         current.next = new Node(val);
     }
 }
-let list = LinkedList(5);
-list.append(10);
-list.append(10);
-list.append(30);
 
 const removeDuplicate = function (list) {
-    let current = this.head;
-    let map = new Map()
+
+    let current = list.head;
+    //console.log(JSON.stringify(list));
+    console.log(JSON.stringify(current));
+
+    let map = new Map();
     while (current.next !== null) {
         let key = current.val;
         if (!map.get(key)) {
@@ -45,11 +45,18 @@ const removeDuplicate = function (list) {
         if (!map.get(k)) {
             cur = cur.next.next;
         } else {
-            map.set(k,false);
+            map.set(k, false);
         }
     }
+    return list;
 }
-
+let list = new LinkedList(5);
+list.append(10);
+list.append(10);
+list.append(30);
+//console.log(JSON.stringify(list));
+//console.log('-------------------');
+console.log(JSON.stringify(removeDuplicate(list)));
 
 /*
 const stringRotation = function (str1, str2) {
