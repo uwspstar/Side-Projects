@@ -28,13 +28,13 @@ const removeDuplicate = function (list) {
     while (current.next !== null) {
         let key = current.val;
         if (!map.get(key)) {
-            map.set(key, true)
+            map.set(key, true);
 
         }
     }
     let key = current.val;
     if (!map.get(key)) {
-        map.set(key, true)
+        map.set(key, true);
     }
     let cur = this.head;
     //[1, 2, 1, 3]
