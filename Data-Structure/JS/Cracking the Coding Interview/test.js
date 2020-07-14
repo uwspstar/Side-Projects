@@ -1,25 +1,79 @@
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor(val) {
+        this.head = new Node(val)
+    }
+    append(val) {
+        let current = this.head;
+        while (current.next !== null) {
+            current = current.next
+        }
+        current.next = new Node(val);
+    }
+}
+let list = LinkedList(5);
+list.append(10);
+list.append(10);
+list.append(30);
+
+const removeDuplicate = function (list) {
+    let current = this.head;
+    let map = new Map()
+    while (current.next !== null) {
+        let key = current.val;
+        if (!map.get(key)) {
+            map.set(key, true)
+
+        }
+    }
+    let key = current.val;
+    if (!map.get(key)) {
+        map.set(key, true)
+    }
+    let cur = this.head;
+    //[1, 2, 1, 3]
+    // 1 = true, 2= true; 3= true
+    // 1 = false, 2 = false, 3 = false
+    while (cur.next !== null) {
+        let k = cur.val;
+        if (!map.get(k)) {
+            cur = cur.next.next;
+        } else {
+            map.set(k,false);
+        }
+    }
+}
+
+
+/*
 const stringRotation = function (str1, str2) {
     if (str1.length !== str1.length) return false;
-    let p1 = 0;
     let p2 = 0;
-    // "bwaterbottle"
-    // "erbottlebwat"
-    while (p1 < arr.length && p2 < arr.length) {
-        if (str1[p1] !== str2[p2]) {
+    // "bwaterbottle" // "erbottlebwat"
+    while (p2 < str2.length) {
+        if (str1[0] !== str2[p2]) {
             p2++;
         }
         else {
-            let tmp = str.slice(p2) + str.slice(0, p2);
-            if (tmp = str1) return true;
+            let tmp = str2.slice(p2) + str2.slice(0, p2);
+            console.log('tpm', tmp);
+            if (tmp === str1) return true;
             p2++;
         }
     }
     return false;
 
 }
+console.table(stringRotation('bbw', 'bottl'));
+console.table(stringRotation('bbwaterbottl', 'bottlebwater'));
 console.table(stringRotation('bwaterbottle', 'bottlebwater'));
 
-/*
 const witnesses = function (arr) {
     if (arr.length < 2) return 1;
     let highest = 0
