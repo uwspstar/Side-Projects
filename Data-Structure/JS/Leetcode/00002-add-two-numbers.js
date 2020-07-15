@@ -11,6 +11,8 @@ Example:
 Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
 Output: 7 -> 0 -> 8
 Explanation: 342 + 465 = 807.
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/arguments
 */
 /**
  * Definition for singly-linked list.
@@ -24,7 +26,9 @@ Explanation: 342 + 465 = 807.
  * @param {ListNode} l2
  * @return {ListNode}
  */
-var addTwoNumbers = function(l1, l2) {
+
+ // fast one
+var addTwoNumbers = function (l1, l2) {
     let node = null
     const carry = arguments[2]
     if (l1 || l2) {
@@ -34,7 +38,7 @@ var addTwoNumbers = function(l1, l2) {
         const next2 = l2 ? l2.next : null
         const val = carry ? val1 + val2 + 1 : val1 + val2
         node = new ListNode(val % 10)
-        node.next = addTwoNumbers(next1, next2, val >= 10)  
+        node.next = addTwoNumbers(next1, next2, val >= 10)
     } else if (carry) {
         node = new ListNode(1)
         node.next = null
@@ -42,3 +46,4 @@ var addTwoNumbers = function(l1, l2) {
     return node
 };
 
+//regular one
