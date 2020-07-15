@@ -27,7 +27,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/argu
  * @return {ListNode}
  */
 
- // fast one
+// fast one
 var addTwoNumbers = function (l1, l2) {
     let node = null
     const carry = arguments[2]
@@ -47,3 +47,67 @@ var addTwoNumbers = function (l1, l2) {
 };
 
 //regular one
+
+class Node {
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+class LinkedList {
+    constructor(val) {
+        this.head = new Node(val);
+    }
+    add(val) {
+        let current = this.head;
+        while (current.next !== null) {
+            current = current.next;
+        }
+        current.next = new Node(val);
+        return this;
+    }
+}
+let list1 = new LinkedList(2);
+list1.add(2);
+list1.add(3);
+//console.log(JSON.stringify(list1));
+let list2 = new LinkedList(1);
+list2.add(9);
+list2.add(6);
+list2.add(9);
+//console.log(JSON.stringify(list2));
+
+//2-->2-->3
+//1-->9-->6-->9
+//3-->1-->0-->0-->1
+const addTwoNumbers = function (l1, l2) {
+    //console.log(JSON.stringify(list1));
+    //console.log(JSON.stringify(list2));
+    let list = new LinkedList();
+    let cur1 = l1.head;
+    let cur2 = l2.head;
+    let sum = 0;
+    let carry = 0;
+    while (cur1 !== null || cur2 !== null || sum >= 10) {
+        // every node, the sum need to recalculate, but carry
+        sum = 0;
+        if (cur1 !== null) {
+            sum += cur1.val;
+            cur1 = cur1.next;
+        }
+        if (cur2 !== null) {
+            sum += cur2.val;
+            cur2 = cur2.next;
+        }
+        sum += carry;
+        sum >= 10 ? carry = 1 : carry = 0;
+        sum = sum % 10;
+        list.add(sum);
+        console.log('sum=', sum, 'carry=', carry);
+        console.log(JSON.stringify(list));
+    }
+    return list.head.next;
+}
+let result = addTwoNumbers(list1, list2);
+console.log('list.next =', JSON.stringify(result));
