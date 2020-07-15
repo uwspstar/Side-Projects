@@ -30,20 +30,24 @@ list2.add(9);
 
 //1-->2-->3
 //1-->9-->6-->9
+//2-->1-->0-->0-->1
 const addTwoNumbers = function (l1, l2) {
     //console.log(JSON.stringify(list1));
     //console.log(JSON.stringify(list2));
     let sum = 0;
     let carry = 0;
     let list = new LinkedList();
-    while (l1 !== null || l2 !== null || sum >= 10) {
-        if (l1.next !== null) {
-            sum += l1.val;
-            l1 = l1.next;
+    let cur1 = l1.head;
+    let cur2 = l2.head;
+    while (cur1 !== null || cur2 !== null || sum >= 10) {
+ 
+        if (cur1 !== null) {
+            sum += cur1.val;
+            cur1 = cur1.next;
         }
-        if (l2.next !== null) {
-            sum += l2.val;
-            l2 = l2.next;
+        if (cur2 !== null) {
+            sum += cur2.val;
+            cur2 = cur2.next;
         }
         sum += carry;
         sum >= 10 ? carry = 1 : carry = 0;
@@ -52,8 +56,8 @@ const addTwoNumbers = function (l1, l2) {
     }
     return list;
 }
-
-console.log(addTwoNumbers(list1, list2));
+let result = addTwoNumbers(list1, list2);
+console.log(JSON.stringify(result));
 
 /*
 const isPalindrome = function (str) {
