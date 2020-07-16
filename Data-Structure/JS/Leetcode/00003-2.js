@@ -25,7 +25,8 @@ const lengthOfLongestSubstring = function (str) {
     let result = 0;
     for (let i = 0; i < str.length; i++) {
         if (mySet.has(str[i])) {
-            mySet.delete(str[i]);
+            mySet.delete(str[i]); // set has order; iterate through the elements of a set in insertion order.
+            mySet.add(str[i]);
         } else {
             mySet.add(str[i]);
             result = Math.max(mySet.size, result);
@@ -33,7 +34,7 @@ const lengthOfLongestSubstring = function (str) {
     }
     return result;
 };
-
+console.log(lengthOfLongestSubstring("bcbdc")); //3
 console.log(lengthOfLongestSubstring("abcabcbb")); //3
 console.log(lengthOfLongestSubstring("bbbb")); //1
 console.log(lengthOfLongestSubstring("bbcd")); //2

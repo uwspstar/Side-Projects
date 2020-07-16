@@ -1,3 +1,19 @@
+let matrix = [
+    ['F', 'A', 'C', 'I'],
+    ['O', 'B', 'Q', 'P'],
+    ['A', 'N', 'O', 'B'],
+    ['M', 'A', 'S', 'S']
+]
+const findWordFromMatrix = function (arr, word) {
+    let wordLen = word.length;
+    if (arr.length === 0 || wordLen === 0) return false;
+    let row = arr.length;
+    let col = arr[0].length;
+    if (row < wordLen && col < wordLen) return false;
+
+}
+
+/*
 const findClosestPointsOrigin = function (points, k) {
     if (points.length <= k) return points
     //try to use selectionSort
@@ -20,7 +36,7 @@ const findClosestPointsOrigin = function (points, k) {
 console.log(findClosestPointsOrigin([[1, 1], [3, 3], [2, 2], [4, 4], [-1, -1]], 3)) // [[-1, -1], [1, 1], [2, 2]]
 console.log(findClosestPointsOrigin([[1, 3], [-2, 2]], 1))
 
-/*
+
 Given a list of points and a number k, find the k closest points to the origin.
 
 findClosestPointsOrigin([[1, 1], [3, 3], [2, 2], [4, 4], [-1, -1]], 3)
