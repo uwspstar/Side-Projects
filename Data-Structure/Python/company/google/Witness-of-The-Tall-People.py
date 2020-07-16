@@ -30,4 +30,4 @@ def witness(nums):
     return count
 
 
-print(witness([3, 6, 3, 4, 1]))
+print(witness([3, 6, 3, 4, 1]))  # 3 [6,4,1]
