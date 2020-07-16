@@ -1,3 +1,20 @@
+const witnesses = function (arr) {
+    if (arr.length < 2) return 1;
+    let highest = 0
+    let count = 0;
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] > highest) {
+            highest = arr[i];
+            count++;
+        }
+    }
+    return count;
+}
+console.table(witnesses([3, 6, 3, 4, 1])); // 3 [1, 4, 6]
+console.table(witnesses([3])); //1 [3]
+console.table(witnesses([3, 7, 4, 5, 6, 2])); //3 [2, 6, 7]
+
+/*
 let matrix = [
     ['F', 'A', 'C', 'I'],
     ['O', 'B', 'Q', 'P'],
@@ -13,7 +30,7 @@ const findWordFromMatrix = function (arr, word) {
 
 }
 
-/*
+
 const findClosestPointsOrigin = function (points, k) {
     if (points.length <= k) return points
     //try to use selectionSort
