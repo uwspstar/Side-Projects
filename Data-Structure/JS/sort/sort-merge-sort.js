@@ -59,7 +59,23 @@ const mergeSort = function (arr) {
 console.log(mergeSort([1, 6, 7, 5]));
 console.log(mergeSort([10, 80, 30, 90, 40, 50, 70]));
 
+const merge = function (left, right) {
+    if (left.length === 0) return right;
+    if (right.length === 0) return left;
+    let result = [];
+    while (left.length > 0 && right.length > 0) {
+        left[0] < right[0] ? result.push(left.shift()) : result.push(right.shift())
+    }
+    return result.concat(left, right);
+}
 
+const mergeSort = function (arr) {
+    if (arr.length < 2) return arr;
+    let mid = arr.length >> 1;
+    let left = mergeSort(arr.slice(0, mid));
+    let right = mergeSort(arr.slice(mid));
+    return merge(left, right);
+}
 
 function merge(left, right) {
     var result = [];
