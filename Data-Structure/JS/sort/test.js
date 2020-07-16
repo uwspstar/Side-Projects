@@ -1,3 +1,20 @@
+const insertionSort = function (arr) {
+    if (arr.length < 2) return arr;
+    //left is sorted
+    for (let i = 1; i < arr.length; i++) {
+        let current = arr[i];
+        let j = i - 1;
+        for (; j >= 0; j--) {
+            if (arr[j] > current) {
+                arr[j + 1] = arr[j];
+            } else break;
+        }
+        arr[j + 1] = current;
+    }
+    return arr;
+}
+console.table(insertionSort([15, 334, 222, 629, 29, 100]));
+/*
 const getPivotIndex = function (arr, start, end) {
     const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]];
     let pivot = arr[end];
@@ -21,8 +38,7 @@ const quickSort = function (arr, start = 0, end = arr.length - 1) {
     }
     return arr;
 }
-console.table(quickSort([15, 334, 222, 629, 29, 100]));
-/*
+
 const merge = function (left, right) {
     if (left.length === 0) return right;
     if (right.length === 0) return left;
