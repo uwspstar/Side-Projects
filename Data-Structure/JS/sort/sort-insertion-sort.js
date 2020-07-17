@@ -25,7 +25,7 @@ We will use nested loops to perform the sorting.
 O(N^2)
 1. First, outer for loop, we will take second element from the array and check if its greater or smaller than the element before it. let current = arr[i] ; i = 1; i++
 
-3. The inner loop will start from left side next current item (j = i -1 ; j--).  
+3. The inner loop will start from left side next current item (j = i - 1; j--).  
  
 4. compare the outer loops element with the inner loops element. If the outer loop’s element is smaller, then we will move it to the position of the inner loop’s element and vice versa. To do this we will use the array’s slice method ( the insert part )
 
@@ -59,8 +59,8 @@ const insertionSort = function (arr) {
     return arr;
 }
 
-console.log(insertionSort([1, 6, 7, 5]))
-console.log(insertionSort([10, 80, 30, 90, 40, 50, 70]))
+console.log(insertionSort([1, 6, 7, 5]));
+console.log(insertionSort([10, 80, 30, 90, 40, 50, 70]));
 
 const insertionSort = function (arr) {
     if (arr.length < 2) return arr;
