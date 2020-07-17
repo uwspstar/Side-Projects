@@ -71,7 +71,7 @@ const binarySearch = function (arr, num) {
       end = mid - 1;
     } else start = mid + 1;
   }
-  return -1
+  return -1;
 }
 console.log(binarySearch([-1], 5));
 console.log(binarySearch([1, 3, 5], 5));
@@ -156,4 +156,20 @@ function indexOf(arr, elem, offset = 0) {
     return indexOf(left, elem, offset);
   }
 }
+*/
+
+// recursive version
+// https://medium.com/jsunderthescope/a-recursive-binary-search-in-javascript-b29efaff64d6
+/*
+var binarySearch = function(array, target, min, max) {
+	var tArray = array.slice();
+	if (min === undefined) min = 0;
+	if (max === undefined) max = array.length - 1;
+
+	var guess = Math.floor(((max - min) / 2) + min);
+	if (max <= min && tArray[guess] !== target) return null;
+	else if (tArray[guess] === target) return guess;
+	else if (tArray[guess] < target) return binarySearch(tArray, target, guess + 1, max);
+	else return binarySearch(tArray, target, min, guess - 1);
+};
 */
