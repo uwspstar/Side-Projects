@@ -11,6 +11,7 @@ var hex = 0xF;       // hex will be set to 15
 var foo = parseInt('1111', 2);    // foo will be set to 15
 
 var num = 255;
+
 document.writeln(num.toString(16)); // Outputs: "ff"
-document.writeln(num.toString(8)); // Outputs: "377"
-document.writeln(num.toString(2)); // Outputs: "11111111"
+document.writeln(num.toString(8));  // Outputs: "377"
+document.writeln(num.toString(2));  // Outputs: "11111111"
