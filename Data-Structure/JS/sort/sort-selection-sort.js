@@ -19,7 +19,7 @@ Repeat this with the next element until the array is sorted.
 // O(N^2)
 // each loop, remember the smallest item index, and swap the position,
 // each loop to put the smallest item in left side, 
-// find the smallest item index, and swap later
+// *** find the smallest item index, and swap later
 // outer loop control looping times
 // inner loop find the smallest index
 

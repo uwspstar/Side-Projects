@@ -1,4 +1,7 @@
 
+
+console.table(quickSort([15, 334, 222, 629, 29, 100]));
+/*
 const getPivotIndex = function (arr, start, end) {
     const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]];
     let pivot = arr[end];
@@ -25,8 +28,7 @@ const quickSort = function (arr, start = 0, end = arr.length - 1) {
     return arr;
 }
  
-console.table(quickSort([15, 334, 222, 629, 29, 100]));
-/*
+
 
 const insertionSort = function (arr) {
     if (arr.length < 2) return arr;

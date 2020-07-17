@@ -1,9 +1,8 @@
 // binary Search arr is sorted
 // use two pointers, start and end, mid = (start + end) >> 1
-// O(log n)
-
 // Original Solution
 
+// O(log n) ( the best sort, will be nlogn)
 const binarySearch = function (arr, num) {
   if (arr.length === 0) return -1;
 
@@ -19,8 +18,7 @@ const binarySearch = function (arr, num) {
     mid = (start + end) >> 1;
   }
 
-  return -1
-
+  return -1;
 }
 console.log(binarySearch([-1], 5));
 console.log(binarySearch([1, 3, 5], 5));
