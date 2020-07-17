@@ -29,7 +29,7 @@ function binarySearch(arr, elem) {
   var start = 0;
   var end = arr.length - 1;
   var middle = Math.floor((start + end) / 2);
-  while (arr[middle] !== elem && start <= end) {
+  while (arr[middle] !== elem && start <= end) { //<=
     if (elem < arr[middle]) {
       end = middle - 1;
     } else {
@@ -69,7 +69,7 @@ const binarySearch = function (arr, num) {
     if (arr[mid] === num) return mid;
     if (arr[mid] > num) {
       end = mid - 1;
-    } else start = mid + 1
+    } else start = mid + 1;
   }
   return -1
 }
