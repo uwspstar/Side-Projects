@@ -1,9 +1,9 @@
 // sortBits([1, 0, 0, 1, 1, 0]) //outputs: [0, 0, 0, 1, 1, 1]
 // 1 : two pointers
 const sortBits = function (arr) {
-    if (arr.length < 2) return arr
-    let fast = 0
-    let slow = 0
+    if (arr.length < 2) return arr;
+    let fast = 0;
+    let slow = 0;
     while (fast < arr.length) {
          // console.log(arr, 'fast=', fast, 'slow=', slow)
         if (arr[fast] === 0) {
