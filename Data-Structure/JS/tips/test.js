@@ -3,7 +3,7 @@ const reverseStrRecursive = function (str) {
   if (str.length < 2) return str;
   return reverseStrRecursive(str.slice(1)) + str[0];
 }
-console.log(reverseStr('awesome'));
+console.log(reverseStrRecursive('awesome'));
 
 /*
 let str = "The rain in SPAIN stays mainly in the plain";
