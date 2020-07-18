@@ -44,14 +44,14 @@ console.log(isPalindromeRecursive('amanaplanacanalpandemonium'));
 // 2 : meet in middle
 const isPalindromeMeetInMiddle = function (str) {
     if (str.length === 1) return false;
-    let mid = parseInt(str.length / 2)
+    let mid = parseInt(str.length / 2);
     for (let i = 0; i <= mid; i++) {
-        if (str[i] !== str[str.length - 1 - i]) return false
+        if (str[i] !== str[str.length - 1 - i]) return false;
     }
-    return true
+    return true;
 }
 
-// 2 pointers
+// 2 pointers : meet in middle
 const isPalindromeMeetInMiddle = function (str) {
     if (str.length < 2) return true;
     let left = 0;
