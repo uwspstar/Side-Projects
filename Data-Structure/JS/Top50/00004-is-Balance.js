@@ -16,12 +16,11 @@ const isBalance = function (str) {
     } else {
       let last = stack.pop();
       if (map[last] !== arr[i]) {
-        return false
+        return false;
       }
     }
   }
-
-  return stack.length === 0
+  return stack.length === 0;
 }
 
 
@@ -45,7 +44,7 @@ console.log(isBalance("[]{}()"))
 console.log(isBalance("[}()"))
 console.log(isBalance("[{()}]"))
 console.log(isBalance(")[{()}]("))
- 
+
 /*
 const plants = ['broccoli', 'cauliflower', 'cabbage', 'kale', 'tomato'];
 
@@ -67,24 +66,26 @@ console.log(plants);
 
 const isBalanceWithMap = function (str) {
 
-  if (str.length % 2 !== 0) return false
-  let map = new Map()
-  map.set("(", ")")
-  map.set("{", "}")
-  map.set("[", "]")
-  let stack = []
+  if (str.length % 2 !== 0) return false;
+  
+  let map = new Map();
+  map.set("(", ")");
+  map.set("{", "}");
+  map.set("[", "]");
+  let stack = [];
   for (let i = 0; i < str.length; i++) {
-    if (map.get(str[i])) {
-      stack.push(str[i])
+    let key = str[i];
+    if (map.get(key)) { // because ")", "}", and "]" is not key
+      stack.push(key);
     } else {
-      let lastKey = stack.pop()
-      if (map.get(lastKey) !== str[i]) return false
+      let lastKey = stack.pop();
+      if (map.get(lastKey) !== key) return false;
     }
   }
-  return stack.length === 0
+  return stack.length === 0;
 }
 
-console.log(isBalanceWithMap("[]{}()"))
-console.log(isBalanceWithMap("[}()"))
-console.log(isBalanceWithMap("[{()}]"))
-console.log(isBalanceWithMap(")[{()}]("))
+console.log(isBalanceWithMap("[]{}()"));
+console.log(isBalanceWithMap("[}()"));
+console.log(isBalanceWithMap("[{()}]"));
+console.log(isBalanceWithMap(")[{()}]("));

@@ -13,9 +13,9 @@ const twoSum = function (arr, target) {
   const twoSum = function (arr, target) {
     let set = new Set()
     for (let i = 0; i < arr.length; i++) {
-        let num = target - arr[i]
-        if (set.has(num))  return true 
-        set.add(arr[i])
+        let num = target - arr[i];
+        if (set.has(num))  return true;
+        set.add(arr[i]);
     }
-    return false
+    return false;
 }

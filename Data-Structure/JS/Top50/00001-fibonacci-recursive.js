@@ -10,7 +10,7 @@ const fibonacci = function (n) {
 
 // 2 : recursive
 const fibonacci = function (n) {
-    let memo = {} // or memo with Map
+    let memo = {}; // or memo with Map
     const fibonacciMemo = function (n) {
         if (n < 3) return 1;
         if (memo[n] !== undefined) return memo[n];
@@ -31,4 +31,4 @@ const fibonacci2 = function (n) {
 //console.log(fibonacci2(40));
 console.log(fibonacci2(45)); // 1134903170  very slow
 
-console.log(fibonacciRecursive(7)) // [1, 1, 2, 3, 5, 8, 13]
+console.log(fibonacciRecursive(7)); // [1, 1, 2, 3, 5, 8, 13]
