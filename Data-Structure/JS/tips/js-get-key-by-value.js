@@ -5,7 +5,12 @@
 // in case, can clone a map first
 
 // see findClosestPointsOrigin
-// using for..of  ( all is using "of")
+// using for..of  ( *** all is using "of" *** )
+// let key of map.keys()
+// let val of map.values()
+// let [key,value] of map.entries()
+
+// first match
 function getKeyByValue(map, searchValue) {
   for (let [key, value] of map.entries()) {
     if (value === searchValue) // first match
