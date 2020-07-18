@@ -21,5 +21,9 @@ def is_palindrome(n):
  # Fill this in.
 
 
+print(is_palindrome(1))  # True
+print(is_palindrome(11))  # True
+print(is_palindrome(121))  # True
+print(is_palindrome(1234))  # False
 print(is_palindrome(1234321))  # True
 print(is_palindrome(1234322))  # False
