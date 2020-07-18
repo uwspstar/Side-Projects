@@ -1,6 +1,5 @@
 // 1: recursive 
-
-
+// is it is integer, without using str function, how you do it ? ( see twitter)
 const isPalindromeRecursive = function (str) {
     if (str.length < 2) return true;
     return str[0] === str[str.length - 1] ?
