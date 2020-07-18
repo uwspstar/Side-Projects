@@ -1,25 +1,15 @@
-const isBalanceWithMap = function (str) {
-
-    if (str.length % 2 !== 0) return false;
-    
-    let map = new Map();
-    map.set("(", ")").set("{", "}").set("[", "]");
-
-    let stack = [];
-
-    for (let i = 0; i < str.length; i++) {
-      let key = str[i];
-      if (map.get(key)) { // because ")", "}", and "]" is not key
-        stack.push(key);
-      } else {
-        let lastKey = stack.pop();
-        if (map.get(lastKey) !== key) return false;
-      }
+const isPalindromeMeetInMiddle = function (str) {
+    if (str.length < 2) return true;
+    let left = 0;
+    let right = str.length - 1;
+    while (left < right) {
+        if (str[left] !== str[right]) return false;
+        left++;
+        right--;
     }
-    return stack.length === 0;
-  }
-  
-  console.log(isBalanceWithMap("[]{}()"));
-  console.log(isBalanceWithMap("[}()"));
-  console.log(isBalanceWithMap("[{()}]"));
-  console.log(isBalanceWithMap(")[{()}]("));
+    return true;
+}
+
+console.log(isPalindromeMeetInMiddle('tacocat')); //true
+console.log(isPalindromeMeetInMiddle('amanaplanacanalpanama'));//true
+console.log(isPalindromeMeetInMiddle('amanaplanacanalpandemonium')); //false
