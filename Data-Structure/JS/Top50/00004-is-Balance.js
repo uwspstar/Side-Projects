@@ -65,14 +65,15 @@ console.log(plants);
 
 
 const isBalanceWithMap = function (str) {
-
   if (str.length % 2 !== 0) return false;
-  
+
   let map = new Map();
   map.set("(", ")");
   map.set("{", "}");
   map.set("[", "]");
+
   let stack = [];
+
   for (let i = 0; i < str.length; i++) {
     let key = str[i];
     if (map.get(key)) { // because ")", "}", and "]" is not key
@@ -82,6 +83,7 @@ const isBalanceWithMap = function (str) {
       if (map.get(lastKey) !== key) return false;
     }
   }
+  
   return stack.length === 0;
 }
 
