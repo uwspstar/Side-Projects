@@ -64,9 +64,9 @@ people.set('3', 'abode');
 people.set('4', 'abode');
 people.set('5', 'abode');
 
-console.log(getKeyByValue(people, 'john'))
-console.log(getKeyByValue(people, 'abode'))
-console.log(getKeyListByValue(people, 'abode'))
+console.log(getKeyByValue(people, 'john'));
+console.log(getKeyByValue(people, 'abode'));
+console.log(getKeyListByValue(people, 'abode'));
 
 console.log("aaa".padStart(2, '0'));
 console.log("a".padStart(2, '0'));
