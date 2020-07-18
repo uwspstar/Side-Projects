@@ -1,14 +1,27 @@
 // 1: recursive 
 
+
 const isPalindromeRecursive = function (arr) {
     if (arr.length < 2) return true;
     return arr[0] === arr[arr.length - 1] ?
         isPalindromeRecursive(arr.slice(1, -1)) : false;
-        // cannot use arr.shift().pop() 
-        // arr.shift() is one item
-        // arr.pop() is one item
-        // A negative index can be used, indicating an offset from the end of the sequence. slice(1,-1) extracts the second element through the second-to-last element in the sequence. 
-        // slice(1,-1) remove last one and first one
+    // cannot use arr.shift().pop() 
+    // arr.shift() is one item
+    // arr.pop() is one item
+    // A negative index can be used, indicating an offset from the end of the sequence. slice(1,-1) extracts the second element through the second-to-last element in the sequence. 
+    // slice(1,-1) remove last one and first one
+    // string using slice(start[,end]) only
+    // arr use arr.slice(), arr.shift(), arr.pop()
+}
+
+const isPalindromeRecursive = function (str) {
+    if (str.length < 2) return true;
+    let arr = str.split('');
+    let start = arr.shift();
+    let end = arr.pop();
+    console.log('start=', start, 'end=', end);
+    return start === end ?
+        isPalindromeRecursive(arr.join('')) : false;
 }
 
 console.log(isPalindromeRecursive('tacocat'))

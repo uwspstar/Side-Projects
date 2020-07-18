@@ -2,3 +2,6 @@
 // selected from start to end (end not included)
 
 // https://we-are.bookmyshow.com/understanding-deep-and-shallow-copy-in-javascript-13438bad941c
+
+// string using slice(start[,end]) only
+// arr use arr.slice(), arr.shift(), arr.pop()

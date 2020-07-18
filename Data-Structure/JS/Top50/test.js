@@ -5,17 +5,14 @@ Write a recursive function called isPalindrome which returns true if the string 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice
 
 */
-const isPalindromeRecursive = function (arr) {
-    if (arr.length < 2) return true;
+const isPalindromeRecursive = function (str) {
+    if (str.length < 2) return true;
+    let arr = str.split('');
     let start = arr.shift();
-    let end = arr.pop();
+    let end = arr.pop(); 
+    console.log('start=', start, 'end=', end);
     return start === end ?
-        isPalindromeRecursive(arr) : false; // 
-    // cannot use arr.shift().pop() 
-    // arr.shift() is one item
-    // arr.pop() is one item
-    // A negative index can be used, indicating an offset from the end of the sequence. slice(1,-1) extracts the second element through the second-to-last element in the sequence. 
-    // slice(1,-1) remove last one and first one
+        isPalindromeRecursive(arr.join('')) : false;
 }
 
 console.log(isPalindromeRecursive('tacocat'))

@@ -7,6 +7,9 @@ The removed element from the array; undefined if the array is empty.
 arr.shift()
 */
 
+// string using slice(start[,end]) only
+// arr use arr.slice(), arr.shift(), arr.pop()
+
 var names = ["Andrew", "Edward", "Paul", "Chris", "John"];
 
 while ((i = names.shift()) !== undefined) {
