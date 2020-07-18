@@ -9,9 +9,27 @@ const fibonacci = function (n) {
 }
 
 // 2 : recursive
-const fibonacciRecursive = function (n) {
-    if (n < 3) return 1
-    return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2)
+
+const fibonacci = function (n) {
+    let memo = {} // or memo with Map
+    const fibonacciMemo = function (n) {
+        if (n < 3) return 1;
+        if (memo[n] !== undefined) return memo[n];
+        return memo[n] = fibonacciMemo(n - 1) + fibonacciMemo(n - 2);
+
+    }
+    return fibonacciMemo(n);
 }
+
+console.log(fibonacci(40));//102334155
+console.log(fibonacci(1000));//4.346655768693743e+208  very fast
+
+const fibonacci2 = function (n) {
+    if (n < 3) return 1;
+    return result = fibonacci2(n - 1) + fibonacci2(n - 2);
+}
+
+//console.log(fibonacci2(40));
+console.log(fibonacci2(45)); // 1134903170  very slow
 
 console.log(fibonacciRecursive(7)) // [1, 1, 2, 3, 5, 8, 13]
