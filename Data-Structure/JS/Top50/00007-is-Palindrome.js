@@ -1,10 +1,10 @@
 // 1: recursive 
 
 
-const isPalindromeRecursive = function (arr) {
-    if (arr.length < 2) return true;
-    return arr[0] === arr[arr.length - 1] ?
-        isPalindromeRecursive(arr.slice(1, -1)) : false;
+const isPalindromeRecursive = function (str) {
+    if (str.length < 2) return true;
+    return str[0] === str[str.length - 1] ?
+        isPalindromeRecursive(str.slice(1, -1)) : false;
     // cannot use arr.shift().pop() 
     // arr.shift() is one item
     // arr.pop() is one item
@@ -14,6 +14,7 @@ const isPalindromeRecursive = function (arr) {
     // arr use arr.slice(), arr.shift(), arr.pop()
 }
 
+// covert arr
 const isPalindromeRecursive = function (str) {
     if (str.length < 2) return true;
     let arr = str.split('');
