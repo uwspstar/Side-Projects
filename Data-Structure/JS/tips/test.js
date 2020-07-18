@@ -1,10 +1,17 @@
 
+const reverseStrRecursive = function (str) {
+  if (str.length < 2) return str;
+  return reverseStrRecursive(str.slice(1)) + str[0];
+}
+console.log(reverseStr('awesome'));
+
+/*
 let str = "The rain in SPAIN stays mainly in the plain";
 let wd = "ain";
 var res = new RegExp(wd, 'g')
 console.table(str.match(res)); // expected output: Array ["T", "I"]
 
-/*
+
 let str = "lorie loled";
 let word = "lo";
 let len = str.length;
