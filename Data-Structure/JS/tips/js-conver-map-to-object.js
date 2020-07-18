@@ -12,3 +12,4 @@ console.log(obj); // expected output: Object { foo: "bar", baz: 42 }
 let obj = [...map.entries()].reduce((obj, [key, value]) => (obj[key] = value, obj), {});
 
 
+
