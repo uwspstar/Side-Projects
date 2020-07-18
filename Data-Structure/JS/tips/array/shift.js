@@ -6,3 +6,9 @@ The removed element from the array; undefined if the array is empty.
 
 arr.shift()
 */
+
+var names = ["Andrew", "Edward", "Paul", "Chris", "John"];
+
+while ((i = names.shift()) !== undefined) {
+    console.log(i);
+}

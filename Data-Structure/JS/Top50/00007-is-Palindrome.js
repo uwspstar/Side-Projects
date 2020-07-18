@@ -23,13 +23,13 @@ const isPalindromeRecursive = function (str) {
     return false;
 }
 
-console.log(isPalindromeRecursive('tacocat'))
-console.log(isPalindromeRecursive('amanaplanacanalpanama'))
-console.log(isPalindromeRecursive('amanaplanacanalpandemonium'))
+console.log(isPalindromeRecursive('tacocat'));
+console.log(isPalindromeRecursive('amanaplanacanalpanama'));
+console.log(isPalindromeRecursive('amanaplanacanalpandemonium'));
 
 // 2 : meet in middle
 const isPalindromeMeetInMiddle = function (str) {
-    if (str.length === 1) return false
+    if (str.length === 1) return false;
     let mid = parseInt(str.length / 2)
     for (let i = 0; i <= mid; i++) {
         if (str[i] !== str[str.length - 1 - i]) return false
