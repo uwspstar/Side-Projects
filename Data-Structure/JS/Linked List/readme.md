@@ -17,6 +17,7 @@
 - https://cs.slides.com/colt_steele/singly-linked-lists#/
 - https://visualgo.net/en/list?slide=1
 - https://adrianmejia.com/data-structures-time-complexity-for-beginners-arrays-hashmaps-linked-lists-stacks-queues-tutorial/
+- https://www.geeksforgeeks.org/circular-linked-list/
 
 ### There are 4 basic operations that we can do in every Linked List:
 
@@ -24,3 +25,8 @@
 - removeLast / pop : deletes element to the end of the list
 - addFirst / unshift : Adds an element to the beginning of the list (head)
 - removeFirst / shift : Removes an element from the start of the list (head/root)
+
+### Circular Linked list
+- https://www.geeksforgeeks.org/circular-linked-list/
+- Circular lists are useful in applications to repeatedly go around the list.  It is convenient for the operating system to use a circular list so that when it reaches the end of the list it can cycle around to the front of the list.
+- For example, when multiple applications are running on a PC, it is common for the operating system to put the running applications on a list and then to cycle through them, giving each of them a slice of time to execute, and then making them wait while the CPU is given to another application.
