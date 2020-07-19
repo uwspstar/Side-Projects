@@ -10,10 +10,12 @@ class LinkedList {
     }
     isCircularFastSlow() {
         if (this.head === null) return true;
+        // if it is circular in part of nodes
         let slow = this.head;
         let fast = this.head;
-        while (slow.next !== null && fast.next !== null) {
-            fast = fast.next;
+        while (slow.next !== null && fast.next !== null && fast.next.next !== null) {
+            fast = fast.next.next;
+            slow = slow.next;
             if (fast === slow) return true;
         }
         return false;
