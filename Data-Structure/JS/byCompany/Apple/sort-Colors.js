@@ -30,7 +30,28 @@ print(nums) # [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2]
 
 
 
+const sortColor = function (arr) {
+  if (arr.length < 2) return arr;
+  let p0 = 0;
+  let current = 0;
+  let p2 = arr.length - 1;
+  const swap = (arr, i, j) => [arr[i], arr[j]] = [arr[j], arr[i]];
 
+  while (current <= p2) {
+    if (arr[current] === 0) {
+      swap(arr, p0, current);
+      p0++;
+      current++;
+    } else if (arr[current] === 2) {
+      swap(arr, p2, current);
+      p2--; // NO current++;
+    } else current++;
+
+  }
+  return arr;
+}
+let arr = [0, 1, 2, 2, 1, 1, 2, 2, 0, 0, 0, 0, 2, 1]
+console.log(sortColor(arr));
 
 //O(4N) =  O(N)
 const sortColor2 = function (arr) {
