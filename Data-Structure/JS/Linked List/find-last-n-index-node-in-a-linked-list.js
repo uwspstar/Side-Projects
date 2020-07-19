@@ -1,8 +1,12 @@
 /*
 
 Fast & Slow strategy
-*/
 
+Program for n’th node from the end of a Linked List
+Given a Linked List and a number n, write a function that returns the value at the n’th node from the end of the Linked List.
+For example, if the input is below list and n = 3, then output is “B”
+
+*/
 class Node {
     constructor(val) {
         this.value = val;
@@ -28,7 +32,7 @@ class LinkedList {
         }
         return slow;
     }
-    
+
     isCircularFastSlow() {
         if (this.head === null) return true;
         // if it is circular in part of nodes
@@ -96,10 +100,11 @@ linkedList.append(10);
 linkedList.append(20);
 linkedList.append(30);
 linkedList.append(40);
+console.log(JSON.stringify(linkedList.getLastGivenIndexNode(3)));
 console.log(JSON.stringify(linkedList.isCircularFastSlow()));
 console.log(JSON.stringify(linkedList.isCircular()));
-/*
 
+/*
 console.log(JSON.stringify(linkedList));
 console.log(JSON.stringify(linkedList.findMid()));
 console.log(JSON.stringify(linkedList.reverse()));

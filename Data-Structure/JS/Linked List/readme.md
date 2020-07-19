@@ -1,6 +1,7 @@
 # Linked Lists
 - A data structure that contains a head, tail and length property.
 - Linked Lists consist of nodes, and each node has a value and a pointer to another node or null
+- Remember that when you're discussing a linked list in an interview, you must understand whether it is a singly linked list or a doubly linked list.
 
 ### Lists vs Arrays
 - list
