@@ -31,6 +31,15 @@ class SinglyLinkedList {
         }
         return slow;
     }
+    findMidValue() {
+        let fast = this.head;
+        let slow = fast;
+        while (fast.next !== null && fast.next.next !== null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow.val;
+    }
 }
 let linkedList = new SinglyLinkedList(5);
 linkedList.append(10);

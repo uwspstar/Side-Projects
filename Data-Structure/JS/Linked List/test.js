@@ -36,6 +36,16 @@ class LinkedList {
         this.head = pre; // very important
         return this;
     }
+    findMid() {
+        let fast = this.head;
+        let slow = fast;
+        while (fast.next !== null && fast.next.next !== null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        return slow.value;
+    }
+
 
 }
 
@@ -45,5 +55,7 @@ linkedList.append(20);
 linkedList.append(30);
 linkedList.append(40);
 console.log(JSON.stringify(linkedList));
+console.log(JSON.stringify(linkedList.findMid()));
 console.log(JSON.stringify(linkedList.reverse()));
+console.log(JSON.stringify(linkedList.findMid()));
 

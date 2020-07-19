@@ -1,3 +1,5 @@
+// https://wsvincent.com/javascript-reverse-linked-list/
+
 class Node {
     constructor(val) {
         this.value = val;
@@ -36,7 +38,6 @@ class LinkedList {
         this.head = pre; // very important
         return this;
     }
-
 }
 
 let linkedList = new LinkedList(5);
