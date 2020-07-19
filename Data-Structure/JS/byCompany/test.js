@@ -1,26 +1,18 @@
-/*Given an integer, check if that integer is a palindrome. For this problem do not convert the integer to a string to check if it is a palindrome.
-
-isPalindrome(1234321) // True
-isPalindrome(1234322) // False
-
-a>>b = a * (2**b)
-*/
-
-const isPalindrome = function (num) {
-    if (num < 10) return true;
-    while (num > 10) {
-        let k = Math.floor(Math.log10(num));
-        let last = Math.floor(num % 10);
-        let first = Math.floor(num / Math.pow(10, k));
-        if (last !== first) return false;
-        let num1 = Math.floor(num / 10);
-        num = Math.floor(num1 % Math.pow(10, k - 1));
-        // console.log('k=', k, 'last=', last, 'first=', first, 'num1', num1, 'num=', num);
+const sortColor = function (arr) {
+    if (arr.length < 2) return arr;
+    let arr0 = [];
+    let arr1 = [];
+    let arr2 = [];
+    for (let i = 0; i < arr.length; i+=) {
+        if (arr[i] === 0) {
+            arr0.push(arr[i])
+        } else if (arr[i] === 1) {
+            arr1.push(arr[i])
+        } if (arr[i] === 2) {
+            arr2.push(arr[i])
+        }
     }
-    return true;
+    return [].concat(arr0, arr1, arr2);
 }
-console.log(isPalindrome(1));
-console.log(isPalindrome(11));
-console.log(isPalindrome(12));
-console.log(isPalindrome(1234321));
-console.log(isPalindrome(1234322));
+let arr = [0, 1, 2, 2, 1, 1, 2, 2, 0, 0, 0, 0, 2, 1]
+console.log(sortColor(arr));
