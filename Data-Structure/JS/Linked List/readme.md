@@ -30,3 +30,6 @@
 - https://www.geeksforgeeks.org/circular-linked-list/
 - Circular lists are useful in applications to repeatedly go around the list.  It is convenient for the operating system to use a circular list so that when it reaches the end of the list it can cycle around to the front of the list.
 - For example, when multiple applications are running on a PC, it is common for the operating system to put the running applications on a list and then to cycle through them, giving each of them a slice of time to execute, and then making them wait while the CPU is given to another application.
+
+### fast and slow strategy
+- https://www.udemy.com/course/coding-interview-bootcamp-algorithms-and-data-structure/learn/lecture/8547208#overview
