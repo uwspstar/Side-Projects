@@ -1,29 +1,24 @@
-'''
-Given an integer, check if that integer is a palindrome. For this problem do not convert the integer to a string to check if it is a palindrome.
-'''
+class Solution:
+    def swapPositions(self, list, pos1, pos2):
+        list[pos1], list[pos2] = list[pos2], list[pos1]
+        return list
 
-import math
-
-
-def is_palindrome(n):
-    if n < 10:
-        return True
-    while n > 10:
-        k = int(math.log10(n))
-        first = int(n / (10**k))
-        last = int(n % 10)
-        if first != last:
-            return False
-        n1 = int(n / 10)
-        n = int(n1 % (10**(k-1)))
-
-    return True
- # Fill this in.
+    def sortColors(self, nums):
+        p0 = 0
+        p2 = len(nums) - 1
+        current = 0
+        while current <= p2:
+            if(nums[current] == 0):
+                swapPositions(nums, p0, current)
+                p0 += 1
+                current += 1
+            elif (nums[current] == 2):
+                p2 += 1
+                swapPositions(nums, p2, current)
+            else:
+                current += 1
 
 
-print(is_palindrome(1))  # True
-print(is_palindrome(11))  # True
-print(is_palindrome(121))  # True
-print(is_palindrome(1234))  # False
-print(is_palindrome(1234321))  # True
-print(is_palindrome(1234322))  # False
+nums = [0, 1, 2, 2, 1, 1, 2, 2, 0, 0, 0, 0, 2, 1]
+# [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2]
+print(Solution().sortColors(nums))
