@@ -9,14 +9,16 @@ class Solution:
         current = 0
         while current <= p2:
             if(nums[current] == 0):
-                swapPositions(nums, p0, current)
+                self.swapPositions(nums, p0, current)
                 p0 += 1
                 current += 1
             elif (nums[current] == 2):
-                p2 += 1
-                swapPositions(nums, p2, current)
+                self.swapPositions(nums, p2, current)
+                p2 -= 1
             else:
                 current += 1
+
+        return nums
 
 
 nums = [0, 1, 2, 2, 1, 1, 2, 2, 0, 0, 0, 0, 2, 1]
