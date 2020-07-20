@@ -24,9 +24,11 @@ print("After Sort: ")
 print(nums) # [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2]
 */
 
-//solution 1 loop all put 3 different arr and concat at the end
-//solution 2 use map to save count of 0, 1 and , loop 3 times add to result arr
-//solution 3 use two pointers, one is for arr[i] = 0 (start++), one for arr[i] = 2 (end --); for arr[i] = 1, not changes
+// solution 1 loop all put 3 different arr and concat at the end
+// solution 2 use map to save count of 0, 1 and , loop 3 times add to result arr
+// solution 3 use two pointers, one is for arr[i] = 0 (start++), one for arr[i] = 2 (end --); for arr[i] = 1, not changes
+// solution 4 tow pointers, sort 0 first (save last 0 position) and sort 1, O(2N) = O(N)
+// solution 5 tow pointers, similar as sln 4, use sub function to return last item index
 
 //input : [0, 1, 2, 2, 1, 1, 2, 2, 0, 0, 0, 0, 2, 1]
 //output : [0, 0, 0, 0, 0, 1, 1, 1, 1, 2, 2, 2, 2, 2]
