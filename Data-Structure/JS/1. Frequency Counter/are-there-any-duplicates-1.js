@@ -5,10 +5,22 @@ Implement a function called, areThereDuplicates which accepts a variable number 
 use new Set() 
 */
 const areThereDuplicates = function (...arr) {
-    if (arr.length < 2) return false
-    return (arr.length !== (new Set(arr)).size)
+    if (arr.length < 2) return false;
+    return (arr.length !== (new Set(arr)).size);
 }
 
 console.log(areThereDuplicates(1, 2, 3)); // false
 console.log(areThereDuplicates(1, 2, 2));// true 
 console.log(areThereDuplicates('a', 'b', 'c', 'a')); // true 
+
+// use Set / Map to save
+
+const areThereDuplicates = function (arr) {
+    if (arr.length < 2) return false;
+    let set = new Set();
+    for (let i = 0; i < arr.length; i++) {
+        if (set.has(arr[i])) return true;
+        set.add(arr[i]);
+    }
+    return false;
+}
