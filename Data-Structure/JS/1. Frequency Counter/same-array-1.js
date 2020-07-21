@@ -1,9 +1,14 @@
 // q1 : has negative number inside array ?
+// q2 : ask is address ? same ? or only value same ? or order same ?
+
 // Array.prototype.indexOf()
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
 // splice vs slice
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice
+
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice
+
+
 
 //O(n^2) 
 // indexOf is O(n)
