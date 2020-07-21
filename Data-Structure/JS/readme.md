@@ -21,6 +21,11 @@
 
 - https://medium.com/outco/the-algorithm-of-an-algorithm-28043fe47b51
 
+### recursive
+- https://towardsdatascience.com/finding-a-recursive-solution-184784b0aea0
+- There are data-structures, such as trees, that are well-suited to recursive algorithms
+- There are even some programming languages with no concept of a loop — purely functional languages such as Haskell depend entirely on recursion for iterative problem solving.
+
 ### Sliding Window
 - https://medium.com/outco/how-to-solve-sliding-window-problems-28d67601a66
 - 2 pointers, one indicating the index corresponding beginning of the window, and one indicating the end of the window.

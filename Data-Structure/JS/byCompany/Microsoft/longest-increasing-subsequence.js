@@ -24,8 +24,9 @@ def longest_increasing_subsequence(arr):
   return max(cache)
 
 
-print longest_increasing_subsequence([0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15])
+print [0, 8, 4, 12, 2, 10, 6, 14, 1, 9, 5, 13, 3, 11, 7, 15]t longest_increasing_subsequence()
 # 6
 
 
 */
+
