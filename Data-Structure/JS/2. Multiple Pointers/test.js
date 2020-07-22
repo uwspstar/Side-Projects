@@ -1,28 +1,19 @@
-const sortColor = function (arr) {
+const findUniqueValue = function (arr) {
   if (arr.length < 2) return arr;
+  let countPosition = 0
+  let current = 0;
 
-  const swap = (arr, i, j) => { [arr[i], arr[j]] = [arr[j], arr[i]] };
-
-  const getTotalNum = (arr, num) => {
-    let totalNum = 0;
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] === num) totalNum++;
+  while (current < arr.length) {
+    if (arr[current] !== arr[countPosition]) {
+      countPosition++;
+      arr[countPosition] = arr[current];
     }
-    return totalNum;
+    current++;
+
   }
-
-  let totalNum0 = getTotalNum(arr, 0);
-  let totalNum1 = getTotalNum(arr, 1);
-
-  for (let i = 0; i < arr.length; i++) {
-    i <= totalNum0 ?
-      arr[i] = 0 : i <= totalNum0 + totalNum1 ?
-        arr[i] = 1 : arr[i] = 2;
-  }
-
-  return arr;
-
+  return arr.slice(0, countPosition + 1);
 }
 
-let arr = [0, 1, 2, 2, 1, 1, 2, 2, 0, 0, 0, 0, 2, 1];
-console.log(sortColor(arr));
+console.log(findUniqueValue([1, 1, 1, 1, 5, 5]));
+console.log(findUniqueValue([1, 1, 2, 3, 3, 4, 5, 5, 5, 6]));
+console.log(findUniqueValue([1, 2, 3, 4, 5, 6]));
