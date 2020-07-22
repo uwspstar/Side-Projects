@@ -35,8 +35,8 @@ const sortBits = function (arr) {
     let slow = 0;
 
     while (fast < arr.length) {
-        if (arr[fast] === 0) {
-            [arr[fast], arr[slow]] = [1, 0]
+        if (arr[fast] === 0) {// [0, 1, 0, 0, 1, 1, 0])
+            [arr[fast], arr[slow]] = [1, 0];
             slow++;
         }
         fast++;
