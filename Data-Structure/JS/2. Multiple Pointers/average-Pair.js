@@ -17,8 +17,10 @@ const averagePair = function (arr, num) {
     let start = 0;
     let end = arr.length - 1;
 
+    //O(N)
     while (start < end) {
-        let average = (arr[start] + arr[end]) >> 1; //(arr[start] + arr[end]) / 2;
+        let average = (arr[start] + arr[end]) / 2
+        // average = (arr[start] + arr[end]) >> 1; // integer 
         if (average === num) return true;
         average > num ? end-- : start++
     }
@@ -31,17 +33,15 @@ console.log(averagePair([-1, 0, 3, 4, 5, 6], 4.1)) // false
 console.log(averagePair([], 4)) // false
 
 
+// similar as two sum O(N)
 const averagePair = function (arr, num) {
     if (arr.length < 2) return false;  // need a pair (two items)
-    let target = num << 1;
-    
-    let start = 0;
-    let end = arr.length - 1;
-
-    while (start < end) {
-        let average = (arr[start] + arr[end]) >> 1;
-        if (average === num) return true;
-        average > num ? end-- : start++
+    let target = num * 2; //num << 1; // only integer
+    //console.log('target = ', target);
+    let set = new Set();
+    for (let i = 0; i < arr.length; i++) {
+        if (set.has(target - arr[i])) return true;
+        set.add(arr[i]);
     }
     return false;
 }

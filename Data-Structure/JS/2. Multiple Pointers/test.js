@@ -1,39 +1,25 @@
-/*
-Multiple Pointers - isSubsequence (order matters)
-Write a function called isSubsequence which takes in two strings and checks whether the characters in the first string form a subsequence of the characters in the second string. In other words, the function should check whether the characters in the first string appear somewhere in the second string, without their order changing.
+const twoSum = function (arr, target) {
+  if (arr.length === 0) return false;
 
-Your solution MUST have AT LEAST the following complexities:
-Time Complexity - O(N + M) Space Complexity - O(1) 
-*/
-const isSubsequence = function (str1, str2) {
+  let mySet = new Set();
 
-    if (str1.length === 0 || str2.length === 0) return false
-
-    let i = 0
-    let j = 0
-    while (j < str2.length) {
-        if (str1[i] === str2[j]) i++ 
-        if (i === str1.length) return true
-        j++
+  for (let item of arr) {
+    if (!mySet.has(item)) {
+      mySet.add(item);
     }
-    return false
-}
 
-console.log(isSubsequence('hello', 'hello world')) // true
-console.log(isSubsequence('sing', 'sting')) // true
-console.log(isSubsequence('abc', 'abracadabra')) // true
-console.log(isSubsequence('abc', 'acb')) // false (order matters)
+    if (mySet.has(target - item)) {
+      return true;
+    }
 
-/*
-function isSubsequence(str1, str2) {
-  var i = 0;
-  var j = 0;
-  if (!str1) return true;
-  while (j < str2.length) {
-    if (str2[j] === str1[i]) i++;
-    if (i === str1.length) return true;
-    j++;
   }
+
   return false;
 }
-*/
+
+console.log(2.5 << 1)
+
+console.log(twoSum([1, 2, 3], 2.5))// true
+console.log(twoSum([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)) // true
+console.log(twoSum([-1, 0, 3, 4, 5, 6], 4.1)) // false
+console.log(twoSum([], 4)) // false
