@@ -7,8 +7,7 @@ Bonus Constraints: Time: O(N) Space: O(1)
 
 check "two sum" example, different it is sorted array
 check "missing number", sorted array
-for sorted arr, start point = 0, end point = arr.length - 1
-think about binary search idea
+for "sorted arr", start point = 0, end point = arr.length - 1 , think about binary search idea
 */
 
 const averagePair = function (arr, num) {

@@ -12,7 +12,7 @@ same with hashtable
 // check binary search concept if arr is sorted
 
 const twoSum = function (arr, target) {
-    if (arr.length === 0) return false;
+    if (arr.length < 2) return false;
 
     let mySet = new Set();
 
