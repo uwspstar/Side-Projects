@@ -1,11 +1,12 @@
-// find first pair of nums sum as zero for a sorted array
-// same as two sum or average pair
+// find first pair of nums sum as zero for a "sorted array"
+// check binary search concept;
+// same as average pair, also check two sum
 //
 const sumZero = function (arr) {
     if (arr.length < 2) return undefined; //at least a pair
 
-    let start = 0
-    let end = arr.length - 1
+    let start = 0;
+    let end = arr.length - 1;
 
     while (start < end) {
 
@@ -14,8 +15,10 @@ const sumZero = function (arr) {
         arr[start] + arr[end] > 0 ? end-- : start++
     }
 
-    return undefined
+    return undefined;
 }
+
+
 console.log(sumZero([-5, -4, -3, -2, 1, 0, -1, 3, 4]))
 console.log(sumZero([-5, -4, -3, -2, 1, 0, -1, 2, 3]))
 console.log(sumZero([-5, -2, -1, 0, 3, 4]))
