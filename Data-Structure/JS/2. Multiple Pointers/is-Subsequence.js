@@ -20,9 +20,10 @@ const isSubsequence = function (str1, str2) {
     }
     return false;
 }
-console.log(isSubsequence('hello', 'he he llo world')) // false
-console.log(isSubsequence('hello', 'he hello world')) // true
-console.log(isSubsequence('sing', 'sting')) // true
-console.log(isSubsequence('abc', 'abracadabra')) // true
-console.log(isSubsequence('abc', 'acb')) // false (order matters)
+
+console.log(isSubsequence('hello', 'he he llo world')); // false
+console.log(isSubsequence('hello', 'he hello world')); // true
+console.log(isSubsequence('sing', 'sting')); // true
+console.log(isSubsequence('abc', 'abracadabra')); // true
+console.log(isSubsequence('abc', 'acb')); // false (order matters)
 
