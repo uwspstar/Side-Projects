@@ -1,15 +1,11 @@
 
 /*
 
-Ideally, the good sort algorithm runtime is O(n log n)	
-
-Default sort() in JavaScript uses insertion sort by V8 Engine of Chrome, 
-and Merge sort by Mozilla Firefox and Safari.
-
-There is no draft requirement for JS to use a specific sorting algorithm.
+Ideally, the good sort algorithm runtime is O(n log n)
 
 Mozilla uses merge sort.
-However, In Chrome's v8 source code, as of today, it uses QuickSort and InsertionSort, for smaller arrays. The ECMAscript standard does not specify which sort algorithm is to be used
+However, In Chrome's v8 source code, as of today, it uses QuickSort, and InsertionSort, for smaller arrays.
+The ECMAscript standard does not specify which sort algorithm is to be used
 
 
 bubbleSort // outer loop and inner loop, each time find the biggest

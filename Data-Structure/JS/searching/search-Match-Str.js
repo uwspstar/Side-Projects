@@ -12,6 +12,7 @@ The replace() method returns a modified string where the pattern is replaced.
 
 const searchMatchStr = function (str, word) {
     if (str.length < word.length) return -1;
+    
     let count = 0;
     for (let i = 0; i < str.length; i++) {
         for (let j = 0; j < word.length; j++) {
@@ -33,7 +34,7 @@ xxx.match(re);
 let str = "lorie loled";
 let word = "lo";
 let len = str.length;
-var re = new RegExp(word, 'g')
+var re = new RegExp(word, 'g');
 str.match(re);
 str.search(word);
 str.replace(word, '').length;
@@ -41,7 +42,7 @@ str.replace(word, '').length;
 
 let str = "The rain in SPAIN stays mainly in the plain";
 let wd = "ain";
-var res = new RegExp(wd, 'g')
+var res = new RegExp(wd, 'g');
 console.table(str.match(res)); // expected output: Array ["T", "I"]
 
 
@@ -66,4 +67,4 @@ function naiveSearch(long, short) {
     }
     return count;
 }
-naiveSearch("lorie loled", "lol")
+naiveSearch("lorie loled", "lol");
