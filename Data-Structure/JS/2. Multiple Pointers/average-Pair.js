@@ -44,3 +44,14 @@ const averagePair = function (arr, num) {
     }
     return false;
 }
+
+const twoSum = function (arr, target) {
+
+    if (arr.length < 2) return false; // at least 2 items 
+    let mySet = new Set();
+    for (let item of arr) {
+        if (mySet.has(target - item)) return true;
+        mySet.add(item);
+    }
+    return false;
+}

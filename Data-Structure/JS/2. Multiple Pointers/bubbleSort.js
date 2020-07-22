@@ -7,18 +7,23 @@
 [3, 2, 4, 5] --step 2 , only sort 3, 2, 4
 [2, 3, 4, 5] --step 3 , only sort 3, 2
 */
+
 const bubbleSort = function (arr) {
 
     if (arr.length < 2) return arr;
 
-    // use two point, from left and right
+    const swap = (arr, i, j) => { [arr[i], arr[j]] = [arr[j], arr[i]] };
 
+    // use two point, from left and right 
     for (let i = arr.length - 1; i >= 0; i--) {
-        for (let j = 0; j <= i; j++) {
+        let isSwap = false;
+        for (let j = 0; j <= i; j++) { // every loop find on on right;
             if (arr[j] > arr[j + 1]) {
-                [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+                swap(arr, j, j + 1);
+                isSwap = true;
             }
         }
+        if (!isSwap) break;
     }
 
     return arr;
