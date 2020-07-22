@@ -8,21 +8,40 @@ Bonus Constraints: Time: O(N) Space: O(1)
 check "two sum" example, different it is sorted array
 check "missing number", sorted array
 for sorted arr, start point = 0, end point = arr.length - 1
+think about binary search idea
 */
 
 const averagePair = function (arr, num) {
-    if (arr.length < 2) return false  // need a pair (two items)
-    let start = 0
-    let end = arr.length - 1
+    if (arr.length < 2) return false;  // need a pair (two items)
+
+    let start = 0;
+    let end = arr.length - 1;
+
     while (start < end) {
-        let average = (arr[start] + arr[end]) / 2
-        if (average === num) return true
+        let average = (arr[start] + arr[end]) >> 1; //(arr[start] + arr[end]) / 2;
+        if (average === num) return true;
         average > num ? end-- : start++
     }
-    return false
+    return false;
 }
 
 console.log(averagePair([1, 2, 3], 2.5))// true
 console.log(averagePair([1, 3, 3, 5, 6, 7, 10, 12, 19], 8)) // true
 console.log(averagePair([-1, 0, 3, 4, 5, 6], 4.1)) // false
 console.log(averagePair([], 4)) // false
+
+
+const averagePair = function (arr, num) {
+    if (arr.length < 2) return false;  // need a pair (two items)
+    let target = num << 1;
+    
+    let start = 0;
+    let end = arr.length - 1;
+
+    while (start < end) {
+        let average = (arr[start] + arr[end]) >> 1;
+        if (average === num) return true;
+        average > num ? end-- : start++
+    }
+    return false;
+}
