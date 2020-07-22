@@ -1,7 +1,8 @@
 // find first pair of nums sum as zero for a sorted array
+// same as two sum or average pair
 //
 const sumZero = function (arr) {
-    if (arr.length < 2) return undefined;
+    if (arr.length < 2) return undefined; //at least a pair
 
     let start = 0
     let end = arr.length - 1
