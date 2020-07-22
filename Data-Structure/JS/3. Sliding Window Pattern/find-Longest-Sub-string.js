@@ -17,13 +17,12 @@ include start , not include end
 
 */
 
-
 const findLongestSubstring = function (str) {
     if (str.length === 0) return 0
 
     let fast = 0;
     let maxLen = -Infinity;
-    let arr = []; // order is matter, use Array is better than Set
+    let arr = []; // order is matter, use Array is better than Set, can use Map with value index
 
     while (fast < str.length) {
         //'rithmschool'
