@@ -8,11 +8,11 @@ However, In Chrome's v8 source code, as of today, it uses QuickSort, and Inserti
 The ECMAscript standard does not specify which sort algorithm is to be used
 
 
-bubbleSort // outer loop and inner loop, each time find the biggest
-selectionSort // find the smallestIndex, swap at the end, two loop
-insertionSort // two loop, left side is sorted, insert
-mergeSort // find mid, merge two sorted arrays
-quickSort // find pivot index, sort left and right
+bubbleSort // outer loop and inner loop, each time find the biggest, swap
+selectionSort // find the smallestIndex, swap at the end, two loop, swap
+insertionSort // two loop, "left side is sorted", insert no swap
+mergeSort // find mid, merge two sorted arrays, divide and conquer, no swap;
+quickSort // find pivot index, sort left and right; divide and conquer, swap
 
 
 Big O Notation	Name	        Example(s)
