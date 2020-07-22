@@ -27,9 +27,9 @@ const sameFrequency = function (num1, num2) {
     }
     return true;
 }
-console.log(sameFrequency(182, 281)) // true
-console.log(sameFrequency(34, 14)) // false
-console.log(sameFrequency(3589578, 5879385)) // true
-console.log(sameFrequency(22, 222)) // false
+console.log(sameFrequency(182, 281)); // true
+console.log(sameFrequency(34, 14)); // false
+console.log(sameFrequency(3589578, 5879385)); // true
+console.log(sameFrequency(22, 222)); // false
 
 
