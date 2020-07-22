@@ -1,6 +1,8 @@
 // sorted array
-// so the same num will be connected each other
+// so the same num will be connected each other with extra space
 // use same array, save space
+
+
 
 const uniqueValue = function (arr) {
     let i = 0;
@@ -12,6 +14,18 @@ const uniqueValue = function (arr) {
     }
     return i + 1;
 }
+
+const uniqueValue = function (arr) {
+    return arr.length < 2 ? arr.length : (new Set(arr)).size;
+}
+
+const uniqueValue = function (arr) {
+    if (arr.length < 2) return arr.length;
+    return (new Set(arr)).size;
+}
+
+
+
 console.log(uniqueValue([1, 1, 1, 1, 5, 5]));
 console.log(uniqueValue([1, 1, 2, 3, 3, 4, 5, 5, 5, 6]));
 console.log(uniqueValue([1, 2, 3, 4, 5, 6]));
