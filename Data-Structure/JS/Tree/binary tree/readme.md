@@ -10,4 +10,18 @@ class BinaryTreeNode {
         this.right = null;
     }
 }
+
+
+const root = new BinaryTreeNode(10);
+const left = new BinaryTreeNode(20);
+const right = new BinaryTreeNode(30);
+root.left = left;
+root.right = right;
+console.log(root);
+// Our first binary tree.
+// 
+//    10
+//   /  \
+//  20   30
+
 ```
