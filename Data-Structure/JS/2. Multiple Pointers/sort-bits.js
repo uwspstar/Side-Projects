@@ -27,6 +27,7 @@ const sortBits = function (arr) {
     return arr;
 }
 
+
 const sortBits = function (arr) {
     if (arr.length < 2) return arr;
 
@@ -44,10 +45,11 @@ const sortBits = function (arr) {
 }
 
 //brut force
+// O(N)
 const sortBits = function (arr) {
 
     if (arr.length < 2) return arr;
-    // space O(n)
+    // space O(n + n)
     let arr1 = [];
     let arr0 = [];
     //O(n)
@@ -68,5 +70,3 @@ console.log(sortBits([1, 0, 0, 1, 1, 0]));
 [ 0, 0, 1, 1, 1, 0 ] fast= 5 slow= 2
 [ 0, 0, 0, 1, 1, 1 ]
 */
-
-console.log(sortBits([1, 0, 0, 1, 1, 0]));
