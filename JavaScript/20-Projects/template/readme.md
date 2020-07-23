@@ -1,0 +1,6 @@
+- type "<" enter
+- type "doc" enter
+- type "command?" for comments
+- https://cdnjs.com/libraries/font-awesome
+- https://fontawesome.com/icons?d=gallery
+- https://css-tricks.com/favicons-next-to-external-links/
