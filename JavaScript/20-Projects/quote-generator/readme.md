@@ -8,6 +8,8 @@
 - https://fonts.google.com/
 - https://forismatic.com/en/api/
 
+### CORS policy
+
 
 ### git
 - git init
