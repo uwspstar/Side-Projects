@@ -1,5 +1,10 @@
 # courses
 - https://codewithmosh.com/courses/423295/lectures/6781761
+- https://docs.python.org/3.8/tutorial/index.html
+- install the ```Code Runner``` extension on vscode setting
+```
+"code-runner.runInTerminal": true,
+```
 
 ### Built-in Functions
 - https://docs.python.org/3/library/functions.html
@@ -55,4 +60,11 @@ message = "old" if age >= 18 else "young"
 ```
 ### For Loops 
 - ```for x in nums: ```
-### while Loops
+### While Loops
+### Functions
+- https://docs.python.org/3.8/tutorial/controlflow.html#defining-functions
+### Function Annotations 4.7.8. 
+- https://docs.python.org/3.8/tutorial/controlflow.html#function-annotations
+
+### Lists
+### 
