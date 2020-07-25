@@ -61,7 +61,7 @@ function displayPhotos() {
     });
 }
 
-const updateApiUrlWithNewCount = (imgCount) => {
+function updateApiUrlWithNewCount(imgCount) {
     apiUrl = `https://api.unsplash.com/photos/random?client_id=${apiKey}&count=${imgCount}`;
 }
 // Get photos from Unsplash API
