@@ -26,3 +26,12 @@ x = 10 % 3 # 1
 x = 10 ** 3 # 1000
 x+=1
 ```
+
+### Type Conversion
+```
+int(x)
+float(x)
+bool(x)
+str(x)
+```
+### Conditional Statements
