@@ -35,3 +35,4 @@ bool(x)
 str(x)
 ```
 ### Conditional Statements
+- use ```pass``` for empty block
