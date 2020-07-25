@@ -43,8 +43,9 @@ async function getQuote() {
         removeLoadingSpinner();
         //throw new Error("see a error");
     } catch (error) {
-        // infinite loop when error happen
-        getQuote();
+        // infinite loop when error happen if we use getQuote();
+        // getQuote();
+        console.log(error)
     }
 }
 
