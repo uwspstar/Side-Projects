@@ -41,7 +41,9 @@ async function getQuote() {
         quoteText.innerText = data.quoteText;
         // Stop Loading, Show Quote
         removeLoadingSpinner();
+        //throw new Error("see a error");
     } catch (error) {
+        // infinite loop when error happen
         getQuote();
     }
 }
