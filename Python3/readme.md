@@ -36,3 +36,20 @@ str(x)
 ```
 ### Conditional Statements
 - use ```pass``` for empty block
+### Logical Operators
+- ```not```, ```and```, ```or```
+```
+if age >= 18 and age<=100:
+
+same as # 18 <= age < 65
+
+if 18 <= age < 65 :
+```
+### Ternary Operator
+```
+message = "old" if age >= 18 else "young"
+# message = age >=18 ? "old" : "young"
+```
+### For Loops 
+- ```for x in nums: ```
+### while Loops
