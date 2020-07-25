@@ -22,7 +22,7 @@ function imageLoaded() {
 }
 
 // Helper Function to Set Attributes on DOM Elements
-function setAttributes(element, attributes) {
+const setAttributes = (element, attributes) => {
     for (const key in attributes) {
         element.setAttribute(key, attributes[key]);
     }
@@ -32,7 +32,7 @@ function setAttributes(element, attributes) {
 function displayPhotos() {
     imagesLoaded = 0;
     totalImages = photosArray.length;
-    
+
     // Run function for each object in photosArray
     photosArray.forEach((photo) => {
 
