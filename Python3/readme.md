@@ -6,3 +6,4 @@
 - int
 ### Mutable
 - string
+- list
