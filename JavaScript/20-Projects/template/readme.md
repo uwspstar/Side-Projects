@@ -1,3 +1,12 @@
+### Javascript
+- https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/
+
+### manage HTML DOM
+- JavaScript : is all about interacting with the Document Object Model
+- https://htmldom.dev/
+
+
+### template
 - type "<" enter
 - type "doc" enter
 - type "command?" for comments
