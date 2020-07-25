@@ -1,6 +1,9 @@
 # courses
 - https://codewithmosh.com/courses/423295/lectures/6781761
 
+### Built-in Functions
+- https://docs.python.org/3/library/functions.html
+
 ## Mutable and Immutable Types
 ### Immutable Types
 - int
