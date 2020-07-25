@@ -7,3 +7,7 @@
 ### Mutable
 - string
 - list
+
+### Escape Sequences
+- ```\"```
+- ```\'```
