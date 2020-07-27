@@ -1,5 +1,8 @@
 ### Javascript
 - https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume/
+- https://css-tricks.com/an-introduction-to-the-picture-in-picture-web-api/
+- https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
+- https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API
 - https://github.com/tc39/proposals
 
 ### manage HTML DOM
@@ -16,8 +19,6 @@
 - https://css-tricks.com/favicons-next-to-external-links/
 - https://loading.io/
 - https://unsplash.com/
-- https://css-tricks.com/an-introduction-to-the-picture-in-picture-web-api/
-- https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture
 
 
 ### git
