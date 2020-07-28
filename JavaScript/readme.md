@@ -1,1 +1,3 @@
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference
+- https://www.udemy.com/course/web-projects-with-vanilla-javascript
+- https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume
