@@ -1,6 +1,7 @@
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch 
 // https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API
+// https://developers.google.com/web/updates/2015/03/introduction-to-fetch
 /*
 
 The fetch specification differs from jQuery.ajax() in three main ways:
