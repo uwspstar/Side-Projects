@@ -7,6 +7,9 @@
 - https://www.w3schools.com/jsref/event_onchange.asp
 - https://www.w3schools.com/howto/howto_css_switch.asp
 
+### Window.localStorage
+- https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
+
 ### Using CSS custom properties (variables)
 - https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties
 ```
