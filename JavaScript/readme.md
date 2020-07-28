@@ -3,11 +3,15 @@
 - https://www.udemy.com/course/web-projects-with-vanilla-javascript
 - https://www.udemy.com/course/javascript-web-projects-to-build-your-portfolio-resume
 
+### manage HTML DOM
+- JavaScript : is all about interacting with the Document Object Model
+- https://htmldom.dev/
+
 ### font-awesome
 - https://cdnjs.com/libraries/font-awesome
 - https://fontawesome.com/icons?d=gallery
 
-### favicons
+### favicon
 - https://css-tricks.com/favicons-next-to-external-links/
 
 ### loading icon animation
