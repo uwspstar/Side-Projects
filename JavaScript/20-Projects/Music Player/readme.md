@@ -7,6 +7,10 @@
 - https://www.w3schools.com/tags/ref_av_dom.asp
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
+- https://www.w3schools.com/js/js_this.asp
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/floor
+- https://developer.mozilla.org/en-US/docs/Web/CSS/object-fit
 
 ### manage HTML DOM
 - JavaScript : is all about interacting with the Document Object Model
