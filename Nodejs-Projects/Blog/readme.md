@@ -1,0 +1,1 @@
+- mac use "brew" to install "nvm"
