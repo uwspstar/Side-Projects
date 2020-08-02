@@ -31,3 +31,12 @@
 
 ### JokeAPI
 https://sv443.net/jokeapi/v2/
+
+### web browser
+```
+- IE        (trident)
+- Chrome    (webkit/blink)
+- firefox   (Gecko)
+- Opera     (presto)
+- safari    (webkit)
+```
