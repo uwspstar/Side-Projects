@@ -16,3 +16,6 @@ $ npm install ejs
 
 ### code
 - https://levelup.gitconnected.com/stocks-api-tutorial-with-javascript-40f24320128c
+
+### live server
+- need to restart after create index.html page
