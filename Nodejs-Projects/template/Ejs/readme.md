@@ -1,11 +1,15 @@
 - https://medium.com/swlh/master-ejs-template-engine-with-node-js-and-expressjs-979cc22b69be
+
 ### folder structure
 ```
 $ touch readme.md
 $ touch .env
 $ touch .gitignore
-$ touch server.js
-$ mkdir web/public 
+$ mkdir server
+$ touch server/app.js
+$ mkdir web/public
+$ mkdir web/public/assets
+$ mkdir web/public/images
 $ mkdir web/views 
 $ touch web/views/index.ejs
 $ mkdir web/views/template
