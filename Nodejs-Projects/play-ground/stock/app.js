@@ -1,6 +1,6 @@
 var unirest = require("unirest");
-require('dotenv').config({path: __dirname + '/.env'});
-
+require('dotenv').config({ path: __dirname + '/.env' });
+fs = require('fs');
 
 var req = unirest("GET", "https://alpha-vantage.p.rapidapi.com/query");
 
@@ -19,16 +19,15 @@ req.headers({
 	"useQueryString": true
 });
 
-fs = require('fs');
 
+const filePath = __dirname + `/data/${symbol}.txt`;
 req.end((res) => {
 	if (res.error) throw new Error(res.error);
 	console.log(JSON.stringify(res.body));
 	console.log(__dirname);
 
-	fs.writeFile(__dirname+`/data/${symbol}.txt`, JSON.stringify(res.body), (err) => {
+	fs.writeFile(filePath, JSON.stringify(res.body), (err) => {
 		if (err) return console.log(err);
 	});
-	// /Users/xingwang/Side-Projects/MSFT.txt
 });
 
