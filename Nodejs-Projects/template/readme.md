@@ -11,7 +11,7 @@ install "REST Client" Extension first
 - touch request.rest
 
 - npm init -y
-- npm install express
+- npm install express body-parser
 - npm install -D dotenv nodemon
 - npm install ejs
 - npm install mongoose
