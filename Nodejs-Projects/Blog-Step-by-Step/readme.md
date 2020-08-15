@@ -26,7 +26,12 @@ $ npm install --save-dev cross-env
 - app.js for logic
 ```
 $ touch app.js
-$ touch www.js
+$ mkdir bin
+$ touch bin/www.js
+$ mkdir src
+$ mkdir src/router
+$ touch src/router/blog.js
+$ touch src/router/user.js
 ```
 ### dev API
 - build router (split router and data)
