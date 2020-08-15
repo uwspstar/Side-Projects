@@ -1,6 +1,10 @@
 ### init dev env
+- ```npm init -y'
 - do not use an framework
 - use nodemon
+```
+npm install --save-dev nodemon
+```
 - use cross-env setup env, cross platform mac, linux and windows
 ```
 process.env.NODE_ENV
