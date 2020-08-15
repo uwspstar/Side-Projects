@@ -3,7 +3,7 @@
 - do not use an framework
 - use nodemon
 ```
-npm install --save-dev nodemon
+$ npm install --save-dev nodemon
 ```
 - use cross-env setup env, cross platform mac, linux and windows
 ```
@@ -11,6 +11,9 @@ process.env.NODE_ENV
 ```
 - www.js for server
 - app.js for logic
+```
+$ touch app.js
+```
 ### dev API
 - build router (split router and data)
 ```
