@@ -50,3 +50,12 @@ switch (x) {
 - undefined：表示“未定义”或不存在，即由于目前没有定义，所以此处暂时没有任何值
 - null：表示空值，即此处的值为空。
 - 对象（object）：各种值组成的集合
+### 对象是最复杂的数据类型，又可以分成三个子类型。 
+    - 狭义的对象（object）
+    - 数组（array）
+    - 函数（function）
+
+### typeof运算符可以返回一个值的数据类型
+```
+typeof undefined // "undefined"
+```
