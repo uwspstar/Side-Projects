@@ -197,6 +197,14 @@ Number.MIN_VALUE // 5e-324
 (1 / +0) === (1 / -0) // false
 除以正零得到+Infinity，除以负零得到-Infinity，这两者是不相等的
 ```
+### Infinity与NaN比较，总是返回false
+```
+Infinity > NaN // false
+-Infinity > NaN // false
+
+Infinity < NaN // false
+-Infinity < NaN // false
+```
 ### NaN
 ```
 5 - 'x' // NaN
@@ -211,3 +219,4 @@ Math.pow(2, 1024) // Infinity
 0 / 0 // NaN
 1 / 0 // Infinity
 ```
+### parseInt方法用于将字符串转为整数
