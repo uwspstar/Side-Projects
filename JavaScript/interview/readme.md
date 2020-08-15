@@ -81,9 +81,41 @@ if (typeof v === "undefined") {
   // ...
 }
 ```
-### 对象返回object
+### 对象返回object, null返回object。null的类型是object，这是由于历史原因造成的。
 ```
 typeof window // "object"
 typeof {} // "object"
 typeof [] // "object"
+typeof null // "object"
+
+空数组（[]）的类型也是object，这表示在 JavaScript 内部，数组本质上只是一种特殊的对象。这里顺便提一下，instanceof 运算符可以区分数组和对象
+
+var o = {};
+var a = [];
+
+o instanceof Array // false
+a instanceof Array // true
+```
+### 区别 null and undefined (undefined == null // true)
+- 区别是这样的：```null```是一个表示“空”的对象，转为数值时为```0```；
+- ```undefined```是一个表示"此处无定义"的原始值，转为数值时为```NaN```。
+
+```
+Number(null) // 0
+5 + null // 5
+
+
+if (!undefined) {
+  console.log('undefined is false');
+}
+// undefined is false
+
+if (!null) {
+  console.log('null is false');
+}
+// null is false
+
+undefined == null
+// true
+
 ```
