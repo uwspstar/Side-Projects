@@ -252,3 +252,35 @@ parseFloat('123.45#') // 123.45
 Number('123.45#') // NaN
 ```
 ### isNaN方法可以用来判断一个值是否为NaN
+### isNaN只对数值有效，如果传入其他值，会被先转成数值。比如，传入字符串的时候，字符串会被先转成NaN，所以最后返回true，这一点要特别引起注意。也就是说，isNaN为true的值，有可能不是NaN，而是一个字符串。
+```
+isNaN('Hello') // true
+// 相当于
+isNaN(Number('Hello')) // true
+```
+### 对于对象和数组，isNaN也返回true
+### 对于空数组和只有一个数值成员的数组，isNaN返回false
+### 使用isNaN之前，最好判断一下数据类型。
+```
+function myIsNaN(value) {
+  return typeof value === 'number' && isNaN(value);
+}
+```
+### 判断NaN更可靠的方法是，利用NaN为唯一不等于自身的值的这个特点，进行判断
+```
+function myIsNaN(value) {
+  return value !== value;
+}
+
+const checkIsNaN = (val) => val !== val;
+```
+
+### isFinite方法返回一个布尔值，表示某个值是否为正常的数值
+```
+isFinite(Infinity) // false
+isFinite(-Infinity) // false
+isFinite(NaN) // false
+isFinite(undefined) // false
+isFinite(null) // true
+isFinite(-1) // true
+```

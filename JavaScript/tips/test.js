@@ -73,3 +73,6 @@ console.log("parseInt('011', 2) //", parseInt('011', 2)) //3
 
 console.log('parseFloat: ------------------------------')
 console.log('parseFloat 方法用于将一个字符串转为浮点数. parseFloat方法会自动过滤字符串前导的空格')
+
+console.log('isNaN: ------------------------------')
+console.log('判断NaN更可靠的方法是，利用NaN为唯一不等于自身的值的这个特点，进行判断')
