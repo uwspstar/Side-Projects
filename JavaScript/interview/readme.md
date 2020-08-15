@@ -66,6 +66,7 @@ typeof f // "function"
 ### typeof可以用来检查一个没有声明的变量，而不报错。
 ```
 v // ReferenceError: v is not defined
-typeof v
+typeof v // undefined
 
+上面代码中，变量v没有用var命令声明，直接使用就会报错。但是，放在typeof后面，就不报错了，而是返回undefined。
 ```
