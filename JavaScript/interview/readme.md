@@ -69,4 +69,21 @@ v // ReferenceError: v is not defined
 typeof v // undefined
 
 上面代码中，变量v没有用var命令声明，直接使用就会报错。但是，放在typeof后面，就不报错了，而是返回undefined。
+
+// 错误的写法
+if (v) {
+  // ...
+}
+// ReferenceError: v is not defined
+
+// 正确的写法
+if (typeof v === "undefined") {
+  // ...
+}
+```
+### 对象返回object
+```
+typeof window // "object"
+typeof {} // "object"
+typeof [] // "object"
 ```
