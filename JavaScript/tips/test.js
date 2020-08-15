@@ -57,7 +57,14 @@ console.log('typeof [] //', typeof []); // object
 console.log('typeof null //', typeof null); // object
 
 console.log('parseInt: ------------------------------')
-console.log('parseInt 用于将字符串转为整数, 字符串转为整数的时候，是一个个字符依次转换，如果遇到不能转为数字的字符，就不再进行下去，返回已经转好的部分')
+console.log('parseInt的返回值只有两种可能，要么是一个十进制整数，要么是NaN')
+console.log('parseInt 用于将字符串转为整数, 字符串转为整数的时候，是一个个字符依次转换，如果遇到不能转为数字的字符，就不再进行下去，返回已经转好的部分.')
 console.log("parseInt('   81')", parseInt('   81')) // 81
 console.log("parseInt('12.34') //", parseInt('12.34'))// 12
 console.log("parseInt('.3') //", parseInt('.3')) // NaN
+console.log("parseInt('15px')//", parseInt('15px3'))  // 15
+
+console.log('parseInt的第二个参数为10，即默认是十进制转十进制')
+console.log("parseInt('1000', 2) //", parseInt('1000', 2)) // 8
+console.log("parseInt('1000', 6) //", parseInt('1000', 6)) // 216
+console.log("parseInt('1000', 8) //", parseInt('1000', 8)) // 512
