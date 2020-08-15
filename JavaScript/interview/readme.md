@@ -24,6 +24,8 @@ switch (x) {
     console.log('x 等于1');
   case 2:
     console.log('x 等于2');
+  case 3:
+  case 4:
   default:
     console.log('x 等于其他值');
 }
