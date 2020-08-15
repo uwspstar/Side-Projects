@@ -104,6 +104,8 @@ a instanceof Array // true
 Number(null) // 0
 5 + null // 5
 
+Number(undefined) // NaN
+5 + undefined // NaN
 
 if (!undefined) {
   console.log('undefined is false');
@@ -118,4 +120,18 @@ if (!null) {
 undefined == null
 // true
 
+
+// 函数没有返回值时，默认返回 undefined
+function f() {}
+f() // undefined
 ```
+### 如果 JavaScript 预期某个位置应该是布尔值，会将该位置上现有的值自动转为布尔值。转换规则是除了下面六个值被转为false，其他值都视为true。
+
+- undefined
+- null
+- false
+- 0
+- NaN
+- ""或''（空字符串)  // "   " and '   ' different
+### JavaScript 内部，所有数字都是以64位浮点数形式储存
+- ```1 === 1.0 // true```
