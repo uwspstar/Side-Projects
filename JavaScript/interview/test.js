@@ -9,7 +9,9 @@ console.log('Number:------------------------------')
 console.log('0.1 + 0.2 === 0.3 //', 0.1 + 0.2 === 0.3) // false
 console.log('(0.3 - 0.2) === (0.2 - 0.1) //', (0.3 - 0.2) === (0.2 - 0.1)); // false
 console.log('Math.pow(2, 1024) //', Math.pow(2, 1024)) // Infinity
-// false
+
+console.log('Number.MAX_VALUE //', Number.MAX_VALUE)// 1.7976931348623157e+308
+console.log('Number.MIN_VALUE //', Number.MIN_VALUE)// 5e-324
 
 function switchTest(x) {
     switch (x) {
