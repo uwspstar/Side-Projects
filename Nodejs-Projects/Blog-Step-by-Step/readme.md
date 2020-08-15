@@ -14,6 +14,12 @@ $ touch .gitignore
 process.env.NODE_ENV
 ```
 ```
+"main": "/bin/www.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
+    "prod": "cross-env NODE_ENV=production nodemon ./bin/www.js"
+  },
 ```
 - www.js for server
 - app.js for logic
