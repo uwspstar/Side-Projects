@@ -5,6 +5,10 @@
 ```
 $ npm install --save-dev nodemon
 ```
+- add ```.gitignore```
+```
+$ touch .gitignore
+```
 - use cross-env setup env, cross platform mac, linux and windows
 ```
 process.env.NODE_ENV
@@ -13,6 +17,7 @@ process.env.NODE_ENV
 - app.js for logic
 ```
 $ touch app.js
+$ touch www.js
 ```
 ### dev API
 - build router (split router and data)
