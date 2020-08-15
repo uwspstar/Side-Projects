@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "",
+    "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
     "prod": ""
   },
   "keywords": [],
