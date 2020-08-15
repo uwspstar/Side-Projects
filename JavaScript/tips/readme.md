@@ -220,6 +220,35 @@ Math.pow(2, 1024) // Infinity
 1 / 0 // Infinity
 ```
 ### parseInt方法用于将字符串转为整数
-### parseInt的第二个参数为10，即默认是十进制转十进制
+### parseInt的第二个参数为10，即默认是十进制转十进制. 这个整数只有在2到36之间，才能得到有意义的结果，超出这个范围，则返回NaN。如果第二个参数是0、undefined和null，则直接忽略。
 ### parseInt的返回值只有两种可能，要么是一个十进制整数，要么是NaN
 ### parseInt 用于将字符串转为整数, 字符串转为整数的时候，是一个个字符依次转换，如果遇到不能转为数字的字符，就不再进行下去，返回已经转好的部分.
+```
+parseInt(011, 2) // NaN
+
+// 等同于
+parseInt(String(011), 2)
+
+// 等同于
+parseInt(String(9), 2)
+
+第一行的011会被先转为字符串9，因为9不是二进制的有效字符，所以返回NaN。
+如果直接计算parseInt('011', 2)，011则是会被当作二进制处理，返回3
+
+```
+### parseFloat 方法用于将一个字符串转为浮点数. parseFloat方法会自动过滤字符串前导的空格
+### parseFloat会将空字符串转为NaN。这些特点使得parseFloat的转换结果不同于Number函数
+```
+parseFloat(true)  // NaN
+Number(true) // 1
+
+parseFloat(null) // NaN
+Number(null) // 0
+
+parseFloat('') // NaN
+Number('') // 0
+
+parseFloat('123.45#') // 123.45
+Number('123.45#') // NaN
+```
+### isNaN方法可以用来判断一个值是否为NaN

@@ -64,7 +64,12 @@ console.log("parseInt('12.34') //", parseInt('12.34'))// 12
 console.log("parseInt('.3') //", parseInt('.3')) // NaN
 console.log("parseInt('15px')//", parseInt('15px3'))  // 15
 
-console.log('parseInt的第二个参数为10，即默认是十进制转十进制')
+console.log('parseInt的第二个参数为10，即默认是十进制转十进制. 这个整数只有在2到36之间，才能得到有意义的结果，超出这个范围，则返回NaN。如果第二个参数是0、undefined和null，则直接忽略。')
 console.log("parseInt('1000', 2) //", parseInt('1000', 2)) // 8
 console.log("parseInt('1000', 6) //", parseInt('1000', 6)) // 216
 console.log("parseInt('1000', 8) //", parseInt('1000', 8)) // 512
+console.log("parseInt(011, 2) //", parseInt(011, 2)) //NaN 011会被先转为字符串9，因为9不是二进制的有效字符，所以返回NaN
+console.log("parseInt('011', 2) //", parseInt('011', 2)) //3
+
+console.log('parseFloat: ------------------------------')
+console.log('parseFloat 方法用于将一个字符串转为浮点数. parseFloat方法会自动过滤字符串前导的空格')
