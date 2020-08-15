@@ -1,9 +1,9 @@
 ### init dev env
 - ```npm init -y'
 - do not use an framework
-- use nodemon
+- use nodemon and env
 ```
-$ npm install --save-dev nodemon
+$ npm install --save-dev nodemon env
 ```
 - add ```.gitignore```
 ```
