@@ -9,9 +9,10 @@ $ npm install --save-dev nodemon
 ```
 $ touch .gitignore
 ```
-- use cross-env setup env, cross platform mac, linux and windows
+- use cross-env setup env, cross platform mac, linux and windows , process.env.NODE_ENV
+
 ```
-process.env.NODE_ENV
+$ npm install --save-dev cross-env
 ```
 ```
 "main": "/bin/www.js",
@@ -37,3 +38,6 @@ POST    /api/blog/update?id=1
 POST    /api/blog/del?id=1
 POST    /api/user/login
 ```
+### Lib
+- https://www.npmjs.com/package/cross-env
+- https://www.npmjs.com/package/nodemon
