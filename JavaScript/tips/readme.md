@@ -14,7 +14,7 @@ countdown(3)
 上面代码中，n --> 0实际上会当作n-- > 0，因此输出2、1、0。
 ```
 ### JavaScript 使用大括号，将多个相关的语句组合在一起，称为“区块”（block）。 
-### 对于 va r命令来说，JavaScript 的区块不构成单独的作用域（scope）。
+### 对于 var 命令来说，JavaScript 的区块不构成单独的作用域（scope）。
 ### 每个 case 代码块内部的 break 语句不能少，否则会接下去执行下一个 case 代码块，而不是跳出 switch 结构。
 ```
 var x = 1;
@@ -84,7 +84,7 @@ if (typeof v === "undefined") {
   // ...
 }
 ```
-### 对象返回object, null返回object。null的类型是object，这是由于历史原因造成的。
+### 对象返回 object, null 返回 object。null的类型是 object，这是由于历史原因造成的。
 ```
 typeof window // "object"
 typeof {} // "object"
@@ -179,7 +179,7 @@ Number.MIN_VALUE // 5e-324
 0o88 // 报错
 0b22 // 报错
 ```
-### JavaScript 内部实际上存在2个0：一个是+0，一个是-0，区别就是64位浮点数表示法的符号位不同。它们是等价的。
+### JavaScript 内部实际上存在2个0：一个是 +0，一个是 -0，区别就是64位浮点数表示法的符号位不同。它们是等价的。
 ```
 -0 === +0 // true
 0 === -0 // true
@@ -220,8 +220,8 @@ Math.pow(2, 1024) // Infinity
 1 / 0 // Infinity
 ```
 ### parseInt方法用于将字符串转为整数
-### parseInt的第二个参数为10，即默认是十进制转十进制. 这个整数只有在2到36之间，才能得到有意义的结果，超出这个范围，则返回NaN。如果第二个参数是0、undefined和null，则直接忽略。
-### parseInt的返回值只有两种可能，要么是一个十进制整数，要么是NaN
+### parseInt的第二个参数为10，即默认是十进制转十进制. 这个整数只有在2到36之间，才能得到有意义的结果，超出这个范围，则返回 NaN。如果第二个参数是 0、undefined 和 null，则直接忽略。
+### parseInt 的返回值只有两种可能，要么是一个十进制整数，要么是NaN
 ### parseInt 用于将字符串转为整数, 字符串转为整数的时候，是一个个字符依次转换，如果遇到不能转为数字的字符，就不再进行下去，返回已经转好的部分.
 ```
 parseInt(011, 2) // NaN
@@ -236,8 +236,8 @@ parseInt(String(9), 2)
 如果直接计算parseInt('011', 2)，011则是会被当作二进制处理，返回3
 
 ```
-### parseFloat 方法用于将一个字符串转为浮点数. parseFloat方法会自动过滤字符串前导的空格
-### parseFloat 会将空字符串转为NaN。这些特点使得parseFloat的转换结果不同于Number函数
+### parseFloat 方法用于将一个字符串转为浮点数. parseFloat 方法会自动过滤字符串前导的空格
+### parseFloat 会将空字符串转为NaN。这些特点使得 parseFloat 的转换结果不同于 Number 函数
 ```
 parseFloat(true)  // NaN
 Number(true) // 1
@@ -251,7 +251,7 @@ Number('') // 0
 parseFloat('123.45#') // 123.45
 Number('123.45#') // NaN
 ```
-### isNaN 方法可以用来判断一个值是否为NaN
+### isNaN 方法可以用来判断一个值是否为 NaN
 ### isNaN 只对数值有效，如果传入其他值，会被先转成数值。比如，传入字符串的时候，字符串会被先转成NaN，所以最后返回true，这一点要特别引起注意。也就是说，isNaN为true的值，有可能不是NaN，而是一个字符串。
 ```
 isNaN('Hello') // true
@@ -327,3 +327,13 @@ atob()：Base64 编码转为原来的值
 ```
 ### object 对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合。
 ### object 对象的所有键名都是字符串（ES6 又引入了 Symbol 值也可以作为键名），所以加不加引号都可以
+### object 如果属性的值还是一个对象，就形成了链式引用
+```
+var obj = {
+  p: function (x) {
+    return 2 * x;
+  }
+};
+
+obj.p(1) // 2
+```
