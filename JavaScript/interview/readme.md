@@ -58,4 +58,14 @@ switch (x) {
 ### typeof运算符可以返回一个值的数据类型
 ```
 typeof undefined // "undefined"
+
+function f() {}
+typeof f // "function"
+
+```
+### typeof可以用来检查一个没有声明的变量，而不报错。
+```
+v // ReferenceError: v is not defined
+typeof v
+
 ```
