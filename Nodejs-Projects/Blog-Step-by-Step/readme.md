@@ -65,10 +65,20 @@ $ mkdir src/controller
 $ touch src/controller/blog.js
 $ touch src/controller/user.js
 ```
-
 ### build API with mock data, no login
 
-
+### install mySQL
+- for mac
+- https://macresearch.org/fix-cant-be-opened-because-apple-cannot-check-it-for-malicious-software/
+```
+System Preferences -> Security & Privacy -> click “Open Anyway”.
+```
+- create users table
+- create blogs table
+- update a record
+```
+SET SQL_SAFE_UPDATE = 0
+```
 ### Lib
 - https://www.npmjs.com/package/cross-env
 - https://www.npmjs.com/package/nodemon
