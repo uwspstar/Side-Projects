@@ -24,3 +24,7 @@ switch (env) {
         }
         break;
 }
+
+module.exports = {
+    MYSQL_CONF
+}

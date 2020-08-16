@@ -101,3 +101,4 @@ SET SQL_SAFE_UPDATE = 0
 ### Lib
 - https://www.npmjs.com/package/cross-env
 - https://www.npmjs.com/package/nodemon
+- https://github.com/Eished/node_blog_notes

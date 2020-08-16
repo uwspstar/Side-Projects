@@ -9,20 +9,27 @@ const handleBlogRouter = (req, res) => {
     if (method === 'GET' && req.path === '/api/blog/list') {
         const author = req.query.author || '';
         const keyword = req.query.keyword || '';
-        const listData = getList(author, keyword);
-        return new SuccessModel(listData);
+        //const listData = getList(author, keyword);
+        //return new SuccessModel(listData);
+        const result = getList(author, keyword);
+        return result.then(listData => new SuccessModel(listData));
     }
 
     // get blog detail
     if (method === 'GET' && req.path === '/api/blog/detail') {
-        const data = getDetail(id);
-        return new SuccessModel(data);
+        //const data = getDetail(id);
+        //return new SuccessModel(data);
+        const result = getDetail(id);
+        return result.then(data => new SuccessModel(data));
     }
 
     // create a new blog
     if (method === 'POST' && req.path === '/api/blog/new') {
-        const data = createNewBlog(req.body);
-        return new SuccessModel(data);
+        //const data = createNewBlog(req.body);
+        //return new SuccessModel(data);
+        req.body.author = 'xingWang'; //mock data, change it after login
+        const result = createNewBlog(req.body);
+        return result.then(data => new SuccessModel(data));
     }
 
     // Update a new blog
