@@ -63,6 +63,7 @@ $ touch src/model/resModel.js
 ```
 $ mkdir src/controller
 $ touch src/controller/blog.js
+$ touch src/controller/user.js
 ```
 
 
