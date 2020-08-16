@@ -79,6 +79,7 @@ System Preferences -> Security & Privacy -> click “Open Anyway”.
 ```
 SET SQL_SAFE_UPDATE = 0
 ```
+- alter users table, add state column for "soft delete"
 ### Lib
 - https://www.npmjs.com/package/cross-env
 - https://www.npmjs.com/package/nodemon
