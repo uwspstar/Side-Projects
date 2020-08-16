@@ -28,10 +28,6 @@ $ npm install --save-dev cross-env
 $ touch app.js
 $ mkdir bin
 $ touch bin/www.js
-$ mkdir src
-$ mkdir src/router
-$ touch src/router/blog.js
-$ touch src/router/user.js
 ```
 ### dev API
 - build router (split router and data)
@@ -49,6 +45,24 @@ POST    /api/user/login
 res.writeHead(404, { 'Content-type': 'text/plain' });
 res.write("404 Not Found");
 res.end();
+```
+### create Router, handle http req and res
+```
+$ mkdir src
+$ mkdir src/router
+$ touch src/router/blog.js
+$ touch src/router/user.js
+```
+### MVC
+### create Model
+```
+$ mkdir src/model
+$ touch src/model/resModel.js
+```
+### create Controller, handle data
+```
+$ mkdir src/controller
+$ touch src/controller/blog.js
 ```
 
 
