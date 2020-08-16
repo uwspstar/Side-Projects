@@ -29,6 +29,7 @@ $ touch app.js
 $ mkdir bin
 $ touch bin/www.js
 ```
+
 ### dev API
 - build router (split router and data)
 ```
@@ -46,6 +47,7 @@ res.writeHead(404, { 'Content-type': 'text/plain' });
 res.write("404 Not Found");
 res.end();
 ```
+
 ### create Router, handle http req and res
 ```
 $ mkdir src
@@ -53,12 +55,16 @@ $ mkdir src/router
 $ touch src/router/blog.js
 $ touch src/router/user.js
 ```
+
 ### MVC, split router and controller
+
 ### create Model
 ```
 $ mkdir src/model
 $ touch src/model/resModel.js
 ```
+
+
 ### create Controller, handle data 
 ```
 $ mkdir src/controller
@@ -80,6 +86,18 @@ System Preferences -> Security & Privacy -> click “Open Anyway”.
 SET SQL_SAFE_UPDATE = 0
 ```
 - alter users table, add state column for "soft delete"
+
+### install mySql
+- ```$ npm install mysql```
+
+### create db config
+- mkdir src/config
+- touch src/config/db.js
+
+### create db
+- mkdir src/db
+- touch src/db/mysql.js
+
 ### Lib
 - https://www.npmjs.com/package/cross-env
 - https://www.npmjs.com/package/nodemon
