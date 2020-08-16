@@ -53,18 +53,20 @@ $ mkdir src/router
 $ touch src/router/blog.js
 $ touch src/router/user.js
 ```
-### MVC
+### MVC, split router and controller
 ### create Model
 ```
 $ mkdir src/model
 $ touch src/model/resModel.js
 ```
-### create Controller, handle data
+### create Controller, handle data 
 ```
 $ mkdir src/controller
 $ touch src/controller/blog.js
 $ touch src/controller/user.js
 ```
+
+### build API with mock data, no login
 
 
 ### Lib
