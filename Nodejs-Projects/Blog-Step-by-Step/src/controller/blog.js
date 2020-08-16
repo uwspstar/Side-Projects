@@ -37,13 +37,26 @@ const createNewBlog = (blogData = {}) => {
         }
     })
 }
-const updateBlog = (id, postData = {}) => {
-    console.log('updateBlog id', id, 'updateBlog blogData', postData);
-    return true;
+const updateBlog = (id, blogData = {}) => {
+    //console.log('updateBlog id', id, 'updateBlog blogData', blogData);
+    //return true;
+    const title = blogData.title;
+    const content = blogData.content;
+    const sql = `
+    UPDATE blogs SET title='${title}', content='${content}' WHERE id = ${id}
+    `
+
+    return exec(sql).then(updateData => {
+        console.log('updateData', updateData);
+        return updateData.affectedRows > 0;
+    })
+
 }
-const deleteBlog = (id) => {
+const deleteBlog = (id, author) => {
     console.log('deleteBlog id', id);
-    return true;
+    // soft delete use "Update"
+    const sql = `DELETE FROM blogs WHERE id = ${id} and author='${author}' `;
+    return exec(sql).then(deleteData => updateData.affectedRows > 0);
 }
 module.exports = {
     getList,

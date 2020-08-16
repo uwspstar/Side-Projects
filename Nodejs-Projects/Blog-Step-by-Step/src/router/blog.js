@@ -34,14 +34,20 @@ const handleBlogRouter = (req, res) => {
 
     // Update a new blog
     if (method === 'POST' && req.path === '/api/blog/update') {
-        const result = updateBlog(id, req.body)
-        return result ? new SuccessModel() : new ErrorModel('Failure to Update a blog');
+        //const result = updateBlog(id, req.body);
+        //return result ? new SuccessModel() : new ErrorModel('Failure to Update a blog');
+        const result = updateBlog(id, req.body);
+        return result.then(val => val ? new SuccessModel(val) : new ErrorModel('Failure to Update a blog'));
+
     }
 
     // Delete a new blog
     if (method === 'POST' && req.path === '/api/blog/del') {
-        const result = deleteBlog(id, req.body)
-        return result ? new SuccessModel() : new ErrorModel('Failure to Delete a blog');
+        //const result = deleteBlog(id, req.body);
+        //return result ? new SuccessModel() : new ErrorModel('Failure to Delete a blog');
+        const author = 'xingWang';// mock data, update after login
+        const result = deleteBlog(id, author); 
+        return result.then(val => val ? new SuccessModel(val) : new ErrorModel('Failure to Delete a blog'));
     }
 
 }

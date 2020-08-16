@@ -1,3 +1,4 @@
+### keep safe guard in mind
 ### init dev env
 - ```npm init -y'
 - do not use an framework
