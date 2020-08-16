@@ -13,12 +13,9 @@ const con = mysql.createConnection({
 con.connect();
 
 // execute mysql query
-const sql = 'SELECT * FROM USERS;';
+const sql = `select * from users;`;
 con.query(sql, (err, result) => {
-    if (err) {
-        console.log('err');
-        return;
-    }
+    if (err) throw err;
 
     console.log(result);
 });
