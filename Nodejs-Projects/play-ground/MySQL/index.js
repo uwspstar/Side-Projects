@@ -20,5 +20,20 @@ con.query(sql, (err, result) => {
     console.log(result);
 });
 
+
+const sqlUpdate = `update users set username = 'xingWang@xing.com' where id =  1;`;
+con.query(sqlUpdate, (err, result) => {
+    if (err) throw err;
+
+    console.log(result);
+});
+
+const sqlInsert = `insert into blogs(title, content, createtime, author) values('Title-Sun','content-Sun@xing.com', 4597525543764, 'Sun');`;
+con.query(sqlInsert, (err, result) => {
+    if (err) throw err;
+
+    console.log(result);
+});
+
 // close connection
 con.end();

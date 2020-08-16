@@ -5,7 +5,33 @@
 - $ touch .gitignore
 - $ npm install mysql
 - $ touch index.js
-
+### index.js
+- for ```update```, we can check ```affectedRows``` 
+```
+OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 0,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '(Rows matched: 1  Changed: 1  Warnings: 0',
+  protocol41: true,
+  changedRows: 1
+}
+```
+- for ```insert```, check ```insertId``` and ```affectedRows```
+```
+OkPacket {
+  fieldCount: 0,
+  affectedRows: 1,
+  insertId: 4,
+  serverStatus: 2,
+  warningCount: 0,
+  message: '',
+  protocol41: true,
+  changedRows: 0
+}
+```
 ### troubleshoot
 ```
 code: 'ER_NOT_SUPPORTED_AUTH_MODE',
@@ -20,5 +46,6 @@ code: 'ER_NOT_SUPPORTED_AUTH_MODE',
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '12345678';
 flush privileges;
 ``
+
 ### links
 - https://www.w3schools.com/nodejs/nodejs_mysql.asp
