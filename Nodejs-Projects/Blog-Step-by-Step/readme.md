@@ -88,7 +88,7 @@ SET SQL_SAFE_UPDATE = 0
 ```
 - alter users table, add state column for "soft delete"
 
-### install mySql
+### install mySql on nodejs
 - ```$ npm install mysql```
 
 ### create db config
@@ -98,6 +98,20 @@ SET SQL_SAFE_UPDATE = 0
 ### create db
 - mkdir src/db
 - touch src/db/mysql.js
+
+
+
+
+
+
+### cookie and session, login with cookie
+
+### cookie
+- client / browser side cookie
+- js with cookie
+- server side using cookie for login
+
+### write session into redis
 
 ### Lib
 - https://www.npmjs.com/package/cross-env
