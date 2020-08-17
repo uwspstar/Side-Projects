@@ -8,4 +8,4 @@ cookieStr.split(';').forEach(item => {
     const val = arr[1];
     req.cookie[key] = val
 })
-console.log(req.cookie);
+console.log('req.cookie is ', req.cookie);
