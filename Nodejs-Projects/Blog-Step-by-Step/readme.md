@@ -112,8 +112,20 @@ SET SQL_SAFE_UPDATE = 0
 - server side using cookie for login
 - cookie size is <= 5kb
 - not share with different domain
-- key / value;
-
+- key / value; k1=v1;k2=va;k3=v3;
+- every http request, the cookie will be sent to request domain
+- server can modify cookie and send back to client/browser
+- server response ```Set-Cookie```
+- js client/browser can modify cookie (has limit)
+- cookie append
+- client check cookie (3 ways)
+- js check and modify cookie (limit, not often)
+```
+document.cookie;
+document.cookie = 'k1=100'
+document.cookie = 'k2=200'
+```
+- sever nodejs modify cookie (check, modify, verify login)
 ### write session into redis
 
 ### Lib
