@@ -110,6 +110,9 @@ SET SQL_SAFE_UPDATE = 0
 - client / browser side cookie
 - js with cookie
 - server side using cookie for login
+- cookie size is <= 5kb
+- not share with different domain
+- key / value;
 
 ### write session into redis
 
