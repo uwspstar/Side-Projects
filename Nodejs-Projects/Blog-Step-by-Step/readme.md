@@ -107,7 +107,7 @@ SET SQL_SAFE_UPDATE = 0
 ### cookie and session, login with cookie
 
 ### cookie
-- cannot put username 
+- cannot put username , such as email, phone
 - can put userId (server side match username)
 - client / browser side cookie
 - js with cookie
@@ -128,6 +128,11 @@ document.cookie = 'k1=100'
 document.cookie = 'k2=200'
 ```
 - sever nodejs modify cookie (check, modify, verify login)
+
+### session
+- for cookie : cannot put username , such as email, phone
+- for cookie : can put userId, sId (sessionId), (server side match username)
+
 ### write session into redis
 
 ### Lib
