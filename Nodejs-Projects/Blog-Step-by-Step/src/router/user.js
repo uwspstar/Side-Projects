@@ -11,7 +11,7 @@ const getCookieExpire = () => {
 
 const handleUserRouter = (req, res) => {
     const method = req.method;
-
+    console.log('cookie expire :', getCookieExpire());
     // user login
     if (method === 'POST' && req.path === '/api/user/login') {
         //const { username, password } = req.body;
