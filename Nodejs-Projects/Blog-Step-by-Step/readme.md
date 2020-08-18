@@ -107,6 +107,8 @@ SET SQL_SAFE_UPDATE = 0
 ### cookie and session, login with cookie
 
 ### cookie
+- cannot put username 
+- can put userId (server side match username)
 - client / browser side cookie
 - js with cookie
 - server side using cookie for login
