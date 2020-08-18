@@ -1,6 +1,14 @@
 const { checkLogin } = require('../controller/user');
 const { SuccessModel, ErrorModel } = require('../model/resModel');
 
+// get cookie expire date
+const getCookieExpire = () => {
+    let d = new Date();
+    d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+    console.log('cookie expire :', d.toGMTString());
+    return d.toGMTString();
+}
+
 const handleUserRouter = (req, res) => {
     const method = req.method;
 
@@ -17,7 +25,7 @@ const handleUserRouter = (req, res) => {
                 // Server side side cookie
                 // path=/ means for root path
                 // httpOnly only allow server side modify cookie, not client side (js on browser document.cookie="username=abc")
-                res.setHeader('Set-Cookie', `username=${data.username}; path=/; httpOnly`)
+                res.setHeader('Set-Cookie', `username=${data.username}; path=/; httpOnly; expire=${getCookieExpire}`)
                 return new SuccessModel()
             }
             return new ErrorModel('Failure to login')
