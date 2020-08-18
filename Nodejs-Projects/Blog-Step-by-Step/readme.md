@@ -132,6 +132,7 @@ document.cookie = 'k2=200'
 ### session
 - for cookie : cannot put username , such as email, phone
 - for cookie : can put userId, sId (sessionId), (server side match username)
+- for session : server side match username, save user info
 
 ### write session into redis
 
