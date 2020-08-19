@@ -41,6 +41,9 @@ const serverHandle = (req, res) => {
     // get query
     req.query = queryString.parse(url.split('?')[1]);
 
+    // set session
+    let SESSION_DATA = {};
+
     // get cookie
     req.cookie = {};
     const cookieStr = req.headers.cookie || ''; //k1=v1;k2=v2;k3=v3;
@@ -51,7 +54,22 @@ const serverHandle = (req, res) => {
         const val = arr[1].trim();
         req.cookie[key] = val;
     })
-    console.log('req.cookie is ', req.cookie);
+    // console.log('req.cookie is ', req.cookie);
+
+    // get session
+    const needSetCookie = false;
+    const userId = req.cookie.userId;
+    if (userId) {
+        if (!SESSION_DATA[userId]) {
+            SESSION_DATA[userId] = {};
+        }
+    } else {
+        needSetCookie = true;
+        // assign an unique value
+        userId = `${Date.now()}_${Math.random()}`;
+        SESSION_DATA[userId] = {};
+    }
+    req.session = SESSION_DATA[userId];
 
     // deal with Post data
     getPostData(req).then(postData => {
@@ -70,6 +88,10 @@ const serverHandle = (req, res) => {
 
         const logResult = handleBlogRouter(req, res); // promise
         if (logResult) {
+            if (needSetCookie) {
+                res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire}`)
+            }
+
             logResult.then(blogData => res.end(JSON.stringify(blogData)));
             return;
         }
@@ -86,6 +108,10 @@ const serverHandle = (req, res) => {
 
         const userResult = handleUserRouter(req, res);
         if (userResult) {
+            if (needSetCookie) {
+                res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire}`)
+            }
+
             userResult.then(userData => res.end(JSON.stringify(userData)));
             return;
         }
