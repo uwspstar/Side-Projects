@@ -28,7 +28,11 @@ const handleUserRouter = (req, res) => {
                 // httpOnly only allow server side modify cookie, not client side (js on browser document.cookie="username=abc")
                 // res.setHeader('Set-Cookie', `username=${data.username}; path=/; httpOnly; expire=${getCookieExpire}`)
 
+                //set session
                 req.session.username = data.username;
+                req.session.realname = data.realname;
+                console.log('req.session: ', req.session);
+
                 return new SuccessModel()
             }
             return new ErrorModel('Failure to login')
@@ -37,8 +41,13 @@ const handleUserRouter = (req, res) => {
 
     // verify success login
     if (method === 'POST' && req.path === '/api/user/login-test') {
+        /*
         return req.cookie.username
             ? Promise.resolve(new SuccessModel(req.cookie.username))
+            : Promise.reject(new ErrorModel('Failure to login'));
+        */
+        return req.session.username
+            ? Promise.resolve(new SuccessModel({ session: req.session }))
             : Promise.reject(new ErrorModel('Failure to login'));
     }
 }

@@ -2,6 +2,14 @@ const queryString = require('querystring');
 const handleUserRouter = require('./src/router/user');
 const handleBlogRouter = require('./src/router/blog');
 
+// get cookie expire date
+const getCookieExpire = () => {
+    let d = new Date();
+    d.setTime(d.getTime() + (24 * 60 * 60 * 1000));
+    console.log('cookie expire :', d.toGMTString());
+    return d.toGMTString();
+}
+
 // deal with postData
 const getPostData = (req) => {
     const promise = new Promise((resolve, reject) => {
@@ -30,6 +38,7 @@ const getPostData = (req) => {
     })
     return promise;
 }
+
 const serverHandle = (req, res) => {
     //step1 : setHeader
     res.setHeader('Content-type', 'application/json');
@@ -57,8 +66,8 @@ const serverHandle = (req, res) => {
     // console.log('req.cookie is ', req.cookie);
 
     // get session
-    const needSetCookie = false;
-    const userId = req.cookie.userId;
+    let needSetCookie = false;
+    let userId = req.cookie.userId;
     if (userId) {
         if (!SESSION_DATA[userId]) {
             SESSION_DATA[userId] = {};
