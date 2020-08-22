@@ -14,7 +14,8 @@
 - \$ touch .gitignore
 - \$ touch index.ts
 
-### run tsc index.ts will generate index.js
+### run tsc index.ts will generate index.js (same as ts-node)
 
 - \$ tsc index.ts // will generate index.js
 - \$ node index.js
+- \$ ts-node index.ts// combine 2 command in one
