@@ -27,3 +27,10 @@ NOT equal
 - Push Cache
 - usually we use "expires" on "Response Headers", not we use both "Cache-Control" and "expires"
 - we also use "Last-Modified", it is a timestamp, check it, to decide to use "304" readn cache , or reload new data
+
+### how browser load the page
+- load HTML and create DOM tree
+- from top to bottom, stop by link, style, script
+- analysis CSS
+- Render Tree (combine CSS and DOM)
+- Repaint and Reflow

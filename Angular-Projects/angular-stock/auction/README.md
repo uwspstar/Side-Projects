@@ -1,3 +1,12 @@
+### 
+- $ sudo npm install -g #angular/cli
+- $ ng --version
+- $ ng new auction // project name
+- $ cd auction
+- $ ng serve --open
+
+
+
 # Auction
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.7.
