@@ -64,3 +64,6 @@ const logNums: (i: number) => void = (i: number) =>{
 const json = '{"x": 10, "y": 20}';
 const coordinates:{x: number; y: number} = JSON.parse(json);
 ```
+
+### variable with different type
+- ```let myTemp : number | boolean;```
