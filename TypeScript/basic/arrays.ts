@@ -11,3 +11,7 @@ const color2: string[][] = [
 color.map((col: string): string => {
   return col;
 });
+
+// multiple types
+// similar like string[] , Date[]
+const importantDates: (Date | string)[] = [new Date(), '2030-10-10'];
