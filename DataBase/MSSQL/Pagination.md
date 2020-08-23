@@ -1,4 +1,11 @@
+### MSSQL Pagination
+
+- https://www.sqlshack.com/pagination-in-sql-server/
+- https://sqlperformance.com/2015/01/t-sql-queries/pagination-with-offset-fetch
+
 ### MSSQL Pagination Example
+
+- https://www.sqlshack.com/pagination-in-sql-server/
 
 ```
 DECLARE @PageNumber AS INT
@@ -11,10 +18,49 @@ OFFSET (@PageNumber-1)*@RowsOfPage ROWS
 FETCH NEXT @RowsOfPage ROWS ONLY
 ```
 
-### MSSQL Pagination
+### Dynamic Sorting with Pagination
 
 - https://www.sqlshack.com/pagination-in-sql-server/
-- https://sqlperformance.com/2015/01/t-sql-queries/pagination-with-offset-fetch
+- use an ORDER BY clause with CASE conditions so that we obtain a query that can be sorted by the variables
+
+```
+DECLARE @PageNumber AS INT
+DECLARE @RowsOfPage AS INT
+DECLARE @SortingCol AS VARCHAR(100) ='FruitName'
+DECLARE @SortType AS VARCHAR(100) = 'DESC'
+SET @PageNumber=1
+SET @RowsOfPage=4
+SELECT FruitName,Price FROM SampleFruits
+ORDER BY
+CASE WHEN @SortingCol = 'Price' AND @SortType ='ASC' THEN Price END ,
+CASE WHEN @SortingCol = 'Price' AND @SortType ='DESC' THEN Price END DESC,
+CASE WHEN @SortingCol = 'FruitName' AND @SortType ='ASC' THEN FruitName END ,
+CASE WHEN @SortingCol = 'FruitName' AND @SortType ='DESC' THEN FruitName END DESC
+OFFSET (@PageNumber-1)*@RowsOfPage ROWS
+FETCH NEXT @RowsOfPage ROWS ONLY
+```
+
+### Pagination in a Loop
+
+- https://www.sqlshack.com/pagination-in-sql-server/
+
+```
+DECLARE @PageNumber AS INT
+DECLARE @RowsOfPage AS INT
+DECLARE @MaxTablePage  AS FLOAT
+SET @PageNumber=1
+SET @RowsOfPage=4
+SELECT @MaxTablePage = COUNT(*) FROM SampleFruits
+SET @MaxTablePage = CEILING(@MaxTablePage/@RowsOfPage)
+WHILE @MaxTablePage >= @PageNumber
+BEGIN
+    SELECT FruitName,Price FROM SampleFruits
+    ORDER BY Price
+    OFFSET (@PageNumber-1)*@RowsOfPage ROWS
+    FETCH NEXT @RowsOfPage ROWS ONLY
+    SET @PageNumber = @PageNumber + 1
+END
+```
 
 ### MSSQL Pagination with OFFSET and FETCH
 
