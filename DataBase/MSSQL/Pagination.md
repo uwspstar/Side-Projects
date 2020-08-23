@@ -18,6 +18,33 @@ OFFSET (@PageNumber-1)*@RowsOfPage ROWS
 FETCH NEXT @RowsOfPage ROWS ONLY
 ```
 
+- https://sqlperformance.com/2015/01/t-sql-queries/pagination-with-offset-fetch
+
+```
+CREATE PROCEDURE dbo.Alternate_Test_WithCount
+  @PageNumber INT = 1,
+  @PageSize   INT = 100
+AS
+BEGIN
+  SET NOCOUNT ON;
+
+  ;WITH pg AS
+  (
+    SELECT CustomerID, c = COUNT(*) OVER()
+      FROM dbo.Customers_I
+      ORDER BY CustomerID
+      OFFSET @PageSize * (@PageNumber - 1) ROWS
+      FETCH NEXT @PageSize ROWS ONLY
+  )
+  SELECT c.CustomerID, c.FirstName, c.LastName,
+      c.EMail, c.Active, c.Created, c.Updated, TotalRowCount = c
+  FROM dbo.Customers_I AS c
+  INNER JOIN pg ON pg.CustomerID = c.CustomerID
+  ORDER BY c.CustomerID OPTION (RECOMPILE);
+END
+
+```
+
 ### Dynamic Sorting with Pagination
 
 - https://www.sqlshack.com/pagination-in-sql-server/
@@ -61,6 +88,8 @@ BEGIN
     SET @PageNumber = @PageNumber + 1
 END
 ```
+
+- the calculated value can be a decimal, and for that, we used the `CEILING` function to round it up to the smallest integer number
 
 ### MSSQL Pagination with OFFSET and FETCH
 
