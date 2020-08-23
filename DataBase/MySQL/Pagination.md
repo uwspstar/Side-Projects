@@ -31,16 +31,4 @@
 "SELECT * FROM Orders LIMIT 15, 10";
 ```
 
-### MSSQL Pagination
 
-- https://www.sqlshack.com/pagination-in-sql-server/
-- https://sqlperformance.com/2015/01/t-sql-queries/pagination-with-offset-fetch
-
-### MSSQL Pagination with OFFSET and FETCH
-
-- When the `OFFSET` and `FETCH` arguments are used in with the ORDER BY clause in a SELECT statement, it will be a pagination solution for SQL Server.
-
-### OFFSET
-
-- ```OFFSET``` argument specifies how many rows will be skipped from the result set of the query.
-- ```OFFSET``` value as ```0```, no rows will be skipped from the result set
