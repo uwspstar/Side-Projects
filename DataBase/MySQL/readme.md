@@ -26,6 +26,18 @@ CREATE TABLE `TestDB`.`SampleFruits` (
 
 ```
 
+### insert
+
+```
+INSERT INTO SampleFruits (FruitName, Price) values('Apple',20.00);
+```
+
+### select
+
+```
+SELECT * FROM SampleFruits
+```
+
 ### update
 
 ```
