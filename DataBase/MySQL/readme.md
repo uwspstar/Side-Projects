@@ -15,6 +15,17 @@ flush privileges;
 System Preferences -> Security & Privacy -> click “Open Anyway”.
 ```
 
+### create a table
+
+```
+CREATE TABLE `TestDB`.`SampleFruits` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `FruitName` VARCHAR(50) NOT NULL,
+  `Price` DECIMAL(2) NOT NULL,
+  PRIMARY KEY (`id`));
+
+```
+
 ### update
 
 ```
