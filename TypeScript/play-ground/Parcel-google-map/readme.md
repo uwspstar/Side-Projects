@@ -13,7 +13,7 @@
 - \$ parcel index.html
 
 ### npmjs.com "faker" package
-
+- $ npm install faker
 - https://www.npmjs.com/package/faker
 
 ### development
