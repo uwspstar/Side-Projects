@@ -19,8 +19,17 @@
 - https://www.npmjs.com/package/faker
 - https://www.npmjs.com/package/@types/faker
 
-
 ### development
 
 - \$ touch src/User.ts
 - \$ touch src/Company.ts
+
+### google API key
+
+- http://console.developers.google.com
+- enable google maps support
+- generate API key
+- add google map script to html
+
+### install google map types@googlemaps
+- $ npm install @types/googlemaps

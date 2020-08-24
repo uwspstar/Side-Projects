@@ -1,3 +1,10 @@
 import { User } from './User';
+import { Company } from './Company';
 
-console.log('test');
+const user = new User();
+console.log(user);
+
+const company = new Company();
+console.log(company);
+
+google
