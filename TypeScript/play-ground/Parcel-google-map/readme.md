@@ -13,8 +13,12 @@
 - \$ parcel index.html
 
 ### npmjs.com "faker" package
-- $ npm install faker
+
+- \$ npm install faker
+- \$ npm install @types/faker
 - https://www.npmjs.com/package/faker
+- https://www.npmjs.com/package/@types/faker
+
 
 ### development
 
