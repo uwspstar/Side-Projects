@@ -1,0 +1,7 @@
+- $ sudo npm install -g parcel-bundler
+- $ mkdir Parcel-google-map
+- $ cd Parcel-google-map
+- $ touch index.html
+- $ mkdir src
+- $ touch src/index.ts
+- $ parcel index.html

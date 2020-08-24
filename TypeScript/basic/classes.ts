@@ -1,4 +1,9 @@
 class Vehicle {
+  private color;
+  constructor(color: string) {
+    this.color = color;
+  }
+
   drive(): void {
     console.log('go go go go');
   }
