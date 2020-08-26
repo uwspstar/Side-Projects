@@ -515,3 +515,22 @@ var obj = {
 Object.keys(obj);
 // ['key1', 'key2']
 ```
+
+### delete 命令用于删除对象的属性，删除成功后返回 true。
+
+```
+var obj = { p: 1 };
+Object.keys(obj) // ["p"]
+
+delete obj.p // true
+obj.p // undefined
+Object.keys(obj) // []
+上面代码中，delete命令删除对象obj的p属性。删除后，再读取p属性就会返回undefined，而且Object.keys方法的返回值也不再包括该属性。
+```
+
+### 注意，删除一个不存在的属性，delete 不报错，而且返回 true。
+
+```
+var obj = {};
+delete obj.p // true
+```
