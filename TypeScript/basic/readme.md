@@ -3,12 +3,12 @@
 ### 7 Primitive Types ( void, sun, nsb : avoid sun new SB)
 
 - void
-- undefined
 - symbol
+- undefined
 - null
 - number
-- boolean
 - string
+- boolean
 
 ### 4 Object Types (coa f : sounds like cough)
 
@@ -66,4 +66,5 @@ const coordinates:{x: number; y: number} = JSON.parse(json);
 ```
 
 ### variable with different type
-- ```let myTemp : number | boolean;```
+
+- `let myTemp : number | boolean;`
