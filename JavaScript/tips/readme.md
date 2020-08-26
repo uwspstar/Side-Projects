@@ -1,7 +1,6 @@
 - https://wangdoc.com/javascript/index.html
 - https://wangdoc.com/
 
-
 ### hoisting
 
 ### basic operation
@@ -549,18 +548,33 @@ delete obj.toString // true
 obj.toString // function toString() { [native code] }
 上面代码中，toString是对象obj继承的属性，虽然delete命令返回true，但该属性并没有被删除，依然存在。这个例子还说明，即使delete返回true，该属性依然可能读取到值。
 ```
-### in运算符用于检查对象是否包含某个属性（注意，检查的是键名，不是键值）
+
+### in 运算符用于检查对象是否包含某个属性（注意，检查的是键名，不是键值）
+
 ```
 var obj = { p: 1 };
 'p' in obj // true
 'toString' in obj // true
 ```
-### in 运算符的一个问题是，它不能识别哪些属性是对象自身的，哪些属性是继承的。就像上面代码中，对象obj本身并没有toString属性，但是in运算符会返回true，因为这个属性是继承的。
+
+### in 运算符的一个问题是，它不能识别哪些属性是对象自身的，哪些属性是继承的。就像上面代码中，对象 obj 本身并没有 toString 属性，但是 in 运算符会返回 true，因为这个属性是继承的。
 
 ### 这时 hasOwnProperty，可以使用对象的 hasOwnProperty 方法判断一下，是否为对象自身的属性。
+
 ```
 var obj = {};
 if ('toString' in obj) {
   console.log(obj.hasOwnProperty('toString')) // false
+}
+```
+
+### for...in 循环用来遍历一个对象的全部属性
+
+```
+var obj = {a: 1, b: 2, c: 3};
+
+for (var i in obj) {
+  console.log('键名：', i);
+  console.log('键值：', obj[i]);
 }
 ```
