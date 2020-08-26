@@ -76,3 +76,7 @@ console.log('parseFloat 方法用于将一个字符串转为浮点数. parseFloa
 
 console.log('isNaN: ------------------------------')
 console.log('判断NaN更可靠的方法是，利用NaN为唯一不等于自身的值的这个特点，进行判断')
+
+console.log('NaN为唯一不等于自身的值 NaN === NaN', NaN === NaN)
+console.log('Object.is(-0,+0)', Object.is(-0, +0))
+console.log('Object.is(NaN, NaN)', Object.is(NaN, NaN))
