@@ -1,4 +1,6 @@
 - https://wangdoc.com/javascript/index.html
+- https://wangdoc.com/
+
 
 ### hoisting
 
@@ -528,9 +530,37 @@ Object.keys(obj) // []
 上面代码中，delete命令删除对象obj的p属性。删除后，再读取p属性就会返回undefined，而且Object.keys方法的返回值也不再包括该属性。
 ```
 
+### 不能根据 delete 命令的结果，认定某个属性是存在的。
+
 ### 注意，删除一个不存在的属性，delete 不报错，而且返回 true。
+
+### 只有一种情况，delete 命令会返回 false，那就是该属性存在，且不得删除。
 
 ```
 var obj = {};
 delete obj.p // true
+```
+
+### 需要注意的是，delete 命令只能删除对象本身的属性，无法删除继承的属性
+
+```
+var obj = {};
+delete obj.toString // true
+obj.toString // function toString() { [native code] }
+上面代码中，toString是对象obj继承的属性，虽然delete命令返回true，但该属性并没有被删除，依然存在。这个例子还说明，即使delete返回true，该属性依然可能读取到值。
+```
+### in运算符用于检查对象是否包含某个属性（注意，检查的是键名，不是键值）
+```
+var obj = { p: 1 };
+'p' in obj // true
+'toString' in obj // true
+```
+### in 运算符的一个问题是，它不能识别哪些属性是对象自身的，哪些属性是继承的。就像上面代码中，对象obj本身并没有toString属性，但是in运算符会返回true，因为这个属性是继承的。
+
+### 这时 hasOwnProperty，可以使用对象的 hasOwnProperty 方法判断一下，是否为对象自身的属性。
+```
+var obj = {};
+if ('toString' in obj) {
+  console.log(obj.hasOwnProperty('toString')) // false
+}
 ```
