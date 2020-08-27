@@ -590,3 +590,42 @@ for (var key in person) {
   }
 }
 ```
+
+### 三种声明函数的方法
+
+- https://wangdoc.com/javascript/types/function.html
+
+### function 命令
+
+- function 命令声明的代码区块，就是一个函数。function 命令后面是函数名，函数名后面是一对圆括号，里面是传入函数的参数。函数体放在大括号里面。
+
+```
+function print(s) {
+  console.log(s);
+}
+```
+
+### 函数表达式
+
+- 除了用 function 命令声明函数，还可以采用变量赋值的写法。
+
+```
+var print = function(s) {
+  console.log(s);
+};
+```
+
+- 这种写法将一个匿名函数赋值给变量。这时，这个匿名函数又称函数表达式（Function Expression），因为赋值语句的等号右侧只能放表达式。
+
+- 采用函数表达式声明函数时，function 命令后面不带有函数名。如果加上函数名，该函数名只在函数体内部有效，在函数体外部无效。
+```
+var print = function x(){
+  console.log(typeof x);
+};
+
+x
+// ReferenceError: x is not defined
+
+print()
+// function
+```
