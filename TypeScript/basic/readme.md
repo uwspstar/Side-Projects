@@ -68,3 +68,5 @@ const coordinates:{x: number; y: number} = JSON.parse(json);
 ### variable with different type
 
 - `let myTemp : number | boolean;`
+
+### Restricting Access with Interfaces
