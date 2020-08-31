@@ -1,5 +1,8 @@
 // https://www.runoob.com/nodejs/nodejs-event-loop.html
-
+// event 就是需要 eventEmitter.on 去绑定一个事件 通过 eventEmitter.emit 去触发这个事件
+// eventEmitter.on
+// eventEmitter.emit
+// eventEmitter.emit 是触发事件（事件请求），eventEmitter.on是绑定处理事件的处理器（事件处理），事件的请求和处理是分开的，所以是异步。
 
 var events = require('events');// 引入 events 模块
 
