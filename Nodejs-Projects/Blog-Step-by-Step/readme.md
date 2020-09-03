@@ -5,6 +5,7 @@
 - ```npm init -y'
 
   ```
+
 - do not use an framework
 - use nodemon
 
@@ -158,11 +159,27 @@ document.cookie = 'k2=200'
 - for cookie : cannot put username , such as email, phone
 - for cookie : can put userId, sId (sessionId), (server side match username)
 - for session : server side match username, save user info
+- session save inside Heap
 
 ### write session into redis
+
 - https://www.runoob.com/redis/redis-install.html
 - https://dev.to/ravishan16/brew-redis-on-mac-1ni8
 - https://redis.io/topics/quickstart
+
+### redis (need to use Terminal to run install and server, open two windows)
+
+- brew install redis
+- redis server 
+- redis-cli
+```
+set mykey 123
+get mykey
+keys *
+del mykey
+set userId userSessionID1234
+get userId
+```
 
 ### Lib
 
