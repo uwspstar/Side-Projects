@@ -180,6 +180,7 @@ del mykey
 set userId userSessionID1234
 get userId
 ```
+- npm install redis --save
 
 ### Lib
 
