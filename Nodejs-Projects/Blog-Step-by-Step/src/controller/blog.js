@@ -1,6 +1,6 @@
 const { exec } = require('../db/mysql');
 
-const getList = (author, keyword) => {
+const getList = async (author, keyword) => {
     let sql = `SELECT * FROM blogs WHERE 1 = 1 `;
     if (author) {
         sql += `AND author='${author}' `
@@ -9,10 +9,13 @@ const getList = (author, keyword) => {
         sql += `AND title like '%${keyword}%' `
     }
     sql += `ORDER BY createtime DESC`
+    try {
+        const rows = await exec(sql);
+        return rows[0];
+    } catch (e) {
+        console.log('getList => ', e)
+    }
 
-    console.log(sql);
-    // return promise
-    return exec(sql);
 }
 
 const getDetailAsync = async (id) => {

@@ -1,6 +1,6 @@
 const queryString = require('querystring');
-const handleUserRouter = require('./src/router/user');
-const handleBlogRouter = require('./src/router/blog');
+const { handleUserRouter } = require('./src/router/user');
+const { handleBlogRouter } = require('./src/router/blog');
 
 // get cookie expire date
 const getCookieExpire = () => {
