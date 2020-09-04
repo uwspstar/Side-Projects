@@ -1,7 +1,6 @@
 const { checkLogin } = require('../controller/user');
 const { SuccessModel, ErrorModel } = require('../model/resModel');
 
-
 // get cookie expire date
 const getCookieExpire = () => {
     let d = new Date();
@@ -51,7 +50,5 @@ const handleUserRouter = (req, res) => {
             : Promise.reject(new ErrorModel('Failure to login'));
     }
 }
-
-
 
 module.exports = handleUserRouter;

@@ -12,7 +12,6 @@ con.connect();
 // exec many query with same connection
 
 const exec = (sql) => {
-
     const promise = new Promise((resolve, reject) => {
         con.query(sql, (err, result) => {
             if (err) {
@@ -28,6 +27,7 @@ const exec = (sql) => {
     return promise;  
 
 }
+
 module.exports = {
     exec
 }
