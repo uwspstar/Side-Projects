@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-const { MYSQL_CONF } = require('../config/db').default;
+const { MYSQL_CONF } = require('../config/db');
 
 // create con obj
 const con = mysql.createConnection(MYSQL_CONF);
@@ -24,7 +24,7 @@ const exec = (sql) => {
             resolve(result);
         })
     })
-    return promise;  
+    return promise;
 
 }
 
