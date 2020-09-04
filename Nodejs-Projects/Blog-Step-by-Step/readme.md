@@ -170,8 +170,9 @@ document.cookie = 'k2=200'
 ### redis (need to use Terminal to run install and server, open two windows)
 
 - brew install redis
-- redis server 
+- redis server
 - redis-cli
+
 ```
 set mykey 123
 get mykey
@@ -180,6 +181,7 @@ del mykey
 set userId userSessionID1234
 get userId
 ```
+
 - npm install redis --save
 
 ### Lib
@@ -187,3 +189,9 @@ get userId
 - https://www.npmjs.com/package/cross-env
 - https://www.npmjs.com/package/nodemon
 - https://github.com/Eished/node_blog_notes
+
+### frontend and server end
+
+- login relay on cookie, must use browser to test
+- cookie not share cross domain, frontend and server end has to be same domain
+- need "nignx" as proxy, make frontend and server end same domain
