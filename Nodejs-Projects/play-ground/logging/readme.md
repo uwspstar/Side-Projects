@@ -14,14 +14,17 @@
 - write
 
 ### IO operation bottleneck vs CPU
+
 - IO : network IO and File IO
 - IO ( slow ) vs CPU read write (fast)
 - how to improve the IO performance based on limit hardware resource
 
-### stream 
+### stream
+
 - source
 - dest
 - process.stdin.pipe(process.stdout)
+
 ```
 let postData = '';
 // IO stream data
@@ -36,4 +39,10 @@ req.on('end', () => {
     }
     resolve(JSON.parse(postData));
 })
+```
+- req and res has stream characters
+```
+if (req.method === 'POST') {
+    req.pipe(res)
+}
 ```
