@@ -40,9 +40,23 @@ req.on('end', () => {
     resolve(JSON.parse(postData));
 })
 ```
+
 - req and res has stream characters
+
 ```
 if (req.method === 'POST') {
     req.pipe(res)
 }
 ```
+
+### log separation
+
+- set up daily job with `crontab`
+- copy access.log and rename to `2020-09-05.access.log`
+- clear access.log, continue write new log
+
+### analyze log
+
+- access.log, analyze the chrome percentage
+- log is save as line by line
+- use nodejs `readline` based on stream, efficient

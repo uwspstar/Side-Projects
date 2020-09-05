@@ -247,9 +247,11 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - clear access.log, continue write new log
 
 ### analyze log
+
 - access.log, analyze the chrome percentage
 - log is save as line by line
-- use nodejs ```readline``` based on stream, efficient
+- use nodejs `readline` based on stream, efficient
+
 ### Lib
 
 - https://www.npmjs.com/package/cross-env
