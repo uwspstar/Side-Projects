@@ -23,7 +23,7 @@ const getPostData = (req) => {
         }
 
         let postData = '';
-
+        // IO stream data
         req.on('data', chunk => {
             postData += chunk.toString();
         })

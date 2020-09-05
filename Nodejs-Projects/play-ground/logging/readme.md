@@ -21,3 +21,19 @@
 ### stream 
 - source
 - dest
+- process.stdin.pipe(process.stdout)
+```
+let postData = '';
+// IO stream data
+req.on('data', chunk => {
+    postData += chunk.toString();
+})
+
+req.on('end', () => {
+    if (!postData) {
+        resolve({});
+        return;
+    }
+    resolve(JSON.parse(postData));
+})
+```
