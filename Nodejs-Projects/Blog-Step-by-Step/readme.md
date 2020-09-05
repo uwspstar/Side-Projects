@@ -170,7 +170,7 @@ document.cookie = 'k2=200'
 ### redis (need to use Terminal to run install and server, open two windows)
 
 - brew install redis
-- redis server
+- start server ```$ redis-server```
 - redis-cli
 
 ```
@@ -181,8 +181,9 @@ del mykey
 set userId userSessionID1234
 get userId
 ```
-
+### nodejs redis
 - npm install redis --save
+- redis-server
 
 ### frontend and server end
 

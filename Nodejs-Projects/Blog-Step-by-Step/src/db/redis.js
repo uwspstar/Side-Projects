@@ -1,5 +1,5 @@
 const redis = require('redis');
-const { REDIS_CONF } = require('../config/db').default;
+const { REDIS_CONF } = require('../config/db');
 
 // build client : only connect once, so we do not use quit()
 // port:6379 host:127.0.01
