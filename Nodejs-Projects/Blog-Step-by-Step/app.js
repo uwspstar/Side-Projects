@@ -76,7 +76,6 @@ const serverHandle = (req, res) => {
         needSetCookie = true;
         // assign an unique value
         userId = `${Date.now()}_${Math.random()}`;
-        console.log('userId : ', userId);
         SESSION_DATA[userId] = {};
     }
     req.session = SESSION_DATA[userId];
@@ -97,11 +96,12 @@ const serverHandle = (req, res) => {
         */
 
         const logResult = handleBlogRouter(req, res); // promise
-        console.log('logResult : ', logResult);
 
         if (logResult) {
             if (needSetCookie) {
-                res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire}`)
+                console.log('logResult : ', logResult, 'userId', userId);
+                //res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire}`)
+                res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire()}`)
             }
 
             logResult.then(blogData => res.end(JSON.stringify(blogData)));
@@ -121,7 +121,7 @@ const serverHandle = (req, res) => {
         const userResult = handleUserRouter(req, res);
         if (userResult) {
             if (needSetCookie) {
-                res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire}`)
+                res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire()}`)
             }
 
             userResult.then(userData => res.end(JSON.stringify(userData)));
