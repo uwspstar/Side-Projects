@@ -1,3 +1,9 @@
+### start project
+
+- start mySql server
+- start redis server
+- \$ npm run dev
+
 ### keep safe guard in mind
 
 ### init dev env
@@ -170,7 +176,7 @@ document.cookie = 'k2=200'
 ### redis (need to use Terminal to run install and server, open two windows)
 
 - brew install redis
-- start server ```$ redis-server```
+- start server `$ redis-server`
 - redis-cli
 
 ```
@@ -181,7 +187,9 @@ del mykey
 set userId userSessionID1234
 get userId
 ```
+
 ### nodejs redis
+
 - npm install redis --save
 - redis-server
 
@@ -210,7 +218,9 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - nodejs stream
 - \*\*\* log function and usage
 - \*\*\* log separation, log content separation. analyze
+- log separation with Date, such as `2020-09-05.access.log`
 - log save to file, not save to mySql, not save to redis
+- linux `crontab`
 
 ### log folder
 
@@ -221,9 +231,25 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 
 ### utils folder
 
-- $ mkdir src/utils
+- \$ mkdir src/utils
 - \$ touch src/utils/log.js
 
+### crontab
+
+- Schedule jobs with crontab on macOS
+- https://ole.michelsen.dk/blog/schedule-jobs-with-crontab-on-mac-osx/
+- 5 star command `***** command`
+
+### log separation
+
+- set up daily job with `crontab`
+- copy access.log and rename to `2020-09-05.access.log`
+- clear access.log, continue write new log
+
+### analyze log
+- access.log, analyze the chrome percentage
+- log is save as line by line
+- use nodejs ```readline``` based on stream, efficient
 ### Lib
 
 - https://www.npmjs.com/package/cross-env

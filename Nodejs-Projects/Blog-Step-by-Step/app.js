@@ -42,7 +42,8 @@ const getPostData = (req) => {
 }
 
 const serverHandle = (req, res) => {
-    // access log
+    // access log : 
+    // if dev env print console log , or, production evn write log
     access(`${req.method} -- ${req.url} -- ${req.headers['user-agent']}`)
 
     //step1 : setHeader
