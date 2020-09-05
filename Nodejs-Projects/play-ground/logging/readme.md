@@ -16,3 +16,8 @@
 ### IO operation bottleneck vs CPU
 - IO : network IO and File IO
 - IO ( slow ) vs CPU read write (fast)
+- how to improve the IO performance based on limit hardware resource
+
+### stream 
+- source
+- dest
