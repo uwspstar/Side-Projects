@@ -76,6 +76,7 @@ const serverHandle = (req, res) => {
         needSetCookie = true;
         // assign an unique value
         userId = `${Date.now()}_${Math.random()}`;
+        console.log('userId : ', userId);
         SESSION_DATA[userId] = {};
     }
     req.session = SESSION_DATA[userId];
@@ -96,6 +97,8 @@ const serverHandle = (req, res) => {
         */
 
         const logResult = handleBlogRouter(req, res); // promise
+        console.log('logResult : ', logResult);
+
         if (logResult) {
             if (needSetCookie) {
                 res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire}`)
