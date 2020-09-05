@@ -100,8 +100,7 @@ const serverHandle = (req, res) => {
         if (logResult) {
             if (needSetCookie) {
                 const expireDate = getCookieExpire();
-                console.log('logResult : ', logResult, 'userId', userId);
-                //res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${getCookieExpire}`)
+                console.log('logResult: ', logResult, 'userId:', userId, 'expireDate:', expireDate);
                 res.setHeader('Set-Cookie', `userId=${userId}; path=/; httpOnly; expire=${expireDate}`)
             }
 

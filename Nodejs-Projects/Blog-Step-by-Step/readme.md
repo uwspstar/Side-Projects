@@ -184,14 +184,25 @@ get userId
 
 - npm install redis --save
 
-### Lib
-
-- https://www.npmjs.com/package/cross-env
-- https://www.npmjs.com/package/nodemon
-- https://github.com/Eished/node_blog_notes
-
 ### frontend and server end
 
 - login relay on cookie, must use browser to test
 - cookie not share cross domain, frontend and server end has to be same domain
 - need "nignx" as proxy, make frontend and server end same domain
+
+### nginx 配置
+
+- CDN
+- load balance
+- reverse proxy : different domain
+
+```
+localhost:8080 --> nginx --> localhost:8001 (html)
+localhost:8080 --> nginx --> localhost:8002 (nodejs)
+```
+
+### Lib
+
+- https://www.npmjs.com/package/cross-env
+- https://www.npmjs.com/package/nodemon
+- https://github.com/Eished/node_blog_notes
