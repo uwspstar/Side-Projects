@@ -201,6 +201,16 @@ localhost:8080 --> nginx --> localhost:8001 (html)
 localhost:8080 --> nginx --> localhost:8002 (nodejs)
 ```
 
+### Log 日志 qps
+
+- access log
+- self log (event, err log)
+- nodejs file
+- nodejs stream
+- \*\*\* log function and usage
+- \*\*\* log separation, log content separation. analyze
+- log save to file, not save to mySql, not save to redis
+
 ### Lib
 
 - https://www.npmjs.com/package/cross-env
