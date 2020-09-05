@@ -5,3 +5,5 @@ GET -- /api/blog/detail?id=1 -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) 
 GET -- /api/blog/list -- PostmanRuntime/7.26.3
 GET -- /api/blog/list -- PostmanRuntime/7.26.3
 GET -- /api/blog/list -- PostmanRuntime/7.26.3
+GET -- /api/blog/detail?id=2 -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36
+GET -- /api/blog/detail?id=3 -- Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36

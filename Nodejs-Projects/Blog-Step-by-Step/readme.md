@@ -4,6 +4,13 @@
 - start redis server
 - \$ npm run dev
 
+### over all
+
+- log
+- error handler
+- security
+- CURD
+
 ### keep safe guard in mind
 
 ### init dev env
@@ -251,6 +258,14 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - access.log, analyze the chrome percentage
 - log is save as line by line
 - use nodejs `readline` based on stream, efficient
+
+### security
+
+- sql injection (database steal data), start from web 2.0, input a sql piece code, use mySql escape() function 
+- xss attack, steal frontend cookie
+- encryption
+- server side attack (we use web server nodejs in this case)
+- some attack need hardware and service to support (OP, such as DDOS)
 
 ### Lib
 
