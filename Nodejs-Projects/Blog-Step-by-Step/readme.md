@@ -211,6 +211,18 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - \*\*\* log separation, log content separation. analyze
 - log save to file, not save to mySql, not save to redis
 
+### log folder
+
+- \$ mkdir logs
+- \$ touch logs/access.log
+- \$ touch logs/error.log
+- \$ touch logs/event.log
+
+### utils folder
+
+- $ mkdir src/utils
+- \$ touch src/utils/log.js
+
 ### Lib
 
 - https://www.npmjs.com/package/cross-env
