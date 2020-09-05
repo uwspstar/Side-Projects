@@ -10,6 +10,10 @@ var readStream = fs.createReadStream(fileName1);
 var writeStream = fs.createWriteStream(fileName2);
 // copy through pipe
 readStream.pipe(writeStream)
+// read as chunk
+readStream.on('data', chunk => {
+    console.log(chunk.toString());
+})
 // finish copy data
 readStream.on('end', () => {
     console.log('finish copy')
