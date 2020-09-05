@@ -28,6 +28,8 @@ const exec = (sql) => {
 
 }
 
+// mysql.escape avoid sql injection
 module.exports = {
-    exec
+    exec,
+    escape: mysql.escape
 }

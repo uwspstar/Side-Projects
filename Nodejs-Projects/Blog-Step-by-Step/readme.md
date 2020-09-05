@@ -261,11 +261,19 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 
 ### security
 
-- sql injection (database steal data), start from web 2.0, input a sql piece code, use mySql escape() function 
-- xss attack, steal frontend cookie
+- sql injection (database steal data), start from web 2.0, input a sql piece code, use mySql escape() function
+- xss attack, steal frontend cookie, server side also need to concern to avoid (both side). in html has js code to get html info. avoid it , change js special character (such as, `&` -> &amp; `<` -> &lt; `>`->&gt; `"`->&quot;). avoid can use `npm i xss --save`
 - encryption
 - server side attack (we use web server nodejs in this case)
 - some attack need hardware and service to support (OP, such as DDOS)
+
+### install xss
+
+- \$ npm i xss --save
+
+### password encryption
+- when user register, encrypt password
+- nodejs use crypto
 
 ### Lib
 

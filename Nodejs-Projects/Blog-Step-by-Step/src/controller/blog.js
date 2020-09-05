@@ -1,6 +1,10 @@
-const { exec } = require('../db/mysql');
+const xss = require('xss');
+const { exec, escape } = require('../db/mysql');
 
 const getList = async (author, keyword) => {
+    author = escape(author);
+    keyword = escape(keyword);
+
     let sql = `SELECT * FROM blogs WHERE 1 = 1 `;
     if (author) {
         sql += `AND author='${author}' `
@@ -19,6 +23,8 @@ const getList = async (author, keyword) => {
 }
 
 const getDetailAsync = async (id) => {
+    id = escape(id);
+
     let sql = `SELECT * FROM blogs WHERE id = '${id}'`;
     const rows = await exec(sql);
     return rows[0];
@@ -28,7 +34,11 @@ const createNewBlogAsync = async (blogData = {}) => {
     // blogData is a object, include title, content, and author, createtime = Date.now()
     // console.log('new blogData', blogData);
 
-    const { title, content, author } = blogData;
+    // const { title, content, author } = blogData;
+    // xss avoid xss attack
+    const title = xss(blogData.title);
+    const content = xss(blogData.content);
+    const author = blogData.author; // not user input, do not use xss
     const createtime = Date.now();
 
     let sql = `
@@ -47,7 +57,11 @@ const updateBlogAsync = async (id, blogData = {}) => {
     //return true;
     //const title = blogData.title;
     //const content = blogData.content;
-    const { title, content } = blogData;
+    //const { title, content } = blogData;
+    id = escape(id);
+    const title = xss(blogData.title);
+    const content = xss(blogData.content);
+
     const sql = `
     UPDATE blogs SET title='${title}', content='${content}' WHERE id = ${id}
     `
@@ -58,7 +72,8 @@ const updateBlogAsync = async (id, blogData = {}) => {
 }
 
 const deleteBlogAsync = async (id, author) => {
-    console.log('deleteBlog id', id);
+    author = escape(author);
+    id = escape(id);
     // soft delete use "Update"
     const sql = `DELETE FROM blogs WHERE id = ${id} and author='${author}' `;
 
@@ -67,6 +82,8 @@ const deleteBlogAsync = async (id, author) => {
 }
 
 const getDetail = (id) => {
+    id = escape(id);
+
     let sql = `SELECT * FROM blogs WHERE id = '${id}'`;
     return exec(sql).then(rows => rows[0]);
 }
@@ -75,7 +92,11 @@ const createNewBlog = (blogData = {}) => {
     // blogData is a object, include title, content, and author, createtime = Date.now()
     // console.log('new blogData', blogData);
 
-    const { title, content, author } = blogData;
+    // const { title, content, author } = blogData;
+    const title = xss(blogData.title);
+    const content = xss(blogData.content);
+    const author = blogData.author; // not user input, do not need xss
+
     const createtime = Date.now();
 
     let sql = `
@@ -91,11 +112,11 @@ const createNewBlog = (blogData = {}) => {
 }
 
 const updateBlog = (id, blogData = {}) => {
-    //console.log('updateBlog id', id, 'updateBlog blogData', blogData);
-    //return true;
-    //const title = blogData.title;
-    //const content = blogData.content;
-    const { title, content } = blogData;
+    id = escape(id);
+    //const { title, content } = blogData;
+    const title = xss(blogData.title);
+    const content = xss(blogData.content);
+
     const sql = `
     UPDATE blogs SET title='${title}', content='${content}' WHERE id = ${id}
     `
@@ -108,7 +129,8 @@ const updateBlog = (id, blogData = {}) => {
 }
 
 const deleteBlog = (id, author) => {
-    console.log('deleteBlog id', id);
+    author = escape(author);
+    id = escape(id);
     // soft delete use "Update"
     const sql = `DELETE FROM blogs WHERE id = ${id} and author='${author}' `;
     return exec(sql).then(deleteData => updateData.affectedRows > 0);

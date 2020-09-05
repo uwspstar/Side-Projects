@@ -1,5 +1,5 @@
-const { exec } = require('../db/mysql')
-
+const { exec, escape } = require('../db/mysql')
+// mysql.escape avoid sql injection
 const checkLoginAsync = async (username, password) => {
     /*
     if (username === 'xing' && password === '123') {
@@ -7,6 +7,10 @@ const checkLoginAsync = async (username, password) => {
     }
     return false;
     */
+    //avoid sql injection
+    username = escape(username);
+    password = escape(password);
+
     const sql = `
     SELECT username, realname FROM users 
     WHERE username ='${username}' AND password='${password}'
@@ -22,6 +26,8 @@ const checkLogin = (username, password) => {
     }
     return false;
     */
+    username = escape(username);
+    password = escape(password);
     const sql = `
     SELECT username, realname FROM users 
     WHERE username ='${username}' AND password='${password}'
