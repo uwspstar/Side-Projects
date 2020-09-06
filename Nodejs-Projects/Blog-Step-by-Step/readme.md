@@ -5,10 +5,12 @@
 ### core points
 
 - http, nodejs handel http, route, mysql
+- error handle
 - cookie, session, redis, nginx reverse proxy
-- sql injection, xss attack
+- sql injection, xss attack, crypto
 - log, stream, contrab, readline
 - deployment
+- micro service, monolithic
 
 ### start project
 
