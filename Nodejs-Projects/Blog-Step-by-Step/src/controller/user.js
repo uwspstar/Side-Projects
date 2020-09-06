@@ -1,4 +1,6 @@
-const { exec, escape } = require('../db/mysql')
+const { exec, escape } = require('../db/mysql');
+const { getPassword } = require('../utils/cryp');
+
 // mysql.escape avoid sql injection
 const checkLoginAsync = async (username, password) => {
     /*
@@ -7,7 +9,10 @@ const checkLoginAsync = async (username, password) => {
     }
     return false;
     */
-    //avoid sql injection
+    //1: getPassword
+    password = getPassword(password);
+
+    //2: avoid sql injection
     username = escape(username);
     password = escape(password);
 
