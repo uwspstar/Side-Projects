@@ -1,3 +1,15 @@
+### Node.js 从零开发个人博客项目
+
+- https://www.youtube.com/playlist?list=PL9nxfq1tlKKlhV1UzUmElRkxmjkoO3mtH
+
+### core points
+
+- http, nodejs handel http, route, mysql
+- cookie, session, redis, nginx reverse proxy
+- sql injection, xss attack
+- log, stream, contrab, readline
+- deployment
+
 ### start project
 
 - start mySql server
@@ -272,11 +284,13 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - \$ npm i xss --save
 
 ### password encryption
+
 - when user register, encrypt password
 - nodejs use crypto
 
 ### Lib
 
+- https://www.youtube.com/playlist?list=PL9nxfq1tlKKlhV1UzUmElRkxmjkoO3mtH
 - https://www.npmjs.com/package/cross-env
 - https://www.npmjs.com/package/nodemon
 - https://github.com/Eished/node_blog_notes
