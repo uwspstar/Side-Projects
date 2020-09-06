@@ -8,6 +8,9 @@ class LikeExpress {
             all: [],
             get: [],
             post: [],
+            put: [],
+            patch: [],
+            delete: []
         }
     }
     register(path) {
@@ -30,12 +33,63 @@ class LikeExpress {
         this.register.all.push(info);
     }
     get() {
-
+        const info = this.register.apply(this, arguments);
+        this.register.get.push(info);
     }
     post() {
-
+        const info = this.register.apply(this, arguments);
+        this.register.post.push(info);
     }
-    listen() {
+
+    match(method, url) {
+        let stack = [];
+        if (url === 'favicon.ico') return stack;
+
+        // get routes
+        let curRoutes = [];
+        curRoutes = curRoutes.concat(this.route.all);
+        curRoutes = curRoutes.concat(this.route[method]);
+
+        curRoutes.forEach(routeInfo => {
+            if (url.indexOf(routeInfo.path) === 0) {
+                //url === '/api/get-cookie' and routeInfo.path === '/'
+                //url === '/api/get-cookie' and routeInfo.path === '/api'
+                //url === '/api/get-cookie' and routeInfo.path === '/api/get-cookie'
+                stack = stack.concat(routeInfo.stack);
+            }
+        })
+    }
+    // core next
+    handle(req, res, stack) {
+        const next = () => {
+            //get first match middleware
+            const middleware = stack.shift();
+            if (middleware) {
+                middleware(req, res, next);
+            }
+        }
+        next();
+    }
+    callback() {
+        return (req, res) => {
+            res.json = (data) => {
+                res.setHeader('Content-type', 'application/json');
+                res.end(
+                    JSON.stringify(data)
+                )
+            }
+            const url = req.url;
+            const method = req.method.toLowerCase();
+
+            const resultList = this.match(method, url);
+            this.handle(req, res, resultList)
+
+
+        }
+    }
+    listen(...args) {
+        const server = http.createServer(this.callback());
+        server.listen(...args)
 
     }
 }
