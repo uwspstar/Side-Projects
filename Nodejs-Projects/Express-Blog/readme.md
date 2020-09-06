@@ -24,6 +24,8 @@
 - \$ DEBUG=express-demo:\* npm start
 - \$ touch .gitignore
 - \$ npm install nodemon cross-env --save-dev
+- \$ npm install express-session --save
+- \$ npm install redis connect-redis --save
 
 ### code intr, workflow, route
 
