@@ -23,6 +23,8 @@
 - \$ npm install
 - \$ DEBUG=express-demo:\* npm start
 - \$ touch .gitignore
+- \$ npm install nodemon cross-env --save-dev
+
 ### code intr, workflow, route
 
 ### middleware
