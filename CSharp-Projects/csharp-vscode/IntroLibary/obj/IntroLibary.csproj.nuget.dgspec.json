@@ -39,6 +39,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[*, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

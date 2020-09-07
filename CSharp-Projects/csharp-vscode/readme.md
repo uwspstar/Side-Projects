@@ -1,10 +1,10 @@
 ---
 marp: true
 theme: uncover
-size: 16:9
 paginate: true
 header :"Csharp Vscode"
 footer :"by Xing"
+size: 16:9
 ---
 
 # Csharp Vscode
@@ -59,6 +59,7 @@ footer :"by Xing"
 
 ### F5 run debug
 
+- `cd IntroUI`
 - run debug `F5`
 
 ---
@@ -69,3 +70,24 @@ _color: white
 -->
 
 ![85% bg bright:0.9](debug.png)
+
+---
+
+### NuGet
+
+- `cd IntroLibary`
+- `dotnet add package Dapper`
+- `IntroLibary.csproj`
+
+```
+<ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.35" />
+</ItemGroup>
+```
+
+---
+
+### dotnet restore
+
+- after copy NuGet packageReference
+- run `dotnet restore`
