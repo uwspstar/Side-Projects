@@ -4,7 +4,7 @@ theme: uncover
 header : "Node.js 从零开发个人博客项目"
 footer : ""
 paginate: true
-size :16:9
+size: 16:9
 
 ---
 
@@ -79,7 +79,6 @@ $ npm install --save-dev cross-env
 ```
 "main": "/bin/www.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cross-env NODE_ENV=dev nodemon ./bin/www.js",
     "prod": "cross-env NODE_ENV=production nodemon ./bin/www.js"
   },
