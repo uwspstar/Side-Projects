@@ -1,6 +1,18 @@
+---
+marp: true
+theme: uncover
+header : "Node.js 从零开发个人博客项目"
+footer : ""
+paginate: true
+size :16:9
+
+---
+
 ### Node.js 从零开发个人博客项目
 
 - https://www.youtube.com/playlist?list=PL9nxfq1tlKKlhV1UzUmElRkxmjkoO3mtH
+
+---
 
 ### core points
 
@@ -12,11 +24,15 @@
 - deployment
 - micro service, monolithic
 
+---
+
 ### start project
 
 - start mySql server
 - start redis server
 - \$ npm run dev
+
+---
 
 ### over all
 
@@ -25,16 +41,15 @@
 - security
 - CURD
 
+---
+
 ### keep safe guard in mind
+
+---
 
 ### init dev env
 
-- ```npm init -y'
-
-  ```
-
-- do not use an framework
-- use nodemon
+- `npm init -y`
 
 ```
 $ npm install --save-dev nodemon
@@ -52,6 +67,10 @@ $ touch .gitignore
 $ npm install --save-dev cross-env
 ```
 
+---
+
+### package.json
+
 ```
 "main": "/bin/www.js",
   "scripts": {
@@ -61,6 +80,8 @@ $ npm install --save-dev cross-env
   },
 ```
 
+---
+
 - www.js for server
 - app.js for logic
 
@@ -69,6 +90,8 @@ $ touch app.js
 $ mkdir bin
 $ touch bin/www.js
 ```
+
+---
 
 ### dev API
 
@@ -155,6 +178,8 @@ SET SQL_SAFE_UPDATE = 0
 
 ### cookie and session, login with cookie
 
+---
+
 ### cookie
 
 - cannot put username , such as email, phone
@@ -163,15 +188,25 @@ SET SQL_SAFE_UPDATE = 0
 - js with cookie
 - server side using cookie for login
 - cookie size is <= 5kb
+
+---
+
 - not share with different domain
 - key / value; k1=v1;k2=va;k3=v3;
 - every http request, the cookie will be sent to request domain
 - server can modify cookie and send back to client/browser
 - server response `Set-Cookie`
 - js client/browser can modify cookie (has limit)
+
+---
+
 - cookie append
 - client check cookie (3 ways)
 - js check and modify cookie (limit, not often)
+
+---
+
+### use cookie (frontend)
 
 ```
 document.cookie;
@@ -188,17 +223,25 @@ document.cookie = 'k2=200'
 - for session : server side match username, save user info
 - session save inside Heap
 
+---
+
 ### write session into redis
 
 - https://www.runoob.com/redis/redis-install.html
 - https://dev.to/ravishan16/brew-redis-on-mac-1ni8
 - https://redis.io/topics/quickstart
 
+---
+
 ### redis (need to use Terminal to run install and server, open two windows)
 
 - brew install redis
 - start server `$ redis-server`
 - redis-cli
+
+---
+
+### use redis
 
 ```
 set mykey 123
@@ -209,16 +252,22 @@ set userId userSessionID1234
 get userId
 ```
 
+---
+
 ### nodejs redis
 
 - npm install redis --save
 - redis-server
+
+---
 
 ### frontend and server end
 
 - login relay on cookie, must use browser to test
 - cookie not share cross domain, frontend and server end has to be same domain
 - need "nignx" as proxy, make frontend and server end same domain
+
+---
 
 ### nginx 配置
 
@@ -231,6 +280,8 @@ localhost:8080 --> nginx --> localhost:8001 (html)
 localhost:8080 --> nginx --> localhost:8002 (nodejs)
 ```
 
+---
+
 ### Log 日志 qps
 
 - access log
@@ -239,9 +290,14 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - nodejs stream
 - \*\*\* log function and usage
 - \*\*\* log separation, log content separation. analyze
+
+---
+
 - log separation with Date, such as `2020-09-05.access.log`
 - log save to file, not save to mySql, not save to redis
 - linux `crontab`
+
+---
 
 ### log folder
 
@@ -250,10 +306,14 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - \$ touch logs/error.log
 - \$ touch logs/event.log
 
+---
+
 ### utils folder
 
 - \$ mkdir src/utils
 - \$ touch src/utils/log.js
+
+---
 
 ### crontab
 
@@ -261,17 +321,23 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - https://ole.michelsen.dk/blog/schedule-jobs-with-crontab-on-mac-osx/
 - 5 star command `***** command`
 
+---
+
 ### log separation
 
 - set up daily job with `crontab`
 - copy access.log and rename to `2020-09-05.access.log`
 - clear access.log, continue write new log
 
+---
+
 ### analyze log
 
 - access.log, analyze the chrome percentage
 - log is save as line by line
 - use nodejs `readline` based on stream, efficient
+
+---
 
 ### security
 
@@ -281,14 +347,20 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - server side attack (we use web server nodejs in this case)
 - some attack need hardware and service to support (OP, such as DDOS)
 
+---
+
 ### install xss
 
 - \$ npm i xss --save
+
+---
 
 ### password encryption
 
 - when user register, encrypt password
 - nodejs use crypto
+
+---
 
 ### Lib
 
