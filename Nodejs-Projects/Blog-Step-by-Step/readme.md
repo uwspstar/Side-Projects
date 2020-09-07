@@ -1,11 +1,10 @@
 ---
 marp: true
 theme: uncover
-header : "Node.js 从零开发个人博客项目"
-footer : ""
+header: 'Node.js 从零开发个人博客项目'
+footer: ''
 paginate: true
 size: 16:9
-
 ---
 
 <!--
@@ -28,6 +27,12 @@ _color: white
 - log, stream, contrab, readline
 - deployment
 - micro service, monolithic
+
+---
+
+### workflow
+
+![90% bg brightness:0.9](workflow.png)
 
 ---
 
@@ -372,3 +377,4 @@ localhost:8080 --> nginx --> localhost:8002 (nodejs)
 - https://www.npmjs.com/package/cross-env
 - https://www.npmjs.com/package/nodemon
 - https://github.com/Eished/node_blog_notes
+- https://github.com/marp-team/marp-core
