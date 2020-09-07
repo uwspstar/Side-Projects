@@ -6,6 +6,10 @@ header :"Csharp Vscode"
 footer :"by Xing"
 size: 16:9
 ---
+<!--
+_backgroundColor: grey
+_color: white
+-->
 
 # Csharp Vscode
 
