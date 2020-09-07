@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "5cWliRG4OlcFaDQ6Yb0N2rmkEujDeNLtg0l+gYUQjZHfASq7a8xNhYHB7XyAgfnE16g63caRjr9esmLgdwDVzw==",
+  "dgSpecHash": "cioE3UK7IpM+Qt2Z2SV5am+irye804BGSTPnT+i6QSN1QutffwBBUIrAB+VEYhK6XM1TcpzFjESZYo+BbpZfBw==",
   "success": true,
-  "projectFilePath": "/Users/xingwang/Side-Projects/CSharp-Projects/vscode/IntroUI/IntroUI.csproj",
+  "projectFilePath": "/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/IntroUI.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

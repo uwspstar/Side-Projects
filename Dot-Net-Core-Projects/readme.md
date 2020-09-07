@@ -65,3 +65,10 @@ footer :"by Xing"
 ### project reference
 
 - `dotnet add IntroUI/IntroUI.csproj reference IntroLibary/IntroLibary.csproj`
+
+---
+
+### dotnet run
+
+- `cd IntroUI`
+- `dotnet run`

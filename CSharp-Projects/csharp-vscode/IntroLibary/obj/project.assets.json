@@ -186,11 +186,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/xingwang/Side-Projects/CSharp-Projects/vscode/IntroLibary/IntroLibary.csproj",
+      "projectUniqueName": "/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/IntroLibary.csproj",
       "projectName": "IntroLibary",
-      "projectPath": "/Users/xingwang/Side-Projects/CSharp-Projects/vscode/IntroLibary/IntroLibary.csproj",
+      "projectPath": "/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/IntroLibary.csproj",
       "packagesPath": "/Users/xingwang/.nuget/packages/",
-      "outputPath": "/Users/xingwang/Side-Projects/CSharp-Projects/vscode/IntroLibary/obj/",
+      "outputPath": "/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

@@ -9,38 +9,48 @@ footer :"by Xing"
 
 # Csharp Vscode
 
+- https://www.youtube.com/watch?v=r5dtl9Uq9V0
+
 ---
 
 ### create sln
 
-- dotnet new sln -n "vscodeIntroSln"
+- `dotnet new sln -n "vscodeIntroSln"`
 
 ---
 
 ### create console project
 
-- dotnet new console -n "IntroUI"
+- `dotnet new console -n "IntroUI"`
 
 ---
 
 ### create lib project
 
-- dotnet new classlib -n "IntroLibary"
+- `dotnet new classlib -n "IntroLibary"`
 
 ---
 
 ### add projects to sln
 
-- dotnet sln vscodeIntroSln.sln add ./IntroUI/IntroUI.csproj
-- dotnet sln vscodeIntroSln.sln add ./IntroLibary/IntroLibary.csproj
+- `dotnet sln vscodeIntroSln.sln add ./IntroUI/IntroUI.csproj`
+- `dotnet sln vscodeIntroSln.sln add ./IntroLibary/IntroLibary.csproj`
 
 ---
+
 ### add projects to sln
 
-- dotnet sln vscodeIntroSln.sln add \*_/_.csproj
+- `dotnet sln vscodeIntroSln.sln add **/*.csproj`
 
 ---
+
 ### project reference
 
-- dotnet add IntroUI/IntroUI.csproj reference IntroLibary/IntroLibary.csproj
+- `dotnet add IntroUI/IntroUI.csproj reference IntroLibary/IntroLibary.csproj`
 
+---
+
+### dotnet run
+
+- `cd IntroUI`
+- `dotnet run`

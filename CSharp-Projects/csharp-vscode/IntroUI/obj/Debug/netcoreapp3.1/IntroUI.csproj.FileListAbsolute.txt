@@ -1,0 +1,15 @@
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/bin/Debug/netcoreapp3.1/IntroUI.deps.json
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/bin/Debug/netcoreapp3.1/IntroUI.runtimeconfig.json
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/bin/Debug/netcoreapp3.1/IntroUI.runtimeconfig.dev.json
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/bin/Debug/netcoreapp3.1/IntroUI.dll
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/bin/Debug/netcoreapp3.1/IntroUI.pdb
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/bin/Debug/netcoreapp3.1/IntroLibary.dll
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/bin/Debug/netcoreapp3.1/IntroLibary.pdb
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/obj/Debug/netcoreapp3.1/IntroUI.csprojAssemblyReference.cache
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/obj/Debug/netcoreapp3.1/IntroUI.AssemblyInfoInputs.cache
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/obj/Debug/netcoreapp3.1/IntroUI.AssemblyInfo.cs
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/obj/Debug/netcoreapp3.1/IntroUI.csproj.CoreCompileInputs.cache
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/obj/Debug/netcoreapp3.1/IntroUI.csproj.CopyComplete
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/obj/Debug/netcoreapp3.1/IntroUI.dll
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/obj/Debug/netcoreapp3.1/IntroUI.pdb
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroUI/obj/Debug/netcoreapp3.1/IntroUI.genruntimeconfig.cache

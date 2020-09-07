@@ -1,0 +1,9 @@
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/bin/Debug/netstandard2.0/IntroLibary.deps.json
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/bin/Debug/netstandard2.0/IntroLibary.dll
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/bin/Debug/netstandard2.0/IntroLibary.pdb
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/obj/Debug/netstandard2.0/IntroLibary.csprojAssemblyReference.cache
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/obj/Debug/netstandard2.0/IntroLibary.AssemblyInfoInputs.cache
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/obj/Debug/netstandard2.0/IntroLibary.AssemblyInfo.cs
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/obj/Debug/netstandard2.0/IntroLibary.csproj.CoreCompileInputs.cache
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/obj/Debug/netstandard2.0/IntroLibary.dll
+/Users/xingwang/Side-Projects/CSharp-Projects/csharp-vscode/IntroLibary/obj/Debug/netstandard2.0/IntroLibary.pdb

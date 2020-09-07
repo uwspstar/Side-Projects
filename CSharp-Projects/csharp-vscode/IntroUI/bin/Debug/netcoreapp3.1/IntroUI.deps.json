@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "IntroUI/1.0.0": {
+        "dependencies": {
+          "IntroLibary": "1.0.0"
+        },
+        "runtime": {
+          "IntroUI.dll": {}
+        }
+      },
+      "IntroLibary/1.0.0": {
+        "runtime": {
+          "IntroLibary.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "IntroUI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "IntroLibary/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
