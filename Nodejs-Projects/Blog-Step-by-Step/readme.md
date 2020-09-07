@@ -8,7 +8,12 @@ size :16:9
 
 ---
 
-### Node.js 从零开发个人博客项目
+<!--
+_backgroundColor: grey
+_color: white
+-->
+
+# Node.js 从零开发个人博客项目
 
 - https://www.youtube.com/playlist?list=PL9nxfq1tlKKlhV1UzUmElRkxmjkoO3mtH
 
