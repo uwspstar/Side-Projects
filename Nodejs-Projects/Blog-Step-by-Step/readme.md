@@ -32,7 +32,7 @@ _color: white
 
 ### workflow
 
-![90% bg brightness:0.9](https://github.com/uwspstar/Side-Projects/edit/master/Nodejs-Projects/Blog-Step-by-Step/workflow.png)
+![90% bg brightness:0.9](workflow.png)
 
 ---
 
