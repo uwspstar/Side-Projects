@@ -28,6 +28,7 @@ footer :"by Xing"
 - Import cost
 - Prettier
 - material-icon
+- NuGet Package Manager
 
 ---
 
