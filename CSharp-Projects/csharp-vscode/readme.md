@@ -54,3 +54,18 @@ footer :"by Xing"
 
 - `cd IntroUI`
 - `dotnet run`
+
+---
+
+### F5 run debug
+
+- run debug `F5`
+
+---
+
+<!--
+_backgroundColor: grey
+_color: white
+-->
+
+![85% bg bright:0.9](debug.png)
