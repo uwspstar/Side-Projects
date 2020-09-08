@@ -15,6 +15,7 @@ _color: black
 # Koa2
 
 - https://www.youtube.com/watch?v=l5eH1ez96g4&list=PL9nxfq1tlKKlhV1UzUmElRkxmjkoO3mtH&index=78
+- nodejs version > 8.0
 
 ---
 
@@ -44,6 +45,12 @@ _color: black
 ---
 
 ### install Koa2
+
+- \$ npm install koa-generator -g
+- \$ koa2 koa2-demo
+- \$ cd koa2-demo
+- \$ npm install
+- \$ npm run dev
 
 ---
 
