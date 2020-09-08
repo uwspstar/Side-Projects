@@ -1,6 +1,6 @@
 ---
 marp: true
-theme: uncover
+theme: default
 header: 'Koa2'
 footer: 'by Xing'
 paginate: true
@@ -8,8 +8,8 @@ size: 16:9
 ---
 
 <!--
-_backgroundColor: grey
-_color: white
+_backgroundColor: white
+_color: black
 -->
 
 # Koa2
@@ -31,6 +31,15 @@ _color: white
 - https://javascript.info/async-await
 - Can’t use await in regular functions
 - await won’t work in the top-level code
+- Error handling , try catch
+
+---
+
+### async/await and promise.then/catch
+
+- When we use async/await, we rarely need .then, because await handles the waiting for us. And we can use a regular try..catch instead of .catch. That’s usually (but not always) more convenient.
+
+- But at the top level of the code, when we’re outside any async function, we’re syntactically unable to use await, so it’s a normal practice to add .then/catch to handle the final result or falling-through error, like in the line (\*) of the example above.
 
 ---
 
