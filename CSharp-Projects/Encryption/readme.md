@@ -9,6 +9,7 @@ size: 16:9
 
 # Encryption
 
+- https://www.youtube.com/watch?v=RkpA6SRfoZM&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE
 - MD5 (un reverse encrypt)
 - DES (symmetric, same key for encryption and decryption)
 - RSA (symmetric, different key for encryption and
