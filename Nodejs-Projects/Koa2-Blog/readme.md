@@ -50,7 +50,10 @@ _color: black
 - \$ koa2 koa2-demo
 - \$ cd koa2-demo
 - \$ npm install
+- \$ npm install cross-env --save-dev
 - \$ npm run dev
+- modify package.json
+  `"dev": "cross-env NODE_ENV=dev ./node_modules/.bin/nodemon bin/www",`
 
 ---
 
