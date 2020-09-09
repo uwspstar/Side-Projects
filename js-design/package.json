@@ -1,0 +1,18 @@
+{
+  "name": "js-design",
+  "version": "1.0.0",
+  "description": "--- marp: true theme: default header: 'Js Design' footer: 'by Xing' paginate: true size: 16:9 ---",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --config ./webpack.dev.config.js --mode development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.4.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
