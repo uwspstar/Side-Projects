@@ -28,3 +28,5 @@ _color: black
 
 - method.Invoke() same as method()
 - direct pass a function
+- lower case `delegate` same as `class` 
+- example : `public delegate bool ThanDelegate(Student s);`
