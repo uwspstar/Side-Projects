@@ -1,5 +1,5 @@
 ---
-marp: false
+marp: true
 theme: default
 header: 'Csharp'
 footer: 'by Xing'
@@ -42,4 +42,23 @@ _color: black
 
 ---
 
+### BeginInvoke()
+
+- asynchronously
+- `method.BeginInvoke(null, null);`
+- asynchronously multi-threading base on Delegate BeginInvoke();
+
+---
+
 ### EndInvoke()
+
+- need pass the result as input
+- `method.EndInvoke(result)`
+
+---
+
+### SafeInvoke
+
+### SqlHelper
+
+### LogHelper
