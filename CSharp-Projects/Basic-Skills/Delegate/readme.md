@@ -16,10 +16,11 @@ _color: black
 
 - it is a sealed class
 - extends `system.MulticastDelegate`
-- .ctor (constructor)
+- .ctor (constructor)d
 - Invoke()
 - BeginInvoke()
 - EndInvoke()
+- Delegates are used to `pass methods` ( such as static method, object method,etc) as arguments to other methods
 
 ---
 
