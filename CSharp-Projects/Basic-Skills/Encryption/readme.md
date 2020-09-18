@@ -25,10 +25,10 @@ size: 16:9
 
 ### MD5 UTF8 (Encoding)
 
-- MD5 : all language are same using MD5, different is Encoding. C# using UTF8 Encoding
+- MD5 : all language are same using MD5 algorithm, different is Encoding. C# using UTF8 Encoding
 - `byte[] bytes = Encoding.UTF8.GetBytes(source)`
 - total length `32`, each position has `16` possibility
-- save string has same MD5 result
+- same string has same MD5 result
 - cannot reverse
 
 ---
@@ -47,15 +47,15 @@ size: 16:9
 - use MD5 avoid duplicate upload
 - svn, git compare MD5
 - database .mdf file compare
-- digit signature, certification
+- `digit signature`, `certification`
 - 2^128
 - big size file, MD5 slowly
 
 ---
 
-### DES (data transportation, Symmetric encryption)
+### DES (Symmetric Encryption, data transportation)
 
-- Symmetric encryption
+- Symmetric Encryption
 - The algorithm is safe, and public
 - key is security (need to keep in a safe place, key room)
 - fast
@@ -65,7 +65,7 @@ size: 16:9
 ### RSA (Asymmetric Encryption)
 
 - Asymmetric Encryption
-- key pairs : public Key and private Key
+- key pairs : `public Key` and `private Key`
 - not fast, very safe
 
 ---
