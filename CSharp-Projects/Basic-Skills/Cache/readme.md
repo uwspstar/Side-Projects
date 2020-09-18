@@ -19,6 +19,12 @@ _color: black
 - `Proxy` : reverse proxy cache
 - `Server` :local cache, such as Memcache, redis
 
+---
+
+- ![](cache1.png)
+
+---
+
 ### Redis vs. Memcached
 
 - https://aws.amazon.com/memcached/
@@ -33,5 +39,9 @@ _color: black
 - using `static`, the GC will not clean up
 - using `private`, keep safe
 - using `Dictionary` for `key, value`
+
+---
+
+- ![](cache2.png)
 
 ---
