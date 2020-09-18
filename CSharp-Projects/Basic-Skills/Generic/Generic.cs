@@ -5,13 +5,37 @@ public class GenericMethod
         System.Console.WriteLine(typeof(GenericMethod));
         System.Console.WriteLine(t.GetType().Name, t.ToString());
     }
+
+    public static void Show<T>(T t) where T : People
+    {
+        // t is People
+        System.Console.WriteLine(t.Name);
+        System.Console.WriteLine(t.Age);
+    }
+
+    public class People
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+    }
 }
 
 public class GenericClass<T>
 {
     public T _T;
 }
+public class GenericClass<T,D,P> 
+    where T: Tea
+    where D: Dog
+    where P: People
+{
+    public T _T;
+}
 public interface IGenericInterface<T>
+{
+    T GetT(T t); // return T
+}
+public interface IGenericInterface<T> where T : People
 {
     T GetT(T t); // return T
 }
@@ -32,7 +56,5 @@ public class CommonClass4<T> : GenericClass<T>, IGenericInterface<T>
 {
     // if CommonClass does have <type>, the GenericClass need has type
 }
-public class CommonClass4<T> : GenericClass<int>, IGenericInterface<T>
-{
-    // if CommonClass does have <type>, the GenericClass need has type
-}
+
+
