@@ -79,25 +79,26 @@ size: 16:9
 
 ### function based
 
-- Encryptkey vs. DecryptKey
+- `Encryptkey` vs. `DecryptKey`
 
 ---
 
 ### based on public or private
 
-- public Key vs private Key
+- `public Key` vs. `private Key`
 
 ---
 
 ### Difference Between Symmetric and Asymmetric Encryption
 
-- Symmetric encryption uses a single key that needs to be shared among the people who need to receive the message
-- asymmetrical encryption uses a pair of public key and a private key to encrypt and decrypt messages when communicating.
+- `Symmetric encryption` uses a `single key` that needs to be shared among the people who need to receive the message
+- `Asymmetrical encryption` uses a pair of `public key` and a `private key` to encrypt and decrypt messages when communicating.
 
 ---
 
 ### DES vs. AES
 
-- DES (Data Encryption Standard) and AES (Advanced Encryption Standard) both are the symmetric block cipher. ... The basic difference between DES and AES is that in DES plaintext block is divided into two halves before the main algorithm starts whereas, in AES the entire block is processed to obtain the ciphertext.
+- DES (Data Encryption Standard) and AES (Advanced Encryption Standard) both are the symmetric block cipher. 
+- The basic difference between DES and AES is that in DES plaintext block is divided into two halves before the main algorithm starts whereas, in AES the entire block is processed to obtain the ciphertext.
 
 ---
