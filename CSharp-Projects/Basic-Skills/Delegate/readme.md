@@ -17,9 +17,9 @@ _color: black
 - it is a sealed class
 - extends `system.MulticastDelegate`
 - .ctor (constructor)d
-- Invoke()
-- BeginInvoke()
-- EndInvoke()
+- `Invoke()`
+- `BeginInvoke()`
+- `EndInvoke()`
 - Delegates are used to `pass methods` ( such as static method, object method,etc) as arguments to other methods
 
 ---
@@ -27,7 +27,7 @@ _color: black
 ### public delegate void ExampleDelegate
 
 - used it as same as class
-- method.Invoke() same as method()
+- `method.Invoke()` same as `method()`
 - direct pass a function
 - lower case `delegate` same as `class`
 - example : `public delegate bool ThanDelegate(Student s);`
@@ -89,5 +89,5 @@ public static void SafeInvoke(Action act)
 
 - Delegate.Combine: `+=` ; CANNOT use for for asynchronously
 - Delegate.Remove: `-=` : `CANNOT` remove the method when it is belong to different obj, such as `new Student.study()`
-
+### Delegate.Combine Handler
 ---
