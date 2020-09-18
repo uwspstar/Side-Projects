@@ -12,7 +12,20 @@ _backgroundColor: white
 _color: black
 -->
 
-# c# Cache
+# Cache : browser -> DNS -> `Proxy` -> `Server`
+
+- `browser` : client side cache
+- `DNS` : CDN
+- `Proxy` : reverse proxy cache
+- `Server` :local cache, such as Memcache, redis
+
+### Redis vs. Memcached
+
+- https://aws.amazon.com/memcached/
+- Redis and Memcached are the two most popular in-memory key-value data stores.
+- Memcached is designed for simplicity while Redis offers a rich set of features that make it effective for a wide range of use cases.
+
+---
 
 ### local Cache
 
