@@ -12,7 +12,30 @@ _backgroundColor: white
 _color: black
 -->
 
-# Delegate : Delegates are used to pass methods as arguments to other methods.
+# Delegate :
+
+- https://www.youtube.com/watch?v=IzKCT34nVoE&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE&index=8
+- https://www.youtube.com/watch?v=txzL4A3UFYo&list=PLZX6sKChTg8GQxnABqxYGX2zLs4Hfa4Ca&index=21
+
+---
+
+- ![](del.png)
+
+---
+
+- ![](del2.png)
+
+---
+
+- ![](del3.png)
+
+---
+
+- ![](del4.png)
+
+---
+
+### Delegates are used to pass methods as arguments to other methods.
 
 - it is a sealed class
 - extends `system.MulticastDelegate`
@@ -89,5 +112,39 @@ public static void SafeInvoke(Action act)
 
 - Delegate.Combine: `+=` ; CANNOT use for for asynchronously
 - Delegate.Remove: `-=` : `CANNOT` remove the method when it is belong to different obj, such as `new Student.study()`
+
 ### Delegate.Combine Handler
+
 ---
+
+### Func vs. Action vs. predicate
+
+- https://stackoverflow.com/questions/4317479/func-vs-action-vs-predicate
+- The difference between Func and Action is simply whether you want the delegate to return a value (use Func) or not (use Action).
+- Predicate is just a special cased Func<T, bool> really, introduced before all of the Func and most of the Action delegates came along.
+
+---
+
+### Event
+
+- Safe : child class cannot use parent class Event, only can be used inside declared class
+- CANNOT directly `.Invoke()` from outside
+- CANNOT = null
+- same concept as framework
+
+---
+
+### Event vs Delegate
+
+- Delegate is a type, Event is an instance of Delegate
+- https://www.youtube.com/watch?v=jQgwEsJISy0
+- Listening to Events is Optional
+- Return Values Require Delegates
+- Events Have Private Invocation
+- Event Listeners Often Have Longer Lifetimes
+- Evaluate Carefully
+- https://docs.microsoft.com/en-us/dotnet/csharp/distinguish-delegates-events
+
+---
+
+- ![](win.png)
