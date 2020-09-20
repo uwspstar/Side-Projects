@@ -82,8 +82,8 @@ size: 16:9
 
 ---
 
-### 类型参数的约束 七种类型的约束
-
+### 类型参数的约束 七种类型的约束 (NOT sealed)
+- A struct is sealed because it is a value type and all value types are sealed.
 - `where T : struct`
 - `where T : class`
 - `where T : new()`
