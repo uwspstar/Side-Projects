@@ -17,26 +17,23 @@ _color: black
 - https://www.youtube.com/watch?v=IzKCT34nVoE&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE&index=8
 - https://www.youtube.com/watch?v=txzL4A3UFYo&list=PLZX6sKChTg8GQxnABqxYGX2zLs4Hfa4Ca&index=21
 - https://csharp-video-tutorials.blogspot.com/2012/06/part-36-c-tutorial-delegates.html
+- https://www.youtube.com/watch?v=IzKCT34nVoE&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE&index=8
 
 ---
 
-- https://www.youtube.com/watch?v=IzKCT34nVoE&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE&index=8
-- ![](del.png)
+- ![70% bg](del.png)
 
 ---
 
-- https://www.youtube.com/watch?v=IzKCT34nVoE&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE&index=8
-- ![](del2.png)
+- ![70% bg](del2.png)
 
 ---
 
-- https://www.youtube.com/watch?v=IzKCT34nVoE&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE&index=8
-- ![](del3.png)
+- ![70% bg](del3.png)
 
 ---
 
-- https://www.youtube.com/watch?v=IzKCT34nVoE&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE&index=8
-- ![](del4.png)
+- ![70% bg](del4.png)
 
 ---
 

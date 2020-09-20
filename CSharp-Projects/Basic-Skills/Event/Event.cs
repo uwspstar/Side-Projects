@@ -53,10 +53,10 @@ namespace EventExample
         {
             if (this.orderEventHandler != null)
             {
-                OrderEventArgs e = new OrderEventArgs();
-                e.DishName = "KongPao Chicken";
-                e.Size = "large";
-                this.orderEventHandler.Invoke(this, e);
+                //OrderEventArgs e = new OrderEventArgs();
+                //e.DishName = "KongPao Chicken";
+                //e.Size = "large";
+                this.orderEventHandler.Invoke(this, new OrderEventArgs { DishName = "KongPao Chicken", Size = "large" });
             }
         }
     }
