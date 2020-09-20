@@ -1,4 +1,6 @@
-//create object
+// create object
+// application config
+
 namespace MyReflection
 {
     public class Factory
