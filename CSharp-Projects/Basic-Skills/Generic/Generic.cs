@@ -12,9 +12,21 @@ public class GenericMethod
         System.Console.WriteLine(t.Name);
         System.Console.WriteLine(t.Age);
     }
+    public static void ShowHi<T>(T t) where T : People, ISport, IWork
+    {
+        // t is People
+        System.Console.WriteLine(t.Name);
+        System.Console.WriteLine(t.Age);
+        System.Console.WriteLine(t.GetT());
+        System.Console.WriteLine(t.WorkT());
+    }
     public static T SayHi<T>(T t) where T : struct
     {
-        T tNew = default(T);
+        T tNew = default(T); //based on different T set default value
+    }
+    public static T SayHi<T>(T t) where T : new()
+    {
+        T tNew = new T();
     }
     public class People
     {
@@ -36,6 +48,10 @@ public class GenericMethod
     public interface ISport
     {
         T GetT(T t); // return T
+    }
+    public interface IWork
+    {
+        T WorkT(T t); // return T
     }
     public interface IGenericInterface<T>
     {
