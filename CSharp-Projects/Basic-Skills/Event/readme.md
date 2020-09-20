@@ -21,3 +21,6 @@ _color: black
 ### 5 steps
 
 - ![70% bg](e1.png)
+
+### Standard .NET event patterns
+- https://docs.microsoft.com/en-us/dotnet/csharp/event-pattern

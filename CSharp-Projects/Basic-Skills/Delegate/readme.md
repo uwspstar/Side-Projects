@@ -14,6 +14,7 @@ _color: black
 
 # Delegate :
 
+- https://docs.microsoft.com/en-us/dotnet/csharp/delegates-overview
 - https://www.youtube.com/watch?v=IzKCT34nVoE&list=PLp5ARg5A-DeA1WYsrlv_mK300GJ9hMGzE&index=8
 - https://www.youtube.com/watch?v=txzL4A3UFYo&list=PLZX6sKChTg8GQxnABqxYGX2zLs4Hfa4Ca&index=21
 - https://csharp-video-tutorials.blogspot.com/2012/06/part-36-c-tutorial-delegates.html
