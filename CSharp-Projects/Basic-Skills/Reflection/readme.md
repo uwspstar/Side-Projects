@@ -54,6 +54,10 @@ Console.WriteLine(info);
 - `System.Reflection` 命名空间中的类与 `System.Type` 使你能够获取有关加载的程序集和其中定义的类型的信息，如类、接口和值类型（即结构和枚举）.
 - https://docs.microsoft.com/zh-cn/dotnet/framework/reflection-and-codedom/reflection
 - MVC URL
+- `1 means <T>,
+- `2 means <T, R>
+- `3 means <T1, T2, T3>
+
 ---
 
 - 使用 `Assembly` 来定义和加载程序集，加载程序集清单中列出的模块，以及在此程序集中定位一个类型并创建一个它的实例。
@@ -76,6 +80,14 @@ Console.WriteLine(info);
 - `System.Type` 类是反射的中心。 当反射提出请求时，公共语言运行时为已加载的类型创建 Type 。 可使用 Type 对象的方法、字段、属性和嵌套类来查找该类型的任何信息。
 - https://docs.microsoft.com/zh-cn/dotnet/framework/reflection-and-codedom/viewing-type-information
 
+---
+
 ### Singleton
 
 - use reflection can call private constructor to create an instance
+
+---
+
+### InvokeMember 和 CreateInstance
+
+- https://docs.microsoft.com/zh-cn/dotnet/framework/reflection-and-codedom/dynamically-loading-and-using-types
