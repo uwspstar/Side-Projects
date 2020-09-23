@@ -14,7 +14,7 @@ size: 16:9
   - 可重用性
   - 类型安全性
   - 效率
-- 不使用允许键和值为任意类型的 Hashtable 类，而使用 Dictionary<TKey,TValue> 泛型类并指定允许的密钥类型和允许的值的类型。
+- 不使用允许键和值为任意类型的 Hashtable 类，而使用 `Dictionary<TKey,TValue>` 泛型类并指定允许的密钥类型和允许的值的类型。
 - https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/generics/
 - https://www.youtube.com/watch?v=o0H0g52MbpU&t=2342s
 
@@ -24,8 +24,8 @@ size: 16:9
 
 - 使用泛型类型可以最大限度地重用代码、保护类型安全性以及提高性能。
 - 泛型最常见的用途是创建集合类。
-- .NET 类库在 System.Collections.Generic 命名空间中包含几个新的泛型集合类。 应尽可能使用这些类来代替某些类，如 System.Collections 命名空间中的 ArrayList。
-- 可以创建自己的泛型接口 API、泛型类 CLASS、泛型方法 Method、泛型事件 Event 和 泛型委托 Delegate。
+- .NET 类库在 `System.Collections.Generic` 命名空间中包含几个新的泛型集合类。 应尽可能使用这些类来代替某些类，如 `System.Collections` 命名空间中的 `ArrayList`。
+- 可以创建自己的泛型接口 `API`、泛型类 `CLASS`、泛型方法 `Method`、泛型事件 `Event` 和 泛型委托 `Delegate`。
 - 可以对泛型类进行约束 Where 以访问特定数据类型的方法。
 - 在泛型数据类型中所用类型的信息可在运行时通过使用反射来获取。
 
@@ -83,6 +83,7 @@ size: 16:9
 ---
 
 ### 类型参数的约束 七种类型的约束 (NOT sealed)
+
 - A struct is sealed because it is a value type and all value types are sealed.
 - `where T : struct`
 - `where T : class`
