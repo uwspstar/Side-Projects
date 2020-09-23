@@ -1,3 +1,4 @@
+// need to inheritate Attribute
 public class CustomAttribute : Attribute
 {
 
