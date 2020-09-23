@@ -26,7 +26,7 @@ size: 16:9
 - 泛型最常见的用途是创建集合类。
 - .NET 类库在 `System.Collections.Generic` 命名空间中包含几个新的泛型集合类。 应尽可能使用这些类来代替某些类，如 `System.Collections` 命名空间中的 `ArrayList`。
 - 可以创建自己的泛型接口 `API`、泛型类 `CLASS`、泛型方法 `Method`、泛型事件 `Event` 和 泛型委托 `Delegate`。
-- 可以对泛型类进行约束 Where 以访问特定数据类型的方法。
+- 可以对泛型类进行`约束` `Where` 以访问特定数据类型的方法。
 - 在泛型数据类型中所用类型的信息可在运行时通过使用反射来获取。
 
 ---
@@ -35,7 +35,7 @@ size: 16:9
 
 - 此特定类的类型参数可以是编译器可识别的任何类型。
 - 在泛型类型或方法定义中，类型参数是在其创建泛型类型的一个实例时，客户端指定的特定类型的占位符
-- 若要使用 GenericList<T>，客户端代码必须通过指定尖括号内的类型参数来声明并实例化构造类型。
+- 若要使用 `GenericList<T>`，客户端代码必须通过指定尖括号内的类型参数来声明并实例化构造类型。
 - https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/generics/generic-type-parameters
 
 ---
@@ -50,7 +50,7 @@ size: 16:9
 
 ### 装箱和取消装箱
 
-- `装箱`是将值类型转换为 object 类型或由此值类型实现的任何接口类型的过程。 常见语言运行时 (CLR) 对值类型进行装箱时，会将值包装在 System.Object 实例中并将其存储在托管堆中。
+- `装箱`是将值类型转换为 `object` 类型或由此值类型实现的任何接口类型的过程。 常见语言运行时 (CLR) 对值类型进行装箱时，会将值包装在 `System.Object` 实例中并将其存储在托管堆中。
 - `取消装箱`将从对象中提取值类型。
 - 装箱是隐式的；取消装箱是显式的。
 - 装箱和取消装箱的概念是类型系统 C# 统一视图的基础，其中任一类型的值都被视为一个对象。
@@ -61,7 +61,7 @@ size: 16:9
 ### System.Collections.Generic
 
 - 许多泛型集合类型均为非泛型类型的直接模拟。
-- `Dictionary<TKey,TValue>` 是 `Hashtable` 的泛型版本；它使用枚举的泛型结构 KeyValuePair<TKey,TValue> 而不是 DictionaryEntry。
+- `Dictionary<TKey,TValue>` 是 `Hashtable` 的泛型版本；它使用枚举的泛型结构 `KeyValuePair<TKey,TValue>` 而不是 `DictionaryEntry`。
 - `List<T>` 是 `ArrayList` 的泛型版本。 存在响应非泛型版本的泛型 `Queue<T>` 和 `Stack<T>` 类。
 - 存在 `SortedList<TKey,TValue>` 的泛型和非泛型版本。 这两个版本均为字典和列表的混合.
 - `SortedDictionary<TKey,TValue>` 泛型类是一个纯字典，并且没有任何非泛型对应项。
