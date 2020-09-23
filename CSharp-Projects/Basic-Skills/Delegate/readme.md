@@ -42,19 +42,20 @@ _color: black
 
 - it is a sealed class
 - extends `system.MulticastDelegate`
-- .ctor (constructor)d
+- .ctor (constructor)
 - `Invoke()`
 - `BeginInvoke()`
 - `EndInvoke()`
-- Delegates are used to `pass methods` ( such as static method, object method,etc) as arguments to other methods
+- `Delegates` are used to `pass methods` ( such as static method, object method,etc) as arguments to other methods
 
 ---
 
 ### public delegate void ExampleDelegate
 
-- used it as same as class
+- using delegate as same as using `class`
 - `method.Invoke()` same as `method()`
-- direct pass a function
+- direct pass a function, so call function pointer,
+- think about JS console.log('bubbleSort', bubbleSort([1,2,3])), pass a function to console.log(...)
 - lower case `delegate` same as `class`
 - example : `public delegate bool ThanDelegate(Student s);`
 
@@ -62,16 +63,16 @@ _color: black
 
 ### Invoke() vs BeginInvoke()
 
-- Delegate.Invoke: Executes synchronously, on the same thread.
-- Delegate.BeginInvoke: Executes asynchronously, on a thread pool thread.
-- Control.Invoke: Executes on the UI thread, but calling thread waits for completion before continuing.
-- Control.BeginInvoke: Executes on the UI thread, and calling thread doesn't wait for completion.
+- `Delegate.Invoke`: Executes synchronously, on the same thread.
+- `Delegate.BeginInvoke`: Executes asynchronously, on a thread pool thread.
+- `Control.Invoke`: Executes on the UI thread, but calling thread waits for completion before continuing.
+- `Control.BeginInvoke`: Executes on the UI thread, and calling thread doesn't wait for completion.
 
 ---
 
 ### BeginInvoke()
 
-- asynchronously
+- `asynchronously`
 - `method.BeginInvoke(null, null);`
 - asynchronously multi-threading base on Delegate BeginInvoke();
 
@@ -85,7 +86,7 @@ _color: black
 ---
 
 ### SafeInvoke
-
+- put `try ... catch` for all Action in same place when `Invoke` it
 ```C#
 public static void SafeInvoke(Action act)
 {
@@ -113,7 +114,7 @@ public static void SafeInvoke(Action act)
 
 ### Delegate.Combine && Delegate.Remove
 
-- Delegate.Combine: `+=` ; CANNOT use for for asynchronously
+- Delegate.Combine: `+=` ; `CANNOT` use for for `asynchronously`
 - Delegate.Remove: `-=` : `CANNOT` remove the method when it is belong to different obj, such as `new Student.study()`
 
 ### Delegate.Combine Handler
@@ -123,14 +124,14 @@ public static void SafeInvoke(Action act)
 ### Func vs. Action vs. predicate
 
 - https://stackoverflow.com/questions/4317479/func-vs-action-vs-predicate
-- The difference between Func and Action is simply whether you want the delegate to return a value (use Func) or not (use Action).
-- Predicate is just a special cased Func<T, bool> really, introduced before all of the Func and most of the Action delegates came along.
+- The difference between `Func` and `Action` is simply whether you want the delegate to return a value (use Func) or not (use Action).
+- `Predicate` is just a special cased `Func<T, bool>` really, introduced before all of the Func and most of the Action delegates came along.
 
 ---
 
 ### Event
 
-- Safe : child class cannot use parent class Event, only can be used inside declared class
+- `Safe` : child class cannot use parent class Event, only can be used inside declared class
 - CANNOT directly `.Invoke()` from outside
 - CANNOT = null
 - same concept as framework
@@ -139,11 +140,11 @@ public static void SafeInvoke(Action act)
 
 ### Event vs Delegate
 
-- Delegate is a type, Event is an instance of Delegate
+- `Delegate` is a type, `Event` is an instance of Delegate
 - https://www.youtube.com/watch?v=jQgwEsJISy0
 - Listening to Events is Optional
 - Return Values Require Delegates
-- Events Have Private Invocation
+- `Events Have Private Invocation`
 - Event Listeners Often Have Longer Lifetimes
 - Evaluate Carefully
 - https://docs.microsoft.com/en-us/dotnet/csharp/distinguish-delegates-events

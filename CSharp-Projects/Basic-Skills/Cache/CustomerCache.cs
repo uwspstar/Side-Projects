@@ -1,7 +1,8 @@
 public class CustomerCache
 {
 
-
+    // use static , so GC will not affect it
+    // use key, value
     private static Dictionary<string, Object> CustomerCacheDictionary =
     new Dictionary<string, Object>();
 
