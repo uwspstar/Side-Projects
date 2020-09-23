@@ -12,7 +12,7 @@ _backgroundColor: white
 _color: black
 -->
 
-# 特性 (C#)
+# 特性 (C#) 
 
 - https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/concepts/attributes/
 - 将特性与程序实体相关联后，可以在运行时使用反射这项技术查询特性。
@@ -22,3 +22,5 @@ _color: black
 - ORM table
 
 ---
+### attribute
+- 
