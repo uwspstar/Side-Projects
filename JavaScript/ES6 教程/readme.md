@@ -32,12 +32,14 @@ $ node --v8-options | findstr harmony
 ### Babel
 
 - https://wangdoc.com/es6/intro.html
-- `Babel` 是一个广泛使用的 ES6 转码器，可以将 ES6 代码转为 ES5 代码，从而在老版本的浏览器执行
+- `Babel` 是一个广泛使用的 `ES6` 转码器，可以将 `ES6` 代码转为 `ES5` 代码，从而在老版本的浏览器执行
 - `$ npm install --save-dev @babel/core`
-- Babel 的配置文件是`.babelrc`，存放在项目的根目录下。使用 Babel 的第一步，就是配置这个文件。所有 Babel 工具和模块的使用，都必须先写好`.babelrc`
-- Babel 默认只转换新的 JavaScript 句法（syntax），而不转换新的 API，比如 Iterator、Generator、Set、Map、Proxy、Reflect、Symbol、Promise 等全局对象，以及一些定义在全局对象上的方法（比如 Object.assign）都不会转码
+- `Babel` 的配置文件是`.babelrc`，存放在项目的根目录下。使用 `Babel` 的第一步，就是配置这个文件。
+- 所有 `Babel` 工具和模块的使用，都必须先写好`.babelrc`
 
 ---
+
+- `Babel` 默认只转换新的 `JavaScript` 句法（syntax），而不转换新的 `API`，比如 `Iterator`、`Generator`、`Set`、`Map`、`Proxy`、`Reflect`、`Symbol`、`Promise` 等全局对象，以及一些定义在全局对象上的方法（比如 `Object.assign`）都不会转码
 
 ### polyfill
 
