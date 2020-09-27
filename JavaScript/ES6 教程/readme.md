@@ -44,6 +44,7 @@ $ node --v8-options | findstr harmony
 
 ### polyfill
 
+- https://developer.mozilla.org/en-US/docs/Glossary/Polyfill
 - https://wangdoc.com/es6/intro.html
 
 ---
@@ -387,3 +388,64 @@ move(); // [0, 0]
 ---
 
 ### 字符串的扩展
+
+- 字符的 Unicode 表示法 : 采用`\uxxxx`形式表示一个字符
+  - 超出这个范围 `\u0000~\uFFFF` 之间的字符，必须用两个双字节的形式表示。`"\u20BB7"// " 7"`
+- JavaScript 共有 6 种方法可以表示一个字符。
+
+```js
+'z' === 'z'; // true
+'\172' === 'z'; // true
+'\x7A' === 'z'; // true
+'\u007A' === 'z'; // true
+'\u{7A}' === 'z'; // true
+```
+
+---
+
+- ES6 为字符串添加了遍历器接口 `for (let codePoint of 'foo') { console.log(codePoint) }`
+- JavaScript 规定有 5 个字符，不能在字符串里面直接使用，只能使用转义形式。
+
+```js
+U+005C：反斜杠（reverse solidus)
+U+000D：回车（carriage return）
+U+2028：行分隔符（line separator）
+U+2029：段分隔符（paragraph separator）
+U+000A：换行符（line feed）
+```
+
+---
+
+### JSON.stringify()
+
+- JSON 数据必须是 UTF-8 编码。但是，现在的 JSON.stringify()方法有可能返回不符合 UTF-8 标准的字符串
+
+### 模板字符串
+
+- 模板字符串（template string）是增强版的字符串，用反引号（`）标识
+- 如果在模板字符串中需要使用反引号，则前面要用反斜杠转义。
+- `let greeting = `\`Yo\` World!`;`
+- 模板字符串中嵌入变量，需要将变量名写在\${}之中, 如果模板字符串中的变量没有声明，将报错。
+
+```js
+`User ${user.name} is not authorized to do ${action}.`);
+```
+
+---
+
+### 标签模板
+
+- 标签模板其实不是模板，而是函数调用的一种特殊形式。“标签”指的就是函数，紧跟在后面的模板字符串就是它的参数
+
+```js
+alert`hello`;
+// 等同于
+alert(['hello']);
+```
+
+- 就是过滤 HTML 字符串，防止用户输入恶意内容
+- 标签模板的另一个应用，就是多语言转换（国际化处理）
+
+```js
+i18n`Welcome to ${siteName}`;
+```
