@@ -387,4 +387,7 @@ function f({x, y, z}) { ... }
 f({z: 3, y: 2, x: 1});
 ```
 
+- 提取 `JSON` 数据 `let { id, status, data: number } = jsonData;`
+- 函数参数的默认值
+
 ---
