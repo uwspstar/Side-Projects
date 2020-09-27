@@ -302,3 +302,89 @@ let x;
 ({} = 'abc');
 ({} = []);
 ```
+
+---
+
+### 字符串的解构赋值
+
+```js
+const [a, b, ...c] = 'hello';
+console.log(c); // [ 'l', 'l', 'o' ]
+```
+
+- 类似数组的对象都有一个 length 属性，因此还可以对这个属性解构赋值。
+
+```js
+let { length: len } = 'hello';
+len; // 5
+```
+
+---
+
+### 数值和布尔值的解构赋值
+
+- 只要等号右边的值不是对象或数组，就先将其转为对象。由于 undefined 和 null 无法转为对象，所以对它们进行解构赋值，都会报错
+
+```js
+let { prop: x } = undefined; // TypeError
+let { prop: y } = null; // TypeError
+
+let { toString: s } = 123;
+s === Number.prototype.toString; // true
+
+let { toString: s } = true;
+s === Boolean.prototype.toString; // true
+```
+
+---
+
+### 函数参数的解构赋值
+
+```js
+[
+  [1, 2],
+  [3, 4],
+].map(([a, b]) => a + b);
+// [ 3, 7 ]
+```
+
+```js
+function move({ x = 0, y = 0 } = {}) {
+  return [x, y];
+}
+move({ x: 3, y: 8 }); // [3, 8]
+move({ x: 3 }); // [3, 0]
+move({}); // [0, 0]
+move(); // [0, 0]
+```
+
+---
+
+### 圆括号问题
+
+- ES6 的规则是，只要有可能导致解构的歧义，就不得使用圆括号。
+- 建议只要有可能，就不要在模式中放置圆括号
+
+### 不能使用圆括号的情况
+
+- 变量声明语句
+- 函数参数也属于变量声明，因此不能带有圆括号。
+- 赋值语句的模式
+
+### 可以使用圆括号的情况
+
+---
+
+### 变量的解构赋值用途
+
+- 交换变量的值 swap function
+- 从函数返回多个值 `let [a, b, c] = example();`, `let { foo, bar } = example();`
+- 函数参数的定义
+
+```js
+// 参数是一组无次序的值
+function f({x, y, z}) { ... }
+f({z: 3, y: 2, x: 1});
+```
+
+---

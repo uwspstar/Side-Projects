@@ -8,3 +8,15 @@ x; // 1
 let [x = 1] = [null];
 x; // null
 
+/*
+只要等号右边的值不是对象或数组，就先将其转为对象。由于 undefined 和 null 无法转为对象，所以对它们进行解构赋值，都会报错
+
+*/
+let { prop: x } = undefined; // TypeError
+let { prop: y } = null; // TypeError
+
+let { toString: s } = 123;
+s === Number.prototype.toString; // true
+
+let { toString: s } = true;
+s === Boolean.prototype.toString; // true
