@@ -485,11 +485,128 @@ i18n`Welcome to ${siteName}`;
 - ES6 提供了 codePointAt()方法，能够正确处理 4 个字节储存的字符
 - codePointAt()方法会正确返回 32 位的 UTF-16 字符的码点。对于那些两个字节储存的常规字符，它的返回结果与 charCodeAt()方法相同
 - codePointAt()方法是测试一个字符由两个字节还是由四个字节组成的最简单方法。
+
 ```js
 function is32Bit(c) {
-  return c.codePointAt(0) > 0xFFFF;
+  return c.codePointAt(0) > 0xffff;
 }
 
-is32Bit("𠮷") // true
-is32Bit("a") // false
+is32Bit('𠮷'); // true
+is32Bit('a'); // false
 ```
+
+---
+
+#### normalize()
+
+- ES6 提供字符串实例的 normalize()方法，用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化.
+- normalize 方法可以接受一个参数来指定 normalize 的方式
+
+  ```js
+  '\u01D1'.normalize() === '\u004F\u030C'.normalize()`
+  ```
+
+---
+
+#### includes(), startsWith(), endsWith()
+
+- 传统上，JavaScript 只有 indexOf 方法，可以用来确定一个字符串是否包含在另一个字符串中。
+- ES6 又提供了三种新方法。这三个方法都支持第二个参数，表示开始搜索的位置。
+  - includes()：返回布尔值，表示是否找到了参数字符串。
+  - startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
+  - endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部
+
+---
+
+#### padStart()，padEnd()
+
+- padStart()的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串
+
+```js
+'1'.padStart(10, '0'); // "0000000001"
+'12'.padStart(10, 'YYYY-MM-DD'); // "YYYY-MM-12"
+```
+
+- ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。
+
+```js
+'x'.padStart(5, 'ab'); // 'ababx'
+'x'.padEnd(5, 'ab'); // 'xabab'
+'xxx'.padStart(2, 'ab'); // 'xxx'
+'xxx'.padEnd(2, 'ab'); // 'xxx'
+'abc'.padStart(10, '0123456789');
+'x'.padStart(4); // '   x'
+'x'.padEnd(4); // 'x   '
+```
+
+---
+
+#### repeat()
+
+- repeat 方法返回一个新字符串，表示将原字符串重复 n 次
+
+#### trimStart()，trimEnd()
+
+- trim()一致，trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。
+- trimStart()，trimEnd() 返回的都是新字符串，不会修改原始字符串。
+
+#### matchAll()
+
+---
+
+### RegExp 构造函数
+
+- https://wangdoc.com/es6/regex.html
+- 在 ES5 中，RegExp 构造函数的参数有两种情况
+  - 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）
+  - 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。
+- ES6 改变了这种行为。如果 RegExp 构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。
+
+---
+
+### 字符串的正则方法
+
+- 字符串对象共有 4 个方法，可以使用正则表达式：match()、replace()、search()和 split()
+- ES6 将这 4 个方法，在语言内部全部调用 RegExp 的实例方法
+
+```js
+String.prototype.match 调用 RegExp.prototype[Symbol.match]
+String.prototype.replace 调用 RegExp.prototype[Symbol.replace]
+String.prototype.search 调用 RegExp.prototype[Symbol.search]
+String.prototype.split 调用 RegExp.prototype[Symbol.split]
+```
+
+---
+
+### u 修饰符
+
+- ES6 对正则表达式添加了 u 修饰符，含义为“Unicode 模式”，用来正确处理大于\uFFFF 的 Unicode 字符。也就是说，会正确处理四个字节的 UTF-16 编码。
+
+### RegExp.prototype.unicode 属性
+
+- https://wangdoc.com/es6/regex.html
+
+### y 修饰符
+
+- https://wangdoc.com/es6/regex.html
+
+---
+
+### Iterator 遍历器转为数组
+
+- 使用...运算符和 Array.from()方法就可以了
+
+```js
+// 转为数组的方法一
+[...string.matchAll(regex)];
+
+// 转为数组的方法二
+Array.from(string.matchAll(regex));
+```
+
+- ES2020 增加了 String.prototype.matchAll()方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组
+- string.matchAll(regex) 返回的是遍历器
+
+---
+
+### 数值的扩展
