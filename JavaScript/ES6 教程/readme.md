@@ -459,12 +459,37 @@ i18n`Welcome to ${siteName}`;
 ### 字符串的新增方法
 
 - https://wangdoc.com/es6/string-methods.html
-- `String.fromCodePoint() vs String.fromCharCode()`
-  - `ES5` 提供 `String.fromCharCode()`方法，用于从 `Unicode` 码点返回对应字符，但是这个方法不能识别码点大于 `0xFFFF` 的字符
-  - `ES6` 提供了 `String.fromCodePoint()`方法，可以识别大于 `0xFFFF` 的字符
+
+#### String.fromCodePoint() vs String.fromCharCode()
+
+- `ES5` 提供 `String.fromCharCode()`方法，用于从 `Unicode` 码点返回对应字符，但是这个方法不能识别码点大于 `0xFFFF` 的字符
+- `ES6` 提供了 `String.fromCodePoint()`方法，可以识别大于 `0xFFFF` 的字符
 - 如果 `String.fromCodePoint` 方法有多个参数，则它们会被合并成一个字符串返回。
-- 注意，`fromCodePoint` 方法定义在 `String` 对象上，而 `codePointAt` 方法定义在字符串的实例对象上
 
 ---
-- `String.raw()`  
+
+#### String.raw()
+
 - `ES6` `String.raw()` 方法可以作为处理模板字符串的基本方法，它会将所有变量替换，而且对斜杠进行转义，方便下一步作为字符串来使用
+
+---
+
+#### codePointAt
+
+- 注意，`fromCodePoint` 方法定义在 `String` 对象上，而 `codePointAt` 方法定义在字符串的实例对象上
+- `JavaScript` 内部，字符以 `UTF-16` 的格式储存，每个字符固定为 2 个字节。
+- 对于那些需要 4 个字节储存的字符（`Unicode` 码点大于 `0xFFFF` 的字符），`JavaScript` 会认为它们是两个字符。
+
+---
+
+- ES6 提供了 codePointAt()方法，能够正确处理 4 个字节储存的字符
+- codePointAt()方法会正确返回 32 位的 UTF-16 字符的码点。对于那些两个字节储存的常规字符，它的返回结果与 charCodeAt()方法相同
+- codePointAt()方法是测试一个字符由两个字节还是由四个字节组成的最简单方法。
+```js
+function is32Bit(c) {
+  return c.codePointAt(0) > 0xFFFF;
+}
+
+is32Bit("𠮷") // true
+is32Bit("a") // false
+```
