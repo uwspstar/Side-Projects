@@ -449,3 +449,22 @@ alert(['hello']);
 ```js
 i18n`Welcome to ${siteName}`;
 ```
+
+---
+
+- 对字符串转义的放松，只在标签模板解析字符串时生效，不是标签模板的场合，依然会报错
+
+---
+
+### 字符串的新增方法
+
+- https://wangdoc.com/es6/string-methods.html
+- `String.fromCodePoint() vs String.fromCharCode()`
+  - `ES5` 提供 `String.fromCharCode()`方法，用于从 `Unicode` 码点返回对应字符，但是这个方法不能识别码点大于 `0xFFFF` 的字符
+  - `ES6` 提供了 `String.fromCodePoint()`方法，可以识别大于 `0xFFFF` 的字符
+- 如果 `String.fromCodePoint` 方法有多个参数，则它们会被合并成一个字符串返回。
+- 注意，`fromCodePoint` 方法定义在 `String` 对象上，而 `codePointAt` 方法定义在字符串的实例对象上
+
+---
+- `String.raw()`  
+- `ES6` `String.raw()` 方法可以作为处理模板字符串的基本方法，它会将所有变量替换，而且对斜杠进行转义，方便下一步作为字符串来使用
