@@ -31,6 +31,7 @@ $ node --v8-options | findstr harmony
 
 ### Babel
 
+- https://babeljs.io/repl
 - https://wangdoc.com/es6/intro.html
 - `Babel` 是一个广泛使用的 `ES6` 转码器，可以将 `ES6` 代码转为 `ES5` 代码，从而在老版本的浏览器执行
 - `$ npm install --save-dev @babel/core`
@@ -53,7 +54,7 @@ $ node --v8-options | findstr harmony
 - `let`命令所声明的变量一定要在声明后使用，否则报错。
 - `let` 不允许在相同作用域内，重复声明同一个变量
 - `var`命令会发生“变量提升”现象，即变量可以在声明之前使用，值为`undefined`
-- 只要块级作用域内存在 let 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。
+- 只要块级作用域内存在 `let` 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。
 
 ```js
 var tmp = 123;
@@ -66,9 +67,11 @@ if (true) {
 
 ---
 
-- ES6 明确规定，如果区块中存在 let 和 const 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。
+- `ES6` 明确规定，如果区块中存在 `let` 和 `const` 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。
 
-- 总之，在代码块内，使用 let 命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。
+- 总之，在代码块内，使用 `let` 命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。
+
+---
 
 - `typeof` 不再是一个百分之百安全的操作。
 
@@ -77,20 +80,18 @@ typeof x; // ReferenceError
 let x;
 ```
 
-- 作为比较，如果一个变量根本没有被声明，使用 typeof 反而不会报错。
+- 作为比较，如果一个变量根本没有被声明，使用 `typeof` 反而不会报错。
 
 ```js
 typeof undeclared_variable; // "undefined"
 ```
 
----
-
-- ES6 规定暂时性死区和 let、const 语句不出现变量提升
+- `ES6` 规定暂时性死区和 `let`、`const` 语句不出现变量提升
 
 ---
 
-- ES5 只有全局作用域和函数作用域，没有块级作用域
-- 块级作用域的出现，实际上使得获得广泛应用的匿名立即执行函数表达式（匿名 IIFE）不再必要了。
+- `ES5` 只有全局作用域和函数作用域，没有块级作用域
+- `块级作用域`的出现，实际上使得获得广泛应用的匿名立即执行函数表达式（匿名 IIFE）不再必要了。
 
 ```js
 // IIFE 写法
@@ -108,9 +109,39 @@ typeof undeclared_variable; // "undefined"
 
 ---
 
-- ES5 中 if 内声明的函数 f 会被提升到函数头部
-- ES6 环境中，块级作用域内声明的函数，行为类似于 var 声明的变量。
-- 考虑到环境导致的行为差异太大，应该避免在块级作用域内声明函数。如果确实需要，也应该写成函数表达式，而不是函数声明语句。
+### JavaScript 中 块级作用域 和 函数作用域
+
+- https://www.jianshu.com/p/a7f9951f329a
+- `函数作用域`: ES5, ES6 语法并没有变化：作用域仅限于函数内部.
+
+```js
+function add(a, b) {
+  var sum = a + b;
+  return sum;
+}
+console.log(add(1, 3));
+console.log(sum); //  ReferenceError: sum is not defined
+```
+
+---
+
+- 块级作用域：ES6 带来的新特性，在 ES5 中时没有这个功能滴. 而`块级作用域`指的就是使用 `if () { }; while ( ) { } `...这些语句所形成的语句块 , 并且其中变量必须使用 `let` 或 `const` 声明,保证了外部不可以访问语句块中的变量.
+
+```js
+if (true) {
+  var name = 'bob';
+  console.log(name); // bob
+}
+console.log(name); // ES5 bob; if语句内部访问name还是在外部访问name都不会报错
+```
+
+- ES6 作用完全一样,你的变量不论是使用 var 声明还是使用了 let ,const 声明在外部都是不可以访问的.
+
+---
+
+- `ES5` 中 `if` 内声明的函数 `f` 会被提升到函数头部
+- `ES6` 环境中，块级作用域内声明的函数，行为类似于 `var` 声明的变量。
+- 考虑到环境导致的行为差异太大，`应该避免在块级作用域内声明函数`。如果确实需要，也`应该写成函数表达式`，而不是函数声明语句。
 
 ---
 
