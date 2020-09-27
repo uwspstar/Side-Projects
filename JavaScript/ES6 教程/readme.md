@@ -1,8 +1,8 @@
 ---
 marp: true
 theme: default
-header: 'ES6 教程'
-footer: 'study note by Xing'
+header: 'ES6 教程 : https://wangdoc.com/es6/'
+footer: 'study note by Xing, source https://wangdoc.com/es6/'
 paginate: true
 size: 16:9
 ---
@@ -168,7 +168,9 @@ foo = {}; // TypeError: "foo" is read-only
 ```
 
 ---
+
 ### 对象冻结
+
 - 如果真的想将对象冻结，应该使用 Object.freeze 方法。
 
 ```js
@@ -182,14 +184,14 @@ foo.prop = 123;
 ---
 
 - `ES5` 只有两种声明变量的方法：`var` 命令和 `function` 命令。
-- ES6 除了添加 let 和 const 命令，后面章节还会提到，另外两种声明变量的方法：import 命令和 class 命令。所以，ES6 一共有 6 种声明变量的方法。
+- `ES6` 共有 6 种声明变量的方法. 除了添加 `let` 和 `const` 命令，另外两种声明变量的方法：`import` 命令和 `class` 命令.
 
 ---
 
 ### 顶层对象的属性
 
-- 在浏览器环境指的是 window 对象，在 Node 指的是 global 对象
-- 全局变量 a 由 var 命令声明，所以它是顶层对象的属性；全局变量 b 由 let 命令声明，所以它不是顶层对象的属性，返回 undefined
+- 在浏览器环境指的是 `window` 对象，在 Node 指的是 `global` 对象
+- 全局变量 a 由 `var` 命令声明，所以它是顶层对象的属性；全局变量 b 由 `let` 命令声明，所以它不是顶层对象的属性，返回 `undefined`
 
 ```js
 var a = 1;
@@ -205,9 +207,9 @@ window.b; // undefined
 
 ### global This
 
-- 浏览器里面，顶层对象是 window，但 Node 和 Web Worker 没有 window。
-- 浏览器和 Web Worker 里面，self 也指向顶层对象，但是 Node 没有 self。
-- Node 里面，顶层对象是 global，但其他环境都不支持。
+- `浏览器里面`，顶层对象是 `window`，但 `Node` 和 `Web Worker` 没有 window。
+- `浏览器`和 `Web Worker` 里面，`self` 也指向顶层对象，但是 `Node` 没有 `self`。
+- `Node` 里面，顶层对象是 `global`，但其他环境都不支持。
 
 ---
 
@@ -225,7 +227,13 @@ third; // "baz"
 let [x, , y] = [1, 2, 3];
 x; // 1
 y; // 3
+```
 
+---
+
+- `...` means `array []`
+
+```js
 let [head, ...tail] = [1, 2, 3, 4];
 head; // 1
 tail; // [2, 3, 4]
@@ -238,7 +246,7 @@ z; // []
 
 ---
 
-- 事实上，只要某种数据结构具有 Iterator 接口，都可以采用数组形式的解构赋值。
+- 事实上，只要某种数据结构具有 `Iterator` 接口，都可以采用数组形式的解构赋值。
 
 ```js
 function* fibs() {
@@ -258,8 +266,8 @@ sixth; // 5
 
 ### 默认值
 
-- ES6 内部使用严格相等运算符（`===`），判断一个位置是否有值。所以，只有当一个数组成员严格等于 `undefined`，默认值才会生效。
-- 如果一个数组成员是 null，默认值就不会生效，因为 null 不严格等于 undefined。
+- `ES6` 内部使用严格相等运算符（`===`），判断一个位置是否有值。所以，只有当一个数组成员严格等于 `undefined`，默认值才会生效。
+- 如果一个数组成员是 `null`，默认值就不会生效，因为 `null` 不严格等于 `undefined`。
 
 ```js
 let [x = 1] = [undefined];
@@ -270,3 +278,27 @@ x; // null
 ```
 
 ---
+
+### 注意点
+
+- 如果要将一个已经声明的变量用于解构赋值，必须非常小心. 因为 JavaScript 引擎会将{x}理解成一个代码块，从而发生语法错误。只有不将大括号写在行首，避免 JavaScript 将其解释为代码块，才能解决这个问题。
+
+```js
+// 错误的写法
+let x;
+{x} = {x: 1}; // SyntaxError: syntax error
+// 正确的写法
+let x;
+({x} = {x: 1});
+```
+
+---
+
+- https://wangdoc.com/es6/destructuring.html
+- 解构赋值允许等号左边的模式之中，不放置任何变量名。因此，可以写出非常古怪的赋值表达式。
+
+```js
+({} = [true, false]);
+({} = 'abc');
+({} = []);
+```
