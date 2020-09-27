@@ -377,17 +377,13 @@ move(); // [0, 0]
 
 ### 变量的解构赋值用途
 
-- 交换变量的值 swap function
+- 输入模块的指定方法 `const { SourceMapConsumer, SourceNode } = require("source-map");`
+- 交换变量的值 `const swap = (arr,i,j) => [[i],[j]] =[[j],[x]];`
 - 从函数返回多个值 `let [a, b, c] = example();`, `let { foo, bar } = example();`
-- 函数参数的定义
-
-```js
-// 参数是一组无次序的值
-function f({x, y, z}) { ... }
-f({z: 3, y: 2, x: 1});
-```
-
+- 函数参数的定义 `function f({x, y, z}) { ... } f({z: 3, y: 2, x: 1});`
 - 提取 `JSON` 数据 `let { id, status, data: number } = jsonData;`
 - 函数参数的默认值
 
 ---
+
+### 字符串的扩展
