@@ -706,3 +706,58 @@ Number.isInteger(25.0); // true
 ### 函数的扩展
 
 - https://wangdoc.com/es6/function.html
+- ES6 允许为函数的参数设置默认值
+- 参数变量是默认声明的，所以不能用 let 或 const 再次声明
+- 使用参数默认值时，函数不能有同名参数
+- 指定了默认值后，length 属性将失真 (length 属性的含义是，该函数预期传入的参数个数). 指定了默认值以后，函数的 length 属性，将返回没有指定默认值的参数个数. 默认值的参数不是尾参数，那么 length 属性也不再计入后面的参数了。`(function (a, b, c = 5, d) {}).length // 2`
+
+---
+
+- 解构赋值默认值的例子
+
+```js
+function fetch(url, { body = '', method = 'GET', headers = {} }) {
+  console.log(method);
+}
+fetch('http://example.com', {});
+// "GET"
+fetch('http://example.com');
+// 报错
+```
+
+---
+
+- 如果传入 `undefined`，将触发该参数等于默认值，`null` 则没有这个效果。
+
+```js
+function foo(x = 5, y = 6) {
+  console.log(x, y);
+}
+
+foo(undefined, null);
+// 5 null
+```
+
+---
+
+### 函数作用域
+
+- https://wangdoc.com/es6/function.html#%E4%BD%9C%E7%94%A8%E5%9F%9F
+- 一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。
+
+---
+
+### rest 参数
+
+- https://wangdoc.com/es6/function.html#rest-%E5%8F%82%E6%95%B0
+  -- rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
+
+```js
+// arguments变量的写法
+function sortNumbers() {
+  return Array.prototype.slice.call(arguments).sort();
+}
+
+// rest参数的写法
+const sortNumbers = (...numbers) => numbers.sort();
+```
