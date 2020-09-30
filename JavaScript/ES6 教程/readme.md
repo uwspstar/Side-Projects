@@ -747,10 +747,11 @@ foo(undefined, null);
 
 ---
 
-### rest 参数
+### 函数 rest 参数
 
 - https://wangdoc.com/es6/function.html#rest-%E5%8F%82%E6%95%B0
-  -- rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
+- rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
+- rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错
 
 ```js
 // arguments变量的写法
@@ -760,4 +761,22 @@ function sortNumbers() {
 
 // rest参数的写法
 const sortNumbers = (...numbers) => numbers.sort();
+```
+
+---
+
+### 函数 严格模式
+
+- https://wangdoc.com/es6/function.html#%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F
+
+### 函数的 name 属性，返回该函数的函数名
+
+- https://wangdoc.com/es6/function.html#name-%E5%B1%9E%E6%80%A7
+
+```js
+const bar = function baz() {};
+// ES5
+bar.name; // "baz"
+// ES6
+bar.name; // "baz"
 ```
