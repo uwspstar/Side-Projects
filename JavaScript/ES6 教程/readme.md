@@ -610,3 +610,99 @@ Array.from(string.matchAll(regex));
 ---
 
 ### 数值的扩展
+
+### 二进制和八进制表示法
+
+- ES6 提供了二进制和八进制数值的新的写法，分别用前缀 0b（或 0B）和 0o（或 0O）表示
+- 从 ES5 开始，在严格模式之中，八进制就不再允许使用前缀 0 表示，ES6 进一步明确，要使用前缀 0o 表示
+- 如果要将 0b 和 0o 前缀的字符串数值转为十进制，要使用 Number 方法
+
+```js
+Number('0b111'); // 7
+Number('0o10'); // 8
+```
+
+---
+
+#### Number.isFinite(), Number.isNaN()
+
+- 如果参数类型不是数值，Number.isFinite 一律返回 false
+- 如果参数类型不是 NaN，Number.isNaN 一律返回 false
+- 它们与传统的全局方法 isFinite()和 isNaN()的区别在于，传统方法先调用 Number()将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，Number.isFinite()对于非数值一律返回 false, Number.isNaN()只有对于 NaN 才返回 true，非 NaN 一律返回 false。
+
+---
+
+#### Number.parseInt(), Number.parseFloat()
+
+- ES6 将全局方法 parseInt()和 parseFloat()，移植到 Number 对象上面，行为完全保持不变
+
+```js
+// ES5的写法
+parseInt('12.34'); // 12
+parseFloat('123.45#'); // 123.45
+
+// ES6的写法
+Number.parseInt('12.34'); // 12
+Number.parseFloat('123.45#'); // 123.45
+```
+
+---
+
+#### Number.isInteger() 用来判断一个数值是否为整数
+
+- 如果对数据精度的要求较高，不建议使用 Number.isInteger()判断一个数值是否为整数
+- 如果参数不是数值，Number.isInteger 返回 false
+- JavaScript 内部，整数和浮点数采用的是同样的储存方法，所以 25 和 25.0 被视为同一个值。
+
+```js
+Number.isInteger(25); // true
+Number.isInteger(25.0); // true
+```
+
+---
+
+#### Number.EPSILON
+
+- https://wangdoc.com/es6/number.html#numberepsilon
+- Number.EPSILON 实际上是 JavaScript 能够表示的最小精度。误差如果小于这个值，就可以认为已经没有意义了，即不存在误差了
+
+---
+
+#### 安全整数和 Number.isSafeInteger()
+
+- https://wangdoc.com/es6/number.html#%E5%AE%89%E5%85%A8%E6%95%B4%E6%95%B0%E5%92%8C-numberissafeinteger
+
+### BigInt 数据类型
+
+- https://wangdoc.com/es6/number.html#bigint-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B
+
+- JavaScript 所有数字都保存成 64 位浮点数，这给数值的表示带来了两大限制。一是数值的精度只能到 53 个二进制位（相当于 16 个十进制位），大于这个范围的整数，JavaScript 是无法精确表示的.
+
+---
+
+- ES2020 引入了一种新的数据类型 BigInt（大整数），来解决这个问题，这是 ECMAScript 的第八种数据类型。BigInt 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。`1234n // BigInt`
+- BigInt 可以使用负号（-），但是不能使用正号（+），因为会与 asm.js 冲突。
+- `BigInt(123) // 123n`
+- 可以使用 Boolean()、Number()和 String()这三个方法，将 BigInt 可以转为布尔值、数值和字符串类型。
+- BigInt 不能与普通数值进行混合运算 `1n + 1.3 // 报错`
+- 同样的原因，如果一个标准库函数的参数预期是 Number 类型，但是得到的是一个 BigInt，就会报错。`Math.sqrt(4n) // 报错`
+- BigInt 与字符串混合运算时，会先转为字符串，再进行运算。
+
+---
+
+### Math 对象的扩展
+
+- https://wangdoc.com/es6/number.html#math-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95
+- ES6 在 Math 对象上新增了 17 个与数学相关的方法。所有这些方法都是静态方法，只能在 Math 对象上调用
+
+### 指数运算符
+
+- ES2016 新增了一个指数运算符（\*\*）
+- 特点是右结合，而不是常见的左结合。多个指数运算符连用时，是从最右边开始计算的
+  `2 ** 3 ** 2 // 相当于 2 ** (3 ** 2) //512`
+
+---
+
+### 函数的扩展
+
+- https://wangdoc.com/es6/function.html
