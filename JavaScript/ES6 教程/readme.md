@@ -811,11 +811,29 @@ bar.name; // "baz"
 
 - https://wangdoc.com/es6/function.html#%E4%B8%8D%E9%80%82%E7%94%A8%E5%9C%BA%E5%90%88
 
+---
+
 ### 尾递归函数
 
 - https://wangdoc.com/es6/function.html#%E5%B0%BE%E9%80%92%E5%BD%92
 - ES6 中只要使用尾递归，就不会发生栈溢出（或者层层递归造成的超时），相对节省内存。
+- ES6 的尾调用优化只在严格模式下开启，正常模式是无效的
+- 这是因为在正常模式下，函数内部有两个变量，可以跟踪函数的调用栈。
+  - func.arguments：返回调用时函数的参数。
+  - func.caller：返回调用当前函数的那个函数
+
+---
+
+### 数组的扩展
+
+- https://wangdoc.com/es6/array.html
+
+#### 扩展运算符
+
+---
 
 ### 递归函数的改写
 
 - https://wangdoc.com/es6/function.html#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%94%B9%E5%86%99
+
+---
