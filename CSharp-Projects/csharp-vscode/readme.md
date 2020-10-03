@@ -1,15 +1,15 @@
 ---
 marp: true
 theme: uncover
-header: "Csharp Vscode"
-footer: "by Xing"
+header: 'Csharp Vscode'
+footer: 'by Xing'
 paginate: true
 size: 16:9
 ---
 
 <!--
-_backgroundColor: grey
-_color: white
+_backgroundColor: while
+_color: black
 -->
 
 # Csharp Vscode

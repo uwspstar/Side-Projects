@@ -44,3 +44,9 @@ _color: black
 ### Verification code
 
 - open source
+
+### build project
+
+- `dotnet new sln -n "crawler"`
+- `dotnet new console -n "Crawler"`
+- `dotnet sln crawler.sln add ./Crawler/Crawler.csproj`
