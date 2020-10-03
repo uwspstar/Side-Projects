@@ -12,6 +12,10 @@ _backgroundColor: white
 _color: black
 -->
 
+### command line
+
+- https://www.w3schools.com/whatis/whatis_cli.asp
+
 # c# 70-483
 
 - The Microsoft 70-483 exam focuses on a broad range of topics that you can use in your work as a C# developer.
