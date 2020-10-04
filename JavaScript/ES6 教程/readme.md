@@ -837,3 +837,5 @@ bar.name; // "baz"
 - https://wangdoc.com/es6/function.html#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%94%B9%E5%86%99
 
 ---
+
+### 替代函数的 apply 方法
