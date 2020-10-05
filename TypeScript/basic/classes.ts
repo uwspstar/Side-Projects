@@ -18,12 +18,13 @@ class Car extends Vehicle {
   }
 }
 
-/*
-const vehicle = new Vehicle();
-vehicle.drive();
-vehicle.honk();
-*/
+abstract class Play {
+  public name:string;
+  public abstract sayHi();
+}
 
-const car = new Car();
-car.drive();
-car.honk();
+class Boy extends Play {
+  public sayHi(){};
+}
+
+
