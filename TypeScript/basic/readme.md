@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: default
-header: 'Nodejs Projects'
+header: 'Typescript Projects'
 footer: 'https://www.udemy.com/course/typescript-the-complete-developers-guide/learn/lecture/14504488?start=0#overview'
 paginate: true
 size: 16:9

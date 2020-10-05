@@ -1,5 +1,16 @@
-# Angular-Projects
-### install cli gloabl
+---
+marp: true
+theme: default
+header: 'Nodejs Projects'
+footer: ''
+paginate: true
+size: 16:9
+---
 
-- ```$npm install -g @anglar/cli```
-- ```sudo npm install -g @anglar/cli```
+# Angular-Projects
+
+### install cli global
+
+- `$npm install -g @anglar/cli`
+- `sudo npm install -g @anglar/cli`
+- ng -v
