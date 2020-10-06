@@ -18,18 +18,25 @@ size: 16:9
 
 ---
 
+### gRPC for .NET
+
+- https://grpc.io/docs/languages/csharp/dotnet/
+- https://grpc.io/docs/languages/csharp/
+
+---
+
 ### RPC (Remote Procedure Calls)
 
 - RPC (`Remote Procedure Calls`)
-- In your Client code, it looks like you're just calling a function directly on the Server
-- at the `core of gRPC`, you need to define the messages and services using `Protocol Buffers`
+- In your `Client` code, it looks like you're just calling a function directly on the `Server`
+- at the `core of gRPC`, you need to define the `messages` and `services` using `Protocol Buffers`
 
 ---
 
 ### Protocol Buffers
 
 - Data is `binary` and `efficiently serialized` (`small payloads`) , this is one reason we are not using `JSON` data.
-- `binary data` is `less CPU intensive`, good for Mobile
+- `binary data` is `less CPU intensive`, good for `Mobile`
 - `Protocol Buffers` are language agnostic
 - code can be generated for pretty much any language
 
@@ -41,3 +48,5 @@ size: 16:9
 - `service` (service name and RPC endpoints)
 
 ---
+
+### HTTP/2 vs. HTTP/1.1
