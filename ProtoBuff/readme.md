@@ -21,6 +21,12 @@ size: 16:9
 ### Protocol Buffers v3.13.0 Releases
 
 - https://github.com/protocolbuffers/protobuf/releases
+- `protoc-3.13.0-osx-x86_64/bin/protoc --js_out=import_style=commonjs,binary:. employees.proto`
+- mac allow anyway
+
+```js
+(base) xings-MBP:demo xingwang$ /Users/xingwang/Side-Projects/ProtoBuff/protoc-3.13.0-osx-x86_64/bin/protoc --js_out=import_style=commonjs,binary:. employees.proto
+```
 
 ###
 
