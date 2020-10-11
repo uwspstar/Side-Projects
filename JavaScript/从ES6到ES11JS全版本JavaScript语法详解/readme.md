@@ -13,9 +13,8 @@ size: 16:9
 
 ---
 
-### let
+### let (2020-10-10)
 
-- 2020-10-10
 - not windows object
 - does not allow declare again after a variable has been declared
 
@@ -162,12 +161,50 @@ Object.freeze(obj.skill);
 
 ---
 
-### how the variable saved in JS
+### How the data saved in JS
 
 - `stack`
-  - primate : value (num, str)
-  - object : address (obj, arr, etc)
+  - primitives : value (num, str)
+  - Structural : address (obj, arr, etc)
 - `heap`
   - value related the obj address from stack
 
-### 解构赋值
+---
+
+![75% bg brightness:0.9](data.png)
+
+---
+
+### The latest ECMAScript standard defines nine types:
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
+
+---
+
+### Primitives
+
+- Six Data Types that are `primitives`, checked by typeof operator:
+  - undefined : typeof instance === "undefined"
+  - Boolean : typeof instance === "boolean"
+  - Number : typeof instance === "number"
+  - String : typeof instance === "string"
+  - BigInt : typeof instance === "bigint"
+  - Symbol : typeof instance === "symbol"
+
+---
+
+### Structural
+
+- Structural Types: everything made with new keyword
+  - `Object` : typeof instance === "object". Special non-data but Structural type for any constructed object instance also used as data structures: `new Object`, `new Array`, `new Map`, `new Set`, `new WeakMap`, `new WeakSet`, `new Date` and almost `everything made with new keyword`;
+  - `Function` : a non-data structure, though it also answers for typeof operator: typeof instance === "function". This is merely a special shorthand for Functions, though every Function constructor is derived from Object constructor.
+
+---
+
+### Structural Root Primitive:
+
+- `null` : typeof instance === "object". Special primitive type having additional usage for its value: if object is not inherited, then null is shown;
+
+---
+
+### 解构赋值 (2020-10-11)
