@@ -114,3 +114,60 @@ for (var i = 0; i < 3; i++) {
 ```
 
 ---
+
+### const
+
+- cannot change
+- ES5
+
+```js
+Object.defineProperty(window, 'PI', {
+  value: 3.14,
+  writable: false,
+});
+```
+
+- ES6
+
+```js
+const a = 5;
+```
+
+```js
+const b
+b = 5
+//error
+```
+
+---
+
+```js
+const obj = {
+  name: 'xing',
+  age: 20,
+  skill: {
+    name: 'code',
+    year: 15,
+  },
+};
+console.log(obj);
+```
+
+- `Object.freeze` : recursive to free deep object
+
+```js
+Object.freeze(obj);
+Object.freeze(obj.skill);
+```
+
+---
+
+### how the variable saved in JS
+
+- `stack`
+  - primate : value (num, str)
+  - object : address (obj, arr, etc)
+- `heap`
+  - value related the obj address from stack
+
+### 解构赋值
