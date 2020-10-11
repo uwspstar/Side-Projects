@@ -208,3 +208,125 @@ Object.freeze(obj.skill);
 ---
 
 ### 解构赋值 (2020-10-11)
+
+```js
+let [a, b, [c, d], e] = [1, 2, [3, 4]];
+console.log(a, b, c, d, e);
+// 1 2 3 4 undefined
+```
+
+```js
+let [a, b, c, d] = 'xing';
+console.log(a, b, c, d); //x i n g
+```
+
+```js
+let [a, b, c = 3, d] = [1, 2];
+console.log(a, b, c, d); //1 2 3 undefined
+```
+
+---
+
+```js
+let user = {
+  name: 'xing',
+  age: '30',
+};
+
+let { name, age } = user;
+
+console.log(name, age); // xing 30
+console.log(age, name); // 30 xing
+```
+
+---
+
+```js
+let user = {
+  name: 'xing',
+  //age: '30',
+};
+
+let { name, age = 18 } = user;
+
+console.log(name, age); // xing 18
+console.log(age, name); // 18 xing
+```
+
+---
+
+- if obj has attribute
+
+```js
+let user = {
+  name: 'xing',
+  age: 30,
+};
+
+let { name, age = 18 } = user;
+
+console.log(name, age); // xing 30
+console.log(age, name); // 30 xing
+```
+
+---
+
+```js
+let user = {
+  name: 'xing',
+  age: '30',
+};
+
+let { name: myName, age: myAge } = user;
+
+console.log(myName, myAge); // 30 xing
+console.log(name, age); // ReferenceError: name is not defined
+```
+
+---
+
+```js
+function foo() {
+  console.log(123);
+}
+
+let [a = foo()] = [1];
+let [b = foo()] = [];
+
+console.log(a, b); // 1 123
+```
+
+```js
+function foo([a, b, c]) {
+  console.log(a, b, c);
+}
+let arr = [1, 2, 3];
+foo(arr); // 1 2 3
+```
+
+---
+
+```js
+function foo({ age, name, school = 'MIT' }) {
+  console.log(name, age, school);
+}
+let user = {
+  name: 'xing',
+  age: 18,
+};
+foo(user); // xing 18 MIT
+```
+
+---
+
+```js
+function foo() {
+  let user = {
+    name: 'xing',
+    age: 18,
+  };
+  return user;
+}
+let { age, name, school = 'MIT' } = foo();
+console.log(name, age, school); //xing 18 MIT
+```

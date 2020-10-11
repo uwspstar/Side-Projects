@@ -1,5 +1,9 @@
-for (var i = 0; i < 3; i++) {
-    setTimeout(function () {
-      console.log(i);
-    });
-  }
+function foo() {
+    let user = {
+        name: "xing",
+        age: 18
+    }
+    return user;
+}
+let { age, name, school = 'MIT' } = foo()
+console.log(name, age, school);//xing 18 MIT
