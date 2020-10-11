@@ -330,3 +330,26 @@ function foo() {
 let { age, name, school = 'MIT' } = foo();
 console.log(name, age, school); //xing 18 MIT
 ```
+
+---
+
+- `JSON` (`JavaScript Object Notation`) is a lightweight data-interchange format, derived from JavaScript, but used by many programming languages.
+- JSON builds universal data structures.
+
+```js
+// JSON data key and value are string
+let data = '{"name" : "xing" , "age" : "18"}';
+let { age, name } = JSON.parse(data);
+console.log(name, age); //xing 18
+```
+
+---
+
+![75% bg brightness:0.9](es5.png)
+
+---
+
+![75% bg brightness:0.9](es6.png)
+
+---
+### ES5 

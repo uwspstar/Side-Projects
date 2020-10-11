@@ -1,9 +1,4 @@
-function foo() {
-    let user = {
-        name: "xing",
-        age: 18
-    }
-    return user;
-}
-let { age, name, school = 'MIT' } = foo()
-console.log(name, age, school);//xing 18 MIT
+// JSON data key and value are string
+let data = '{"name" : "xing" , "age" : "18"}'
+let { age, name } = JSON.parse(data)
+console.log(name, age);//xing 18
