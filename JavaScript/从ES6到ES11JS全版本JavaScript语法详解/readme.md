@@ -352,4 +352,84 @@ console.log(name, age); //xing 18
 ![75% bg brightness:0.9](es6.png)
 
 ---
-### ES5 
+
+### ES5 (2020-10-12)
+
+- `for` : can use `break` and `continue`
+- `foreach`: cannot use `break` and `continue`
+
+```js
+arr.forEach(function (elem, index, array) {
+  console.log(elem, index);
+});
+```
+
+---
+
+- `map` : generate a new array, not change original array
+
+```js
+let arr = [1, 2, 3];
+let result = arr.map(function (value) {
+  value++;
+  return value;
+});
+console.log(arr, result);
+//[ 1, 2, 3 ] [ 2, 3, 4 ]
+```
+
+---
+
+- `filter` : return a new array which item match the condition, not change original array.
+
+```js
+let arr = [1, 2, 3, 4];
+let result = arr.filter(function (value) {
+  return value % 2 === 0;
+});
+console.log(arr, result);
+//[ 1, 2, 3 ] [ 2, 4 ]
+```
+
+---
+
+- `some` : return true if any elem match the condition, otherwise return false
+
+```js
+let arr = [1, 2, 3, 4];
+let result = arr.some(function (value) {
+  return value % 2 === 0;
+});
+console.log(arr, result);
+//[ 1, 2, 3 ] true
+```
+
+---
+
+- `every` : return true if all elem match the condition, otherwise return false
+
+```js
+let arr = [1, 2, 3, 4];
+let result = arr.every(function (value) {
+  return value % 2 === 0;
+});
+console.log(arr, result);
+//[ 1, 2, 3 ] false
+```
+
+---
+
+- `reduce` :
+
+```js
+let arr = [1, 2, 3, 4];
+let result = arr.reduce(function (prev, cur, index, array) {
+  return prev + cur;
+});
+console.log(arr, result); //[ 1, 2, 3 ] 10
+
+let max = arr.reduce(function (prev, cur) {
+  return Math.max(prev, cur);
+});
+console.log(arr, max); // [ 1, 2, 3, 4 ] 4
+```
