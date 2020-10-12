@@ -12,19 +12,36 @@ _backgroundColor: white
 _color: black
 -->
 
-### Javascript 设计模式系统讲解与应用
+### Javascript 设计模式系统讲解与应用 2010-10-11
 
 - https://www.youtube.com/watch?v=XFU0KgoV2NE&list=PL9nxfq1tlKKkfCNnYKoC2yvSy4jo1AsoD&index=2
 - https://www.youtube.com/watch?v=7FjsHBSxLjE&list=PL9nxfq1tlKKkfCNnYKoC2yvSy4jo1AsoD
+- 23 design patten
 
 ---
 
-![75% bg brightness:0.9](keypoints.png)
+![65% bg brightness:0.9](keypoints.png)
 
 ---
 
-### project init
+### Object
 
+- environment
+- object
+- UML
+
+### Environment Init
+
+- install nodejs environment
+- install webpack
+- install webpack-dev-server
+- install babel
+
+---
+
+### Project Init
+
+- npm -v
 - install nodejs
 - npm init --y
 - touch .gitignore
@@ -35,11 +52,11 @@ _color: black
 
 ---
 
-### install webpack
+### Install Webpack
 
-- touch webpack.dev.config.js
-- npm install webpack webpack-cli --save-dev
-- npm install webpack-dev-server html-webpack-plugin --save-dev
+- touch `webpack.dev.config.js`
+- `npm install webpack webpack-cli --save-dev`
+- `npm install webpack-dev-server html-webpack-plugin --save-dev`
 
 ---
 

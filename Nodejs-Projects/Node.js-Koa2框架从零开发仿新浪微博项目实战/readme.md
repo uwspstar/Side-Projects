@@ -23,3 +23,7 @@ size: 16:9
 ![85% bg brightness:0.9](design.png)
 
 ---
+
+### 2010-10-11
+- node -v
+- `$ npm install -g koa-generator`
