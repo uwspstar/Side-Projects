@@ -10,4 +10,13 @@ router.get('/bar', function (ctx, next) {
   ctx.body = 'this is a users/bar response'
 })
 
+router.post('/login', async (ctx, next) => {
+  const { userName, password } = ctx.request.body;
+  //verify logic logic
+  ctx.body = {
+    tag: 100,
+    userName,
+    password
+  }
+})
 module.exports = router
