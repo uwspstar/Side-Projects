@@ -349,10 +349,6 @@ console.log(name, age); //xing 18
 
 ---
 
-![75% bg brightness:0.9](es6.png)
-
----
-
 ### ES5 (2020-10-12)
 
 - `for` : can use `break` and `continue`
@@ -433,3 +429,157 @@ let max = arr.reduce(function (prev, cur) {
 });
 console.log(arr, max); // [ 1, 2, 3, 4 ] 4
 ```
+
+### 2020-11-13
+
+```js
+let arr = [1, 1, 2, 3, 3, 4];
+let result = arr.reduce(function (prev, cur) {
+  prev.indexOf(cur) == -1 && prev.push(cur);
+  return prev;
+}, []);
+console.log(arr, result); // [ 1, 2, 3, 4 ]
+```
+
+---
+
+- `for...in` (in ->Index), but has problem to loop array. Array.prototype will show in loop
+
+```js
+let arr = [1, 2, 3];
+Array.prototype.foo = function () {
+  console.log('foo');
+};
+for (let index in arr) {
+  console.log('index', index);
+}
+//index 0
+//index 1
+//index 2
+//index foo
+```
+
+---
+
+![75% bg brightness:0.9](es6.png)
+
+---
+
+### ES6 iterator (2020-11-14)
+
+- `find` : return first find elem
+- `findIndex` : return first find elem index
+
+- `for of`
+  - `values()`
+  - `keys()`
+  - `entries`
+
+---
+
+```js
+let arr = [1, 2, 3];
+Array.prototype.foo = function () {
+  console.log('foo');
+};
+for (let index in arr) {
+  console.log('index', index);
+}
+for (let item of arr.values()) {
+  console.log('item', item);
+}
+for (let item of arr.keys()) {
+  console.log('item', item);
+}
+for (let [index, item] of arr.entries()) {
+  console.log('index', index, 'item', item);
+}
+```
+
+---
+
+### 数组的扩展 (2020 - 10 - 14)
+
+- similar Array, iterator, such as `DOM`, has length, Can NOT use push(), etc.
+- check is Array : `instanceof Array`
+- `covert similar Array to Array` : `let arr = Array.prototype.slice.call(divs3)`
+- `Array.from` : covert similar Array to Array
+- `Array.of` : build new Array
+- `copyWithin()` : replace
+- `fill()`
+- `includes()` : return true, and false. ES5 `indexOf` Can NOT check `NaN`
+
+---
+
+- check is Array : `instanceof Array`
+
+```js
+let divs = document.getElementsByTagName('div');
+console.log(divs); // HTMLCollection []
+
+let divs2 = document.querySelectorAll('.myClass');
+console.log(divs2); // NodeList []
+console.log(divs2 instanceof Array);
+```
+
+---
+
+- `Array.from`
+
+```js
+let divs = document.getElementsByTagName('div');
+console.log(Array.from(divs)); //  []
+```
+
+---
+
+- `Array.of`
+
+```js
+let arr = Array.of(1, 3);
+console.log(arr); // [1, 3]
+```
+
+```js
+let arr = Array.of(1, true, 'xing', [1, 2, 3], { age: 10 });
+console.log(arr); // [ 1, true, 'xing', [ 1, 2, 3 ], { age: 10 } ]
+```
+
+---
+
+- copyWithin()
+
+```js
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.copyWithin(1, 3)); //[1, 4, 5, 4, 5]
+```
+
+---
+
+- fill()
+
+```js
+let arr = new Array(3).fill(7);
+console.log(arr); // [7, 7, 7]
+```
+
+```js
+let arr = [1, 2, 3, 4, 5];
+arr.fill('Xing', 1, 3); // start 1, end 3 not include 3
+console.log(arr); // [1, 'Xing', 'Xing', 4, 5]
+```
+
+---
+
+- `includes()` : ES5 `indexOf` Can NOT check `NaN`
+
+```js
+let arr = [1, 2, 3, NaN];
+console.log(arr.indexOf(NaN)); // -1
+console.log(NaN == NaN); // false
+console.log(arr.include(NaN)); // true
+```
+
+---
+
+### 函数的参数 (2020-10-13)
