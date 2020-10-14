@@ -59,3 +59,16 @@ var app = require('../src/app');
 ### SSR (Server-Side Rendering) (2020-11-14)
 
 - Node.js Server Side Rendering (SSR) using EJS https://www.geeksforgeeks.org/node-js-server-side-rendering-ssr-using-ejs/
+
+---
+
+### mySQL (2020-11-14)
+
+- `install mysql` https://dev.mysql.com/downloads/mysql/
+- `macOS 10.15 (x86, 64-bit), DMG Archive`
+- `install mysql workbench` (root user)
+- `client side` open workbench, connect to mysql service https://dev.mysql.com/downloads/workbench/
+
+---
+
+![85% bg brightness:0.9](workbench.png)
