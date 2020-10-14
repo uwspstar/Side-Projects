@@ -3,7 +3,22 @@ const router = require('koa-router')()
 router.get('/', async (ctx, next) => {
   //index is the ejs template name. 
   await ctx.render('index', {
-    title: 'Hello Koa 2!'
+    title: 'Hello Koa 2!',
+    msg: 'index page with ejs template',
+    blogList: [
+      {
+        id: 1,
+        title: 'blog 1'
+      },
+      {
+        id: 2,
+        title: 'blog 2'
+      },
+      {
+        id: 3,
+        title: 'blog 3'
+      }
+    ]
   })
 })
 

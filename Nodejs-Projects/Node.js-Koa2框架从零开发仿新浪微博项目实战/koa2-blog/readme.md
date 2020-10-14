@@ -45,8 +45,17 @@ var app = require('../src/app');
 
 ### 路由 (2020-11-12)
 
-### ejs (2020-11-13)
+### ejs (2020-11-13, 14)
 
+- `EJS` stands for `Embedded JavaScript template`.
 - https://github.com/mde/ejs
+- local variable in ejs page, such as `locals.myName`
+- `if ...else`
+- `for loop`
+- `<%- include(path, {variable})%>`
 
 ---
+
+### SSR (Server-Side Rendering) (2020-11-14)
+
+- Node.js Server Side Rendering (SSR) using EJS https://www.geeksforgeeks.org/node-js-server-side-rendering-ssr-using-ejs/

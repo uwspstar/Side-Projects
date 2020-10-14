@@ -1,0 +1,9 @@
+<h3>this is blog-list.ejs</h3>
+<ul>
+    <% blogList.forEach(blog => { %>
+    <li><%= blog.title %></li>
+    <% }) %>
+</ul>
+<script>
+    console.log('this is script inside blog-list.ejs')
+</script>
