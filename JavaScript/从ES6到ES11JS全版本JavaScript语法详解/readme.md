@@ -582,4 +582,88 @@ console.log(arr.include(NaN)); // true
 
 ---
 
-### 函数的参数 (2020-10-13)
+### 函数的参数 (2020-10-13, 14)
+
+```js
+function ajax(url, { body = '', method = 'GET', headers = {} } = {}) {
+  console.log(method);
+}
+ajax('http://google.com', {
+  method: 'POST',
+});
+```
+
+---
+
+- `length` : Number of `NO default value` variable
+
+```js
+function foo(x = 1, y = 2) {
+  console.log(x, y);
+}
+console.log(foo.length);
+```
+
+---
+
+### 函数的参数 (2020-10-15)
+
+```js
+let x = 1;
+function foo(x, y = x) {
+  console.log(y); //2
+}
+foo(2);
+```
+
+```js
+let x = 1;
+function foo(y = x) {
+  let x = 2;
+  console.log(y); //1
+}
+foo();
+```
+
+---
+
+```js
+function foo(y = x) {
+  let x = 2;
+  console.log(y); // ReferenceError : X is not defined
+}
+foo();
+```
+
+```js
+console.log(new Function().name); //anonymous
+```
+
+```js
+function foo() {
+  console.log(this); // { name: 'xing' }
+}
+foo.bind({ name: 'xing' })();
+```
+
+---
+
+```js
+function foo(x, y) {
+  console.log(this, x, y); // { name: 'xing' } 1 2
+}
+foo.bind({ name: 'xing' })(1, 2);
+```
+
+```js
+function foo(x, y) {
+  console.log(this, x, y); // { name: 'xing' } 1 2
+}
+foo.bind({ name: 'xing' }, 1, 2)();
+```
+
+```js
+console.log(function () {}.bind({}).name); // bound
+```
+
+---
