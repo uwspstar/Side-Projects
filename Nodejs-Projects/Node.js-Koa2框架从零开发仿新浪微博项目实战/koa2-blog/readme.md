@@ -72,3 +72,9 @@ var app = require('../src/app');
 ---
 
 ![85% bg brightness:0.9](workbench.png)
+
+---
+
+### mysql (2020-10-15)
+
+- https://www.w3schools.com/sql/sql_ref_mysql.asp
