@@ -667,3 +667,149 @@ console.log(function () {}.bind({}).name); // bound
 ```
 
 ---
+
+### 扩展运算符与 rest 参数 (2020-10-15, 16)
+
+- `...` : split
+- `rest` : combine
+
+```js
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+console.log(...arr1); // 1 2 3
+console.log(arr1.push(...arr2)); // [1, 2, 3, 4, 5]
+Array.prototype.push.apply(arr1, arr2);
+```
+
+```js
+let str = 'xing';
+var arr = [...str];
+console.log(...arr); // x i n g
+```
+
+---
+
+- `rest`
+
+```js
+function foo(x, y, z) {
+  console.log(arguments);
+  let sum = 0;
+  Array.prototype.forEach.call(arguments, function (item) {
+    sum += item;
+  });
+  return sum;
+}
+foo(1, 2);
+foo(1, 2, 3);
+```
+
+---
+
+```js
+let sum = 0;
+Array.from(arguments).forEach(function (item) {
+  sum += item;
+});
+return sum;
+```
+
+```js
+function foo(..args) {
+  console.log(arg) // 1 2 3
+  let sum = 0;
+  args.forEach(function(item){
+    sum += item
+  })
+  return sum;
+}
+foo(1, 2, 3)
+```
+
+---
+
+```js
+function foo(x, ...args) {
+  console.log(x); // 1
+  console.log(arg); // 2 3 4
+}
+foo(1, 2, 3, 4);
+```
+
+```js
+let [x, ...y] = [1, 2, 3];
+console.log(x); // 1
+console.log(y); // [2, 3]
+```
+
+---
+
+### Arrow function (2020-11-16)
+
+- `const swap = (arr,i,j) => [arr[i], arr[j] = [arr[j], arr[i]]`
+- `let b = a => a * a;`
+- `let x = x => x;`
+
+```js
+let sum = (x, y) => x + y;
+let b = (a) => a * a;
+console.log(sum(3, 4));
+```
+
+---
+
+```js
+let oBtn = document.querySelector('#btn');
+oBtn.addEventListener('click', function () {
+  console.log(this); // oBtn
+  //window.setTimeout(fn(),timer)
+  setTimeout(function () {
+    console.log(this); // window
+  }, 1000);
+});
+```
+
+---
+
+- `call` , `apply` run immediately
+- `bind` runs after timer
+
+```js
+let oBtn = document.querySelector('#btn');
+oBtn.addEventListener('click', function () {
+  // call apply bind
+  setTimeout(
+    function () {
+      console.log(this); // oBtn
+    }.bind(this),
+    1000
+  );
+});
+```
+
+---
+
+- `this` pointing to the obj when it is declared, `NOT` the running obj
+- `arrow function` does not have `this`, need looking outside
+
+```js
+let oBtn = document.querySelector('#btn');
+oBtn.addEventListener('click', function () {
+  // call apply bind
+  setTimeout(
+    () => console.log(this); // oBtn
+     ,1000
+  );
+});
+```
+
+---
+
+- `arrow function` cannot create `New` function : error `not a constructor`
+- `arrow function` cannot use `arguments` : error `not defined`
+- `arrow function` can use `...` rest
+
+```js
+let foo = (...args) => console.log(args); // 1 2 3
+foo(1, 2, 3);
+```
