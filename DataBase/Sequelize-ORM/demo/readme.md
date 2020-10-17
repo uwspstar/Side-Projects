@@ -12,4 +12,11 @@ size: 16:9
 - `$ npm init -y`
 - `$ npm install --save mysql2`
 - `$ npm install --save sequelize`
+- `$ touch .gitignore`
+- `$ mkdir src`
+- `$ touch src\seq.js`
+- `$ touch src\model.js`
+- `$ touch src\sync.js`
 ---
+
+- https://sequelize.org/master/manual/getting-started.html
