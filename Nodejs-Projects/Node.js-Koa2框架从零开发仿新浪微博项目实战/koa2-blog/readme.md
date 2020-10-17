@@ -78,3 +78,8 @@ var app = require('../src/app');
 ### mysql (2020-10-15)
 
 - https://www.w3schools.com/sql/sql_ref_mysql.asp
+
+### sequelize ORM (2010-15-17)
+
+- `Sequelize` is a promise-based Node.js `ORM` for `Postgres`, `MySQL`, `MariaDB`, `SQLite` and `Microsoft SQL` Server.
+- https://sequelize.org
