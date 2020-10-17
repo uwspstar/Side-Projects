@@ -1,4 +1,18 @@
+---
+marp: true
+theme: default
+header: 'MySQL'
+footer: 'study note by Xing, source https://www.npmjs.com/package/mysql2'
+paginate: true
+size: 16:9
+---
+
 ### MySQL
+
+### MySQL2
+
+- https://www.npmjs.com/package/mysql2
+- `npm install --save mysql2`
 
 ### mac install
 
@@ -47,5 +61,3 @@ SET SQL_SAFE_UPDATE = 0
 ### install mySql
 
 - `$ npm install mysql`
-
-
