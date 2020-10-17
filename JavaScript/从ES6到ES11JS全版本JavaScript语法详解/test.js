@@ -1,8 +1,7 @@
-
-function foo(x, y) {
-    console.log(this, x, y); // { name: 'xing' } 1 2
+let x = {
+    a: 3,
+    b: 4
 }
-foo.bind({ name: 'xing' }, 1, 2)();
-
-
-console.log((function () { }).bind({}).name); // bound 
+let y = {}
+Object.assign(y, x);
+console.log(y) // {a: 3, b: 4}

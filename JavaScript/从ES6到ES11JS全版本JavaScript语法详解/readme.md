@@ -813,3 +813,53 @@ oBtn.addEventListener('click', function () {
 let foo = (...args) => console.log(args); // 1 2 3
 foo(1, 2, 3);
 ```
+
+---
+
+### 对象的扩展 (2020-11-17)
+
+```js
+let name = 'xing';
+let s = 'school';
+let obj = {
+  name,
+  [s]: 'home',
+  studyEs6() {
+    console.log('studyEs6', this.name);
+  },
+  studyEs5: function () {
+    console.log('studyEs5', this.name);
+  },
+  studyArrow: () => {
+    console.log('studyArrow', this.name); // undefined : no this inside arrow function
+  },
+};
+obj.studyArrow(); // undefined
+console.log(obj.studyArrow);
+```
+
+---
+
+- `Object.is()`
+
+```js
+console.log(Object.is(2, '2')); //false
+console.log(NaN == NaN); //false
+console.log(Object.is(NaN, NaN)); //true
+console.log(Object.is(+0, -0)); //false
+console.log(Object.is({}, {})); //false
+```
+
+- `Object.assign()`
+
+```js
+let x = {
+  a: 3,
+  b: 4,
+};
+let y = {};
+Object.assign(y, x);
+console.log(y); // {a: 3, b: 4}
+```
+
+---

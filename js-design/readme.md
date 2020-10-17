@@ -41,20 +41,20 @@ _color: black
 
 ### Project Init
 
-- npm -v
-- install nodejs
-- npm init --y
-- touch .gitignore
-- mkdir src
-- touch src/index.js
-- touch index.html
+- `npm -v`
+- `install nodejs`
+- `npm init --y`
+- `touch .gitignore`
+- `mkdir src`
+- `touch src/index.js`
+- `touch index.html`
 - inside html `type "!" (exclamation mark) and press enter in vs code.`
 
 ---
 
 ### Install Webpack
 
-- touch `webpack.dev.config.js`
+- `touch webpack.dev.config.js`
 - `npm install webpack webpack-cli --save-dev`
 - `npm install webpack-dev-server html-webpack-plugin --save-dev`
 
@@ -62,9 +62,9 @@ _color: black
 
 ### install babel
 
-- npm install babel-core babel-loader babel-polyfill babel-preset-es2015 babel-preset-latest --save-dev
-- npm install --save-dev babel-core babel-preset-env
-- touch .babelrc
+- `npm install babel-core babel-loader babel-polyfill babel-preset-es2015 babel-preset-latest --save-dev`
+- `npm install --save-dev babel-core babel-preset-env`
+- `touch .babelrc`
 
 ---
 
@@ -75,3 +75,27 @@ _color: black
     "dev": "webpack --config ./webpack.dev.config.js --mode development"
   },
 ```
+
+---
+
+### 面向对象 Object Oriented Programming (2020-11-17) A-PIE
+
+- `Abstraction`
+- `Polymorphism`
+- `Inheritance`
+- `Encapsulation`
+
+---
+
+### Inheritance
+- `super` inside `constructor`
+```js
+class Student extends People {
+  constructor(name, age, number) {
+    super(name, age);
+    this.number = number;
+  }
+}
+```
+
+---
