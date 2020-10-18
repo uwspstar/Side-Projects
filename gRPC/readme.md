@@ -65,4 +65,21 @@ size: 16:9
 
 ### gRPC is using HTTP/2
 
+---
+
 ### 4 Types of gRPC APIs
+
+- Unary
+- Streaming Server
+- Streaming Client
+- Bi Directional streaming
+
+---
+
+![70% bg brightness:0.9](4types.png)
+
+---
+
+###
+
+ ![70% bg brightness:0.9](4.png)
