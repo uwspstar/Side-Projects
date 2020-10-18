@@ -818,6 +818,13 @@ foo(1, 2, 3);
 
 ### 对象的扩展 (2020-11-17)
 
+- `Object.is()`
+- `Object.assign()`
+- `in`
+- `object iteration`
+
+---
+
 ```js
 let name = 'xing';
 let s = 'school';
@@ -863,3 +870,51 @@ console.log(y); // {a: 3, b: 4}
 ```
 
 ---
+
+- `in` : check obj has property , `in` check `Index`
+
+```js
+let arr [1, 2, 3]
+console.log(2 in arr) // true [2] has value 3
+console.log(3 in arr) // false [3] not exist
+```
+
+---
+
+- `object iteration`
+
+```js
+for (let key in obj) {
+  console.log(key, obj[key]);
+}
+
+Object.keys(obj).forEach((key) => {
+  console.log(key, obj[key]);
+});
+
+Object.getOwnPropertyNames(obj).forEach((key) => {
+  console.log(key, obj[key]);
+});
+
+Reflect.ownKeys(obj).forEach((key) => {
+  console.log('Reflect.ownKeys', key, obj[key]);
+});
+```
+
+---
+
+### 深拷贝与浅拷贝 (2020-11-18)
+
+- `Object.assign()` : shallow copy
+- The `Object.assign()` method only `copies enumerable` and `own properties` from a `source object` to a `target object`.
+- For `copying property` definitions (including their `enumerability`) into `prototypes`, use `Object.getOwnPropertyDescriptor()` and `Object.defineProperty()` instead.
+
+---
+
+```js
+let target = { a: '1' };
+let source = { a: '100', b: '2' };
+
+Object.assign(target, source);
+console.log('target', target); //target { a: '100', b: '2' }
+```

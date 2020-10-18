@@ -1,7 +1,6 @@
-let x = {
-    a: 3,
-    b: 4
-}
-let y = {}
-Object.assign(y, x);
-console.log(y) // {a: 3, b: 4}
+let target = { a: "1" }
+let source = { a: "100", b: "2" }
+
+Object.assign(target, source);
+console.log('target', target); //target { a: '100', b: '2' }
+
