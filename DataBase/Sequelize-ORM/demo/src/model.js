@@ -25,7 +25,7 @@ const Blog = seq.define('blog', {
         allowNull: false
     },
     content: {
-        type: Sequelize.STRING,
+        type: Sequelize.TEXT,
         allowNull: false
     },
     userId: { // can be auto created, not recommend
