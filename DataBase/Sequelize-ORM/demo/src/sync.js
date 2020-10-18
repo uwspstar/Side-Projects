@@ -11,7 +11,7 @@ require('./model');
 })();
 
 /*
-// Sync :  
+// Sync :  will clean data inside table, not trunk table, id increase
 Executing (default): DROP TABLE IF EXISTS `users`;
 Connection has been established successfully.
 Executing (default): DROP TABLE IF EXISTS `users`;

@@ -88,7 +88,9 @@ _color: black
 ---
 
 ### Inheritance
+
 - `super` inside `constructor`
+
 ```js
 class Student extends People {
   constructor(name, age, number) {
@@ -99,3 +101,31 @@ class Student extends People {
 ```
 
 ---
+
+### 应用举例 (2020-11-28)
+
+- `jQuery` is a `class`
+
+---
+
+```js
+class jQuery {
+  constructor(selector) {
+    let slice = Array.prototype.slice;
+    let dom = slice.call(document.querySelectorAll(selector));
+    let len = dom ? dom.length : 0;
+    for (let i = 0; i < len; i++) {
+      this[i] = dom[i];
+    }
+    this.length = len;
+    this.selector = selector || '';
+  }
+  append(node) {}
+  addClass(name) {}
+  html(data) {}
+  //more APIs
+}
+windows.$ = function (selector) {
+  return new jQuery(selector);
+};
+```
