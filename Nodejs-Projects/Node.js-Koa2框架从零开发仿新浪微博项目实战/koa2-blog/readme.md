@@ -89,3 +89,5 @@ var app = require('../src/app');
 - https://sequelize.org
 
 ---
+
+### sequelize-查询数据 (2020-11-21)
