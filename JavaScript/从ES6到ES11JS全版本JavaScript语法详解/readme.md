@@ -903,7 +903,7 @@ Reflect.ownKeys(obj).forEach((key) => {
 
 ---
 
-### 深拷贝与浅拷贝 (2020-11-18)
+### 深拷贝与浅拷贝 (2020-11-18, 21)
 
 - `Object.assign()` : shallow copy
 - The `Object.assign()` method only `copies enumerable` and `own properties` from a `source object` to a `target object`.
@@ -911,10 +911,61 @@ Reflect.ownKeys(obj).forEach((key) => {
 
 ---
 
+- https://www.javascripttutorial.net/object/3-ways-to-copy-objects-in-javascript/
+- `Object.assign`: only pass address
+- `deep copy` : two value does not affect each other
+- `shallow copy`: one value change, the other value change also.
+
 ```js
-let target = { a: '1' };
+let target = { a: '1', e: 'e' };
 let source = { a: '100', b: '2' };
 
 Object.assign(target, source);
-console.log('target', target); //target { a: '100', b: '2' }
+console.log('target', target); //target { a: '100', b: '2' } //no e:
+```
+
+---
+
+- using `JSON.stringify()` and `JSON.parse()` to do a `deep copy`
+- JSON : same as a string with standard formate `{}`
+- `JSON key` needs double quote. `Object key` does not need double quote
+- `JSON.stringify()` : obj -> string
+- `JSON.parse()` -> string -> obj
+
+---
+
+- `typeof` may not always correct, such as `[]`
+
+```js
+let checkType = (data) => {
+  return Object.prototype.toString.call(data).slice(8, -1);
+};
+console.log('{} type', checkType({}));
+console.log('[] type', checkType([]));
+```
+
+---
+
+```js
+let deepCopy = (target) => {
+  let targetType = checkType(target);
+  let result;
+  if (targetType === 'Object') {
+    result = {};
+  } else if (targetType === 'Array') {
+    result = [];
+  } else {
+    return target;
+  }
+  for (let i in target) {
+    let value = target[i];
+    let valueType = checkType(value);
+    if (valueType === 'Object' || valueType === 'Array') {
+      result[i] = deepClone(value);
+    } else {
+      result[i] = value;
+    }
+  }
+  return result;
+};
 ```
