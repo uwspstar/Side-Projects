@@ -85,4 +85,18 @@ const { Blog, User } = require('./model');
             return blogVal;
         }));
 
+    // 连表查询
+    const userListWithBlog = await User.findAndCountAll({
+        attributes: ['userName', 'nickName'],
+        include: [{ model: Blog }]
+    })
+
+    console.log('userListWithBlog', userListWithBlog.count,
+        userListWithBlog.rows.map(user => {
+            const userVal = user.dataValues;
+            //one user has many blogs
+            userVal.blogs = userVal.blogs.map(blog => blog.dataValues);
+            return userVal;
+        }));
+
 })()
