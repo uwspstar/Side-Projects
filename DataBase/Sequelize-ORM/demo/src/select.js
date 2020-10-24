@@ -92,11 +92,13 @@ const { Blog, User } = require('./model');
     })
 
     console.log('userListWithBlog', userListWithBlog.count,
-        userListWithBlog.rows.map(user => {
-            const userVal = user.dataValues;
-            //one user has many blogs
-            userVal.blogs = userVal.blogs.map(blog => blog.dataValues);
-            return userVal;
-        }));
+        JSON.stringify(
+            userListWithBlog.rows.map(user => {
+                const userVal = user.dataValues;
+                //one user has many blogs
+                userVal.blogs = userVal.blogs.map(blog => blog.dataValues);
+                return userVal;
+            }))
+    );
 
 })()
