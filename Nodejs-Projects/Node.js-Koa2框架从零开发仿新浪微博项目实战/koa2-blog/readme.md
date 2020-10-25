@@ -87,10 +87,33 @@ var app = require('../src/app');
 
 - `Sequelize` is a promise-based Node.js `ORM` for `Postgres`, `MySQL`, `MariaDB`, `SQLite` and `Microsoft SQL` Server.
 - https://sequelize.org
+- `npm install --save mysql2`
+- `npm install --save sequelize`
 
 ---
 
 ### sequelize-查询数据 (2020-11-21)
+
 ### setup eslint, and pre-commit
-### inspect
+
+---
+
+### inspection
+
+- setup `inspect` on `package.json`
+
+```js
+"scripts": {
+    "start": "node bin/www",
+    "dev": "cross-env NODE_ENV=dev ./node_modules/.bin/nodemon --inspect=9229 bin/www",
+    ...
+  },
+```
+- run with chrome `chrome://inspect`
+---
+
 ### 404 page
+
+---
+
+### redis
