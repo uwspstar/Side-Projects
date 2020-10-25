@@ -91,3 +91,6 @@ var app = require('../src/app');
 ---
 
 ### sequelize-查询数据 (2020-11-21)
+### setup eslint, and pre-commit
+### inspect
+### 404 page
