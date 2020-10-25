@@ -4,6 +4,13 @@ const conf = {
     dialect: 'mysql'
 }
 
+// connection pool : only use for production mode
+conf.pool = {
+    max: 5, // max connection
+    min: 0, // min connection
+    idle: 10000  // release when no connection in 10s
+}
+
 const seq = new Sequelize('koa2_db', 'root', '12345678', conf);
 /* 
 // test connection --> move to sync.js

@@ -7,4 +7,11 @@ const { Blog, User } = require('./model');
     })
 
     console.log('delBlogRecord', delBlogRecord[0] > 0);
+
+
+    const delUserRecord = await User.destroy({
+        where: { id: 3 }
+    })
+
+    console.log('delUserRecord', delUserRecord[0] > 0);
 })()

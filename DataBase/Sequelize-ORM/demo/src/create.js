@@ -33,6 +33,15 @@ const { Blog, User } = require('./model');
     console.log('user2', user2.dataValues);
     const user2Id = user2.dataValues.id;
 
+    const user3 = await User.create({
+        userName: 'ToDo',
+        password: '123',
+        nickName: 'son1'
+    })
+
+    console.log('user3', user3.dataValues);
+    const user3Id = user3.dataValues.id;
+
     // create blog
     const blog1 = await Blog.create({
         title: 't-b-1',
@@ -60,7 +69,7 @@ const { Blog, User } = require('./model');
     const blog4 = await Blog.create({
         title: 't-b-4',
         content: 'blog content 4',
-        userId: user2Id
+        userId: user3Id
     })
 
     console.log('blog4', blog4.dataValues);
