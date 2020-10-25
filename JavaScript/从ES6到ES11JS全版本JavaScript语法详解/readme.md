@@ -974,9 +974,97 @@ let deepCopy = (target) => {
 
 ### object oriented design (2020-10-25)
 
-- class
-- object
+- `constructor Function` (ES5)
+- `class` (ES6)
+- `object`
+- use `prototype` to define a function inside `constructor function`
+
+---
+
+### class vs constructor function vs factory function
+
+- https://stackoverflow.com/questions/8698726/constructor-function-vs-factory-functions
+
+```js
+// ES5
+function ConstructorFunction() {
+  this.someProp1 = '1';
+  this.someProp2 = '2';
+}
+ConstructorFunction.prototype.someMethod = function () {
+  /* whatever */
+};
+```
+
+---
+
+```js
+function factoryFunction() {
+  var obj = {
+    someProp1: '1',
+    someProp2: '2',
+    someMethod: function () {
+      /* whatever */
+    },
+  };
+  // other code to manipulate obj in some way here
+  return obj;
+}
+```
+
+---
+
+- https://stackoverflow.com/questions/41659343/clarification-need-in-class-vs-constructor-function-vs-factory-function
+
+---
+
+### static way
+
+- such as `Math`, `Math.max()`
+
+```js
+function People() {}
+People.count = 0;
+People.getCount = function () {
+  console.log(this); // undefined
+  console.log('People.count', People.count);
+};
+```
+
+---
+
+### children class parent class (ES6)
+
+- `class`
+- `constructor`
+- `super`
+- `get`, `set`
+- `static`
+
+---
+
+```js
+class Child extends Parent {
+  constructor(name, num) {
+    // Calling parent's constructor
+    super(name);
+    this.num = num;
+  }
+
+  display() {
+    // Calling display() from parent
+    super.display();
+    alert('num: ' + this.num);
+  }
+}
+```
+
+---
 
 ### symbol
 
 - symbol
+
+```
+
+```
