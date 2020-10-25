@@ -969,3 +969,14 @@ let deepCopy = (target) => {
   return result;
 };
 ```
+
+---
+
+### object oriented design (2020-10-25)
+
+- class
+- object
+
+### symbol
+
+- symbol
