@@ -47,17 +47,23 @@ const { Blog, User } = require('./model');
         userId: user2Id
     })
 
+    console.log('blog2', blog2.dataValues);
+
     const blog3 = await Blog.create({
         title: 't-b-3',
         content: 'blog content 3',
         userId: user1Id
     })
 
+    console.log('blog3', blog3.dataValues);
+
     const blog4 = await Blog.create({
         title: 't-b-4',
         content: 'blog content 4',
         userId: user2Id
     })
+
+    console.log('blog4', blog4.dataValues);
 
 })()
 

@@ -6,5 +6,5 @@ const { Blog, User } = require('./model');
         where: { id: 4 }
     })
 
-    console.log('delBlogRecord', updateRecord[0] > 0);
+    console.log('delBlogRecord', delBlogRecord[0] > 0);
 })()

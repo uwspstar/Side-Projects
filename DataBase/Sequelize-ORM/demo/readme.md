@@ -17,8 +17,14 @@ size: 16:9
 - `$ touch src\seq.js`
 - `$ touch src\model.js`
 - `$ touch src\sync.js`
+- `$ touch src\create.js`
 - `$ touch src\select.js`
+- `$ touch src\update.js`
+- `$ touch src\delete.js`
 
 ---
 
 - https://sequelize.org/master/manual/getting-started.html
+
+- run `sync.js`
+- run 
