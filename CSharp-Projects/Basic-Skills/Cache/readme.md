@@ -21,7 +21,7 @@ _color: black
 
 ---
 
-- ![](cache1.png)
+- ![75% bg brightness:0.9](cache1.png)
 
 ---
 
@@ -42,6 +42,6 @@ _color: black
 
 ---
 
-- ![](cache2.png)
+- ![75% bg brightness:0.9](cache2.png)
 
 ---
