@@ -10,6 +10,7 @@ size: 16:9
 # 从 ES6 到 ES11JS 全版本 JavaScript 语法详解
 
 - https://www.youtube.com/watch?v=uTYkUfniMeo&list=PL9nxfq1tlKKn96qqvz92I-09Qg21F12c2
+- https://wangdoc.com/es6/
 
 ---
 
@@ -17,17 +18,17 @@ size: 16:9
 
 - not windows object
 - does not allow declare again after a variable has been declared
+- let 命令所在的代码块内有效
 
 ```js
-// error, b is undefined
 function foo(a = b, b = 2) {
-  console.log(a, b);
+  console.log(a, b); // error, b is undefined
 }
 ```
 
 ---
 
-- ES5
+- ES5 : hoisting
 
 ```js
 for (var i = 0; i < 3; i++) {
@@ -44,8 +45,7 @@ console.log('outside', i);
 if (false) {
   var a = 5;
 }
-console.log(a);
-// undefined
+console.log(a); // undefined
 ```
 
 ---
@@ -1061,8 +1061,9 @@ class Child extends Parent {
 
 ---
 
-### symbol
+### symbol (2020-11-27)
 
+- 7 data type
 - symbol
 
 ```

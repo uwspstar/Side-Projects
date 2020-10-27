@@ -1,10 +1,7 @@
-const [a, b, ...c] = 'hello';
-console.log(c) // [ 'l', 'l', 'o' ]
-
-
-/*if (true) {
-    var name = 'bob';
-    console.log(name); // bob
-  }
-  console.log(name); // ES5 bob; if语句内部访问name还是在外部访问name都不会报错
-  */
+var a = [];
+for (let i = 0; i < 10; i++) {
+  a[i] = function () {
+    console.log(i);
+  };
+}
+a[6]();
