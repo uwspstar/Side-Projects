@@ -150,14 +150,13 @@ typeof v; // undefined
 
 ---
 
-- 上面代码中，变量 v 没有用 var 命令声明，直接使用就会报错。但是，放在 typeof 后面，就不报错了，而是返回 undefined。
+- 上面代码中，变量 `v` 没有用 `var` 命令声明，直接使用就会报错。但是，放在 `typeof` 后面，就不报错了，而是返回 `undefined`。
 
 ```js
 // 错误的写法
 if (v) {
   // ...
-}
-// ReferenceError: v is not defined
+} // ReferenceError: v is not defined
 
 // 正确的写法
 if (typeof v === 'undefined') {
@@ -169,68 +168,69 @@ if (typeof v === 'undefined') {
 
 ### 对象返回 object, null 返回 object。null 的类型是 object，这是由于历史原因造成的。顺便提一下，instanceof 运算符可以区分数组和对象
 
+```js
+typeof window; // "object"
+typeof {}; // "object"
+typeof []; // "object"
+typeof null; // "object"
 ```
 
-typeof window // "object"
-typeof {} // "object"
-typeof [] // "object"
-typeof null // "object"
+- Empty `Array`（[]）的类型也是 `object`，这表示在 `JavaScript` 内部 `Array` 本质上只是一种特殊的对象。这里顺便提一下，1instanceof1 运算符可以区分`Array` 和 `object`
 
-空数组（[]）的类型也是 object，这表示在 JavaScript 内部，数组本质上只是一种特殊的对象。这里顺便提一下，instanceof 运算符可以区分数组和对象
-
+```js
 var o = {};
 var a = [];
 
-o instanceof Array // false
-a instanceof Array // true
-
+o instanceof Array; // false
+a instanceof Array; // true
 ```
+
+---
 
 ### 区别 null and undefined (undefined == null // true)
 
 - 区别是这样的：`null`是一个表示“空”的对象，转为数值时为`0`；
 - `undefined`是一个表示"此处无定义"的原始值，转为数值时为`NaN`。
 
-```
+```js
+Number(null); // 0
+5 + null; // 5
 
-Number(null) // 0
-5 + null // 5
-
-Number(undefined) // NaN
-5 + undefined // NaN
+Number(undefined); // NaN
+5 + undefined; // NaN
 
 if (!undefined) {
-console.log('undefined is false');
-}
-// undefined is false
+  console.log('undefined is false');
+} // undefined is false
 
 if (!null) {
-console.log('null is false');
-}
-// null is false
+  console.log('null is false');
+} // null is false
 
-undefined == null
-// true
-
+undefined == null; // true
 ```
+
+---
 
 ### 函数没有返回值时，默认返回 undefined
 
-```
-
+```js
 function f() {}
-f() // undefined
-
+f(); // undefined returned
 ```
+
+---
 
 ### 如果 JavaScript 预期某个位置应该是布尔值，会将该位置上现有的值自动转为布尔值。转换规则是除了下面六个值被转为 false，其他值都视为 true。
 
-- undefined
-- null
-- false
-- 0
-- NaN
-- ""或''（空字符串) // " " and ' ' different
+- `undefined`
+- `null`
+- `false`
+- `0`
+- `NaN`
+- `""`或`''`（空字符串) // `" "` and `' '` different
+
+---
 
 ### JavaScript 内部，所有数字都是以 64 位浮点数形式储存. 这就是说，JavaScript 语言的底层根本没有整数，所有数字都是小数（64 位浮点数）。
 
@@ -238,51 +238,51 @@ f() // undefined
 
 - `1 === 1.0 // true`
 
+```js
+0.1 + 0.2 === 0.3; // false
+
+0.3 / 0.1; // 2.9999999999999996
+
+0.3 - 0.2 === 0.2 - 0.1; // false
 ```
 
-0.1 + 0.2 === 0.3
-// false
+---
 
-0.3 / 0.1
-// 2.9999999999999996
+### 精度最多只能到 53 个二进制位，这意味着，绝对值小于 2 的 53 次方的整数，即-2^53 到 2^53，都可以精确表示.
 
-(0.3 - 0.2) === (0.2 - 0.1)
-// false
+### 由于 2 的 53 次方是一个 16 位的十进制数值，所以简单的法则就是,JavaScript 对 15 位的十进制数都可以精确处理。
 
-```
+---
 
-### 精度最多只能到 53 个二进制位，这意味着，绝对值小于 2 的 53 次方的整数，即-2^53 到 2^53，都可以精确表示. 由于 2 的 53 次方是一个 16 位的十进制数值，所以简单的法则就是,JavaScript 对 15 位的十进制数都可以精确处理。则 JavaScript 能够表示的数值范围为 2^1024 到 2^-1023（开区间），超出这个范围的数无法表示。
+### JavaScript 能够表示的数值范围为 2^1024 到 2^-1023（开区间），超出这个范围的数无法表示。
 
-```
-
-Math.pow(2, 53) // 9007199254740992
+```js
+Math.pow(2, 53); // 9007199254740992
 
 // 多出的三个有效数字，将无法保存
-9007199254740992111 // 9007199254740992000
-
+9007199254740992111; // 9007199254740992000
 ```
+
+---
 
 ### JavaScript 提供 Number 对象的 MAX_VALUE 和 MIN_VALUE 属性，返回可以表示的具体的最大值和最小值。
 
+```js
+Number.MAX_VALUE; // 1.7976931348623157e+308
+Number.MIN_VALUE; // 5e-324
+// 小数点后紧跟 5 个以上的零，就自动转为科学计数法
 ```
 
-Number.MAX_VALUE // 1.7976931348623157e+308
-Number.MIN_VALUE // 5e-324
-
-// 小数点后紧跟 5 个以上的零，
-// 就自动转为科学计数法
-
-```
+---
 
 ### JavaScript 对整数提供 4 种进制的表示方法：十进制、十六进制、八进制、二进制
 
-```
+- 十进制：没有前导 `0` 的数值。
+- 八进制：有前缀 `0o` 或 `0O` 的数值，或者有前导 `0`、且只用到 `0-7 `的八个阿拉伯数字的数值。
+- - 十六进制：有前缀 `0x` 或 `0X` 的数值。
+    二进制：有前缀 `0b` 或 `0B` 的数值。
 
-十进制：没有前导 0 的数值。
-八进制：有前缀 0o 或 0O 的数值，或者有前导 0、且只用到 0-7 的八个阿拉伯数字的数值。
-十六进制：有前缀 0x 或 0X 的数值。
-二进制：有前缀 0b 或 0B 的数值。
-
+```js
 0xff // 255
 0o377 // 255
 0b11 // 3
@@ -293,67 +293,66 @@ Number.MIN_VALUE // 5e-324
 
 ```
 
+---
+
 ### JavaScript 内部实际上存在 2 个 0：一个是 +0，一个是 -0，区别就是 64 位浮点数表示法的符号位不同。它们是等价的。
 
-- Object.is(-0,+0) //false
+- 存在 2 个 `0` : `Object.is(-0,+0) //false`
+- 几乎所有场合，正零和负零都会被当作正常的 `0`。
+- 唯一有区别的场合是，`+0` 或`-0` 当作分母，返回的值是不相等的。
 
+---
+
+```js
+-0 === +0; // true
+0 === -0; // true
+0 === +0; // true
 ```
 
--0 === +0 // true
-0 === -0 // true
-0 === +0 // true
-
+```js
++0; // 0
+-0; // 0
+(-0).toString(); // '0'
+(+0).toString(); // '0'
 ```
 
-- 几乎所有场合，正零和负零都会被当作正常的 0。
+---
 
+- 除以`+0`得到`+Infinity`，除以`-0`得到`-Infinity`，这两者是`!==`的
+
+```js
+1 / +0 === 1 / -0; // false
 ```
 
-+0 // 0
--0 // 0
-(-0).toString() // '0'
-(+0).toString() // '0'
-
-```
-
-- 唯一有区别的场合是，+0 或-0 当作分母，返回的值是不相等的。
-
-```
-
-(1 / +0) === (1 / -0) // false
-除以正零得到+Infinity，除以负零得到-Infinity，这两者是不相等的
-
-```
+---
 
 ### Infinity 与 NaN 比较，总是返回 false
 
-```
+```js
+Infinity > NaN; // false
+-Infinity > NaN; // false
 
-Infinity > NaN // false
--Infinity > NaN // false
-
-Infinity < NaN // false
--Infinity < NaN // false
-
+Infinity < NaN; // false
+-Infinity < NaN; // false
 ```
 
 ### NaN
 
-```
-
-5 - 'x' // NaN
-NaN === NaN // false
-[NaN].indexOf(NaN) // -1
-Boolean(NaN) // false
+```js
+5 - 'x'; // NaN
+NaN === NaN; // false
+[NaN].indexOf(NaN); // -1
+Boolean(NaN); // false
 
 // 场景一
-Math.pow(2, 1024) // Infinity
+Math.pow(2, 1024); // Infinity
 
 // 场景二
-0 / 0 // NaN
-1 / 0 // Infinity
-
+0 / 0; // NaN
+1 / 0; // Infinity
 ```
+
+---
 
 ### parseInt 方法用于将字符串转为整数
 

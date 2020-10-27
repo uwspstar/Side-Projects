@@ -80,3 +80,4 @@ console.log('判断NaN更可靠的方法是，利用NaN为唯一不等于自身�
 console.log('NaN为唯一不等于自身的值 NaN === NaN', NaN === NaN)
 console.log('Object.is(-0,+0)', Object.is(-0, +0))
 console.log('Object.is(NaN, NaN)', Object.is(NaN, NaN))
+
