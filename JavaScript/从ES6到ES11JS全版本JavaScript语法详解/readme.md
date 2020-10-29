@@ -16,9 +16,9 @@ size: 16:9
 
 ### let (2020-10-10)
 
-- not windows object
-- does not allow declare again after a variable has been declared
-- let 命令所在的代码块内有效
+- NOT `windows` object
+- does NOT allow declare again after a variable has been declared
+- let 命令所在的`代码块内`有效
 
 ```js
 function foo(a = b, b = 2) {
@@ -73,7 +73,7 @@ console.log(a);
 
 ---
 
-- event loop
+- `Event Loop` : https://www.youtube.com/watch?v=8aGhZQkoFbQ
 
 ```js
 for (var i = 0; i < 3; i++) {
@@ -96,6 +96,39 @@ for (let i = 0; i < 3; i++) {
 //1
 //2
 ```
+
+---
+
+### Concurrency model and the event loop
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
+- `Runtime concepts`
+
+  - `stack`
+  - `heap` : Objects are allocated in a heap
+  - `queue` : message queue
+  - `event loop`
+
+    ```js
+    while (queue.waitForMessage()) {
+      queue.processNextMessage();
+    }
+    ```
+
+---
+
+### How the data saved in JS
+
+- `stack`
+  - primitives : value (num, str)
+  - Structural : address (obj, arr, etc)
+- `heap`
+  - value related the obj address from stack
+
+---
+
+![95% bg brightness:0.9](data.png)
+![60% bg brightness:0.9](eventloop.png)
 
 ---
 
@@ -158,20 +191,6 @@ console.log(obj);
 Object.freeze(obj);
 Object.freeze(obj.skill);
 ```
-
----
-
-### How the data saved in JS
-
-- `stack`
-  - primitives : value (num, str)
-  - Structural : address (obj, arr, etc)
-- `heap`
-  - value related the obj address from stack
-
----
-
-![75% bg brightness:0.9](data.png)
 
 ---
 
@@ -1040,21 +1059,24 @@ People.getCount = function () {
 - `super`
 - `get`, `set`
 - `static`
+- `this[variableName]`
 
 ---
 
 ```js
+const sys = Symbol('xing');
 class Child extends Parent {
   constructor(name, num) {
     // Calling parent's constructor
     super(name);
     this.num = num;
+    this[sys] = 'xing sing';
   }
 
   display() {
     // Calling display() from parent
     super.display();
-    alert('num: ' + this.num);
+    console.log('num: ' + this.num, 'Symbol', this[sys]);
   }
 }
 ```
@@ -1096,7 +1118,10 @@ console.log(s);
 ```
 
 ---
+
 - can obj has duplicate key ?
+- use `Symbol` as `object key`
+
 ```js
 const stu1 = 'xing';
 const stu2 = 'xing';
@@ -1116,3 +1141,27 @@ const grade = {
 };
 console.log(grade); //  xing: { add: 'zzz', tel: '222' } }
 ```
+
+---
+
+- use `Symbol` to handle duplicate
+
+```js
+const stu1 = Symbol('xing');
+const stu2 = Symbol('xing');
+const grade = {
+  [stu1]: { add: 'yyy', tel: '111' },
+  [stu2]: { add: 'zzz', tel: '222' },
+};
+console.log(grade);
+console.log(grade[stu1]);
+console.log(grade[stu2]);
+/* 
+{
+  [Symbol(xing)]: { add: 'yyy', tel: '111' },
+  [Symbol(xing)]: { add: 'zzz', tel: '222' }
+}
+*/
+```
+
+---
