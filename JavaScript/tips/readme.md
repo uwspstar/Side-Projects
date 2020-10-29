@@ -356,58 +356,62 @@ Math.pow(2, 1024); // Infinity
 
 ### parseInt 方法用于将字符串转为整数
 
-### parseInt 的第二个参数为 10，即默认是十进制转十进制. 这个整数只有在 2 到 36 之间，才能得到有意义的结果，超出这个范围，则返回 NaN。如果第二个参数是 0、undefined 和 null，则直接忽略。
-
 ### parseInt 的返回值只有两种可能，要么是一个十进制整数，要么是 NaN
+
+### parseInt 的第二个参数为 10，即默认是十进制转十进制. 这个整数只有在 2 到 36 之间，才能得到有意义的结果，超出这个范围，则返回 NaN。
+
+### 如果第二个参数是 0、undefined 和 null，则直接忽略。
+
+---
 
 ### parseInt 用于将字符串转为整数, 字符串转为整数的时候，是一个个字符依次转换，如果遇到不能转为数字的字符，就不再进行下去，返回已经转好的部分.
 
-```
-
-parseInt(011, 2) // NaN
-
-// 等同于
-parseInt(String(011), 2)
+```js
+parseInt(011, 2); // NaN
 
 // 等同于
-parseInt(String(9), 2)
+parseInt(String(011), 2);
 
-第一行的 011 会被先转为字符串 9，因为 9 不是二进制的有效字符，所以返回 NaN。
-如果直接计算 parseInt('011', 2)，011 则是会被当作二进制处理，返回 3
+// 等同于
+parseInt(String(9), 2);
 
+// 第一行的 011 会被先转为字符串 9，因为 9 不是二进制的有效字符，所以返回 NaN。
+// 如果直接计算 parseInt('011', 2)，011 则是会被当作二进制处理，返回 3
 ```
+
+---
 
 ### parseFloat 方法用于将一个字符串转为浮点数. parseFloat 方法会自动过滤字符串前导的空格
 
 ### parseFloat 会将空字符串转为 NaN。这些特点使得 parseFloat 的转换结果不同于 Number 函数
 
+```js
+parseFloat(true); // NaN
+Number(true); // 1
+
+parseFloat(null); // NaN
+Number(null); // 0
+
+parseFloat(''); // NaN
+Number(''); // 0
+
+parseFloat('123.45#'); // 123.45
+Number('123.45#'); // NaN
 ```
 
-parseFloat(true) // NaN
-Number(true) // 1
-
-parseFloat(null) // NaN
-Number(null) // 0
-
-parseFloat('') // NaN
-Number('') // 0
-
-parseFloat('123.45#') // 123.45
-Number('123.45#') // NaN
-
-```
+---
 
 ### isNaN 方法可以用来判断一个值是否为 NaN
 
 ### isNaN 只对数值有效，如果传入其他值，会被先转成数值。比如，传入字符串的时候，字符串会被先转成 NaN，所以最后返回 true，这一点要特别引起注意。也就是说，isNaN 为 true 的值，有可能不是 NaN，而是一个字符串。
 
-```
-
-isNaN('Hello') // true
+```js
+isNaN('Hello'); // true
 // 相当于
-isNaN(Number('Hello')) // true
-
+isNaN(Number('Hello')); // true
 ```
+
+---
 
 ### isNaN 对于对象和数组，isNaN 也返回 true
 
@@ -415,38 +419,38 @@ isNaN(Number('Hello')) // true
 
 ### isNaN 使用 isNaN 之前，最好判断一下数据类型。
 
-```
-
+```js
 function myIsNaN(value) {
-return typeof value === 'number' && isNaN(value);
+  return typeof value === 'number' && isNaN(value);
 }
-
 ```
+
+---
 
 ### NaN 判断 NaN 更可靠的方法是，利用 NaN 为唯一不等于自身的值的这个特点，进行判断
 
-```
-
+```js
 function myIsNaN(value) {
-return value !== value;
+  return value !== value;
 }
 
 const checkIsNaN = (val) => val !== val;
-
 ```
+
+---
 
 ### isFinite 方法返回一个布尔值，表示某个值是否为正常的数值
 
+```js
+isFinite(Infinity); // false
+isFinite(-Infinity); // false
+isFinite(NaN); // false
+isFinite(undefined); // false
+isFinite(null); // true
+isFinite(-1); // true
 ```
 
-isFinite(Infinity) // false
-isFinite(-Infinity) // false
-isFinite(NaN) // false
-isFinite(undefined) // false
-isFinite(null) // true
-isFinite(-1) // true
-
-```
+---
 
 ### string 默认只能写在一行内，分成多行将会报错. 如果长字符串必须分成多行，可以在每一行的尾部使用反斜杠
 
@@ -454,88 +458,84 @@ isFinite(-1) // true
 
 ### \u 后面紧跟四个十六进制数（0000 到 FFFF），代表一个字符。XXXX 对应该字符的 Unicode 码点，比如 \u00A9 表示版权符号。
 
+---
+
 ### 字符串可以被视为字符数组，因此可以使用数组的方括号运算符, 如果方括号中的数字超过字符串的长度，或者方括号中根本不是数字，则返回 undefined
 
 ### 无法改变字符串之中的单个字符. 字符串内部的单个字符无法改变和增删，这些操作会默默地失败. length 属性返回字符串的长度，该属性也是无法改变的, 但是不会报错。
 
-```
+---
 
+```js
 var s = 'hello';
 
 delete s[0];
-s // "hello"
+s; // "hello"
 
 s[1] = 'a';
-s // "hello"
+s; // "hello"
 
 s[5] = '!';
-s // "hello"
+s; // "hello"
 
 s.length = 3;
-s.length // 5
-
+s.length; // 5
 ```
+
+---
 
 ### JavaScript 使用 Unicode 字符集。JavaScript 引擎内部，所有字符都用 Unicode 表示. JavaScript 不仅以 Unicode 储存字符，还允许直接在程序中使用 Unicode 码点表示字符，即将字符写成 \uxxxx 的形式，其中 xxxx 代表该字符的 Unicode 码点。比如，\u00A9 代表版权符号。
 
-```
-
+```js
 var s = '\u00A9';
-s // "©"
-
+s; // "©"
 ```
+
+---
 
 ### Unicode 解析代码的时候，JavaScript 会自动识别一个字符是字面形式表示，还是 Unicode 形式表示。输出给用户的时候，所有字符都会转成字面形式。
 
+```js
+var foo = 'abc';
+foo; // "abc"
 ```
 
-var f\u006F\u006F = 'abc';
-foo // "abc"
-
-```
+---
 
 ### UTF-16 每个字符在 JavaScript 内部都是以 16 位（即 2 个字节）的 UTF-16 格式储存。也就是说，JavaScript 的单位字符长度固定为 16 位长度，即 2 个字节。
 
+---
+
 ### 对于码点在 U+10000 到 U+10FFFF 之间的字符，JavaScript 总是认为它们是两个字符（length 属性为 2）。所以处理的时候，必须把这一点考虑在内，也就是说，JavaScript 返回的字符串长度可能是不正确的。
 
+---
+
 ### Base64 就是一种编码方法，可以将任意值转成 0 ～ 9、A ～ Z、a-z、+和/这 64 个字符组成的可打印字符。
+
+--
 
 ### Base64 使用的主要目的，不是为了加密，而是为了不出现特殊字符，简化程序的处理。
 
 ### JavaScript 原生提供两个 Base64 相关的方法。
 
+```js
+btoa(); //：任意值转为 Base64 编码
+atob(); //：Base64 编码转为原来的值
 ```
 
-btoa()：任意值转为 Base64 编码
-atob()：Base64 编码转为原来的值
-
-```
-
-### object 对象就是一组“键值对”（key-value）的集合，是一种无序的复合数据集合。
-
-### object 对象的所有键名都是字符串（ES6 又引入了 Symbol 值也可以作为键名），所以加不加引号都可以
-
-### object 如果属性的值还是一个对象，就形成了链式引用
-
-```
-
-var obj = {
-p: function (x) {
-return 2 \* x;
-}
-};
-
-obj.p(1) // 2
-
-```
+---
 
 ### '𝌆'.length // 2 JavaScript 认为 𝌆 的长度为 2，而不是 1
 
 - https://wangdoc.com/javascript/types/string.html
 
+---
+
 ### 有时，文本里面包含一些不可打印的符号，比如 ASCII 码 0 到 31 的符号都无法打印出来，这时可以使用 Base64 编码，将它们转成可以打印的字符。另一个场景是，有时需要以文本格式传递二进制数据，那么也可以使用 Base64 编码。
 
 ### 所谓 Base64 就是一种编码方法，可以将任意值转成 0 ～ 9、A ～ Z、a-z、+和/这 64 个字符组成的可打印字符。使用它的主要目的，不是为了加密，而是为了不出现特殊字符，简化程序的处理
+
+---
 
 ### Object : ES6 又引入了 Symbol 值也可以作为键名
 
@@ -545,17 +545,14 @@ obj.p(1) // 2
 
 ### 对象的每一个键名又称为“属性”（property），它的“键值”可以是任何数据类型。如果一个属性的值为函数，通常把这个属性称为“方法”，它可以像函数那样调用。
 
-```
-
+```js
 var obj = {
-p: function (x) {
-return 2 \* x;
-}
+  p: function (x) {return 2 \* x;}
 };
-
 obj.p(1) // 2
-
 ```
+
+---
 
 ### 如果属性的值还是一个对象，就形成了链式引用
 
@@ -563,57 +560,58 @@ obj.p(1) // 2
 
 ### 如果行首是一个大括号，它到底是表达式还是语句？ 为了避免这种歧义，JavaScript 引擎的做法是，如果遇到这种情况，无法确定是对象还是代码块，一律解释为代码块。
 
+```js
+{
+  console.log(123);
+} // 123 上面的语句是一个代码块，而且只有解释为代码块，才能执行。
 ```
 
-{ console.log(123) } // 123
-上面的语句是一个代码块，而且只有解释为代码块，才能执行。
-
-```
+---
 
 ### 如果要解释为对象，最好在大括号前加上圆括号。因为圆括号的里面，只能是表达式，所以确保大括号只能解释为对象。
 
-```
+```js
 
 ({ foo: 123 }) // 正确
 ({ console.log(123) }) // 报错
-这种差异在 eval 语句（作用是对字符串求值）中反映得最明显。
+//这种差异在 eval 语句（作用是对字符串求值）中反映得最明显。
 
 eval('{foo: 123}') // 123
 eval('({foo: 123})') // {foo: 123}
-上面代码中，如果没有圆括号，eval 将其理解为一个代码块；加上圆括号以后，就理解成一个对象。
+//上面代码中，如果没有圆括号，eval 将其理解为一个代码块；加上圆括号以后，就理解成一个对象。
 
 ```
+
+---
 
 ### 如果使用方括号运算符，键名必须放在引号里面，否则会被当作变量处理. 数字键可以不加引号，因为会自动转成字符串。注意，数值键名不能使用点运算符（因为会被当成小数点），只能使用方括号运算符。
 
-```
-
+```js
 // 如果使用点运算符，foo 就是字符串；如果使用方括号运算符，但是不使用引号，那么 foo 就是一个变量，指向字符串 bar。
 
 var foo = 'bar';
 
 var obj = {
-foo: 1,
-bar: 2
+  foo: 1,
+  bar: 2,
 };
 
-obj.foo // 1
-obj[foo] // 2
-
+obj.foo; // 1
+obj[foo]; // 2
 ```
+
+---
 
 ### 查看一个对象本身的所有属性，可以使用 Object.keys 方法。
 
-```
-
+```js
 var obj = {
-key1: 1,
-key2: 2
+  key1: 1,
+  key2: 2,
 };
 
 Object.keys(obj);
 // ['key1', 'key2']
-
 ```
 
 ### delete 命令用于删除对象的属性，删除成功后返回 true。
