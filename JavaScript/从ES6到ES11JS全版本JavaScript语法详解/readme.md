@@ -1063,9 +1063,56 @@ class Child extends Parent {
 
 ### symbol (2020-11-27)
 
-- 7 data type
-- symbol
+- do NOT use `new`
 
+```js
+let s1 = Symbol();
+let s2 = Symbol();
+console.log(s1 === s2); // false
+console.log(Symbol.keyFor(s1)); // undefined
 ```
 
+- `Symbol.for` global
+
+```js
+let s1 = Symbol.for('foo');
+let s2 = Symbol.for('foo');
+console.log(s1 === s2); // true
+console.log(Symbol.keyFor(s1)); // foo
+```
+
+---
+
+```js
+let s1 = Symbol('foo');
+let s2 = Symbol('bar');
+console.log(s1 === s2); // false
+```
+
+```js
+const obj = { name: 'xing' };
+let s = Symbol(obj);
+console.log(s);
+```
+
+---
+- can obj has duplicate key ?
+```js
+const stu1 = 'xing';
+const stu2 = 'xing';
+const grade = {
+  stu1: { add: 'yyy', tel: '111' },
+  stu2: { add: 'zzz', tel: '222' },
+};
+console.log(grade); // { stu1: { add: 'yyy', tel: '111' }, stu2: { add: 'zzz', tel: '222' } }
+```
+
+```js
+const stu1 = 'xing';
+const stu2 = 'xing';
+const grade = {
+  [stu1]: { add: 'yyy', tel: '111' },
+  [stu2]: { add: 'zzz', tel: '222' },
+};
+console.log(grade); //  xing: { add: 'zzz', tel: '222' } }
 ```
