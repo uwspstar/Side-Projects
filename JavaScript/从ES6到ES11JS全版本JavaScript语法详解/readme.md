@@ -203,26 +203,33 @@ Object.freeze(obj.skill);
 ### Primitives
 
 - Six Data Types that are `primitives`, checked by typeof operator:
-  - undefined : typeof instance === "undefined"
-  - Boolean : typeof instance === "boolean"
-  - Number : typeof instance === "number"
-  - String : typeof instance === "string"
-  - BigInt : typeof instance === "bigint"
-  - Symbol : typeof instance === "symbol"
+  - `undefined` : typeof instance === "undefined"
+  - `Boolean` : typeof instance === "boolean"
+  - `Number` : typeof instance === "number"
+  - `String` : typeof instance === "string"
+  - `BigInt` : typeof instance === "bigint"
+  - `Symbol` : typeof instance === "symbol"
+  
+---
+
+### Structural : Object, new, Function
+
+- `Structural Types`: everything made with `new` keyword
+
+  - `Object` : typeof instance === "object". Special non-data but Structural type for any constructed object instance also used as data structures: `new Object`, `new Array`, `new Map`, `new Set`, `new WeakMap`, `new WeakSet`, `new Date` and almost `everything made with new keyword`;
+  - `Function`: a`non-data structure`;
 
 ---
 
-### Structural
+### Non-data Structure : Function
 
-- Structural Types: everything made with new keyword
-  - `Object` : typeof instance === "object". Special non-data but Structural type for any constructed object instance also used as data structures: `new Object`, `new Array`, `new Map`, `new Set`, `new WeakMap`, `new WeakSet`, `new Date` and almost `everything made with new keyword`;
-  - `Function` : a non-data structure, though it also answers for typeof operator: typeof instance === "function". This is merely a special shorthand for Functions, though every Function constructor is derived from Object constructor.
+- `Function` : a `non-data structure`, though it also answers for typeof operator: typeof instance === "function". This is merely a special shorthand for Functions, though every Function constructor is derived from Object constructor.
 
 ---
 
 ### Structural Root Primitive:
 
-- `null` : typeof instance === "object". Special primitive type having additional usage for its value: if object is not inherited, then null is shown;
+- `null` : typeof instance === "object". Special primitive type having additional usage for its value: if object is `NOT inherited`, then null is shown;
 
 ---
 
