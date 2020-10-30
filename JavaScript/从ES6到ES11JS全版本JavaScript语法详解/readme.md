@@ -209,7 +209,7 @@ Object.freeze(obj.skill);
   - `String` : typeof instance === "string"
   - `BigInt` : typeof instance === "bigint"
   - `Symbol` : typeof instance === "symbol"
-  
+
 ---
 
 ### Structural : Object, new, Function
@@ -1090,7 +1090,7 @@ class Child extends Parent {
 
 ---
 
-### symbol (2020-11-27)
+### symbol (2020-11-27, 29, 30)
 
 - do NOT use `new`
 
@@ -1172,3 +1172,29 @@ console.log(grade[stu2]);
 ```
 
 ---
+
+- `for...in` can NOT show symbol
+- `for... key of Object.keys` can NOT show symbol
+- `for... key of Object.getOwnPropertySymbols` can only show symbol
+- `for... key of Reflect.ownKeys` can show both symbol and other properties
+
+---
+
+```js
+const shapeType = {
+  triangle: Symbol(),
+  circle: Symbol(),
+};
+
+function getArea(shape) {
+  let area = 0;
+  switch (shape) {
+    case shapeType.triangle:
+    case shapeType.circle:
+      area = 1;
+      break;
+  }
+}
+```
+
+### Set (2020-11-30)
