@@ -387,7 +387,7 @@ arr.forEach(function (elem, index, array) {
 
 ---
 
-- `map` : generate a new array, not change original array
+- `map` : generate a `new array`, not change original array
 
 ```js
 let arr = [1, 2, 3];
@@ -395,8 +395,18 @@ let result = arr.map(function (value) {
   value++;
   return value;
 });
-console.log(arr, result);
-//[ 1, 2, 3 ] [ 2, 3, 4 ]
+console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
+```
+
+---
+
+```js
+let arr = [1, 2, 3];
+let result = arr.map(value => {
+  value++;
+  return value;
+});
+console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
 ```
 
 ---
