@@ -402,7 +402,7 @@ console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
 
 ```js
 let arr = [1, 2, 3];
-let result = arr.map(value => {
+let result = arr.map((value) => {
   value++;
   return value;
 });
@@ -411,15 +411,20 @@ console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
 
 ---
 
-- `filter` : return a new array which item match the condition, not change original array.
+- `filter` : return a `new array` which item match the condition, not change original array.
 
 ```js
 let arr = [1, 2, 3, 4];
 let result = arr.filter(function (value) {
   return value % 2 === 0;
 });
-console.log(arr, result);
-//[ 1, 2, 3 ] [ 2, 4 ]
+console.log(arr, result); //[ 1, 2, 3 ] [ 2, 4 ]
+```
+
+```js
+let arr = [1, 2, 3, 4];
+let result = arr.filter((x) => x % 2 === 0);
+console.log(arr, result); //[ 1, 2, 3 ] [ 2, 4 ]
 ```
 
 ---
@@ -428,11 +433,10 @@ console.log(arr, result);
 
 ```js
 let arr = [1, 2, 3, 4];
-let result = arr.some(function (value) {
+let result = arr.some((value) => {
   return value % 2 === 0;
 });
-console.log(arr, result);
-//[ 1, 2, 3 ] true
+console.log(arr, result); //[ 1, 2, 3 ] true
 ```
 
 ---
