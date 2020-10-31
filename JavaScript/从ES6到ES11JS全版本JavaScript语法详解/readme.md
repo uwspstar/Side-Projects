@@ -486,15 +486,20 @@ console.log(arr, result); //[ 1, 2, 3 ] 10
 ```
 
 ```js
+let arr = [1, 2, 3, 4];
 let max = arr.reduce(function (prev, cur) {
   return Math.max(prev, cur);
 });
 console.log(arr, max); // [ 1, 2, 3, 4 ] 4
 ```
 
----
+```js
+let arr = [1, 2, 3, 4];
+let max = arr.reduce((prev, cur) => Math.max(prev, cur));
+console.log(arr, max); // [ 1, 2, 3, 4 ] 4
+```
 
-### 2020-11-13
+---
 
 ```js
 let arr = [1, 1, 2, 3, 3, 4];
@@ -537,7 +542,7 @@ for (let index in arr) {
 - `for of`
   - `values()`
   - `keys()`
-  - `entries`
+  - `entries()`
 
 ---
 
