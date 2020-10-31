@@ -463,6 +463,21 @@ console.log(arr, result);
 - `reduce` :
 
 ```js
+arr.reduce(callback( accumulator, currentValue[, index[, array]] ) {
+  // return result from executing something for accumulator or currentValue
+}[, initialValue]);
+```
+
+```js
+let total = [0, 1, 2, 3].reduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  0
+);
+```
+
+---
+
+```js
 let arr = [1, 2, 3, 4];
 let result = arr.reduce(function (prev, cur, index, array) {
   return prev + cur;
@@ -470,14 +485,14 @@ let result = arr.reduce(function (prev, cur, index, array) {
 console.log(arr, result); //[ 1, 2, 3 ] 10
 ```
 
----
-
 ```js
 let max = arr.reduce(function (prev, cur) {
   return Math.max(prev, cur);
 });
 console.log(arr, max); // [ 1, 2, 3, 4 ] 4
 ```
+
+---
 
 ### 2020-11-13
 
