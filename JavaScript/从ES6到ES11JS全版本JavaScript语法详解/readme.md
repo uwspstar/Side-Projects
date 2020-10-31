@@ -402,10 +402,16 @@ console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
 
 ```js
 let arr = [1, 2, 3];
-let result = arr.map((value) => {
-  value++;
-  return value;
+let result = arr.map((x) => {
+  x++;
+  return x;
 });
+console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
+```
+
+```js
+let arr = [1, 2, 3];
+let result = arr.map((x) => (x = x + 1));
 console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
 ```
 
@@ -462,7 +468,11 @@ let result = arr.reduce(function (prev, cur, index, array) {
   return prev + cur;
 });
 console.log(arr, result); //[ 1, 2, 3 ] 10
+```
 
+---
+
+```js
 let max = arr.reduce(function (prev, cur) {
   return Math.max(prev, cur);
 });
