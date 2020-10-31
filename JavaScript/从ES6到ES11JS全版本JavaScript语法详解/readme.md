@@ -270,7 +270,6 @@ console.log(age, name); // 30 xing
 ```js
 let user = {
   name: 'xing',
-  //age: '30',
 };
 
 let { name, age = 18 } = user;
@@ -1197,4 +1196,69 @@ function getArea(shape) {
 }
 ```
 
+---
+
 ### Set (2020-11-30)
+
+- unique value : remove duplicate
+- `add`
+- `delete`
+- `clear`
+- `has`
+- `size`
+- `key` and `value` are same
+
+---
+
+- remove duplicate
+- combine and remove duplicate
+
+```js
+let arr1 = [1, 2, 3, 4];
+let arr1 = [3, 4, 5];
+let s = new Set([...arr1, ...arr2]);
+console.log(s); // new Set
+console.log([...s]); // new Array
+console.log(Array.from(s)); // new Array
+```
+
+---
+
+- get union value
+
+```js
+let result = new Set(arr1.filter((item) => s2.has(item)));
+console.log(Array.from(result));
+```
+
+- get diff value
+
+```js
+let r1 = new Set(arr1.filter((item) => !s2.has(item)));
+let r2 = new Set(arr2.filter((item) => !s1.has(item)));
+con;
+console.log([...r1, ...r2]);
+```
+
+---
+
+### WeakSet :
+
+- WeakSet only has `object`,
+- WeakSet CANNOT iteration,
+- WeakSet : GC not consider the obj is using by WeakSet
+
+---
+
+- add
+
+```js
+let ws = new WeakSet();
+ws.add({ name: 'xing' });
+ws.add({ age: 19 });
+console.log(ws);
+```
+
+- `delete` may not work, when you delete obj, because the obj look same, but there are different address. only delete the obj has same address
+
+---
