@@ -552,6 +552,7 @@ Array.prototype.foo = function () {
   console.log('foo');
 };
 for (let index in arr) {
+  // in : index?
   console.log('index', index);
 }
 for (let item of arr.values()) {
@@ -569,7 +570,7 @@ for (let [index, item] of arr.entries()) {
 
 ### 数组的扩展 (2020 - 10 - 14)
 
-- similar Array, iterator, such as `DOM`, has length, Can NOT use push(), etc.
+- similar Array, iterator, such as `DOM`, has length, Can NOT use `push()`, etc.
 - check is Array : `instanceof Array`
 - `covert similar Array to Array` : `let arr = Array.prototype.slice.call(divs3)`
 - `Array.from` : covert similar Array to Array
@@ -616,11 +617,18 @@ console.log(arr); // [ 1, true, 'xing', [ 1, 2, 3 ], { age: 10 } ]
 
 ---
 
-- copyWithin()
+- copyWithin() : shallow copy
+- `arr.copyWithin(target[, start[, end]])`
 
 ```js
-let arr = [1, 2, 3, 4, 5];
-console.log(arr.copyWithin(1, 3)); //[1, 4, 5, 4, 5]
+const array1 = ['a', 'b', 'c', 'd', 'e'];
+// copy to index 0 the element at index 3
+console.log(array1.copyWithin(0, 3, 4));
+// expected output: Array ["d", "b", "c", "d", "e"]
+
+// copy to index 1 all elements from index 3 to the end
+console.log(array1.copyWithin(1, 3));
+// expected output: Array ["d", "d", "e", "d", "e"]
 ```
 
 ---
@@ -667,10 +675,14 @@ ajax('http://google.com', {
 - `length` : Number of `NO default value` variable
 
 ```js
-function foo(x = 1, y = 2) {
-  console.log(x, y);
-}
-console.log(foo.length);
+function fun1(z, x = 1, y = 2) {}
+console.log(fun1.length); // 1
+
+function fun1(x = 1, y = 2, z) {}
+console.log(fun1.length); // 0
+
+function func2(a, b) {}
+console.log(func2.length); // 2
 ```
 
 ---
@@ -680,7 +692,7 @@ console.log(foo.length);
 ```js
 let x = 1;
 function foo(x, y = x) {
-  console.log(y); //2
+  console.log(y); // 2
 }
 foo(2);
 ```
@@ -689,7 +701,7 @@ foo(2);
 let x = 1;
 function foo(y = x) {
   let x = 2;
-  console.log(y); //1
+  console.log(y); // 1
 }
 foo();
 ```
@@ -704,8 +716,14 @@ function foo(y = x) {
 foo();
 ```
 
+---
+
 ```js
 console.log(new Function().name); //anonymous
+```
+
+```js
+console.log(function () {}.bind({}).name); // bound
 ```
 
 ```js
@@ -729,10 +747,6 @@ function foo(x, y) {
   console.log(this, x, y); // { name: 'xing' } 1 2
 }
 foo.bind({ name: 'xing' }, 1, 2)();
-```
-
-```js
-console.log(function () {}.bind({}).name); // bound
 ```
 
 ---
