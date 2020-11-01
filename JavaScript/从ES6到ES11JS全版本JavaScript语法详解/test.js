@@ -1,8 +1,16 @@
-function fun1(z, x = 1, y = 2) { }
-console.log(fun1.length); // 1
-
-function fun1(x = 1, y = 2, z) { }
-console.log(fun1.length); // 0
-
-function func2(a, b) { }
-console.log(func2.length); // 2
+let obj = {
+    name,
+    [s]: 'home',
+    studyEs6() {
+        console.log('studyEs6', this.name);
+    },
+    studyEs5: function () {
+        console.log('studyEs5', this.name);
+    },
+    studyArrow: () => {
+        console.log('studyArrow', this.name); // undefined : no this inside arrow function
+        //ReferenceError: name is not defined
+    },
+};
+obj.studyArrow(); // undefined
+console.log(obj.studyArrow);

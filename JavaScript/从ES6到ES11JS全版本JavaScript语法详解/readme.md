@@ -755,13 +755,15 @@ foo.bind({ name: 'xing' }, 1, 2)();
 
 - `...` : split
 - `rest` : combine
+- `Array.prototype.push.apply`
 
 ```js
 let arr1 = [1, 2, 3];
 let arr2 = [4, 5, 6];
 console.log(...arr1); // 1 2 3
-console.log(arr1.push(...arr2)); // [1, 2, 3, 4, 5]
-Array.prototype.push.apply(arr1, arr2);
+console.log(...arr2); // 4 5 6
+console.log(arr1.push(...arr2)); // 6 ???
+Array.prototype.push.apply(arr1, arr2); // [1, 2, 3, 4, 5, 6]
 ```
 
 ```js
@@ -802,7 +804,7 @@ function foo(..args) {
   console.log(arg) // 1 2 3
   let sum = 0;
   args.forEach(function(item){
-    sum += item
+    sum += item;
   })
   return sum;
 }
@@ -872,6 +874,8 @@ oBtn.addEventListener('click', function () {
 
 ---
 
+### Arrow function vs. this
+
 - `this` pointing to the obj when it is declared, `NOT` the running obj
 - `arrow function` does not have `this`, need looking outside
 
@@ -888,23 +892,14 @@ oBtn.addEventListener('click', function () {
 
 ---
 
-- `arrow function` cannot create `New` function : error `not a constructor`
-- `arrow function` cannot use `arguments` : error `not defined`
+- `arrow function` can NOT create `New` function : error `not a constructor`
+- `arrow function` can NOT use `arguments` : error `not defined`
 - `arrow function` can use `...` rest
 
 ```js
 let foo = (...args) => console.log(args); // 1 2 3
 foo(1, 2, 3);
 ```
-
----
-
-### 对象的扩展 (2020-11-17)
-
-- `Object.is()`
-- `Object.assign()`
-- `in`
-- `object iteration`
 
 ---
 
@@ -922,11 +917,21 @@ let obj = {
   },
   studyArrow: () => {
     console.log('studyArrow', this.name); // undefined : no this inside arrow function
+    //ReferenceError: name is not defined
   },
 };
 obj.studyArrow(); // undefined
 console.log(obj.studyArrow);
 ```
+
+---
+
+### 对象的扩展 (2020-11-17)
+
+- `Object.is()`
+- `Object.assign()`
+- `in`
+- `object iteration`
 
 ---
 
