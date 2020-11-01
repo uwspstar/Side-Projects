@@ -916,8 +916,7 @@ let obj = {
     console.log('studyEs5', this.name);
   },
   studyArrow: () => {
-    console.log('studyArrow', this.name); // undefined : no this inside arrow function
-    //ReferenceError: name is not defined
+    console.log('studyArrow', this.name); // undefined : no this inside arrow function, this is obj, obj.name undefined
   },
 };
 obj.studyArrow(); // undefined
@@ -945,6 +944,8 @@ console.log(Object.is(+0, -0)); //false
 console.log(Object.is({}, {})); //false
 ```
 
+---
+
 - `Object.assign()`
 
 ```js
@@ -962,7 +963,7 @@ console.log(y); // {a: 3, b: 4}
 - `in` : check obj has property , `in` check `Index`
 
 ```js
-let arr [1, 2, 3]
+let arr [1, 2, 3];
 console.log(2 in arr) // true [2] has value 3
 console.log(3 in arr) // false [3] not exist
 ```
@@ -993,7 +994,7 @@ Reflect.ownKeys(obj).forEach((key) => {
 
 ### 深拷贝与浅拷贝 (2020-11-18, 21)
 
-- `Object.assign()` : shallow copy
+- `Object.assign()` : `shallow copy`
 - The `Object.assign()` method only `copies enumerable` and `own properties` from a `source object` to a `target object`.
 - For `copying property` definitions (including their `enumerability`) into `prototypes`, use `Object.getOwnPropertyDescriptor()` and `Object.defineProperty()` instead.
 
@@ -1009,7 +1010,7 @@ let target = { a: '1', e: 'e' };
 let source = { a: '100', b: '2' };
 
 Object.assign(target, source);
-console.log('target', target); //target { a: '100', b: '2' } //no e:
+console.log('target', target); //target { a: '100', b: '2' }
 ```
 
 ---
