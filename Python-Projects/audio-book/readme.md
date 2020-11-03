@@ -1,0 +1,4 @@
+- pip install pyttsx3
+- pip install PyPDF2
+- https://www.youtube.com/watch?v=kyZ_5cvrXJI&t=123s
+- https://www.devdungeon.com/content/text-speech-python-pyttsx3
