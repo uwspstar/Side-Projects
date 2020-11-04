@@ -1326,3 +1326,40 @@ console.log(ws);
 - `delete` may not work, when you delete obj, because the obj look same, but there are different address. only delete the obj has same address
 
 ---
+
+### WeakSet vs Set (2020-11-02)
+
+- `Set`s can store any value. `WeakSet`s are collections of objects only.
+- `WeakSet` does not have size property.
+- `WeakSet` does not have clear, keys, values, entries, forEach methods.
+- `WeakSet` is not iterable
+
+---
+
+### Map (2020-11-02)
+
+- `set`
+- `get`
+- `has`
+
+```js
+let m =new Map();
+let obj ={
+  name ='xing'
+}
+m.set(obj, 'es');
+console.log(m.get(obj))
+```
+
+---
+
+```js
+let map = new Map([
+  ['name', 'xing'],
+  ['age', 20],
+]);
+console.log(map);
+console.log(map.size);
+console.log(map.has('name'));
+console.log(map.get('name'));
+```
