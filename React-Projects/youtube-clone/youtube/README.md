@@ -2,7 +2,7 @@
 marp: true
 theme: default
 header: 'React clone YouTube'
-footer: ''
+footer: 'https://www.youtube.com/watch?v=NT299zIk2JY&t=1410s'
 paginate: true
 size: 16:9
 ---
@@ -23,6 +23,7 @@ size: 16:9
 - install [snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)
 
 - `rfce`
+- Comment Code Block `Ctrl+K+C/Ctrl+K+U`
 
 ---
 
