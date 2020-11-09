@@ -19,6 +19,9 @@
     width: 40%;
     border: 1px solid black;
 }
+.header_input_search:focus {
+    border: 1px solid white;
+}
 .header_inputButton {
     width: 50px !important; 
     background-color: #fafafa;
