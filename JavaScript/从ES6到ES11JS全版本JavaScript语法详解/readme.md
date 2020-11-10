@@ -1364,10 +1364,34 @@ console.log(map.has('name'));
 console.log(map.get('name'));
 ```
 
+```js
+for (let [key, value] of map) {
+}
+for (let [key, value] of map.entries) {
+}
+for (let key of map.keys()) {
+}
+for (let value of map.values()) {
+}
+```
+
+---
+
+### WeakMap (2020-11-10)
+
+- The WeakMap object is a collection of key/value pairs in which the keys are weakly referenced.
+- Keys of WeakMaps are of the type `Object only`. Primitive data types as keys are `NOT` allowed (e.g. a Symbol can't be a WeakMap key).
+
 ---
 
 ### 字符串的扩展 (2020-11-10)
 
-![95% bg brightness:0.9](string.png)
+- `Unicode` : `UTF-8 is recommended`.
+  - https://developer.mozilla.org/en-US/docs/Glossary/Unicode
+  - The most common Unicode character encoding on the Web is `UTF-8`. Other encodings exist, like UTF-16 or the obsolete UCS-2, but `UTF-8 is recommended`.
+
+---
+
+![75% bg brightness:0.9](string.png)
 
 ---
