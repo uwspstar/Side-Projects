@@ -1363,3 +1363,11 @@ console.log(map.size);
 console.log(map.has('name'));
 console.log(map.get('name'));
 ```
+
+---
+
+### 字符串的扩展 (2020-11-10)
+
+![95% bg brightness:0.9](string.png)
+
+---
