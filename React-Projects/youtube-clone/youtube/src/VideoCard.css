@@ -1,0 +1,28 @@
+.videoCard {
+    margin-bottom: 40px;
+    width: 270px;;
+}
+.videoCard_thumbnail{
+    height: 140px;
+    width: 250px;
+}
+.video_info{
+    display: flex;
+    margin-top: 10px;
+    padding-right: 30px;
+}
+.videoCard_text{
+    margin-left: 15px;
+}
+.videoCard_text > h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.videoCard_text > p {
+    font-size: 14px;
+    color: gray;
+}
+.videoCard_avatar {
+    height: 30px !important;
+    width: 30px !important;
+}
