@@ -53,6 +53,7 @@ size: 16:9
 
 - https://reactrouter.com/web/guides/quick-start
 - `npm install react-router-dom`
+- using `Link` instead of using `a tag`
 
 ## Available Scripts
 
