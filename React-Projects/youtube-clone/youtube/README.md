@@ -49,6 +49,11 @@ size: 16:9
 
 - This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### router
+
+- https://reactrouter.com/web/guides/quick-start
+- `npm install react-router-dom`
+
 ## Available Scripts
 
 - In the project directory, you can run:
