@@ -13,7 +13,7 @@ function SearchPage() {
             </div>
             <hr />
             <ChannelRow
-                image="https://i.ytimg.com/vi/EQKjgUUZTLM/hqdefault.jpg"
+                image="https://yt3.ggpht.com/a/AATXAJweY7J9e6YEK00oom7tOl-jBd-Mq1qJvwIKUB0AaQ=s176-c-k-c0x00ffffff-no-rj-mo"
                 channel="科学声音"
                 verified
                 subs="660K"
