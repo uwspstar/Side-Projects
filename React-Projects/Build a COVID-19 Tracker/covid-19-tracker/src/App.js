@@ -1,11 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FormControl, MenuItem, Select } from '@material-ui/core'
+import axios from 'axios';
 import './App.css';
 
 function App() {
-  const [countries, setCountries] = useState([
-    'USA', 'UK', 'CHINA', 'INDIA', 'JAPAN'
-  ]);
+  const API = {
+    COUNTRIES: 'https://disease.sh/v3/covid-19/countries'
+  };
+  const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState("worldwide");
+  /*
+  // Fetch Way
+  useEffect(() => {
+    const getCountriesData = async () => {
+      await fetch(API.COUNTRIES)
+        .then(res => res.json())
+        .then(data => {
+          const countries = data.map(x => ({
+            name: x.country,// United Statue United Kingdom..
+            value: x.countryInfo.iso2 //USA, UK ...
+          }));
+          setCountries(countries);
+        });
+    };
+
+    //getCountriesData();
+  }, []);
+  */
+
+  useEffect(() => {
+    axios.get(API.COUNTRIES)
+      .then(res => {
+        const countries = res.data.map(x => ({
+          name: x.country,// United Statue United Kingdom..
+          value: x.countryInfo.iso2 //USA, UK ...
+        }));
+        setCountries(countries);
+      })
+  });
+
+  const onCountryChange = async (e) => {
+    const countryCode = e.target.value;
+    console.log('countryCode : ', countryCode);
+    setCountry(countryCode)
+  }
   return (
     <div className="app">
       <div className="app_header">
@@ -13,10 +51,12 @@ function App() {
         <FormControl className="app_dropdown">
           <Select
             variant="outlined"
-            value="abc"
+            value={country}
+            onChange={onCountryChange}
           >
-            {countries.map(country =>
-              <MenuItem value={country}>{country}</MenuItem>
+            <MenuItem value="worldwide">Worldwide</MenuItem>
+            {countries.map((country, index) =>
+              <MenuItem value={country.value}>{country.name}</MenuItem>
             )}
 
           </Select>

@@ -7,12 +7,13 @@ paginate: true
 size: 16:9
 ---
 
-# Build a COVID-19 Tracker with REACT JS for Beginners (React Hooks and Material UI)
+# COVID-19 Tracker with REACT JS
 
 - [Build a COVID-19 Tracker](https://www.youtube.com/watch?v=cF3pIMJUZxM&list=PL-J2q3Ga50oMQa1JdSJxYoZELwOJAXExP&index=6)
-- [drawio](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
+- [draw.io](https://marketplace.visualstudio.com/items?itemName=hediet.vscode-drawio)
 - [material-ui](https://material-ui.com/)
 - [disease.sh](https://disease.sh/docs/)
+  - [covid-19 countries api](https://disease.sh/v3/covid-19/countries)
 
 ---
 
@@ -27,13 +28,16 @@ size: 16:9
 - `npm install -g npx`
 - `npx create-react-app covid-19-tracker`
 - create a project on firebase [https://console.firebase.google.com/](https://console.firebase.google.com/)
-- n`pm install @material-ui/core`
+- `npm install @material-ui/core`
+- `npm install axios`
 
 ---
 
 ### clean up
 
 - remove test file
+- remove logo file
+- clean up html and css
 
 ---
 
