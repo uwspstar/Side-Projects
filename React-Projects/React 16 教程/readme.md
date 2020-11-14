@@ -12,6 +12,18 @@ size: 16:9
 - React is a declarative, efficient, and flexible `JavaScript library` for building user interfaces
 - https://www.youtube.com/watch?v=ZXg4W7qm-uw&list=PL9nxfq1tlKKnza3MPogWqaYIPtdW_G2lF
 - https://reactjs.org/tutorial/tutorial.html
+- all in js
+
+---
+
+### [目录文件简介](https://www.youtube.com/watch?v=ukXHAqsbu6g&list=PL9nxfq1tlKKnza3MPogWqaYIPtdW_G2lF&index=4)
+
+- `App.js`
+- `index.js`
+- `logo.svg`
+- `registerServiceWorker` : `PWA` progressive web application
+- `React.StrictMode`
+- `App.test.js`
 
 ---
 
