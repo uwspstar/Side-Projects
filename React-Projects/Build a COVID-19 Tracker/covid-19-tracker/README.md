@@ -43,3 +43,9 @@ size: 16:9
 ---
 
 ### structure app
+
+---
+
+### NODE
+
+- you can use more than 1 `useEffect`

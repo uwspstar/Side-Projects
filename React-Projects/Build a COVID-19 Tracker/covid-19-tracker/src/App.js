@@ -6,11 +6,24 @@ import Map from './Map'
 import './App.css';
 
 function App() {
+  const CONSTANCE = { WORLDWIDE: "worldwide" }
   const API = {
-    COUNTRIES: 'https://disease.sh/v3/covid-19/countries'
+    BASE: 'https://disease.sh/v3/covid-19/',
+    COUNTRIES: 'https://disease.sh/v3/covid-19/countries',
+    COUNTRIES_CODE_ALL: 'https://disease.sh/v3/covid-19/all',
   };
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
+  const [countryInfo, setCountryInfo] = useState({});
+  const [tableData, setTableData] = useState([]);
+
+  // page init load worldwide
+  useEffect(async () => {
+    const response = await axios.get(API.COUNTRIES_CODE_ALL);
+    const data = await response.data;
+    setCountryInfo(data);
+
+  }, []);
   /*
   // Fetch Way
   useEffect(() => {
@@ -41,8 +54,8 @@ function App() {
       })
   });
  */
- // axios async
-  useEffect(async () => {
+  // axios async
+  const getCountriesData = async () => {
     const response = await axios.get(API.COUNTRIES);
     const data = await response.data;
     const countries = data.map(x => ({
@@ -50,12 +63,32 @@ function App() {
       value: x.countryInfo.iso2 //USA, UK ...
     }));
     setCountries(countries);
+  }
+  /*
+   useEffect(async () => {
+     const countriesData =  await getCountriesData();
+     console.log('CountriesData', countriesData);
+  });
+  */
+  useEffect(() => {
+    getCountriesData();
   });
 
   const onCountryChange = async (e) => {
     const countryCode = e.target.value;
+    setCountry(countryCode);
+
+    const url = countryCode === CONSTANCE.WORLDWIDE
+      ? API.COUNTRIES_CODE_ALL
+      : API.COUNTRIES + '/' + countryCode;
+    const response = await axios.get(url);
+    const data = await response.data;
+
+    setCountryInfo(data);
+    console.log('url = ', url);
     console.log('countryCode : ', countryCode);
-    setCountry(countryCode)
+    console.log('countryInfo = ', data);
+
   }
   return (
     <div className="app">
@@ -77,9 +110,9 @@ function App() {
           </FormControl >
         </div>
         <div className="app_stats">
-          <InfoBox title="Coronavirus Cases" cases={123} total={2000} />
-          <InfoBox title="Recovered" cases={1234} total={3000} />
-          <InfoBox title="Deaths" cases={12345} total={4000} />
+          <InfoBox title="Coronavirus Cases" cases={countryInfo.todayCases} total={countryInfo.cases} />
+          <InfoBox title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
+          <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
         </div>
         <Map />
       </div >
