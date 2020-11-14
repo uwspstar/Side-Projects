@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { FormControl, MenuItem, Select } from '@material-ui/core'
+import { FormControl, MenuItem, Select, Card, CardContent } from '@material-ui/core'
 import axios from 'axios';
+import InfoBox from './InfoBox'
+import Map from './Map'
 import './App.css';
 
 function App() {
@@ -46,27 +48,36 @@ function App() {
   }
   return (
     <div className="app">
-      <div className="app_header">
-        <h1>COVID-19 TRACKER</h1>
-        <FormControl className="app_dropdown">
-          <Select
-            variant="outlined"
-            value={country}
-            onChange={onCountryChange}
-          >
-            <MenuItem value="worldwide">Worldwide</MenuItem>
-            {countries.map((country, index) =>
-              <MenuItem value={country.value}>{country.name}</MenuItem>
-            )}
+      <div className="app_left">
+        <div className="app_header">
+          <h1>COVID-19 TRACKER</h1>
+          <FormControl className="app_dropdown">
+            <Select
+              variant="outlined"
+              value={country}
+              onChange={onCountryChange}
+            >
+              <MenuItem value="worldwide">Worldwide</MenuItem>
+              {countries.map((country, index) =>
+                <MenuItem value={country.value}>{country.name}</MenuItem>
+              )}
 
-          </Select>
-        </FormControl >
-      </div>
-      {/* HEADER */}
-      {/* Title */}
-      {/* InfoBox */}
-      {/* InfoBox */}
-      {/* InfoBox */}
+            </Select>
+          </FormControl >
+        </div>
+        <div className="app_stats">
+          <InfoBox title="Coronavirus Cases" cases={123} total={2000} />
+          <InfoBox title="Recovered" cases={1234} total={3000} />
+          <InfoBox title="Deaths" cases={12345} total={4000} />
+        </div>
+        <Map />
+      </div >
+      <Card className="app_right">
+        <CardContent>
+          <h3>Live Cases by Country</h3>
+          <h3>Worldwide new cases</h3>
+        </CardContent>
+      </Card>
       {/* Table */}
       {/* Graph */}
       {/* Map */}
