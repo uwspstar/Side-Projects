@@ -55,23 +55,25 @@ function App() {
   });
  */
   // axios async
-  const getCountriesData = async () => {
-    const response = await axios.get(API.COUNTRIES);
+  const getCountriesData = async (url) => {
+    const response = await axios.get(url);
     const data = await response.data;
     const countries = data.map(x => ({
       name: x.country,// United Statue United Kingdom..
       value: x.countryInfo.iso2 //USA, UK ...
     }));
+    setTableData(data);
     setCountries(countries);
+
   }
   /*
    useEffect(async () => {
-     const countriesData =  await getCountriesData();
+     const countriesData =  await getCountriesData(API.COUNTRIES);
      console.log('CountriesData', countriesData);
   });
   */
   useEffect(() => {
-    getCountriesData();
+    getCountriesData(API.COUNTRIES);
   });
 
   const onCountryChange = async (e) => {
@@ -83,12 +85,7 @@ function App() {
       : API.COUNTRIES + '/' + countryCode;
     const response = await axios.get(url);
     const data = await response.data;
-
     setCountryInfo(data);
-    console.log('url = ', url);
-    console.log('countryCode : ', countryCode);
-    console.log('countryInfo = ', data);
-
   }
   return (
     <div className="app">
