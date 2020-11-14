@@ -14,6 +14,7 @@ size: 16:9
 - [material-ui](https://material-ui.com/)
 - [disease.sh](https://disease.sh/docs/)
   - [covid-19 countries api](https://disease.sh/v3/covid-19/countries)
+- [Asynchronous Javascript using Async - Await](https://scotch.io/tutorials/asynchronous-javascript-using-async-await)
 
 ---
 

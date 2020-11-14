@@ -29,7 +29,7 @@ function App() {
     //getCountriesData();
   }, []);
   */
-
+  /*
   useEffect(() => {
     axios.get(API.COUNTRIES)
       .then(res => {
@@ -39,6 +39,17 @@ function App() {
         }));
         setCountries(countries);
       })
+  });
+ */
+ // axios async
+  useEffect(async () => {
+    const response = await axios.get(API.COUNTRIES);
+    const data = await response.data;
+    const countries = data.map(x => ({
+      name: x.country,// United Statue United Kingdom..
+      value: x.countryInfo.iso2 //USA, UK ...
+    }));
+    setCountries(countries);
   });
 
   const onCountryChange = async (e) => {
