@@ -3,6 +3,8 @@ import { FormControl, MenuItem, Select, Card, CardContent } from '@material-ui/c
 import axios from 'axios';
 import InfoBox from './InfoBox'
 import Map from './Map'
+import Table from './Table'
+import { sortData } from './util'
 import './App.css';
 
 function App() {
@@ -62,7 +64,8 @@ function App() {
       name: x.country,// United Statue United Kingdom..
       value: x.countryInfo.iso2 //USA, UK ...
     }));
-    setTableData(data);
+
+    setTableData(sortData(data)); //sortData util function
     setCountries(countries);
 
   }
@@ -116,6 +119,7 @@ function App() {
       <Card className="app_right">
         <CardContent>
           <h3>Live Cases by Country</h3>
+          <Table countries={tableData} />
           <h3>Worldwide new cases</h3>
         </CardContent>
       </Card>
