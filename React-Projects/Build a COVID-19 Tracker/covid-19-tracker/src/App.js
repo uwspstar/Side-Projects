@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { FormControl, MenuItem, Select, Card, CardContent } from '@material-ui/core'
 import axios from 'axios';
-import { sortData } from './util'
+import { sortData, prettyPrintStat } from './util'
 import { CONSTANCE } from './constance'
 import { API } from './api'
 import InfoBox from './InfoBox'
@@ -16,6 +16,7 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
+  const [mapCountries, setMapCountries] = useState([]);
   const [tableData, setTableData] = useState([]);
   const [mapZoom, setMapZoom] = useState(3);
   const [mapCenter, setMapCenter] = useState({
@@ -28,25 +29,25 @@ function App() {
     const response = await axios.get(API.COUNTRIES_CODE_ALL);
     const data = await response.data;
     setCountryInfo(data);
-
   }, []);
 
   // axios async
-  const getCountriesData = async (url) => {
-    const response = await axios.get(url);
-    const data = await response.data;
-    const countries = data.map(x => ({
-      name: x.country,// United Statue United Kingdom..
-      value: x.countryInfo.iso2 //USA, UK ...
-    }));
-
-    setTableData(sortData(data)); //sortData util function
-    setCountries(countries);
-
-  }
-
   useEffect(() => {
+    const getCountriesData = async (url) => {
+      const response = await axios.get(url);
+      const data = await response.data;
+      const countries = data.map(x => ({
+        name: x.country,// United Statue United Kingdom..
+        value: x.countryInfo.iso2 //USA, UK ...
+      }));
+
+      setTableData(sortData(data)); //sortData util function
+      setMapCountries(data)
+      setCountries(countries);
+    }
+
     getCountriesData(API.COUNTRIES);
+
   });
 
   const onCountryChange = async (e) => {
@@ -59,7 +60,9 @@ function App() {
     const response = await axios.get(url);
     const data = await response.data;
     setCountryInfo(data);
+    console.log("this is called ....")
   }
+
   return (
     <div className="app">
       <div className="app_left">
@@ -80,11 +83,24 @@ function App() {
           </FormControl >
         </div>
         <div className="app_stats">
-          <InfoBox title="Coronavirus Cases" cases={countryInfo.todayCases} total={countryInfo.cases} />
-          <InfoBox title="Recovered" cases={countryInfo.todayRecovered} total={countryInfo.recovered} />
-          <InfoBox title="Deaths" cases={countryInfo.todayDeaths} total={countryInfo.deaths} />
+          <InfoBox
+            title="Coronavirus Cases"
+            cases={prettyPrintStat(countryInfo.todayCases)}
+            total={prettyPrintStat(countryInfo.cases)}
+          />
+          <InfoBox
+            title="Recovered"
+            cases={prettyPrintStat(countryInfo.todayRecovered)}
+            total={prettyPrintStat(countryInfo.recovered)}
+          />
+          <InfoBox
+            title="Deaths"
+            cases={prettyPrintStat(countryInfo.todayDeaths)}
+            total={prettyPrintStat(countryInfo.deaths)}
+          />
         </div>
         <MapView
+          countries={mapCountries}
           center={mapCenter}
           zoom={mapZoom}
         />

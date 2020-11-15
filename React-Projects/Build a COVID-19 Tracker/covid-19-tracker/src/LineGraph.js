@@ -53,7 +53,6 @@ function LineGraph() {
     useEffect(async () => {
         const response = await axios.get(API.HISTORY_LAST_120);
         const data = await response.data;
-        console.log(data)
         const charData = buildChartData(data);
         setData(charData);
     }, []);
