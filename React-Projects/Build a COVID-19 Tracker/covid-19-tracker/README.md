@@ -15,6 +15,8 @@ size: 16:9
 - [disease.sh](https://disease.sh/docs/)
   - [covid-19 countries api](https://disease.sh/v3/covid-19/countries)
 - [Asynchronous Javascript using Async - Await](https://scotch.io/tutorials/asynchronous-javascript-using-async-await)
+- [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
+- [chartjs](https://www.chartjs.org/docs/latest/charts/line.html)
 
 ---
 
@@ -31,6 +33,8 @@ size: 16:9
 - create a project on firebase [https://console.firebase.google.com/](https://console.firebase.google.com/)
 - `npm install @material-ui/core`
 - `npm install axios`
+- `npm install --save react-chartjs-2 chart.js`
+- `npm install numeral`
 
 ---
 

@@ -1,19 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { FormControl, MenuItem, Select, Card, CardContent } from '@material-ui/core'
 import axios from 'axios';
+import { sortData } from './util'
+import { CONSTANCE } from './constance'
+import { API } from './api'
 import InfoBox from './InfoBox'
 import Map from './Map'
 import Table from './Table'
-import { sortData } from './util'
+import LineGraph from './LineGraph'
 import './App.css';
 
 function App() {
-  const CONSTANCE = { WORLDWIDE: "worldwide" }
-  const API = {
-    BASE: 'https://disease.sh/v3/covid-19/',
-    COUNTRIES: 'https://disease.sh/v3/covid-19/countries',
-    COUNTRIES_CODE_ALL: 'https://disease.sh/v3/covid-19/all',
-  };
+
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState("worldwide");
   const [countryInfo, setCountryInfo] = useState({});
@@ -26,36 +24,7 @@ function App() {
     setCountryInfo(data);
 
   }, []);
-  /*
-  // Fetch Way
-  useEffect(() => {
-    const getCountriesData = async () => {
-      await fetch(API.COUNTRIES)
-        .then(res => res.json())
-        .then(data => {
-          const countries = data.map(x => ({
-            name: x.country,// United Statue United Kingdom..
-            value: x.countryInfo.iso2 //USA, UK ...
-          }));
-          setCountries(countries);
-        });
-    };
 
-    //getCountriesData();
-  }, []);
-  */
-  /*
-  useEffect(() => {
-    axios.get(API.COUNTRIES)
-      .then(res => {
-        const countries = res.data.map(x => ({
-          name: x.country,// United Statue United Kingdom..
-          value: x.countryInfo.iso2 //USA, UK ...
-        }));
-        setCountries(countries);
-      })
-  });
- */
   // axios async
   const getCountriesData = async (url) => {
     const response = await axios.get(url);
@@ -69,12 +38,7 @@ function App() {
     setCountries(countries);
 
   }
-  /*
-   useEffect(async () => {
-     const countriesData =  await getCountriesData(API.COUNTRIES);
-     console.log('CountriesData', countriesData);
-  });
-  */
+
   useEffect(() => {
     getCountriesData(API.COUNTRIES);
   });
@@ -121,11 +85,9 @@ function App() {
           <h3>Live Cases by Country</h3>
           <Table countries={tableData} />
           <h3>Worldwide new cases</h3>
+          <LineGraph />
         </CardContent>
       </Card>
-      {/* Table */}
-      {/* Graph */}
-      {/* Map */}
     </div >
   );
 }
