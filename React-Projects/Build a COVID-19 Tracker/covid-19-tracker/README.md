@@ -17,6 +17,7 @@ size: 16:9
 - [Asynchronous Javascript using Async - Await](https://scotch.io/tutorials/asynchronous-javascript-using-async-await)
 - [react-chartjs-2](https://www.npmjs.com/package/react-chartjs-2)
 - [chartjs](https://www.chartjs.org/docs/latest/charts/line.html)
+- [leaflet](https://www.npmjs.com/package/leaflet)
 
 ---
 
@@ -35,7 +36,7 @@ size: 16:9
 - `npm install axios`
 - `npm install --save react-chartjs-2 chart.js`
 - `npm install numeral`
-
+- `npm i leaflet`
 ---
 
 ### clean up
