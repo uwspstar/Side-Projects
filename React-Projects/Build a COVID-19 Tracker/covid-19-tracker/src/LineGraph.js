@@ -47,15 +47,15 @@ const options = {
         ],
     }
 }
-function LineGraph() {
+function LineGraph({ casesType }) {
     const [data, setData] = useState({});
 
     useEffect(async () => {
         const response = await axios.get(API.HISTORY_LAST_120);
         const data = await response.data;
-        const charData = buildChartData(data);
+        const charData = buildChartData(data, casesType);
         setData(charData);
-    }, []);
+    }, [casesType]);
 
     const buildChartData = (data, casesType = 'cases') => {
         const chartData = [];
