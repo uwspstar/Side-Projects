@@ -10,24 +10,24 @@ footer :"by Xing"
 # VsCode Extensions
 
 - vscode-icon
-- BracketPair
-- Code Spelling
-- Run Code
-- Live server
+- Bracket Pair Colorizer
+- Code Spell Checker
+- Code Runner
+- Live Server
 - vscode Intellicode
-- Faker
+- vscode-faker
 - REST client
 
 ---
 
 - draw.io integration
-- Marp for vscode
+- Marp for VS Code
 - Highlight line
 - Color Highlight
 - Beautify
 - Import cost
-- Prettier
-- material-icon
+- Prettier - Code formatter
+- Material Icon Theme
 - NuGet Package Manager
 
 ---
