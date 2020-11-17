@@ -37,6 +37,27 @@ size: 16:9
 - `npm install --save react-chartjs-2 chart.js`
 - `npm install numeral`
 - `npm i leaflet`
+
+---
+
+### firebase deployment
+
+- `sudo npm i -g firebase-tools`
+- `firebase logout`
+- `firebase login`
+- `firebase init`
+- `Allow Firebase to collect CLI usage and error reporting information? (Y/n)` > Y
+- `Please select an option:` > Use an existing project
+- `Select a default Firebase project for this directory:` covid-19-tracker-e5d46 (covid-19-tracker)
+- `What do you want to use as your public directory?` > build
+- `? Configure as a single-page app (rewrite all urls to /index.html)?` Yes
+- `? Set up automatic builds and deploys with GitHub?` No
+- `? File build/index.html already exists. Overwrite?` Yes
+- `✔ Wrote build/index.html`
+- `firebase deploy`
+- `Project Console: https://console.firebase.google.com/project/covid-19-tracker-e5d46/overview`
+- `Hosting URL: https://covid-19-tracker-e5d46.web.app`
+
 ---
 
 ### clean up

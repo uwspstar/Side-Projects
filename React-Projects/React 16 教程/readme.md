@@ -24,6 +24,7 @@ size: 16:9
 - `registerServiceWorker` : `PWA` progressive web application
 - `React.StrictMode`
 - `App.test.js`
+- `manifest.json` : PWA setting
 
 ---
 
@@ -34,11 +35,52 @@ size: 16:9
 
 ---
 
+### project init
+
+- `npm install -g npx`
+- `npx create-react-app app-name`
+- create a project on firebase [https://console.firebase.google.com/](https://console.firebase.google.com/)
+- `npm install @material-ui/core`
+- `npm install axios`
+
+---
+
+### [React 中的组件](https://www.youtube.com/watch?v=64b-Rt0CPbc&list=PL9nxfq1tlKKnza3MPogWqaYIPtdW_G2lF&index=5)
+
+```js
+import React, {Component} from 'react';
+class App extends Component {...}
+```
+
+#### same as
+
+```js
+import React from 'react';
+class App extends React.Component {...}
+```
+
+---
+
+```js
+import { Component } from 'react';
+```
+
+#### same as
+
+```js
+import React from 'react';
+const Component = React.Component;
+```
+
+- `ReactDOM.render`
+
+---
+
 ### React.Component
 
 - A component takes in parameters, called `props` (short for “properties”), and returns a hierarchy of views to display via the `render method`.
 - `props`
-- `render`
+- `render` : function return JSX
 - `state`
 - `setState`
 - Immutability
