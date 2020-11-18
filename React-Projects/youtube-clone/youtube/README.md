@@ -55,6 +55,8 @@ size: 16:9
 - `npm install react-router-dom`
 - using `Link` instead of using `a tag`
 
+---
+
 ## Available Scripts
 
 - In the project directory, you can run:
