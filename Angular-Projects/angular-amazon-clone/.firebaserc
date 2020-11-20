@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "clone-dae07"
+  },
+  "targets": {
+    "clone-dae07": {
+      "hosting": {
+        "angular-amazon-clone": [
+          "clone-dae07"
+        ]
+      }
+    }
   }
 }
