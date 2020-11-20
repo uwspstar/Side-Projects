@@ -31,6 +31,7 @@ size: 16:9
 
 ### firebase deployment
 
+- https://alligator.io/angular/deploying-angular-app-to-firebase/
 - `sudo npm i -g firebase-tools`
 - `firebase logout`
 - `firebase login`
@@ -46,6 +47,7 @@ size: 16:9
 - `firebase deploy`
 - `Project Console: https://console.firebase.google.com/project/covid-19-tracker-e5d46/overview`
 - `Hosting URL: https://covid-19-tracker-e5d46.web.app`
+- `firebase open`
 
 ---
 
