@@ -466,7 +466,7 @@ i18n`Welcome to ${siteName}`;
 
 ### 字符串的新增方法
 
-- https://wangdoc.com/es6/string-methods.html
+- [string-methods](https://wangdoc.com/es6/string-methods.html)
 
 #### String.fromCodePoint() vs String.fromCharCode()
 
@@ -507,8 +507,8 @@ is32Bit('a'); // false
 
 #### normalize()
 
-- ES6 提供字符串实例的 normalize()方法，用来将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化.
-- normalize 方法可以接受一个参数来指定 normalize 的方式
+- ES6 提供字符串实例的 `normalize()` 方法，用来将字符的不同表示方法统一为同样的形式，这称为 `Unicode` 正规化.
+- `normalize` 方法可以接受一个参数来指定 `normalize` 的方式
 
   ```js
   '\u01D1'.normalize() === '\u004F\u030C'.normalize()`
@@ -518,24 +518,24 @@ is32Bit('a'); // false
 
 #### includes(), startsWith(), endsWith()
 
-- 传统上，JavaScript 只有 indexOf 方法，可以用来确定一个字符串是否包含在另一个字符串中。
-- ES6 又提供了三种新方法。这三个方法都支持第二个参数，表示开始搜索的位置。
-  - includes()：返回布尔值，表示是否找到了参数字符串。
-  - startsWith()：返回布尔值，表示参数字符串是否在原字符串的头部。
-  - endsWith()：返回布尔值，表示参数字符串是否在原字符串的尾部
+- 传统上，`JavaScript` 只有 `indexOf` 方法，可以用来确定一个字符串是否包含在另一个字符串中。
+- `ES6` 又提供了三种新方法。这三个方法都支持第二个参数，表示开始搜索的位置。
+  - `includes()` ：返回布尔值，表示是否找到了参数字符串。
+  - `startsWith()` ：返回布尔值，表示参数字符串是否在原字符串的头部。
+  - `endsWith()` ：返回布尔值，表示参数字符串是否在原字符串的尾部
 
 ---
 
 #### padStart()，padEnd()
 
-- padStart()的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串
+- `padStart()` 的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串
 
 ```js
 '1'.padStart(10, '0'); // "0000000001"
 '12'.padStart(10, 'YYYY-MM-DD'); // "YYYY-MM-12"
 ```
 
-- ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。padStart()用于头部补全，padEnd()用于尾部补全。
+- `ES2017` 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。`padStart()` 用于头部补全，`padEnd()` 用于尾部补全。
 
 ```js
 'x'.padStart(5, 'ab'); // 'ababx'
@@ -551,12 +551,12 @@ is32Bit('a'); // false
 
 #### repeat()
 
-- repeat 方法返回一个新字符串，表示将原字符串重复 n 次
+- `repeat` 方法返回一个新字符串，表示将原字符串重复 n 次
 
 #### trimStart()，trimEnd()
 
-- trim()一致，trimStart()消除字符串头部的空格，trimEnd()消除尾部的空格。
-- trimStart()，trimEnd() 返回的都是新字符串，不会修改原始字符串。
+- `trim()` 一致，`trimStart()` 消除字符串头部的空格，`trimEnd()` 消除尾部的空格。
+- `trimStart()`，`trimEnd()` 返回的都是新字符串，不会修改原始字符串。
 
 #### matchAll()
 
@@ -564,8 +564,8 @@ is32Bit('a'); // false
 
 ### RegExp 构造函数
 
-- https://wangdoc.com/es6/regex.html
-- 在 ES5 中，RegExp 构造函数的参数有两种情况
+- [regex](https://wangdoc.com/es6/regex.html)
+- 在 ES5 中，`RegExp` 构造函数的参数有两种情况
   - 第一种情况是，参数是字符串，这时第二个参数表示正则表达式的修饰符（flag）
   - 第二种情况是，参数是一个正则表示式，这时会返回一个原有正则表达式的拷贝。
 - ES6 改变了这种行为。如果 RegExp 构造函数第一个参数是一个正则对象，那么可以使用第二个参数指定修饰符。而且，返回的正则表达式会忽略原有的正则表达式的修饰符，只使用新指定的修饰符。
@@ -574,8 +574,8 @@ is32Bit('a'); // false
 
 ### 字符串的正则方法
 
-- 字符串对象共有 4 个方法，可以使用正则表达式：match()、replace()、search()和 split()
-- ES6 将这 4 个方法，在语言内部全部调用 RegExp 的实例方法
+- 字符串对象共有 4 个方法，可以使用正则表达式：`match()`、`replace()`、`search()` 和 `split()`
+- ES6 将这 4 个方法，在语言内部全部调用 `RegExp` 的实例方法
 
 ```js
 String.prototype.match 调用 RegExp.prototype[Symbol.match]
@@ -588,7 +588,7 @@ String.prototype.split 调用 RegExp.prototype[Symbol.split]
 
 ### u 修饰符
 
-- ES6 对正则表达式添加了 u 修饰符，含义为“Unicode 模式”，用来正确处理大于\uFFFF 的 Unicode 字符。也就是说，会正确处理四个字节的 UTF-16 编码。
+- ES6 对正则表达式添加了 u 修饰符，含义为“Unicode 模式”，用来正确处理大于\uFFFF 的 `Unicode` 字符。也就是说，会正确处理四个字节的 `UTF-16` 编码。
 
 ### RegExp.prototype.unicode 属性
 
@@ -612,8 +612,8 @@ String.prototype.split 调用 RegExp.prototype[Symbol.split]
 Array.from(string.matchAll(regex));
 ```
 
-- ES2020 增加了 String.prototype.matchAll()方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组
-- string.matchAll(regex) 返回的是遍历器
+- ES2020 增加了 `String.prototype.matchAll()` 方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组
+- `string.matchAll(regex)` 返回的是遍历器
 
 ---
 
@@ -634,15 +634,15 @@ Number('0o10'); // 8
 
 #### Number.isFinite(), Number.isNaN()
 
-- 如果参数类型不是数值，Number.isFinite 一律返回 false
-- 如果参数类型不是 NaN，Number.isNaN 一律返回 false
-- 它们与传统的全局方法 isFinite()和 isNaN()的区别在于，传统方法先调用 Number()将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，Number.isFinite()对于非数值一律返回 false, Number.isNaN()只有对于 NaN 才返回 true，非 NaN 一律返回 false。
+- 如果参数类型不是数值，`Number.isFinite` 一律返回 `false`
+- 如果参数类型不是 `NaN`，`Number.isNaN` 一律返回 `false`
+- 它们与传统的全局方法 `isFinite()` 和 `isNaN()` 的区别在于，传统方法先调用 `Number()` 将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，`Number.isFinite()` 对于非数值一律返回 `false`, `Number.isNaN()` 只有对于 `NaN` 才返回 `true`，非 `NaN` 一律返回 `false`。
 
 ---
 
 #### Number.parseInt(), Number.parseFloat()
 
-- ES6 将全局方法 parseInt()和 parseFloat()，移植到 Number 对象上面，行为完全保持不变
+- ES6 将全局方法 `parseInt()` 和 `parseFloat()`，移植到 `Number` 对象上面，行为完全保持不变
 
 ```js
 // ES5的写法
@@ -658,9 +658,9 @@ Number.parseFloat('123.45#'); // 123.45
 
 #### Number.isInteger() 用来判断一个数值是否为整数
 
-- 如果对数据精度的要求较高，不建议使用 Number.isInteger()判断一个数值是否为整数
-- 如果参数不是数值，Number.isInteger 返回 false
-- JavaScript 内部，整数和浮点数采用的是同样的储存方法，所以 25 和 25.0 被视为同一个值。
+- 如果对数据精度的要求较高，不建议使用 `Number.isInteger()` 判断一个数值是否为整数
+- 如果参数不是数值，`Number.isInteger` 返回 `false`
+- `JavaScrip`t 内部，整数和浮点数采用的是同样的储存方法，所以 25 和 25.0 被视为同一个值。
 
 ```js
 Number.isInteger(25); // true
@@ -672,7 +672,8 @@ Number.isInteger(25.0); // true
 #### Number.EPSILON
 
 - https://wangdoc.com/es6/number.html#numberepsilon
-- Number.EPSILON 实际上是 JavaScript 能够表示的最小精度。误差如果小于这个值，就可以认为已经没有意义了，即不存在误差了
+- `Number.EPSILON` 实际上是 JavaScript 能够表示的最小精度。
+- 误差如果小于这个值，就可以认为已经没有意义了，即不存在误差了
 
 ---
 
@@ -684,24 +685,24 @@ Number.isInteger(25.0); // true
 
 - https://wangdoc.com/es6/number.html#bigint-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B
 
-- JavaScript 所有数字都保存成 64 位浮点数，这给数值的表示带来了两大限制。一是数值的精度只能到 53 个二进制位（相当于 16 个十进制位），大于这个范围的整数，JavaScript 是无法精确表示的.
+- `JavaScript 所有数字都保存成 64 位浮点数`，这给数值的表示带来了两大限制。一是数值的精度只能到 53 个二进制位（相当于 16 个十进制位），大于这个范围的整数，JavaScript 是无法精确表示的.
 
 ---
 
-- ES2020 引入了一种新的数据类型 BigInt（大整数），来解决这个问题，这是 ECMAScript 的第八种数据类型。BigInt 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。`1234n // BigInt`
-- BigInt 可以使用负号（-），但是不能使用正号（+），因为会与 asm.js 冲突。
+- ES2020 引入了一种新的数据类型 `BigInt（大整数）`，来解决这个问题，这是 ECMAScript 的第八种数据类型。`BigInt` 只用来表示整数，没有位数的限制，任何位数的整数都可以精确表示。`1234n // BigInt`
+- `BigInt` 可以使用负号（-），但是不能使用正号（+），因为会与 `asm.js` 冲突。
 - `BigInt(123) // 123n`
-- 可以使用 Boolean()、Number()和 String()这三个方法，将 BigInt 可以转为布尔值、数值和字符串类型。
-- BigInt 不能与普通数值进行混合运算 `1n + 1.3 // 报错`
-- 同样的原因，如果一个标准库函数的参数预期是 Number 类型，但是得到的是一个 BigInt，就会报错。`Math.sqrt(4n) // 报错`
-- BigInt 与字符串混合运算时，会先转为字符串，再进行运算。
+- 可以使用 `Boolean()`、`Number()` 和 `String()` 这三个方法，将 `BigInt` 可以转为布尔值、数值和字符串类型。
+- `BigInt` 不能与普通数值进行混合运算 `1n + 1.3 // 报错`
+- 同样的原因，如果一个标准库函数的参数预期是 `Number` 类型，但是得到的是一个 `BigInt`，就会报错。`Math.sqrt(4n) // 报错`
+- `BigInt` 与字符串混合运算时，会先转为字符串，再进行运算。
 
 ---
 
 ### Math 对象的扩展
 
 - https://wangdoc.com/es6/number.html#math-%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95
-- ES6 在 Math 对象上新增了 17 个与数学相关的方法。所有这些方法都是静态方法，只能在 Math 对象上调用
+- ES6 在 `Math` 对象上新增了 17 个与数学相关的方法。所有这些方法都是静态方法，只能在 Math 对象上调用
 
 ### 指数运算符
 
@@ -715,9 +716,10 @@ Number.isInteger(25.0); // true
 
 - https://wangdoc.com/es6/function.html
 - ES6 允许为函数的参数设置默认值
-- 参数变量是默认声明的，所以不能用 let 或 const 再次声明
+- 参数变量是默认声明的，所以不能用 `let` 或 `const` 再次声明
 - 使用参数默认值时，函数不能有同名参数
-- 指定了默认值后，length 属性将失真 (length 属性的含义是，该函数预期传入的参数个数). 指定了默认值以后，函数的 length 属性，将返回没有指定默认值的参数个数. 默认值的参数不是尾参数，那么 length 属性也不再计入后面的参数了。`(function (a, b, c = 5, d) {}).length // 2`
+- 指定了默认值后，`length` 属性将失真 (length 属性的含义是，该函数预期传入的参数个数). 指定了默认值以后，函数的 length 属性，将返回没有指定默认值的参数个数. 默认值的参数不是尾参数，那么 length 属性也不再计入后面的参数了。
+- `(function (a, b, c = 5, d) {}).length // 2`
 
 ---
 
@@ -750,7 +752,7 @@ foo(undefined, null);
 
 ### 函数作用域
 
-- https://wangdoc.com/es6/function.html#%E4%BD%9C%E7%94%A8%E5%9F%9F
+- [函数作用域](https://wangdoc.com/es6/function.html#%E4%BD%9C%E7%94%A8%E5%9F%9F)
 - 一旦设置了参数的默认值，函数进行声明初始化时，参数会形成一个单独的作用域（context）。等到初始化结束，这个作用域就会消失。这种语法行为，在不设置参数默认值时，是不会出现的。
 
 ---
@@ -758,8 +760,8 @@ foo(undefined, null);
 ### 函数 rest 参数
 
 - https://wangdoc.com/es6/function.html#rest-%E5%8F%82%E6%95%B0
-- rest 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
-- rest 参数之后不能再有其他参数（即只能是最后一个参数），否则会报错
+- `rest` 参数搭配的变量是一个数组，该变量将多余的参数放入数组中。
+- `rest` 参数之后不能再有其他参数（即`只能是最后一个参数`），否则会报错
 
 ```js
 // arguments变量的写法
@@ -802,33 +804,42 @@ bar.name; // "baz"
 
 ### 箭头函数有几个使用注意点。
 
-- 1 函数体内的 this 对象，就是定义时所在的对象，而不是使用时所在的对象。
-- 2 不可以当作构造函数，也就是说，不可以使用 new 命令，否则会抛出一个错误。
-- 3 不可以使用 arguments 对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。
-- 4 不可以使用 yield 命令，因此箭头函数不能用作 Generator 函数。
+- 1 函数体内的 `this` 对象，就是定义时所在的对象，而不是使用时所在的对象。
+- 2 不可以当作构造函数，也就是说，不可以使用 `new` 命令，否则会抛出一个错误。
+- 3 不可以使用 `arguments` 对象，该对象在函数体内不存在。如果要用，可以用 `rest` 参数代替。
+- 4 不可以使用 `yield` 命令，因此箭头函数不能用作 `Generator` 函数。
 
 ---
 
-- 上面四点中，第一点尤其值得注意。this 对象的指向是可变的，但是在箭头函数中，它是固定的。
-- this 指向的固定化，并不是因为箭头函数内部有绑定 this 的机制，实际原因是箭头函数根本没有自己的 this，导致内部的 this 就是外层代码块的 this。正是因为它没有 this，所以也就不能用作构造函数。
-- 由于箭头函数没有自己的 this，所以当然也就不能用 call()、apply()、bind()这些方法去改变 this 的指向
+- 上面四点中，第一点尤其值得注意。`this` 对象的指向是可变的，但是在箭头函数中，它是固定的。
+- `this` 指向的固定化，并不是因为箭头函数内部有绑定 `this` 的机制，实际原因是箭头函数根本没有自己的 `this`，导致内部的 `this` 就是外层代码块的 `this`。正是因为它没有 `this`，所以也就不能用作构造函数。
+- 由于箭头函数没有自己的 `this`，所以当然也就不能用 `call()`、`apply()`、`bind()`这些方法去改变 `this` 的指向
 
 ---
 
 ### 箭头函数不适用场合
 
-- https://wangdoc.com/es6/function.html#%E4%B8%8D%E9%80%82%E7%94%A8%E5%9C%BA%E5%90%88
+- [箭头函数不适用场合](https://wangdoc.com/es6/function.html#%E4%B8%8D%E9%80%82%E7%94%A8%E5%9C%BA%E5%90%88)
 
 ---
 
 ### 尾递归函数
 
-- https://wangdoc.com/es6/function.html#%E5%B0%BE%E9%80%92%E5%BD%92
-- ES6 中只要使用尾递归，就不会发生栈溢出（或者层层递归造成的超时），相对节省内存。
-- ES6 的尾调用优化只在严格模式下开启，正常模式是无效的
+-[尾调用优化](https://www.ruanyifeng.com/blog/2015/04/tail-call.html)
+
+- [尾递归函数](https://wangdoc.com/es6/function.html#%E5%B0%BE%E9%80%92%E5%BD%92)
+- `ES6 中只要使用尾递归，就不会发生栈溢出`（或者层层递归造成的超时），相对`节省内存`。
+- `ES6 的尾调用优化只在严格模式下开启`，`正常模式是无效的`
 - 这是因为在正常模式下，函数内部有两个变量，可以跟踪函数的调用栈。
-  - func.arguments：返回调用时函数的参数。
-  - func.caller：返回调用当前函数的那个函数
+  - `func.arguments` ：返回调用时函数的参数。
+  - `func.caller` ：返回调用当前函数的那个函数
+
+---
+
+### 递归函数的改写
+
+- [递归函数的改写](https://wangdoc.com/es6/function.html#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%94%B9%E5%86%99)
+- 尾递归的实现，往往需要改写递归函数，确保最后一步只调用自身。做到这一点的方法，就是把所有用到的内部变量改写成函数的参数。
 
 ---
 
@@ -842,7 +853,39 @@ bar.name; // "baz"
 
 ### 递归函数的改写
 
-- https://wangdoc.com/es6/function.html#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%94%B9%E5%86%99
+- [递归函数的改写](https://wangdoc.com/es6/function.html#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%94%B9%E5%86%99)
+- 阶乘函数，计算 n 的阶乘，最多需要保存 n 个调用记录，复杂度 `O(n)` 。
+
+```js
+function factorial(n) {
+  if (n === 1) return 1;
+  return n * factorial(n - 1);
+}
+factorial(5); // 120
+```
+
+---
+
+### 尾递归 Tail call optimization
+
+- 函数调用自身，称为递归。如果尾调用自身，就称为`尾递归`。
+- 如果改写成尾递归，只保留一个调用记录，复杂度 `O(1)` 。
+
+```js
+function factorial(n, total) {
+  if (n === 1) return total;
+  return factorial(n - 1, n * total);
+}
+factorial(5, 1); // 120
+```
+
+```js
+factorial(5, 1);
+factorial(4, 5);
+factorial(3, 20);
+factorial(2, 60);
+factorial(1, 120);
+```
 
 ---
 
