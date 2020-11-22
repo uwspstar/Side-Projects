@@ -93,7 +93,7 @@ typeof undeclared_variable; // "undefined"
 ---
 
 - `ES5` 只有全局作用域和函数作用域，没有块级作用域
-- `块级作用域`的出现，实际上使得获得广泛应用的匿名立即执行函数表达式（匿名 IIFE）不再必要了。
+- `块级作用域`的出现，实际上使得获得广泛应用的匿名立即执行函数表达式（匿名 `IIFE`）不再必要了。
 
 ```js
 // IIFE 写法
@@ -113,8 +113,9 @@ typeof undeclared_variable; // "undefined"
 
 ### JavaScript 中 块级作用域 和 函数作用域
 
-- https://www.jianshu.com/p/a7f9951f329a
+- [函数作用域](https://www.jianshu.com/p/a7f9951f329a)
 - `函数作用域`: ES5, ES6 语法并没有变化：作用域仅限于函数内部.
+- 考虑到环境导致的行为差异太大，`应该避免在块级作用域内声明函数`。
 
 ```js
 function add(a, b) {
@@ -124,6 +125,8 @@ function add(a, b) {
 console.log(add(1, 3));
 console.log(sum); //  ReferenceError: sum is not defined
 ```
+
+- `const add = (a,b) => a+b;`
 
 ---
 
@@ -137,7 +140,7 @@ if (true) {
 console.log(name); // ES5 bob; if语句内部访问name还是在外部访问name都不会报错
 ```
 
-- ES6 作用完全一样,你的变量不论是使用 var 声明还是使用了 let ,const 声明在外部都是不可以访问的.
+- ES6 作用完全一样,你的变量不论是使用 `var` 声明还是使用了 `let` ,`const` 声明在外部都是不可以访问的.
 
 ---
 
@@ -149,7 +152,7 @@ console.log(name); // ES5 bob; if语句内部访问name还是在外部访问name
 
 ### const 命令
 
-- `const` 一旦声明变量，就必须立即初始化，不能留到以后赋值
+- `const` 一旦声明变量，`就必须立即初始化`，不能留到以后赋值
 - `const` 实际上保证的，并不是变量的值不得改动，而是`变量指向的那个内存地址` 所保存的内存地址数据不得改动
 
 ---
@@ -173,11 +176,10 @@ foo = {}; // TypeError: "foo" is read-only
 
 ### 对象冻结
 
-- 如果真的想将对象冻结，应该使用 Object.freeze 方法。
+- 如果真的想将`对象冻结`，应该使用 `Object.freeze` 方法。
 
 ```js
 const foo = Object.freeze({});
-
 // 常规模式时，下面一行不起作用；
 // 严格模式时，该行会报错
 foo.prop = 123;
@@ -186,24 +188,26 @@ foo.prop = 123;
 ---
 
 - `ES5` 只有两种声明变量的方法：`var` 命令和 `function` 命令。
-- `ES6` 共有 6 种声明变量的方法. 除了添加 `let` 和 `const` 命令，另外两种声明变量的方法：`import` 命令和 `class` 命令.
+- `ES6` 共有 `6 ` 种声明变量的方法. 除了添加 `let` 和 `const` 命令，另外两种声明变量的方法：`import` 命令和 `class` 命令.
 
 ---
 
 ### 顶层对象的属性
 
 - 在浏览器环境指的是 `window` 对象，在 Node 指的是 `global` 对象
-- 全局变量 a 由 `var` 命令声明，所以它是顶层对象的属性；全局变量 b 由 `let` 命令声明，所以它不是顶层对象的属性，返回 `undefined`
 
 ```js
 var a = 1;
-// 如果在 Node 的 REPL 环境，可以写成 global.a
+// 如果在 Node 的 REPL (交互式解释器) 环境 ，可以写成 global.a
 // 或者采用通用方法，写成 this.a
 window.a; // 1
 
 let b = 1;
 window.b; // undefined
 ```
+
+- 全局变量 a 由 `var` 命令声明，所以它是顶层对象的属性；
+- 全局变量 b 由 `let` 命令声明，所以它不是顶层对象的属性，返回 `undefined`
 
 ---
 

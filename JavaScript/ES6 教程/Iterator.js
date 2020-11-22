@@ -1,5 +1,7 @@
 /*
-任何部署了 Iterator 接口的对象，都可以用for...of循环遍历。Map 结构原生支持 Iterator 接口，配合变量的解构赋值，获取键名和键值就非常方便。*/
+任何部署了 Iterator 接口的对象，都可以用for...of循环遍历。
+Map 结构原生支持 Iterator 接口，配合变量的解构赋值，获取键名和键值就非常方便。
+*/
 
 const map = new Map();
 map.set('first', 'hello');
@@ -23,7 +25,8 @@ for (let [, value] of map) {
 }
 
 /*
-ES2020 增加了String.prototype.matchAll()方法，可以一次性取出所有匹配。不过，它返回的是一个遍历器（Iterator），而不是数组。
+ES2020 增加了String.prototype.matchAll()方法，可以一次性取出所有匹配。
+不过，它返回的是一个遍历器（Iterator），而不是数组。
 
 const string = 'test1test2test3';
 const regex = /t(e)(st(\d?))/g;
