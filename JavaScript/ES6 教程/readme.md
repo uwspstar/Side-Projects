@@ -9,14 +9,14 @@ size: 16:9
 
 # ES6 教程
 
-- https://wangdoc.com/es6/
+- [wangdoc](https://wangdoc.com/es6/)
 - 标准在每年的 6 月份正式发布一次，作为当年的正式版本。接下来的时间，就在这个版本的基础上做改动，直到下一年的 6 月份
-- ECMAScript 当前的所有提案，可以在 TC39 的官方网站 GitHub.com/tc39/ecma262
-- 各大浏览器对 ES6 的支持可以查看 kangax.github.io/compat-table/es6/
+- `ECMAScript` 当前的所有提案，可以在 TC39 的官方网站 GitHub.com/tc39/ecma262
+- [各大浏览器对 ES6 的支持可以查看] (kangax.github.io/compat-table/es6/)
 
 ---
 
-- ECMAScript 和 JavaScript 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 JScript 和 ActionScript）. Node.js 是 JavaScript 的服务器运行环境（runtime）
+- `ECMAScript` 和 `JavaScript` 的关系是，前者是后者的规格，后者是前者的一种实现（另外的 ECMAScript 方言还有 JScript 和 ActionScript）. `Node.js` 是 `JavaScript` 的服务器运行环境（`runtime`）
 - 可以查看 Node.js 默认没有打开的 ES6 实验性语法。
 
 ```Javascript
@@ -31,8 +31,8 @@ $ node --v8-options | findstr harmony
 
 ### Babel
 
-- https://babeljs.io/repl
-- https://wangdoc.com/es6/intro.html
+- [babeljs](https://babeljs.io/repl)
+- [wangdoc.com/es6](https://wangdoc.com/es6/intro.html)
 - `Babel` 是一个广泛使用的 `ES6` 转码器，可以将 `ES6` 代码转为 `ES5` 代码，从而在老版本的浏览器执行
 - `$ npm install --save-dev @babel/core`
 - `Babel` 的配置文件是`.babelrc`，存放在项目的根目录下。使用 `Babel` 的第一步，就是配置这个文件。
@@ -42,35 +42,36 @@ $ node --v8-options | findstr harmony
 
 - `Babel` 默认只转换新的 `JavaScript` 句法（syntax），而不转换新的 `API`，比如 `Iterator`、`Generator`、`Set`、`Map`、`Proxy`、`Reflect`、`Symbol`、`Promise` 等全局对象，以及一些定义在全局对象上的方法（比如 `Object.assign`）都不会转码
 
+---
+
 ### polyfill
 
-- https://developer.mozilla.org/en-US/docs/Glossary/Polyfill
+- [Polyfill](https://developer.mozilla.org/en-US/docs/Glossary/Polyfill)
 - https://wangdoc.com/es6/intro.html
 
 ---
 
 ### let 和 const 命令
 
-- `let`命令所在的代码块内有效
-- `let`命令所声明的变量一定要在声明后使用，否则报错。
+- `let` 命令所在的代码块内有效
+- `let` 命令所声明的变量一定要在声明后使用，否则报错。
 - `let` 不允许在相同作用域内，重复声明同一个变量
-- `var`命令会发生“变量提升”现象，即变量可以在声明之前使用，值为`undefined`
-- 只要块级作用域内存在 `let` 命令，它所声明的变量就“绑定”（binding）这个区域，不再受外部的影响。
-
-```js
-var tmp = 123;
-
-if (true) {
-  tmp = 'abc'; // ReferenceError
-  let tmp;
-}
-```
+- `var` 命令会发生“变量提升”现象，即变量可以在声明之前使用，值为`undefined`
+- 只要块级作用域内存在 `let` 命令，它所声明的变量就`“绑定”(binding)`这个区域，不再受外部的影响。
 
 ---
 
 - `ES6` 明确规定，如果区块中存在 `let` 和 `const` 命令，这个区块对这些命令声明的变量，从一开始就形成了封闭作用域。凡是在声明之前就使用这些变量，就会报错。
 
 - 总之，在代码块内，使用 `let` 命令声明变量之前，该变量都是不可用的。这在语法上，称为“暂时性死区”（temporal dead zone，简称 TDZ）。
+
+```js
+var tmp = 123;
+if (true) {
+  tmp = 'abc'; // ReferenceError
+  let tmp;
+}
+```
 
 ---
 

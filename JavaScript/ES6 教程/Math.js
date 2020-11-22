@@ -14,3 +14,6 @@ clz32这个函数名就来自”count leading zero bits in 32-bit binary represe
 
 左移运算符（<<）与Math.clz32方法直接相关
 */
+
+console.log('Math.sign(123) : ', Math.sign(123) );
+console.log('Math.sign(-123) : ', Math.sign(-123) );
