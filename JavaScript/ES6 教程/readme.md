@@ -843,14 +843,6 @@ bar.name; // "baz"
 
 ---
 
-### 数组的扩展
-
-- https://wangdoc.com/es6/array.html
-
-#### 扩展运算符
-
----
-
 ### 递归函数的改写
 
 - [递归函数的改写](https://wangdoc.com/es6/function.html#%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0%E7%9A%84%E6%94%B9%E5%86%99)
@@ -866,7 +858,7 @@ factorial(5); // 120
 
 ---
 
-### 尾递归 Tail call optimization
+### 尾递归
 
 - 函数调用自身，称为递归。如果尾调用自身，就称为`尾递归`。
 - 如果改写成尾递归，只保留一个调用记录，复杂度 `O(1)` 。
@@ -889,4 +881,139 @@ factorial(1, 120);
 
 ---
 
-### 替代函数的 apply 方法
+### 尾递归优化的实现 Tail call optimization
+
+- [尾递归优化的实现](https://wangdoc.com/es6/function.html#%E5%B0%BE%E9%80%92%E5%BD%92%E4%BC%98%E5%8C%96%E7%9A%84%E5%AE%9E%E7%8E%B0)
+- 它的原理非常简单。尾递归之所以需要优化，原因是调用栈太多，造成溢出，那么只要减少调用栈，就不会溢出。怎么做可以减少调用栈呢？就是采用“循环”换掉“递归”
+
+---
+
+### 函数参数的尾逗号
+
+- ES2017 允许函数的最后一个参数有尾逗号（trailing comma）
+
+### Function.prototype.toString()
+
+- ES2019 对函数实例的`toString()`方法做出了修改。
+- `toString()`方法返回函数代码本身，以前会省略注释和空格。
+
+---
+
+### catch 命令的参数省略
+
+- `JavaScript` 语言的`try...catch`结构，以前明确要求`catch`命令后面必须跟参数，接受`try`代码块抛出的错误对象.
+
+```js
+try {
+  // ...
+} catch (err) {
+  // 处理错误
+}
+```
+
+---
+
+- 很多时候，`catch` 代码块可能用不到这个参数。但是，为了保证语法正确，还是必须写。`ES2019` 做出了改变，允许 `catch` 语句省略参数
+
+```js
+try {
+  // ...
+} catch {
+  // ...
+}
+```
+
+---
+
+### 数组的扩展
+
+- [数组的扩展](https://wangdoc.com/es6/array.html)
+
+---
+
+#### 扩展运算符 （spread）是三个点（...）
+
+- 扩展运算符`（spread）`是三个点`（...）`
+
+```js
+[...document.querySelectorAll('div')];
+// [<div>, <div>, <div>]
+```
+
+```js
+const arr = [...(x > 0 ? ['a'] : []), 'b'];
+```
+
+- 注意，只有函数调用时，扩展运算符才可以放在圆括号中，否则会报错。
+
+```js
+console.log((...[1, 2]))
+// Uncaught SyntaxError: Unexpected number
+```
+
+---
+
+### 替代函数的 apply 方法 (2020-11-22)
+
+- 扩展运算符取代 apply 方法
+
+```js
+// ES5 的写法
+Math.max.apply(null, [14, 3, 77]);
+// ES6 的写法
+Math.max(...[14, 3, 77]);
+// 等同于
+Math.max(14, 3, 77);
+```
+
+```js
+// ES5的 写法
+var arr1 = [0, 1, 2];
+var arr2 = [3, 4, 5];
+Array.prototype.push.apply(arr1, arr2);
+// ES6 的写法
+let arr1 = [0, 1, 2];
+let arr2 = [3, 4, 5];
+arr1.push(...arr2);
+```
+
+---
+
+### 扩展运算符的应用
+
+- 复制数组 : 扩展运算符提供了复制数组的简便写法
+
+```js
+const a1 = [1, 2];
+// 写法一
+const a2 = [...a1];
+// 写法二
+const [...a2] = a1;
+```
+
+- 合并数组 : 这两种方法都是浅拷贝，使用的时候需要注意
+
+```js
+// ES5 的合并数组
+arr1.concat(arr2, arr3);
+// ES6 的合并数组
+[...arr1, ...arr2, ...arr3];
+```
+
+---
+
+- 如果将扩展运算符用于数组赋值，只能放在参数的最后一位，否则会报错。
+
+```js
+const [...butLast, last] = [1, 2, 3, 4, 5];
+// 报错
+const [first, ...middle, last] = [1, 2, 3, 4, 5];
+// 报错
+```
+
+- 有一个重要的好处，那就是能够正确识别四个字节的 Unicode 字符。
+
+```js
+'x\uD83D\uDE80y'.length // 4
+[...'x\uD83D\uDE80y'].length // 3
+```
