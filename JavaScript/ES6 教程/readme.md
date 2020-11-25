@@ -1017,3 +1017,70 @@ const [first, ...middle, last] = [1, 2, 3, 4, 5];
 'x\uD83D\uDE80y'.length // 4
 [...'x\uD83D\uDE80y'].length // 3
 ```
+
+---
+
+### 实现了 Iterator 接口的对象
+
+- `querySelectorAll` 方法返回的是一个`NodeList` 对象。它不是数组，而是一个类似数组的对象。这时，扩展运算符可以将其转为真正的数组，原因就在于`NodeList`对象实现了 `Iterator`
+
+```js
+let nodeList = document.querySelectorAll('div');
+let array = [...nodeList];
+```
+
+---
+
+- 对于那些没有部署 Iterator 接口的类似数组的对象，扩展运算符就无法将其转为真正的数组
+
+```js
+let arrayLike = {
+  0: 'a',
+  1: 'b',
+  2: 'c',
+  length: 3,
+};
+
+// TypeError: Cannot spread non-iterable object.
+let arr = [...arrayLike];
+```
+
+- 这时，可以改为使用 `Array.from` 方法将 `arrayLike` 转为真正的数组。
+
+---
+
+### Map 和 Set 结构，Generator 函数
+
+- 扩展运算符`内部调用`的是数据结构的 `Iterator` 接口，因此`只要具有 Iterator 接口的对象`，都可以使用扩展运算符，比如 `Map`, not `Object`
+
+```js
+let map = new Map([[1, 'one']]);
+let arr = [...map.keys()];
+```
+
+- 如果对没有 Iterator 接口的对象，使用扩展运算符，将会报错。
+
+```js
+const obj = { a: 1, b: 2 };
+let arr = [...obj]; // TypeError: Cannot spread non-iterable object
+```
+
+---
+
+- Generator 函数运行后，返回一个遍历器对象，因此也可以使用扩展运算符。
+
+```js
+const go = function* () {
+  yield 1;
+  yield 2;
+  yield 3;
+};
+
+[...go()]; // [1, 2, 3]
+```
+
+---
+
+### Array.from()
+
+- Array.from 方法用于将两类对象转为真正的数组：`类似数组的对象（array-like object）`和`可遍历（iterable）的对象`（包括 `ES6` 新增的数据结构 `Set` 和 `Map`）。
