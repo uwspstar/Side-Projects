@@ -1109,3 +1109,153 @@ function countSymbols(string) {
 
 - Array.of 方法用于将一组值，转换为数组。
   `Array.of(3, 11, 8) // [3,11,8]`
+- `Array.of` 总是返回参数值组成的数组。如果没有参数，就返回一个空数组。
+- 这个方法的主要目的，是弥补数组构造函数`Array()`的不足。因为参数个数的不同，会导致`Array()`的行为有差异。
+
+---
+
+```js
+Array(); // []
+Array(3); // [, , ,]
+Array(3, 11, 8); // [3, 11, 8]
+```
+
+- 上面代码中，`Array` 方法没有参数、一个参数、三个参数时，返回结果都不一样。只有当参数个数`不少于 2 个时`，`Array()`才会返回由参数组成的新数组。`参数个数只有一个时`，`实际上是指定数组的长度`。
+
+---
+
+### 数组实例的 find() 和 findIndex()
+
+- 数组实例的 `find` 方法，用于找出第一个符合条件的数组成员
+- 数组实例的 `findIndex` 方法的用法与 `find` 方法非常类似，返回第一个符合条件的数组成员的位置
+- 这两个方法都可以接受第二个参数，用来绑定回调函数的 this 对象。
+
+```js
+function f(v) {
+  return v > this.age;
+}
+let person = { name: 'John', age: 20 };
+[10, 12, 26, 15].find(f, person); // 26
+```
+
+---
+
+### 数组实例的 includes()
+
+- `indexOf`方法有两个缺点，一是不够语义化，它的含义是找到参数值的第一个出现位置，所以要去比较是否不等于-1，表达起来不够直观。二是，它内部使用严格相等运算符（`===`）进行判断，这会导致对`NaN`的误判。
+  `[NaN].indexOf(NaN)// -1`
+- includes 使用的是不一样的判断算法，就没有这个问题。
+  `[NaN].includes(NaN)`
+
+---
+
+- 另外，`Map` 和 `Set` 数据结构有一个 has 方法，需要注意与`includes`区分。
+- `Map` 结构的`has`方法，是用来查找键名的，比如`Map.prototype.has(key)`、`WeakMap.prototype.has(key)`、`Reflect.has(target, propertyKey)`。
+- `Set` 结构的`has`方法，是用来查找值的，比如`Set.prototype.has(value)、WeakSet.prototype.has(value)`。
+
+---
+
+### 数组实例的 copyWithin()
+
+### 数组实例的 fill()
+
+```js
+['a', 'b', 'c'].fill(7); // [7, 7, 7]
+new Array(3).fill(7); // [7, 7, 7]
+```
+
+---
+
+### 数组实例的 entries()，keys() 和 values()
+
+- `ES6` 提供三个新的方法 : `entries()`，`keys()`和`values()` 用于遍历数组。它们都返回一个遍历器对象，可以用`for...of`循环进行遍历，唯一的区别是`keys()`是对键名的遍历、`values()`是对键值的遍历，`entries()`是对键值对的遍历.
+- 如果不使用 `for...of` 循环，可以手动调用遍历器对象的 `next` 方法，进行遍历
+
+---
+
+### 数组实例的 flat()，flatMap()
+
+- 数组的成员有时还是数组，`Array.prototype.flat()`用于将嵌套的数组“拉平”，变成一维的数组。该方法返回一个新数组，对原数据没有影响。
+
+```js
+[1, 2, [3, 4]].flat(); // [1, 2, 3, 4]
+```
+
+- flat()默认只会“拉平”一层，如果想要“拉平”多层的嵌套数组，可以将 flat()方法的参数写成一个整数，表示想要拉平的层数，默认为 1。
+
+```js
+[1, 2, [3, [4, 5]]]
+  .flat() // [1, 2, 3, [4, 5]]
+
+  [(1, 2, [3, [4, 5]])].flat(2); // [1, 2, 3, 4, 5]
+```
+
+---
+
+- 如果原数组有空位，`flat()`方法会跳过空位。
+- 如果不管有多少层嵌套，都要转成一维数组，可以用 `Infinity` 关键字作为参数。
+
+```js
+[1, [2, [3]]].flat(Infinity); // [1, 2, 3]
+```
+
+- `flatMap()`方法对原数组的每个成员执行一个函数（相当于执行 `Array.prototype.map()`），然后对返回值组成的数组执行 `flat()`方法。该方法返回一个新数组，不改变原数组。
+- `flatMap()`只能展开一层数组。
+
+```js
+[1, 2, 3, 4].flatMap((x) => [[x * 2]]); // [[2], [4], [6], [8]]
+```
+
+---
+
+### 数组的空位
+
+- 空位不是`undefined`，一个位置的值等于`undefined`，依然是有值的。空位是没有任何值，`in` 运算符可以说明这一点。
+
+```js
+0 in [undefined, undefined, undefined]; // true
+0 in [, , ,]; // false
+```
+
+- ES5 `forEach()`, `filter()`, `reduce()`, `every()` 和`some()`都会跳过空位。
+- `map()`会跳过空位，但会保留这个值
+- `join()`和`toString()`会将空位视为`undefined`，而`undefined`和`null`会被处理成空字符串。
+
+---
+
+`ES6 则是明确将空位转为undefined.`
+
+- `Array.from`方法会将数组的空位，转为`undefined`，也就是说，这个方法不会忽略空位。
+
+```js
+Array.from(['a', , 'b']); // [ "a", undefined, "b" ]
+```
+
+---
+
+- 由于空位的处理规则非常不统一，所以建议避免出现空位。
+
+```js
+// entries()
+[...[,'a'].entries()] // [[0,undefined], [1,"a"]]
+// keys()
+[...[,'a'].keys()] // [0,1]
+// values()
+[...[,'a'].values()] // [undefined,"a"]
+// find()
+[,'a'].find(x => true) // undefined
+// findIndex()
+[,'a'].findIndex(x => true) // 0
+```
+
+---
+
+### Array.prototype.sort() 的排序稳定性
+
+- [排序稳定性](https://wangdoc.com/es6/array.html#arrayprototypesort-%E7%9A%84%E6%8E%92%E5%BA%8F%E7%A8%B3%E5%AE%9A%E6%80%A7)
+- 常见的排序算法之中，`插入排序`、`合并排序`、`冒泡排序`等都是稳定的，
+- `堆排序`、`快速排序`等是不稳定的。
+
+### 对象的扩展
+
+- [对象的扩展](https://wangdoc.com/es6/object.html)
