@@ -1083,4 +1083,29 @@ const go = function* () {
 
 ### Array.from()
 
-- Array.from 方法用于将两类对象转为真正的数组：`类似数组的对象（array-like object）`和`可遍历（iterable）的对象`（包括 `ES6` 新增的数据结构 `Set` 和 `Map`）。
+- `Array.from` 方法用于将两类对象转为真正的数组：`类似数组的对象（array-like object）`和`可遍历（iterable）的对象`（包括 `ES6` 新增的数据结构 `Set` 和 `Map`）。
+- 只要是部署了 `Iterator` 接口的数据结构，`Array.from` 都能将其转为数组
+- `Array.from`方法还支持类似数组的对象。所谓类似数组的对象，本质特征只有一点，即必须有`length`属性。因此，任何有`length`属性的对象，都可以通过`Array.from`方法转为数组，而此时扩展运算符就无法转换
+- 对于还没有部署该方法的浏览器，可以用 `Array.prototype.slice` 方法替代。
+
+---
+
+- `Array.from` 还可以接受第二个参数，作用类似于数组的 `map` 方法，用来对每个元素进行处理，将处理后的值放入返回的数组。
+- `Array.from()`可以将各种值转为真正的数组，并且还提供`map`功能
+- `Array.from()`的另一个应用是，将字符串转为数组，然后返回字符串的长度。因为它能正确处理各种 `Unicode` 字符，可以避免 `JavaScript` 将大于`\uFFFF`的 `Unicode` 字符，算作两个字符的 bug。
+
+```js
+function countSymbols(string) {
+  return Array.from(string).length;
+}
+```
+
+---
+
+- `扩展运算符（...）也可以将某些数据结构转为数组`
+- 扩展运算符背后调用的是遍历器接口（`Symbol.iterator`），如果一个对象没有部署这个接口，就无法转换。
+
+### Array.of()
+
+- Array.of 方法用于将一组值，转换为数组。
+  `Array.of(3, 11, 8) // [3,11,8]`
