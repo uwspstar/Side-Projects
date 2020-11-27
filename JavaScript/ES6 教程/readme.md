@@ -1259,3 +1259,13 @@ Array.from(['a', , 'b']); // [ "a", undefined, "b" ]
 ### 对象的扩展
 
 - [对象的扩展](https://wangdoc.com/es6/object.html)
+- `CommonJS` 模块输出一组变量，就非常合适使用简洁写法
+
+```js
+module.exports = { getItem, setItem, clear };
+```
+- 简洁写法在打印对象时也很有用。
+```js
+console.log({user, foo})
+// {user: {name: "test"}, foo: {bar: "baz"}}
+```
