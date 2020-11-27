@@ -1256,6 +1256,8 @@ Array.from(['a', , 'b']); // [ "a", undefined, "b" ]
 - 常见的排序算法之中，`插入排序`、`合并排序`、`冒泡排序`等都是稳定的，
 - `堆排序`、`快速排序`等是不稳定的。
 
+---
+
 ### 对象的扩展
 
 - [对象的扩展](https://wangdoc.com/es6/object.html)
@@ -1264,8 +1266,27 @@ Array.from(['a', , 'b']); // [ "a", undefined, "b" ]
 ```js
 module.exports = { getItem, setItem, clear };
 ```
+
 - 简洁写法在打印对象时也很有用。
+
 ```js
-console.log({user, foo})
+console.log({ user, foo });
 // {user: {name: "test"}, foo: {bar: "baz"}}
+```
+
+---
+
+- 注意，简写的对象方法`不能用作构造函数`，会报错。
+
+```
+const obj = {
+  f() {
+    this.foo = 'bar';
+  }
+};
+new obj.f() // 报错
+```
+- ES6 can 是用表达式作为属性名
+```js
+obj['a' + 'bc'] = 123;
 ```
