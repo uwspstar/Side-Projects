@@ -1286,7 +1286,112 @@ const obj = {
 };
 new obj.f() // 报错
 ```
+
 - ES6 can 是用表达式作为属性名
+
 ```js
 obj['a' + 'bc'] = 123;
 ```
+
+---
+
+### Set 和 Map 数据结构
+
+- [Set 和 Map 数据结构](https://es6.ruanyifeng.com/#docs/set-map)
+- 向 `Set` 加入值的时候，不会发生类型转换，所以 5 和"5"是两个不同的值。
+- `Set` 内部判断两个值是否不同，使用的算法叫做`“Same-value-zero equality”`，它类似于精确相等运算符（===），主要的区别是向 Set 加入值时认为 NaN 等于自身，而精确相等运算符认为 NaN 不等于自身。
+- 另外，两个对象总是不相等的
+
+---
+
+### Set 实例的属性和方法
+
+- Set 结构的实例有以下属性。
+  - `Set.prototype.constructor`：构造函数，默认就是 Set 函数。
+  - `Set.prototype.size`：返回 Set 实例的成员总数。
+- 四个操作方法。
+  - `Set.prototype.add(value)`：添加某个值，返回 Set 结构本身。
+  - `Set.prototype.delete(value)`：删除某个值，返回一个布尔值，表示删除是否成功。
+  - `Set.prototype.has(value)`：返回一个布尔值，表示该值是否为 Set 的成员。
+  - `Set.prototype.clear()`：清除所有成员，没有返回值。
+
+---
+
+- `Array.from`方法可以将 Set 结构转为数组. 这就提供了去除数组重复成员的另一种方法.
+- 扩展运算符和 Set 结构相结合，就可以去除数组的重复成员。
+
+```js
+function removeDuplicate(array) {
+  return Array.from(new Set(array));
+}
+removeDuplicate([1, 1, 2, 3]); // [1, 2, 3]
+
+let arr = [3, 5, 2, 2, 5, 5];
+let unique = [...new Set(arr)]; // [3, 5, 2]
+```
+
+---
+
+- Set 结构的实例有四个遍历方法，可以用于遍历成员。
+
+  - `Set.prototype.keys()`：返回键名的遍历器
+  - `Set.prototype.values()`：返回键值的遍历器
+  - `Set.prototype.entries()`：返回键值对的遍历器
+  - `Set.prototype.forEach()`：使用回调函数遍历每个成员
+
+- 需要特别指出的是，Set 的遍历顺序就是`插入顺序`。这个特性有时非常有用，比如使用 Set 保存一个回调函数列表，调用时就能保证按照添加顺序调用
+- 由于 Set 结构没有键名，只有键值（或者说键名和键值是同一个值），所以 `keys` 方法和 `values` 方法的行为完全一致。
+
+---
+
+- Set 结构的实例默认可遍历，它的默认遍历器生成函数就是它的 values 方法。这意味着，可以省略 values 方法，直接用 for...of 循环遍历 Set。
+- Set 结构的实例与数组一样，也拥有 forEach 方法，用于对每个成员执行某种操作，没有返回值。forEach 方法还可以有第二个参数，表示绑定处理函数内部的 this 对象
+
+```js
+let set = new Set([1, 4, 9]);
+set.forEach((value, key) => console.log(key + ' : ' + value));
+// 1 : 1
+// 4 : 4
+// 9 : 9
+```
+
+---
+
+- 因此使用 Set 可以很容易地实现并集（Union）、交集（Intersect）和差集（Difference）
+
+```js
+let a = new Set([1, 2, 3]);
+let b = new Set([4, 3, 2]);
+
+// 并集
+let union = new Set([...a, ...b]); // Set {1, 2, 3, 4}
+
+// 交集
+let intersect = new Set([...a].filter((x) => b.has(x))); // set {2, 3}
+
+// （a 相对于 b 的）差集
+let difference = new Set([...a].filter((x) => !b.has(x))); // Set {1}
+```
+
+---
+
+- 如果想在遍历操作中，同步改变原来的 `Set` 结构，目前没有直接的方法，但有两种变通方法。一种是利用原 `Set` 结构映射出一个新的结构，然后赋值给原来的 `Set` 结构；另一种是利用 `Array.from` 方法。
+
+```js
+// 方法一
+let set = new Set([1, 2, 3]);
+set = new Set([...set].map((val) => val * 2)); // set的值是2, 4, 6
+
+// 方法二
+let set = new Set([1, 2, 3]);
+set = new Set(Array.from(set, (val) => val * 2)); // set的值是2, 4, 6
+```
+
+---
+
+### WeakSet
+
+- `WeakSet 不可遍历`.
+- `WeakSet` 的成员只能是对象，而不能是其他类型的值。
+- `WeakSet` 中的对象都是弱引用，即垃圾回收机制不考虑 `WeakSet` 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。因为垃圾回收机制依赖引用计数，如果一个值的引用次数不为 0，垃圾回收机制就不会释放这块内存。结束使用该值之后，有时会忘记取消引用，导致内存无法释放，进而可能会引发内存泄漏。WeakSet 里面的引用，都不计入垃圾回收机制，所以就不存在这个问题。
+- 因此，WeakSet 适合临时存放一组对象，以及存放跟对象绑定的信息。只要这些对象在外部消失，它在 WeakSet 里面的引用就会自动消失。
