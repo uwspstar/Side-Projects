@@ -1396,3 +1396,71 @@ set = new Set(Array.from(set, (val) => val * 2)); // set的值是2, 4, 6
 - `WeakSet` 中的对象都是弱引用，即垃圾回收机制不考虑 `WeakSet` 对该对象的引用，也就是说，如果其他对象都不再引用该对象，那么垃圾回收机制会自动回收该对象所占用的内存，不考虑该对象还存在于 WeakSet 之中。
 - 因为垃圾回收机制依赖引用计数，如果一个值的引用次数不为 0，垃圾回收机制就不会释放这块内存。结束使用该值之后，有时会忘记取消引用，导致内存无法释放，进而可能会引发内存泄漏。`WeakSet` 里面的引用，都不计入垃圾回收机制，所以就不存在这个问题。
 - 因此，`WeakSet` 适合临时存放一组对象，以及存放跟对象绑定的信息。只要这些对象在外部消失，它在 WeakSet 里面的引用就会自动消失。
+
+---
+
+- `WeakSet` 的一个用处，是储存 `DOM` 节点，而不用担心这些节点从文档移除时，会引发内存泄漏。
+
+---
+
+### Map vs Object
+
+- JavaScript 的对象（`Object`），本质上是键值对的集合（`Hash` 结构），但是`传统上只能用字符串当作键`。这给它的使用带来了很大的限制。
+- Map 数据结构, 它类似于对象，也是键值对的集合，但是“键”的范围不限于字符串，各种类型的值（包括对象）都可以当作键。
+- `Object` 结构提供了“字符串—值”的对应，`Map` 结构提供了“值—值”的对应，是一种更完善的 `Hash` 结构实现。如果你需要“键值对”的数据结构，`Map` 比 `Object` 更合适。
+
+---
+
+- Map 构造函数接受数组作为参数，实际上执行的是下面的算法。
+
+```js
+const items = [
+  ['name', 'xing'],
+  ['title', 'Author'],
+];
+
+const map = new Map();
+
+items.forEach(([key, value]) => map.set(key, value));
+```
+
+---
+
+- `Map` 的键实际上是跟`内存地址绑定的`，只要内存地址不一样，就视为两个键。
+- 如果 `Map` 的键是一个简单类型的值（数字、字符串、布尔值），则只要两个值严格相等，`Map` 将其视为一个键，比如`0`和`-0`就是一个键，布尔值`true`和字符串`true`则是两个不同的键。另外，`undefined`和`null`也是两个不同的键。虽然`NaN`不严格相等于自身，但 `Map` 将其视为同一个键。
+- 事实上，不仅仅是数组，任何具有 `Iterator` 接口、且每个成员都是一个双元素的数组的数据结构都可以当作`Map`构造函数的参数。这就是说，`Set`和`Map`都可以用来生成新的 `Map`。
+
+---
+
+- `size`属性返回 `Map` 结构的成员总数
+- `Map.prototype.set(key, value)`
+
+```js
+const m = new Map();
+
+m.set('edition', 6); // 键是字符串
+m.set(262, 'standard'); // 键是数值
+m.set(undefined, 'nah'); // 键是 undefined
+```
+
+- set 方法返回的是当前的 Map 对象，因此可以采用链式写法。
+
+```js
+let map = new Map().set(1, 'a').set(2, 'b').set(3, 'c');
+```
+
+---
+
+- `Map.prototype.get(key)` : `get`方法读取`key`对应的键值，如果找不到 key，返回`undefined`。
+- `Map.prototype.has(key)` : `has`方法返回一个布尔值，表示某个键是否在当前 `Map` 对象之中。
+- `Map.prototype.delete(key)` : `delete`方法删除某个键，返回`true`。如果删除失败，返回`false`
+- `Map.prototype.clear()` : `clear`方法清除所有成员，没有返回值
+
+---
+
+- `Map` 结构的默认遍历器接口（`Symbol.iterator`属性），就是`entries`方法。
+- `Map` 结构原生提供三个遍历器生成函数和一个遍历方法。
+  - `Map.prototype.keys()`：返回键名的遍历器。
+  - `Map.prototype.values()`：返回键值的遍历器。
+  - `Map.prototype.entries()`：返回所有成员的遍历器。
+  - `Map.prototype.forEach()`：遍历 Map 的所有成员
