@@ -1464,3 +1464,27 @@ let map = new Map().set(1, 'a').set(2, 'b').set(3, 'c');
   - `Map.prototype.values()`：返回键值的遍历器。
   - `Map.prototype.entries()`：返回所有成员的遍历器。
   - `Map.prototype.forEach()`：遍历 Map 的所有成员
+
+---
+
+- `Map` 转为数组最方便的方法，就是使用扩展运算符`（...）`
+- `Map` 转为 `JSON` 要区分两种情况。
+  - 一种情况是，`Map` 的键名都是字符串，这时可以选择转为对象 `JSON`。
+  - 另一种情况是，`Map` 的键名有非字符串，这时可以选择转为数组 `JSON`。
+- `JSON` 转为 `Map`，正常情况下，所有键名都是字符串。
+
+```js
+function jsonToMap(jsonStr) {
+  return new Map(JSON.parse(jsonStr));
+}
+```
+
+---
+
+### WeakMap
+
+- `WeakMap`与`Map`的区别有两点
+  - `WeakMap`只接受对象作为键名（`null除外`），不接受其他类型的值作为键名。如果将数值`1`和`Symbol`值作为 `WeakMap` 的键名，都会报错.
+  - `WeakMap` 的键名所指向的对象，不计入垃圾回收机制
+
+---
