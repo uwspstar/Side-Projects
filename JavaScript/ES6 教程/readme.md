@@ -1488,3 +1488,20 @@ function jsonToMap(jsonStr) {
   - `WeakMap` 的键名所指向的对象，不计入垃圾回收机制
 
 ---
+
+- `WeakMap` 应用的典型场合就是 `DOM` 节点作为键名。下面是一个例子。
+
+```js
+let myWeakmap = new WeakMap();
+myWeakmap.set(document.getElementById('logo'), { timesClicked: 0 });
+document.getElementById('logo').addEventListener(
+  'click',
+  function () {
+    let logoData = myWeakmap.get(document.getElementById('logo'));
+    logoData.timesClicked++;
+  },
+  false
+);
+```
+
+- 上面代码中，`document.getElementById('logo')`是一个 `DOM` 节点，每当发生`click`事件，就更新一下状态。我们将这个状态作为键值放在 `WeakMap` 里，对应的键名就是这个节点对象。一旦这个 `DOM` 节点删除，该状态就会自动消失，不存在内存泄漏风险。
