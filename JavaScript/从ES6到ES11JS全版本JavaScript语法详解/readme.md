@@ -166,8 +166,8 @@ const a = 5;
 ```
 
 ```js
-const b
-b = 5
+const b;
+b = 5;
 //error
 ```
 
@@ -1395,3 +1395,56 @@ for (let value of map.values()) {
 ![75% bg brightness:0.9](string.png)
 
 ---
+
+### Proxy - ES5
+
+- Object.defineProperty()
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty
+
+```js
+let obj = {};
+let newVal = '';
+Object.defineProperty(obj, 'name', {
+  get() {
+    return newVal;
+  },
+  set(val) {
+    newVal = val;
+  },
+});
+obj.name = 'es';
+console.log(obj.name);
+```
+
+---
+
+### Proxy - ES6
+
+- https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
+- With a Proxy, you can easily `validate the passed value` for an object. This example uses the set handler.
+- A function proxy could easily extend a constructor with a new constructor.
+
+---
+
+```js
+let arr = [7, 8, 9];
+arr = new Proxy(arr, {
+  get(target, prop) {
+    // console.log(target, prop)
+    return prop in target ? target[prop] : 'err';
+  },
+});
+
+let dict = {
+  k1: 'KEY ONE',
+  k2: 'KEY TWO',
+};
+dict = new Proxy(dict, {
+  get(target, prop) {
+    // console.log(target, prop)
+    return prop in target ? target[prop] : prop;
+  },
+});
+console.log(dict['k1']); //KEY ONE
+console.log(dict['k10']); //k10
+```

@@ -1,18 +1,12 @@
-let name = 'xing';
-let s = 'school';
-let obj = {
-  name,
-  [s]: 'home',
-  studyEs6() {
-    console.log('studyEs6', this.name);
-  },
-  studyEs5: function () {
-    console.log('studyEs5', this.name);
-  },
-  studyArrow: () => {
-    console.log('studyArrow', this.name); // undefined : no this inside arrow function
-    //ReferenceError: name is not defined
-  },
+let dict = {
+  k1: 'KEY ONE',
+  k2: 'KEY TWO',
 };
-obj.studyArrow(); // undefined
-console.log(obj.studyArrow);
+dict = new Proxy(dict, {
+  get(target, prop) {
+    // console.log(target, prop)
+    return prop in target ? target[prop] : prop;
+  },
+});
+console.log(dict['k1']);
+console.log(dict['k10']);
