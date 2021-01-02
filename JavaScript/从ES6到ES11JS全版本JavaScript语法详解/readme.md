@@ -1423,6 +1423,7 @@ console.log(obj.name);
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
 - With a Proxy, you can easily `validate the passed value` for an object. This example uses the set handler.
 - A function proxy could easily extend a constructor with a new constructor.
+- https://www.youtube.com/watch?v=WQmqCF9a6oA&list=PL9nxfq1tlKKn96qqvz92I-09Qg21F12c2&index=28
 
 ---
 
@@ -1447,4 +1448,31 @@ dict = new Proxy(dict, {
 });
 console.log(dict['k1']); //KEY ONE
 console.log(dict['k10']); //k10
+```
+
+---
+
+```js
+let user = {
+  name: 'xing',
+  age: 28,
+  _password: '***',
+};
+user = new Proxy(user, {
+  get(target, prop) {
+    if (prop.startWith('_')) {
+      throw new Error('err');
+    } else {
+      return targe[prop];
+    }
+  },
+  set(target, prop, val) {
+    if (prop.startWith('_')) {
+      throw new Error('err');
+    } else {
+      target[prop] = val;
+      return targe[prop];
+    }
+  },
+});
 ```
