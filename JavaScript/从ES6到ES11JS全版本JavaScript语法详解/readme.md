@@ -1379,7 +1379,7 @@ for (let value of map.values()) {
 
 ### WeakMap (2020-11-10)
 
-- The WeakMap object is a collection of key/value pairs in which the keys are weakly referenced.
+- The `WeakMap` object is a collection of key/value pairs in which the keys are weakly referenced.
 - Keys of WeakMaps are of the type `Object only`. Primitive data types as keys are `NOT` allowed (e.g. a Symbol can't be a WeakMap key).
 
 ---
@@ -1421,7 +1421,7 @@ console.log(obj.name);
 ### Proxy - ES6
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy
-- With a Proxy, you can easily `validate the passed value` for an object. This example uses the set handler.
+- With a `Proxy`, you can easily `validate the passed value` for an object. This example uses the set handler.
 - A function proxy could easily extend a constructor with a new constructor.
 - https://www.youtube.com/watch?v=WQmqCF9a6oA&list=PL9nxfq1tlKKn96qqvz92I-09Qg21F12c2&index=28
 
