@@ -1491,7 +1491,8 @@ user = new Proxy(user, {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect
 - `Reflect` is a built-in object that provides methods for interceptable JavaScript operations. The methods are the same as those of `proxy handlers`.
-- Reflect is NOT a function object, so it's not constructible.
-- You cannot use it with a new operator or invoke the Reflect object as a function. All properties and methods of Reflect are static (just like the Math object).
+- `Reflect` is NOT a function object, so it's not constructible.
+- You cannot use it with a new operator or invoke the `Reflect` object as a function. 
+- All properties and methods of Reflect are `static` (just like the Math object).
 
 ---
