@@ -266,7 +266,7 @@ Object.freeze(obj.skill);
 
 ### Primitives
 
-- Six Data Types that are `primitives`, checked by typeof operator:
+- `Six Data Types` that are `primitives`, checked by typeof operator:
   - `undefined` : typeof instance === "undefined"
   - `Boolean` : typeof instance === "boolean"
   - `Number` : typeof instance === "number"
@@ -280,7 +280,8 @@ Object.freeze(obj.skill);
 
 - `Structural Types`: everything made with `new` keyword
 
-  - `Object` : typeof instance === "object". Special non-data but Structural type for any constructed object instance also used as data structures: `new Object`, `new Array`, `new Map`, `new Set`, `new WeakMap`, `new WeakSet`, `new Date` and almost `everything made with new keyword`;
+  - `Object` : typeof instance === "object". 
+  - Special `non-data` but `Structural type` for any constructed object instance also used as data structures: `new Object`, `new Array`, `new Map`, `new Set`, `new WeakMap`, `new WeakSet`, `new Date` and almost `everything made with new keyword`;
   - `Function`: a`non-data structure`;
 
 ---
