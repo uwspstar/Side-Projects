@@ -101,6 +101,15 @@ console.log(null === undefined);
 
 ---
 
+### Event Loop : Js vs Node.js
+
+- https://www.geeksforgeeks.org/node-js-event-loop/
+- https://wsvincent.com/javascript-event-loop/
+- Each browser uses its own engine, but the best known is (V8), which is used by Chrome and also powers NodeJS!
+- JavaScript is a single-threaded language which means it has a single call stack.JavaScript can only do one thing at at time.
+
+---
+
 - `Event Loop` : https://www.youtube.com/watch?v=8aGhZQkoFbQ
 
 ```js
@@ -127,23 +136,36 @@ for (let i = 0; i < 3; i++) {
 
 ---
 
-### Concurrency model and the event loop
+### Concurrency (同时发生) model and the event loop
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 - `Runtime concepts`
 
-  - `stack`
+  - `stack` : Function calls form a stack of frames.
   - `heap` : Objects are allocated in a heap
   - `queue` : message queue
   - `event loop`
 
-    ```js
-    while (queue.waitForMessage()) {
-      queue.processNextMessage();
-    }
-    ```
+  ```js
+  while (queue.waitForMessage()) {
+    queue.processNextMessage();
+  }
+  ```
 
 ---
+
+### setTimeout
+
+- The function `setTimeout` is called with 2 arguments: a message to add to the `queue`, and a time value (optional; defaults to 0).
+- The time value represents the (minimum) delay after which the message will actually be pushed into the queue.
+- If there is no other message in the queue, and the stack is empty, the message is processed right after the delay. However, if there are messages, the setTimeout message will have to wait for other messages to be processed. For this reason, the second argument indicates a minimum time—not a guaranteed time.
+
+---
+
+### Several runtimes communicating together
+
+- A `web worker` or a `cross-origin iframe` has its own `stack`, `heap`, and `message queue`.
+- Two distinct runtimes can only communicate through `sending messages` via the `postMessage` method. This method adds a message to the other runtime if the latter listens to message events.
 
 ### How the data saved in JS
 
