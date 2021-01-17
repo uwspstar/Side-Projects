@@ -68,9 +68,23 @@ if (false) {
   let a = 5;
 }
 console.log(a);
-// error
+// ReferenceError: a is not defined
 ```
 
+---
+
+- Null Vs Undefined :
+- https://blog.webdevsimplified.com/2021-01/null-vs-undefined/
+
+```js
+console.log(null == undefined);
+// true
+console.log(null === undefined);
+// false
+```
+
+- Because of `null == undefined`, when I want to check to see if a variable has a value or not I almost always use `double equals` comparison since it will return true whether the variable is null or undefined.
+- By setting a variable to `undefined` you are conveying the message that the variable no longer contains any useful information, while if the value is `null` then you are specifically saying the result of some action has no value.
 ---
 
 - `Event Loop` : https://www.youtube.com/watch?v=8aGhZQkoFbQ
@@ -1492,7 +1506,7 @@ user = new Proxy(user, {
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect
 - `Reflect` is a built-in object that provides methods for interceptable JavaScript operations. The methods are the same as those of `proxy handlers`.
 - `Reflect` is NOT a function object, so it's not constructible.
-- You cannot use it with a new operator or invoke the `Reflect` object as a function. 
+- You cannot use it with a new operator or invoke the `Reflect` object as a function.
 - All properties and methods of Reflect are `static` (just like the Math object).
 
 ---
