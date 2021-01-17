@@ -74,7 +74,16 @@ console.log(a);
 ---
 
 - Null Vs Undefined :
-- https://blog.webdevsimplified.com/2021-01/null-vs-undefined/
+
+```js
+let d = undefined;
+let c = null;
+let b;
+console.log('d is ...', d); //d is ... undefined
+console.log('c is ...', c); //c is ... null
+console.log('b is ...', b); //b is ... undefined
+console.log('a is ...', a); //ReferenceError: a is not defined
+```
 
 ```js
 console.log(null == undefined);
@@ -83,8 +92,13 @@ console.log(null === undefined);
 // false
 ```
 
+- https://blog.webdevsimplified.com/2021-01/null-vs-undefined/
+
+---
+
 - Because of `null == undefined`, when I want to check to see if a variable has a value or not I almost always use `double equals` comparison since it will return true whether the variable is null or undefined.
 - By setting a variable to `undefined` you are conveying the message that the variable no longer contains any useful information, while if the value is `null` then you are specifically saying the result of some action has no value.
+
 ---
 
 - `Event Loop` : https://www.youtube.com/watch?v=8aGhZQkoFbQ
