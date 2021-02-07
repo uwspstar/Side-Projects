@@ -35,3 +35,23 @@ size: 16:9
 ---
 
 ### Pros and Cons of Async Communication
+
+---
+
+![95% bg brightness:0.9](q1.png)
+
+---
+
+### Event Bus Overview
+
+![95% bg brightness:0.9](event-bus.png)
+
+---
+
+### Deployment Issues
+
+![95% bg brightness:0.9](event-bus.png)
+
+---
+
+### Running Services with Docker
