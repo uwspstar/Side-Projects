@@ -412,6 +412,20 @@ var promise = new Promise(function (resolve, reject) {
 
 ---
 
+### Promise 的静态方法
+
+- https://juejin.cn/post/6844903623059570696
+- `Promise.resolve`
+- `Promise.reject`
+- `Promise.all`
+- `Promise.race`
+
+---
+
+![95% bg brightness:0.9](promise2promise.png)
+
+---
+
 ### Promise 完成图片的加载
 
 - https://wangdoc.com/es6/promise.html#promiseall

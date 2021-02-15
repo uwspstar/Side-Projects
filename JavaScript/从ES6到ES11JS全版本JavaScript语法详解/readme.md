@@ -41,6 +41,8 @@ console.log('outside', i);
 //outside 3
 ```
 
+---
+
 ```js
 if (false) {
   var a = 5;
@@ -63,6 +65,8 @@ console.log('outside', i);
 //ReferenceError: i is not defined
 ```
 
+---
+
 ```js
 if (false) {
   let a = 5;
@@ -73,7 +77,7 @@ console.log(a);
 
 ---
 
-- Null Vs Undefined :
+### Null Vs Undefined :
 
 ```js
 let d = undefined;
@@ -84,6 +88,8 @@ console.log('c is ...', c); //c is ... null
 console.log('b is ...', b); //b is ... undefined
 console.log('a is ...', a); //ReferenceError: a is not defined
 ```
+
+---
 
 ```js
 console.log(null == undefined);
@@ -105,8 +111,8 @@ console.log(null === undefined);
 
 - https://www.geeksforgeeks.org/node-js-event-loop/
 - https://wsvincent.com/javascript-event-loop/
-- Each browser uses its own engine, but the best known is (V8), which is used by Chrome and also powers NodeJS!
-- JavaScript is a single-threaded language which means it has a single call stack.JavaScript can only do one thing at at time.
+- Each browser uses its own engine, but the best known is (`V8`), which is used by Chrome and also powers `NodeJS`!
+- JavaScript is a `single-threaded` language which means it has a single call stack.JavaScript can only do one thing at at time.
 
 ---
 
@@ -146,11 +152,13 @@ for (let i = 0; i < 3; i++) {
   - `queue` : message queue
   - `event loop`
 
-  ```js
-  while (queue.waitForMessage()) {
-    queue.processNextMessage();
-  }
-  ```
+---
+
+```js
+while (queue.waitForMessage()) {
+  queue.processNextMessage();
+}
+```
 
 ---
 
@@ -171,28 +179,31 @@ for (let i = 0; i < 3; i++) {
 
 ### JavaScript Never blocking
 
-- A very interesting property of the event loop model is that JavaScript, unlike a lot of other languages, `never blocks`. Handling I/O is typically performed via events and callbacks, so when the application is waiting for an IndexedDB query to return or an XHR request to return, it can still process other things like user input.
+- A very interesting property of the event loop model is that JavaScript, unlike a lot of other languages, `never blocks`. Handling `I/O` is typically performed via events and callbacks, so when the application is waiting for an IndexedDB query to return or an XHR request to return, it can still process other things like user input.
 
 ---
 
 ### How the data saved in JS
 
 - `stack`
-  - primitives : value (num, str)
-  - Structural : address (obj, arr, etc)
+  - primitives : `value` (num, str)
+  - Structural : `address` (obj, arr, etc)
 - `heap`
-  - value related the obj address from stack
+  - value related the obj address from `stack`
 
 ---
 
-![95% bg brightness:0.9](data.png)
-![60% bg brightness:0.9](eventloop.png)
+![80% bg brightness:0.9](data.png)
+
+---
+
+![50% bg brightness:0.9](eventloop.png)
 
 ---
 
 ### IIFE
 
-- An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+- An `IIFE` (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
 
 ```js
 for (var i = 0; i < 3; i++) {
@@ -200,7 +211,7 @@ for (var i = 0; i < 3; i++) {
     setTimeout(function () {
       console.log(j);
     });
-  })(i);
+  })(i); // i is input variable
 }
 //0
 //1
@@ -228,6 +239,8 @@ Object.defineProperty(window, 'PI', {
 ```js
 const a = 5;
 ```
+
+- declare and assign value at the same time
 
 ```js
 const b;
@@ -1482,6 +1495,3 @@ console.log(obj.name);
 ```
 
 ---
-
-
- 
