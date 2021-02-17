@@ -98,3 +98,6 @@ Unexpected end of JSON input while parsing near '...-parser","version":"0'
 - $ `ng add _____`
 - $ `ng test`
 - $ `ng build --prod`
+
+### links
+- http://placehold.it/800x300
