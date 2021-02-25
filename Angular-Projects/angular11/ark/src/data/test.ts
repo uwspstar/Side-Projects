@@ -44,16 +44,11 @@ let ELEMENT_DATA: PeriodicElement[] = [];
 })
 export class AppComponent implements AfterViewInit {
 
-  /*
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  */
   displayedColumns: string[] = ['date', 'fund', 'company', 'ticker', 'cusip', 'shares', 'marketValue', 'weight'];
-  dataSource : any;//= new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource : any;
 
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -146,9 +141,9 @@ export class AppComponent implements AfterViewInit {
         ELEMENT_DATA.push(pe);
       }  
     }  
+    //ELEMENT_DATA = csvArr;
 
-
-    // console.log('ELEMENT_DATA',JSON.stringify(ELEMENT_DATA));
+    console.log('ELEMENT_DATA',JSON.stringify(ELEMENT_DATA));
     this.dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
     this.changeDetectorRefs.detectChanges();
     return csvArr;    

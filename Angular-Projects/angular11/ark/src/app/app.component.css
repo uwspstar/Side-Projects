@@ -1,7 +1,29 @@
+div.big-title {
+    font-size: 88px;
+    font-weight: 500;
+    font-family: bebas neue,Sans-serif;
+    letter-spacing: 2.9px;
+    width: 420px;
+    line-height: 1;
+}
+div.container {
+    margin-top: 50px;
+}
+div.data-input-container {
+   float: right;
+   margin-top: 30px;
+   margin-right: 130px;
+}
+div.record-container {
+    padding: auto;
+    margin: auto;
+    border: 2px solid black;
+    width: 80%;
+}
 table {
     width: 100%;
-    }
-    
+}
+
 table.minimalistBlack {  
     border: 3px solid #000;  
     width: 100%;  
