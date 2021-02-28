@@ -1,0 +1,26 @@
+<table>
+	<tr>
+		<th>title</th>
+		<th>publisher</th>
+		<th>type</th>
+		<th>uuid</th>
+	</tr>
+
+	<ng-container *ngFor="let item of news">
+		<tr>
+			<td><a [href]=item.link>{{ item.title }} </a></td>
+			<td>
+				<p>{{ item.publisher }}</p>
+			</td>
+			<td>
+				<p>{{ item.type }}</p>
+			</td>
+			<td>
+				<p>{{ item.uuid }}</p>
+			</td>
+		</tr>
+	</ng-container>
+</table>
+<button (click)="CallAPI()">Call API</button>
+
+<router-outlet></router-outlet>
