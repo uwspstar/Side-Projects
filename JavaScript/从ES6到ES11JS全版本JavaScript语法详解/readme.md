@@ -103,7 +103,8 @@ console.log(null === undefined);
 ---
 
 - Because of `null == undefined`, when I want to check to see if a variable has a value or not I almost always use `double equals` comparison since it will return true whether the variable is null or undefined.
-- By setting a variable to `undefined` you are conveying the message that the variable no longer contains any useful information, while if the value is `null` then you are specifically saying the result of some action has no value.
+- By setting a variable to `undefined` you are conveying the message that the variable no longer contains any useful information
+- if the value is `null` then you are specifically saying the result of some action has no value.
 
 ---
 
@@ -112,7 +113,8 @@ console.log(null === undefined);
 - https://www.geeksforgeeks.org/node-js-event-loop/
 - https://wsvincent.com/javascript-event-loop/
 - Each browser uses its own engine, but the best known is (`V8`), which is used by Chrome and also powers `NodeJS`!
-- JavaScript is a `single-threaded` language which means it has a single call stack.JavaScript can only do one thing at at time.
+- JavaScript is a `single-threaded` language which means it has a single call stack.
+- JavaScript can only do one thing at at time.
 
 ---
 
@@ -146,13 +148,14 @@ for (let i = 0; i < 3; i++) {
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop
 - `Runtime concepts`
-
   - `stack` : Function calls form a stack of frames.
-  - `heap` : Objects are allocated in a heap
+  - `heap` : Objects are allocated in a heap (stack has the address pointing to heap)
   - `queue` : message queue
   - `event loop`
 
 ---
+
+### queue
 
 ```js
 while (queue.waitForMessage()) {
@@ -172,6 +175,8 @@ while (queue.waitForMessage()) {
 
 ### Several runtimes communicating together
 
+- `web worker`
+- `cross-origin iframe`
 - A `web worker` or a `cross-origin iframe` has its own `stack`, `heap`, and `message queue`.
 - Two distinct runtimes can only communicate through `sending messages` via the `postMessage` method. This method adds a message to the other runtime if the latter listens to message events.
 
@@ -179,15 +184,16 @@ while (queue.waitForMessage()) {
 
 ### JavaScript Never blocking
 
-- A very interesting property of the event loop model is that JavaScript, unlike a lot of other languages, `never blocks`. Handling `I/O` is typically performed via events and callbacks, so when the application is waiting for an IndexedDB query to return or an XHR request to return, it can still process other things like user input.
+- A very interesting property of the event loop model is that JavaScript, unlike a lot of other languages, `never blocks`.
+- Handling `I/O` is typically performed via `events` and `callbacks`, so when the application is waiting for an `IndexedDB` query to return or an `XHR request` to return, it can still process other things like user input.
 
 ---
 
 ### How the data saved in JS
 
 - `stack`
-  - primitives : `value` (num, str)
-  - Structural : `address` (obj, arr, etc)
+  - `primitives` : `value` (num, str)
+  - `Structural` : `address` (obj, arr, etc)
 - `heap`
   - value related the obj address from `stack`
 
@@ -201,7 +207,7 @@ while (queue.waitForMessage()) {
 
 ---
 
-### IIFE
+### IIFE (Interview must know)
 
 - An `IIFE` (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
 
@@ -219,6 +225,19 @@ for (var i = 0; i < 3; i++) {
 ```
 
 - https://developer.mozilla.org/en-US/docs/Glossary/IIFE
+
+---
+
+```js
+for (var i = 0; i < 3; i++) {
+  setTimeout(function () {
+    console.log(i);
+  }); // event loop, i is 3 when the console.log(i) run
+}
+//3
+//3
+//3
+```
 
 ---
 
@@ -271,13 +290,13 @@ Object.freeze(obj.skill);
 
 ---
 
-### The latest ECMAScript standard defines nine types:
+### The latest ECMAScript standard defines 9 types:
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures
 
 ---
 
-### Primitives
+### 6 Primitives
 
 - `Six Data Types` that are `primitives`, checked by typeof operator:
   - `undefined` : typeof instance === "undefined"
@@ -289,7 +308,7 @@ Object.freeze(obj.skill);
 
 ---
 
-### Structural : Object, new, Function
+### 3 Structural : Object, new, Function
 
 - `Structural Types`: everything made with `new` keyword
 
@@ -301,13 +320,13 @@ Object.freeze(obj.skill);
 
 ### Non-data Structure : Function
 
-- `Function` : a `non-data structure`, though it also answers for typeof operator: typeof instance === "function". This is merely a special shorthand for Functions, though every Function constructor is derived from Object constructor.
+- `Function` : a `non-data structure`, though it also answers for typeof operator: `typeof instance === "function"`. This is merely a special shorthand for Functions, though every Function constructor is `derived from Object constructor`.
 
 ---
 
 ### Structural Root Primitive:
 
-- `null` : typeof instance === "object". Special primitive type having additional usage for its value: if object is `NOT inherited`, then null is shown;
+- `null` : typeof instance === "object". Special primitive type having additional usage for its value: if object is `NOT inherited`, then `null` is shown;
 
 ---
 
@@ -399,10 +418,13 @@ let [b = foo()] = [];
 console.log(a, b); // 1 123
 ```
 
+---
+
 ```js
 function foo([a, b, c]) {
   console.log(a, b, c);
 }
+
 let arr = [1, 2, 3];
 foo(arr); // 1 2 3
 ```
@@ -436,8 +458,9 @@ console.log(name, age, school); //xing 18 MIT
 
 ---
 
-- `JSON` (`JavaScript Object Notation`) is a lightweight data-interchange format, derived from JavaScript, but used by many programming languages.
-- JSON builds universal data structures.
+- `JSON` (`JavaScript Object Notation`) is a lightweight data-interchange format, derived from `JavaScript`, but used by many programming languages.
+- `JSON` builds universal data structures.
+- `JSON` data `key` and `value` are `string`
 
 ```js
 // JSON data key and value are string
@@ -452,8 +475,9 @@ console.log(name, age); //xing 18
 
 ---
 
-### ES5 (2020-10-12)
+### for vs foreach
 
+- ES5 (2020-10-12)
 - `for` : can use `break` and `continue`
 - `foreach`: cannot use `break` and `continue`
 
@@ -465,7 +489,10 @@ arr.forEach(function (elem, index, array) {
 
 ---
 
-- `map` : generate a `new array`, not change original array
+### map
+
+- `map` : generate a `new array`, not change original array.
+- must callback with `return`
 
 ```js
 let arr = [1, 2, 3];
@@ -476,6 +503,14 @@ let result = arr.map(function (value) {
 console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
 ```
 
+---
+
+```js
+let arr = [1, 2, 3];
+let result = arr.map((value) => value++);
+console.log(arr, result); //[ 1, 2, 3 ] [ 1, 2, 3 ]
+```
+- so we can use map to create a new array
 ---
 
 ```js
@@ -495,6 +530,8 @@ console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
 
 ---
 
+### filter
+
 - `filter` : return a `new array` which item match the condition, not change original array.
 
 ```js
@@ -513,6 +550,8 @@ console.log(arr, result); //[ 1, 2, 3 ] [ 2, 4 ]
 
 ---
 
+### some
+
 - `some` : return true if any elem match the condition, otherwise return false
 
 ```js
@@ -524,6 +563,8 @@ console.log(arr, result); //[ 1, 2, 3 ] true
 ```
 
 ---
+
+### every
 
 - `every` : return true if all elem match the condition, otherwise return false
 
@@ -538,7 +579,10 @@ console.log(arr, result);
 
 ---
 
-- `reduce` :
+### reduce
+
+- `reduce` : `arr.reduce((prev, cur, index, array) => {return ...})`
+- `callback`
 
 ```js
 arr.reduce(callback( accumulator, currentValue[, index[, array]] ) {
@@ -551,6 +595,7 @@ let total = [0, 1, 2, 3].reduce(
   (accumulator, currentValue) => accumulator + currentValue,
   0
 );
+console.log(total); // 6
 ```
 
 ---
@@ -562,6 +607,8 @@ let result = arr.reduce(function (prev, cur, index, array) {
 });
 console.log(arr, result); //[ 1, 2, 3 ] 10
 ```
+
+---
 
 ```js
 let arr = [1, 2, 3, 4];
@@ -590,7 +637,7 @@ console.log(arr, result); // [ 1, 2, 3, 4 ]
 
 ---
 
-- `for...in` (in ->Index), but has problem to loop array. Array.prototype will show in loop
+- `for...in` (in ->Index), but has problem to loop array. `Array.prototype` will show in loop
 
 ```js
 let arr = [1, 2, 3];
@@ -612,10 +659,15 @@ for (let index in arr) {
 
 ---
 
-### ES6 iterator (2020-11-14)
+### find vs findIndex
 
+- ES6 iterator (2020-11-14)
 - `find` : return first find elem
 - `findIndex` : return first find elem index
+
+---
+
+### for ... of vs for ... in
 
 - `for of`
   - `values()`
@@ -659,7 +711,7 @@ for (let [index, item] of arr.entries()) {
 
 ---
 
-- check is Array : `instanceof Array`
+### check is Array : `instanceof Array`
 
 ```js
 let divs = document.getElementsByTagName('div');
@@ -672,7 +724,7 @@ console.log(divs2 instanceof Array);
 
 ---
 
-- `Array.from`
+### Array.from
 
 ```js
 let divs = document.getElementsByTagName('div');
@@ -681,7 +733,7 @@ console.log(Array.from(divs)); //  []
 
 ---
 
-- `Array.of`
+### Array.of
 
 ```js
 let arr = Array.of(1, 3);
@@ -695,7 +747,7 @@ console.log(arr); // [ 1, true, 'xing', [ 1, 2, 3 ], { age: 10 } ]
 
 ---
 
-- copyWithin() : shallow copy
+- `copyWithin()` : shallow copy
 - `arr.copyWithin(target[, start[, end]])`
 
 ```js

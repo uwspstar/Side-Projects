@@ -1,5 +1,4 @@
-var a
-if (true) {
-    let a = 5;
-}
-console.log(a); // undefined
+
+let arr = [1, 2, 3];
+let result = arr.map(value => value++);
+console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
