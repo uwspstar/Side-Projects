@@ -1,4 +1,14 @@
+let A = [1,2, 3];
+let B = [4, 5];
 
-let arr = [1, 2, 3];
-let result = arr.map(value => value++);
-console.log(arr, result); //[ 1, 2, 3 ] [ 2, 3, 4 ]
+let tmp = A.shift();
+
+B.push(tmp);
+
+console.log(A,B);
+
+let arr = A.concat(B);
+
+for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i]);
+}
