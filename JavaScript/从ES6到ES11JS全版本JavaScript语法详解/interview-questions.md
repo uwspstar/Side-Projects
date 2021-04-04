@@ -78,6 +78,15 @@ console.log(b);
 
 ---
 
+### Delete Element from Array
+
+- pop - Removes from the End of an Array
+- shift - Removes from the beginning of an Array
+- splice - removes from a specific Array index
+- filter - allows you to programmatically remove elements from an Array
+
+---
+
 ### Finding max of an array:
 
 - We may use `Math.max.apply` to find the highest number in an array.
@@ -322,4 +331,5 @@ const obj = new fun(): // Gives error
 ```
 
 ---
+
 # Recursion
