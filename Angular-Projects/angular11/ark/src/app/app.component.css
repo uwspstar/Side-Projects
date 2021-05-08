@@ -9,11 +9,19 @@ div.big-title {
 div.container {
     margin-top: 50px;
 }
+
 div.data-input-container {
    float: right;
    margin-top: 30px;
-   margin-right: 130px;
+   margin-right: 100px;
 }
+
+div.header-container{
+    padding: auto;
+    margin: auto;
+    width: 80%;
+}
+
 div.record-container {
     padding: auto;
     margin: auto;

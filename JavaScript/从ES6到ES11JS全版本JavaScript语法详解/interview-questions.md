@@ -7,6 +7,60 @@ paginate: true
 size: 16:9
 ---
 
+# Memory Management
+
+- https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Memory_Management
+- JavaScript automatically allocates memory when objects are created and frees it when they are not used anymore (garbage collection)
+
+---
+
+```js
+var n = 123; // allocates memory for a number
+var s = 'azerty'; // allocates memory for a string
+
+var s2 = s.substr(0, 3); // s2 is a new string
+// Since strings are immutable values, JavaScript may decide to not allocate memory, but just store the [0, 3] range.
+
+var o = {
+  a: 1,
+  b: null,
+}; // allocates memory for an object and contained values
+
+// (like object) allocates memory for the array and contained values
+var a = [1, null, 'abra'];
+
+function f(a) {
+  return a + 2;
+} // allocates a function (which is a callable object)
+
+// function expressions also allocate an object
+someElement.addEventListener(
+  'click',
+  function () {
+    someElement.style.backgroundColor = 'blue';
+  },
+  false
+);
+```
+
+---
+
+# garbage collection 垃圾回收算法主要依赖于引用的概念
+
+- `Reference-counting` garbage collection
+- Limitation: `Circular references`
+- `Mark-and-sweep` algorithm : This algorithm reduces the definition of "an object is no longer needed" to "an object is unreachable".
+- “对象”的概念不仅特指 JavaScript 对象，还包括函数作用域（或者全局词法作用域）
+
+---
+
+### Mark-and-sweep 标记-清除算法
+
+- 标记-清除算法 : 这个算法把“对象是否不再需要”简化定义为“对象是否可以获得”。
+- 这个算法假定设置一个叫做根（`root`）的对象（在 Javascript 里，根是`全局对象`）。垃圾回收器将定期从根开始，找所有从根开始引用的对象，然后找这些对象引用的对象……从根开始，垃圾回收器将找到所有可以获得的对象和收集所有不能获得的对象.
+
+---
+
 # var vs let vs const
 
 ```js
@@ -107,7 +161,18 @@ var z = Math.min.apply(null, A);
 
 # Map and Filter Methods
 
-### Filter
+### Filter : returns a new array.
+
+```js
+var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+var filtered = array.filter(function (value, index, arr) {
+  return value > 5;
+});
+//filtered => [6, 7, 8, 9]
+//array => [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+```
+
+---
 
 - `array.filter(callback(element, index, arr), thisValue)`
 

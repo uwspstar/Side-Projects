@@ -1,0 +1,17 @@
+img.thumbnail {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+
+  div.parent {
+    margin: auto;
+    padding: 2em;;
+    display: flex;
+  }
+  
+  img.child {
+    margin: auto;
+    max-width: 80%;
+    max-height: 800%;
+  }

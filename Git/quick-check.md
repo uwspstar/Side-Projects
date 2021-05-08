@@ -9,6 +9,7 @@ size: 16:9
 
 # Git
 
+- https://mp.weixin.qq.com/s/Q_O0ey4C9tryPZaZeJocbA
 - https://www.youtube.com/watch?v=8JJ101D3knE
 
 ### Git Tools

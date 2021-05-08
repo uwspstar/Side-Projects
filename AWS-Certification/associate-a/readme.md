@@ -20,9 +20,12 @@ size: 16:9
 - Private, Public and Hybrid Cloud and Multi Cloud
 - Cloud Services (Offering) - IaaS , PaaS, SaaS, XaaS
 - TCP /IP
-- Cloud Services (Offering) - IaaS , PaaS, SaaS, XaaS
 - AWS Free Tier https://aws.amazon.com/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc
 
+---
+### Hybrid Cloud vs Multi Cloud
+- is a mix of public and on-premises private cloud
+- suitable for cost effectiveness, backup, disaster recovery, development and testing.
 ---
 
 ### IAM : Identity and Access Management

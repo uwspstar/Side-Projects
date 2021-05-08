@@ -38,20 +38,50 @@ size: 16:9
 
 ---
 
-![95% bg brightness:0.9](q1.png)
+![75% bg brightness:0.9](q1.png)
 
 ---
 
 ### Event Bus Overview
 
-![95% bg brightness:0.9](event-bus.png)
+---
+
+![75% bg brightness:0.9](event-bus.png)
 
 ---
 
 ### Deployment Issues
 
-![95% bg brightness:0.9](event-bus.png)
+---
+
+![75% bg brightness:0.9](event-bus.png)
 
 ---
 
 ### Running Services with Docker
+
+---
+
+![75% bg brightness:0.9](docker1.png)
+
+---
+
+![75% bg brightness:0.9](d2.png)
+
+---
+
+### Kubernetes
+
+---
+
+![75% bg brightness:0.9](k1.png)
+
+---
+
+![75% bg brightness:0.9](k2.png)
+
+---
+
+![75% bg brightness:0.9](k3.png)
+
+---

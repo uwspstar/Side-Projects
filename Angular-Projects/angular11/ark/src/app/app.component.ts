@@ -1,5 +1,6 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { Record } from '../model/record';
 
@@ -44,16 +45,13 @@ let ELEMENT_DATA: PeriodicElement[] = [];
 })
 export class AppComponent implements AfterViewInit {
 
-  /*
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  */
   displayedColumns: string[] = ['date', 'fund', 'company', 'ticker', 'cusip', 'shares', 'marketValue', 'weight'];
-  dataSource : any;//= new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource : any;
 
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  @ViewChild('csvReader') csvReader: any;
 
-  @ViewChild(MatPaginator)
-  paginator!: MatPaginator;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -61,33 +59,18 @@ export class AppComponent implements AfterViewInit {
 
   title = 'ark data';
   public records: any[] =[];
+  public isShown: boolean = false;
 
-  @ViewChild('csvReader') csvReader: any;
-
+ 
   constructor(private changeDetectorRefs: ChangeDetectorRef){
 
   }
-  isValidCSVFile(file: any) {  
-    return file.name.endsWith(".csv");  
-  }
-
-  getHeaderArray(csvRecordsArr: any) {  
-    let headers = (<string>csvRecordsArr[0]).split(',');  
-    let headerArray = [];  
-    for (let j = 0; j < headers.length; j++) {  
-      headerArray.push(headers[j]);  
-    }  
-    return headerArray;  
-  }
-
-  fileReset() {  
-    this.csvReader.nativeElement.value = "";  
-    this.records = [];  
-  } 
+  
 
   uploadListener($event: any): void {  
   
-    let text = [];  
+    ELEMENT_DATA = [];  
+
     let files = $event.srcElement.files;  
   
     if (this.isValidCSVFile(files[0])) {  
@@ -99,13 +82,14 @@ export class AppComponent implements AfterViewInit {
       reader.onload = () => {  
         let csvData = reader.result;  
         let csvRecordsArray = (<string>csvData).split(/\r\n|\n/);  
-  
-        let headersRow = this.getHeaderArray(csvRecordsArray);  
-  
+
+        let headers = (<string>csvRecordsArray[0]).split(',');  
+        let headersRow = this.getHeaderArray(headers);  
+
         this.records = this.getDataRecordsArrayFromCSVFile(csvRecordsArray, headersRow.length);  
       };  
   
-      reader.onerror = function () {  
+      reader.onerror = () => {  
         console.log('error while reading file!');  
       };  
   
@@ -115,42 +99,46 @@ export class AppComponent implements AfterViewInit {
     }  
   }
 
-  getDataRecordsArrayFromCSVFile(csvRecordsArray: any, headerLength: any) {  
-    let csvArr = [];  
-  
+  getDataRecordsArrayFromCSVFile(csvRecordsArray: any, headerLength: any): PeriodicElement[] {  
+    
     for (let i = 1; i < csvRecordsArray.length; i++) {  
-      let currantRecord = (<string>csvRecordsArray[i]).split(',');  
-      if (currantRecord.length == headerLength) {  
-        let csvRecord: Record = new Record(  
-        currantRecord[0].trim(),
-        currantRecord[1].trim(), 
-        currantRecord[2].trim(),  
-        currantRecord[3].trim(),  
-        parseFloat(currantRecord[4]),  
-        parseFloat(currantRecord[5]), 
-        parseFloat(currantRecord[6]), 
-        parseFloat(currantRecord[7])
-        )
-        let pe = {
-          date:currantRecord[0].trim(),
-          fund: currantRecord[1].trim(), 
-          company: currantRecord[2].trim(),  
-          ticker: currantRecord[3].trim(),  
-          cusip: parseFloat(currantRecord[4]),  
-          shares: parseFloat(currantRecord[5]), 
-          marketValue: parseFloat(currantRecord[6]), 
-          weight: parseFloat(currantRecord[7])
+      let record = (<string>csvRecordsArray[i]).split(',');  
+      if (record.length === headerLength) {       
+        const lineData = {
+          date:record[0].trim(),
+          fund: record[1].trim(), 
+          company: record[2].trim(),  
+          ticker: record[3].trim(),  
+          cusip: parseFloat(record[4]),  
+          shares: parseFloat(record[5]), 
+          marketValue: parseFloat(record[6]), 
+          weight: parseFloat(record[7])
         };
-
-        csvArr.push(csvRecord);  
-        ELEMENT_DATA.push(pe);
+        ELEMENT_DATA.push(lineData);
       }  
-    }  
+    } 
 
-
-    // console.log('ELEMENT_DATA',JSON.stringify(ELEMENT_DATA));
     this.dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
     this.changeDetectorRefs.detectChanges();
-    return csvArr;    
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+    this.isShown = true;
+    return ELEMENT_DATA;    
+  } 
+
+  isValidCSVFile(file: any) {  
+    return file.name.toLowerCase().endsWith(".csv");  
+  }
+
+  getHeaderArray(headers: any): string[] {  
+    let headerArray = [];  
+    for (let j = 0; j < headers.length; j++) {  
+      headerArray.push(headers[j]);  
+    }  
+    return headerArray;  
+  }
+
+  fileReset() {  
+    this.csvReader.nativeElement.value = "";  
   } 
 }

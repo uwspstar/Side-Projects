@@ -1,5 +1,6 @@
 import {AfterViewInit, ChangeDetectorRef, Component, ViewChild} from '@angular/core';
 import {MatPaginator} from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { Record } from '../model/record';
 
@@ -49,6 +50,7 @@ export class AppComponent implements AfterViewInit {
 
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -146,6 +148,8 @@ export class AppComponent implements AfterViewInit {
     console.log('ELEMENT_DATA',JSON.stringify(ELEMENT_DATA));
     this.dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
     this.changeDetectorRefs.detectChanges();
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
     return csvArr;    
   } 
 }

@@ -1,52 +1,54 @@
 <div class="container">
-
-  <div class="data-input-container">
-    <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)"
-      accept=".csv" />
+  <div class="header-container">
+    <div class="data-input-container">
+      <input type="file" #csvReader name="Upload CSV" id="txtFileUpload" (change)="uploadListener($event)"
+        accept=".csv" />
+    </div>
+    <div class="big-title">ARK-G</div>
+    <br />
+    <a href="https://ark-funds.com/investor-resources" target="_blank">Download Fund Materials</a>
   </div>
-  <div class="big-title">ARK-G</div>
-  <br />
   <div class="record-container">
     <div class="mat-elevation-z8">
-      <table mat-table [dataSource]="dataSource">
+      <table mat-table [dataSource]="dataSource" matSort>
 
         <ng-container matColumnDef="date">
-          <th mat-header-cell *matHeaderCellDef> Date. </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> DATE </th>
           <td mat-cell *matCellDef="let element"> {{element.date}} </td>
         </ng-container>
 
         <ng-container matColumnDef="fund">
-          <th mat-header-cell *matHeaderCellDef> Fund </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> FUND </th>
           <td mat-cell *matCellDef="let element"> {{element.fund}} </td>
         </ng-container>
 
         <ng-container matColumnDef="company">
-          <th mat-header-cell *matHeaderCellDef> Company </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> COMPANY </th>
           <td mat-cell *matCellDef="let element"> {{element.company}} </td>
         </ng-container>
 
         <ng-container matColumnDef="ticker">
-          <th mat-header-cell *matHeaderCellDef> Ticker </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> TICKER </th>
           <td mat-cell *matCellDef="let element"> {{element.ticker}} </td>
         </ng-container>
 
         <ng-container matColumnDef="cusip">
-          <th mat-header-cell *matHeaderCellDef> Cusip </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> CUSIP </th>
           <td mat-cell *matCellDef="let element"> {{element.cusip}} </td>
         </ng-container>
 
         <ng-container matColumnDef="shares">
-          <th mat-header-cell *matHeaderCellDef> Shares </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> SHARES </th>
           <td mat-cell *matCellDef="let element"> {{element.shares}} </td>
         </ng-container>
 
         <ng-container matColumnDef="marketValue">
-          <th mat-header-cell *matHeaderCellDef> Market Value </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> MARKET VALUE($) </th>
           <td mat-cell *matCellDef="let element"> {{element.marketValue}} </td>
         </ng-container>
 
         <ng-container matColumnDef="weight">
-          <th mat-header-cell *matHeaderCellDef> Weight </th>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> WEIGHT(%) </th>
           <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
         </ng-container>
 
@@ -54,14 +56,14 @@
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
 
-      <mat-paginator [pageSizeOptions]="[50, 10, 100]" showFirstLastButtons></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[10, 50, 100]" showFirstLastButtons></mat-paginator>
     </div>
   </div>
 </div>
 
 
 
-
+<!--
 <table class="minimalistBlack" *ngIf="records.length > 0">
   <thead>
     <tr>
@@ -88,6 +90,6 @@
     </tr>
   </tbody>
 </table>
-
+-->
 
 <router-outlet></router-outlet>
