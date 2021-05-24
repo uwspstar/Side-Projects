@@ -9,8 +9,10 @@ size: 16:9
 
 # Java 教程
 
+- https://introcs.cs.princeton.edu/java/11cheatsheet/
 - https://www.liaoxuefeng.com/wiki/1252599548343744
 - https://www.youtube.com/watch?v=CuOfO9tDVbU&list=PLD3Xyx6ef38yAdTNXD7ntDlaarf8NEoZ4
+- https://www.youtube.com/watch?v=HlYMFwJ5QuY&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f
 
 ---
 
@@ -55,6 +57,12 @@ size: 16:9
 │    Run on JVM    │
 └──────────────────┘
 ```
+
+---
+
+### Difference between an Integer and int in Java
+
+- https://www.tutorialspoint.com/difference-between-an-integer-and-int-in-java
 
 ---
 
@@ -119,7 +127,7 @@ public class Main {
  short │   │   │
        └───┴───┘
        ┌───┬───┬───┬───┐
-   int │   │   │   │   │
+   int │   │   │   │   │ 4 byte (default)
        └───┴───┴───┴───┘
        ┌───┬───┬───┬───┬───┬───┬───┬───┐
   long │   │   │   │   │   │   │   │   │ 8 byte
@@ -150,7 +158,7 @@ double │   │   │   │   │   │   │   │   │ 8 byte
 
 - Java 只定义了带符号的整型，因此，最高位的 bit 表示符号位（`0表示正数，1表示负数`）
 - byte：-128 ~ 127 (+-, 1 1 1 1 1 1 1) (8 bits)
-- short: -32768 ~ 32767 (2 \* 8 bits)
+- short: -32768 ~ 32767 (2 \* bits)
 - int: -2147483648 ~ 2147483647 (4 \* 8bits)
 - long: -9223372036854775808 ~ 9223372036854775807 (8 \* 8bits) long 型的结尾需要加 L
 
@@ -931,9 +939,13 @@ class Student extends Person {
 ### List 接口提供的 of()方法 快速创建 List
 
 - 除了使用 ArrayList 和 LinkedList，我们还可以通过 List 接口提供的 of()方法，根据给定元素快速创建 List：
+- 要注意的是，返回的 List 不一定就是 ArrayList 或者 LinkedList，因为 List 只是一个接口，如果我们调用 List.of()，它返回的是一个只读 List：对只读 List 调用 add()、remove()方法会抛出 `UnsupportedOperationException`。
+
+`List<String> list = List.of("apple", "pear", "banana");`
 
 ```
-List<String> list = List.of("apple", "pear", "banana");
+Integer[] array = { 1, 2, 3 };
+List<Integer> list = List.of(array);
 ```
 
 ---
@@ -988,7 +1000,7 @@ for (String s : list) {
 
 ### 把 Array 变为 List 简单 通过 List.of(T...)
 
-- 把 Array 变为 List 就简单多了，通过 List.of(T...)方法最简单：
+- 把 Array 变为 List 就简单多了，通过 `List.of(T...)`方法最简单：
 
 ```java
 Integer[] array = { 1, 2, 3 };
@@ -1042,6 +1054,84 @@ for (Object s : array) {
 
 ---
 
+### contains : List 内部并不是通过==判断两个元素是否相等，而是使用 equals()方法判断两个元素是否相等
+
+- List 还提供了 boolean contains(Object o)方法来判断 List 是否包含某个指定元素。
+- 此外，int indexOf(Object o)方法可以返回某个元素的索引，如果元素不存在，就返回-1。
+- List 内部并不是通过==判断两个元素是否相等，而是使用 equals()方法判断两个元素是否相等
+
+---
+
+### 正确使用 List 的 contains()、indexOf()这些方法, 必须正确覆写 equals()方法
+
+- 正确使用 List 的 contains()、indexOf()这些方法，放入的实例必须正确覆写 equals()方法，否则，放进去的实例，查找不到。
+- 我们之所以能正常放入 String、Integer 这些对象，是因为 Java 标准库定义的这些类已经正确实现了 equals()方法。
+
+---
+
+### 对于引用字段比较，我们使用 equals()，对于基本类型字段的比较，我们使用==。
+
+---
+
+### 编写 equals : 如何正确编写 equals()方法？equals()方法要求我们必须满足以下条件：
+
+- https://www.liaoxuefeng.com/wiki/1252599548343744/1265116446975264
+- 自反性（Reflexive）：对于非 null 的 x 来说，x.equals(x)必须返回 true；
+- 对称性（Symmetric）：对于非 null 的 x 和 y 来说，如果 x.equals(y)为 true，则 y.equals(x)也必须为 true；
+- 传递性（Transitive）：对于非 null 的 x、y 和 z 来说，如果 x.equals(y)为 true，y.equals(z)也为 true，那么 x.equals(z)也必须为 true；
+- 一致性（Consistent）：对于非 null 的 x 和 y 来说，只要 x 和 y 状态不变，则 x.equals(y)总是一致地返回 true 或者 false；
+  对 null 的比较：即 x.equals(null)永远返回 false。
+
+---
+
+```java
+public boolean equals(Object o) {
+    if (o instanceof Person) {
+        Person p = (Person) o;
+        boolean nameEquals = false;
+        if (this.name == null && p.name == null) {
+            nameEquals = true;
+        }
+        if (this.name != null) {
+            nameEquals = this.name.equals(p.name);
+        }
+        return nameEquals && this.age == p.age;
+    }
+    return false;
+}
+```
+
+---
+
+### 简化引用类型的比较，我们使用 Objects.equals()静态方法
+
+```java
+public class Person {
+    public String name;
+    public int age;
+}
+```
+
+```java
+if (o instanceof Person) {
+    Person p = (Person) o;
+    return Objects.equals(this.name, p.name) && this.age == p.age;
+}
+return false;
+```
+
+---
+
+### 总结一下 equals()方法的正确编写方法：
+
+- 先确定实例“相等”的逻辑，即哪些字段相等，就认为实例相等；
+- 用 instanceof 判断传入的待比较的 Object 是不是当前类型，如果是，继续比较，否则，返回 false；
+- 对引用类型用 Objects.equals()比较，对基本类型直接用==比较。
+- 使用 Objects.equals()比较两个引用类型是否相等的目的是省去了判断 null 的麻烦。两个引用类型都是 null 时它们也是相等的。
+- 如果不调用 List 的 contains()、indexOf()这些方法，那么放入的元素就不需要实现 equals()方法。
+
+---
+
 ### ArrayList
 
 - https://www.liaoxuefeng.com/wiki/1252599548343744/1265112034799552
@@ -1069,3 +1159,159 @@ for (Object s : array) {
 在指定位置添加/删除	        需要移动元素	           不需要移动元素
 内存占用	                少	                    较大
 ```
+
+---
+
+### Map
+
+- 和 List 类似，Map 也是一个接口，最常用的实现类是 HashMap。
+- 通过一个键去查询对应的值。使用 List 来实现存在效率非常低的问题，因为平均需要扫描一半的元素才能确定，而 Map 这种键值（key-value）映射表的数据结构，作用就是能高效通过 key 快速查找 value（元素）。
+- Map<K, V>是一种键-值映射表，当我们调用 put(K key, V value)方法时，就把 key 和 value 做了映射并放入 Map。当我们调用 V get(K key)时，就可以通过 key 获取到对应的 value。如果 key 不存在，则返回 null。
+- 如果只是想查询某个 key 是否存在，可以调用 `boolean containsKey(K key)`方法。
+
+---
+
+### 遍历 Map
+
+- 对 Map 来说，要遍历 key 可以使用 for each 循环遍历 Map 实例的 keySet()方法返回的 Set 集合，它包含不重复的 key 的集合：
+
+```java
+for (String key : map.keySet()) {
+    Integer value = map.get(key);
+    System.out.println(key + " = " + value);
+}
+```
+
+---
+
+### 同时遍历 key 和 value
+
+- 同时遍历 key 和 value 可以使用 for each 循环遍历 Map 对象的 entrySet()集合，它包含每一个 key-value 映射：
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+...
+for (Map.Entry<String, Integer> entry : map.entrySet()) {
+    String key = entry.getKey();
+    Integer value = entry.getValue();
+    System.out.println(key + " = " + value);
+}
+```
+
+---
+
+### Map vs. List
+
+- Map 和 List 不同的是，Map 存储的是 key-value 的映射关系，并且，它不保证顺序。
+- 在遍历的时候，遍历的顺序既不一定是 put()时放入的 key 的顺序，也不一定是 key 的排序顺序。
+- 使用 Map 时，任何依赖顺序的逻辑都是不可靠的。以 HashMap 为例，假设我们放入"A"，"B"，"C"这 3 个 key，遍历的时候，每个 key 会保证被遍历一次且仅遍历一次，但顺序完全没有保证，甚至对于不同的 JDK 版本，相同的代码遍历的输出顺序都是不同的.
+
+---
+
+### HashMap 之所以能根据 key 直接拿到 value
+
+- 原因是它内部通过空间换时间的方法，用一个大数组存储所有 value，并根据 key 直接计算出 value 应该存储在哪个索引：
+- 当我们使用 key 存取 value 的时候，就会引出一个问题：我们放入 Map 的 key 是字符串"a"，但是，当我们获取 Map 的 value 时，传入的变量不一定就是放入的那个 key 对象。换句话讲，两个 key 应该是内容相同，但不一定是同一个对象
+
+---
+
+### 在 Map 的内部，对 key 做比较是通过 equals()实现的，
+
+- 这一点和 List 查找元素需要正确覆写 equals()是一样的，即正确使用 Map 必须保证：作为 key 的对象必须正确覆写 equals()方法
+
+---
+
+### HashMap 为什么能通过 key 直接计算出 value 存储的索引
+
+- 相同的 key 对象（使用 equals()判断时返回 true）必须要计算出相同的索引，否则，相同的 key 每次取出的 value 就不一定对。
+- 通过 key 计算索引的方式就是调用 key 对象的 hashCode()方法，它返回一个 int 整数。HashMap 正是通过这个方法直接定位 key 对应的 value 的索引，继而直接返回 value。
+
+---
+
+### 正确使用 Map 必须保证：
+
+- https://www.liaoxuefeng.com/wiki/1252599548343744/1265117217944672
+- 作为 key 的对象必须正确覆写 equals()方法，相等的两个 key 实例调用 equals()必须返回 true；
+- 作为 key 的对象还必须正确覆写 hashCode()方法，且 hashCode()方法要严格遵循以下规范：
+- 如果两个对象相等，则两个对象的 hashCode()必须相等；
+- 如果两个对象不相等，则两个对象的 hashCode()尽量不要相等。
+
+---
+
+### 在计算 hashCode()的时候，经常借助 Objects.hash()来计算：所以，编写 equals()和 hashCode()遵循的原则是
+
+```java
+int hashCode() {
+    return Objects.hash(firstName, lastName, age);
+}
+```
+
+- equals()用到的用于比较的每一个字段，都必须在 hashCode()中用于计算；equals()中没有使用到的字段，绝不可放在 hashCode()中计算。
+- 另外注意，对于放入 HashMap 的 value 对象，没有任何要求。
+
+---
+
+### hashCode()
+
+- 实际上 HashMap 初始化时默认的数组大小只有 16，任何 key，无论它的 hashCode()有多大，都可以简单地通过：把索引确定在 0 ～ 15，即永远不会超出数组范围，上述算法只是一种最简单的实现。
+  `int index = key.hashCode() & 0xf; // 0xf = 15`
+- 添加超过一定数量的 key-value 时，HashMap 会在内部自动扩容，每次扩容一倍，即长度为 16 的数组扩展为长度 32，相应地，需要重新确定 hashCode()计算的索引位置。例如，对长度为 32 的数组计算 hashCode()对应的索引，计算方式要改为：
+  `int index = key.hashCode() & 0x1f; // 0x1f = 31`
+
+---
+
+### hashCode()方法编写得越好，HashMap 工作的效率就越高
+
+```java
+int hashCode() {
+    return Objects.hash(firstName, lastName, age);
+}
+```
+
+---
+
+### 哈希冲突 :
+
+- 在冲突的时候，一种最简单的解决办法是用 List 存储 hashCode()相同的 key-value。
+- 显然，如果冲突的概率越大，这个 List 就越长，Map 的 get()方法效率就越低，这就是为什么要尽量满足条件二：如果两个对象不相等，则两个对象的 hashCode()尽量不要相等。
+
+---
+
+### TreeSet
+
+- Keeps the elements sorted and prevents duplicates.
+- if you don't need the list to stay sorted. TreeSet might be more expensive than you need
+- With ArrayList, inserts can be blindingly fast because the new element
+  just goes in at the end.
+
+---
+
+### HashMap
+
+Let's you store and access elements as name/value pairs.
+
+---
+
+### LinkedList
+
+- Designed to give better performance when you insert or delete elements from the middle of the collection. (In practice, an ArrayUst is still usually what you want.)
+
+---
+
+### HashSet
+
+- Prevents duplicates in the collection, and given an element, can find that element in the collection quickly.
+
+---
+
+### LinkedHashMap
+
+- Like a regular HashMap, except it can remember the order in which elements (name/value pairs) were Inserted, or it can be configured to remember the order In which elements were last accessed.
+
+---
+
+### 稀疏矩阵（英語：sparse matrix）
+
+- 在数值分析中，是其元素大部分为零的矩阵。反之，如果大部分元素都非零，则这个矩阵是稠密的。在科学与工程领域中求解线性模型时经常出现大型的稀疏矩阵。
+- https://www.youtube.com/watch?v=awZ5pJGjS7o&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=8

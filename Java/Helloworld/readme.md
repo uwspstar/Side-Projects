@@ -10,6 +10,7 @@ size: 16:9
 # Java Tutorial for Beginners [2020] Programming with Mosh
 
 - https://www.youtube.com/watch?v=eIrMbAQSU34
+- https://introcs.cs.princeton.edu/java/11cheatsheet/
 
 ---
 
@@ -32,6 +33,7 @@ size: 16:9
 - byte code -> JVM -> naive codet
 
 ---
+
 # JAVA NOTES: (by Abhishek Gupta)
 
 1. // [comment]
@@ -200,7 +202,7 @@ size: 16:9
     Just the basic data types which are not objects.
 
 57. [x].toString()
-Will convert [x] into a string.
+    Will convert [x] into a string.
 
 58. [number].parse[numbertype]([string])
     This will parse [number] into the [numbertype] with [string].
