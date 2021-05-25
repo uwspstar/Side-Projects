@@ -1332,6 +1332,8 @@ Let's you store and access elements as name/value pairs.
 - 栈实现综合计算器
 - https://www.youtube.com/watch?v=Xcmxxx2NH7w&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=33
 - 前缀 中缀 后缀表达式规则
+- 中缀转后缀表达式
+- https://www.youtube.com/watch?v=sZdij3a5BYs&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=39
 ---
 
 ### Linked List
