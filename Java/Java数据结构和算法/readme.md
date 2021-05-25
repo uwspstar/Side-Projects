@@ -1315,3 +1315,29 @@ Let's you store and access elements as name/value pairs.
 
 - 在数值分析中，是其元素大部分为零的矩阵。反之，如果大部分元素都非零，则这个矩阵是稠密的。在科学与工程领域中求解线性模型时经常出现大型的稀疏矩阵。
 - https://www.youtube.com/watch?v=awZ5pJGjS7o&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=8
+
+---
+
+### Queue
+
+- 数组模拟队列
+- 数组模拟环形队列 : 因为简单高效，所以甚至在硬件中都实现了环形队列
+- https://www.youtube.com/watch?v=Syo8JiRP1Ys&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=14
+- https://segmentfault.com/a/1190000022804140
+
+---
+
+### Stack
+
+- 栈实现综合计算器
+- https://www.youtube.com/watch?v=Xcmxxx2NH7w&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=33
+- 前缀 中缀 后缀表达式规则
+---
+
+### Linked List
+
+- 单链表
+- 环形链表介绍和约瑟夫问题
+- https://www.youtube.com/watch?v=mAzpiaiL8lk&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=27
+
+---
