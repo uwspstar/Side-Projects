@@ -1343,3 +1343,15 @@ Let's you store and access elements as name/value pairs.
 - https://www.youtube.com/watch?v=mAzpiaiL8lk&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=27
 
 ---
+### Set vs HashSet vs TreeSet in Java
+- https://www.tutorialspoint.com/set-vs-hashset-vs-treeset-in-java
+
+---
+
+- A Set is a generic set of values with no duplicate elements. 
+- A TreeSet is a set where the elements are sorted.
+
+- A HashSet is a set where the elements are not sorted or ordered. It is faster than a TreeSet. The HashSet is an implementation of a Set.
+
+- Set is a parent interface of all set classes like TreeSet, HashSet, etc.
+---
