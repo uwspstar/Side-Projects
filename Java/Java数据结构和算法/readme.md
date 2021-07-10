@@ -16,6 +16,23 @@ size: 16:9
 
 ---
 
+### Java EE, Java SE, Java ME
+
+- Java SE 是整个 Java 平台的核心，而 Java EE 是进一步学习 Web 应用所必须的。我们熟悉的 Spring 等框架都是 Java EE 开源生态系统的一部分
+
+---
+
+### 推荐的 Java 学习路线图如下：
+
+- https://www.liaoxuefeng.com/wiki/1252599548343744/1255876875896416
+- 首先要学习 Java SE，掌握 Java 语言本身、Java 核心开发技术以及 Java 标准库的使用；
+- 如果继续学习 Java EE，那么`Spring`框架、数据库开发、`分布式架构`就是需要学习的；
+- 如果要学习大数据开发，那么 Hadoop、Spark、Flink 这些大数据平台就是需要学习的，他们都基于 Java 或 Scala 开发；
+- 如果想要学习移动开发，那么就深入 Android 平台，掌握 Android App 开发。
+- 无论怎么选择，Java SE 的核心技术是基础，这个教程的目的就是让你完全精通 Java SE！
+
+---
+
 ### JDK : JAVA_HOME 的 bin 目录下可执行文件：
 
 - `java`：这个可执行程序其实就是 JVM，运行 Java 程序，就是启动 JVM，然后让 JVM 执行指定的编译后的代码；
@@ -23,6 +40,48 @@ size: 16:9
 - `jar`：用于把一组.class 文件打包成一个.jar 文件，便于发布；
 - `javadoc`：用于从 Java 源码中自动提取注释并生成文档；
 - `jdb`：Java 调试器，用于开发阶段的运行调试。
+
+---
+
+### JDK：Java Development Kit
+
+### JRE：Java Runtime Environment
+
+### JSR 规范：Java Specification Request
+
+### JCP 组织：Java Community Process
+
+### RI：Reference Implementation
+
+### TCK：Technology Compatibility Kit
+
+---
+
+### JDK vs JRE
+
+- https://www.liaoxuefeng.com/wiki/1252599548343744/1255876875896416
+- 简单地说，JRE 就是运行 Java 字节码的虚拟机。但是，如果只有 Java 源码，要编译成 Java 字节码，就需要 JDK，因为 JDK 除了包含 JRE，还提供了编译器、调试器等开发工具。
+
+二者关系如下：
+
+┌─ ┌──────────────────────────────────┐
+│ │ Compiler, debugger, etc. │
+│ └──────────────────────────────────┘
+JDK ┌─ ┌──────────────────────────────────┐
+│ │ │ │
+│ JRE │ JVM + Runtime Library │
+│ │ │ │
+└─ └─ └──────────────────────────────────┘
+┌───────┐┌───────┐┌───────┐┌───────┐
+│Windows││ Linux ││ macOS ││others │
+└───────┘└───────┘└───────┘└───────┘
+
+---
+
+### 安装 JDK
+
+- https://www.liaoxuefeng.com/wiki/1252599548343744/1280507291631649
+- 把 JAVA_HOME 的 bin 目录添加到 PATH 中是为了在任意文件夹下都可以运行 java。
 
 ---
 
@@ -1334,6 +1393,7 @@ Let's you store and access elements as name/value pairs.
 - 前缀 中缀 后缀表达式规则
 - 中缀转后缀表达式
 - https://www.youtube.com/watch?v=sZdij3a5BYs&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=39
+
 ---
 
 ### Linked List
@@ -1343,15 +1403,22 @@ Let's you store and access elements as name/value pairs.
 - https://www.youtube.com/watch?v=mAzpiaiL8lk&list=PLmOn9nNkQxJFvyhDYx0ya4F75uTtUHA_f&index=27
 
 ---
+
 ### Set vs HashSet vs TreeSet in Java
+
 - https://www.tutorialspoint.com/set-vs-hashset-vs-treeset-in-java
 
 ---
 
-- A Set is a generic set of values with no duplicate elements. 
+- A Set is a generic set of values with no duplicate elements.
 - A TreeSet is a set where the elements are sorted.
 
 - A HashSet is a set where the elements are not sorted or ordered. It is faster than a TreeSet. The HashSet is an implementation of a Set.
 
 - Set is a parent interface of all set classes like TreeSet, HashSet, etc.
+
 ---
+
+### String.equals() vs "=="
+
+- String.equals() compares the content while == checks whether the references are pointing to the same object or not.
