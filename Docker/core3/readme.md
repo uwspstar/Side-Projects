@@ -6,3 +6,5 @@
 - $ dotnet new
 - $ dotnet new webapi -n WeatherAPI
 - $ code-insiders -r Weather
+- $ dotnet run
+- $ $ dotnet dev-certs https --trust
