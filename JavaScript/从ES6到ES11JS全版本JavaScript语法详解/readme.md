@@ -9,8 +9,76 @@ size: 16:9
 
 # 从 ES6 到 ES11JS 全版本 JavaScript 语法详解
 
+- http://es.xiecheng.live/introduction/preface.html
 - https://www.youtube.com/watch?v=uTYkUfniMeo&list=PL9nxfq1tlKKn96qqvz92I-09Qg21F12c2
 - https://wangdoc.com/es6/
+
+---
+
+# new ES6 `?`
+
+```js
+const street = user?.address?.street;
+const num = user?.address?.getNum?.();
+```
+
+---
+
+# `Symbol()`
+
+```js
+const shapeType = {
+  triangle: Symbol(),
+  circle: Symbol(),
+};
+function getArea(shape) {
+  let area = 0;
+  switch (shape) {
+    case shapeType.triangle:
+      area = 1;
+      break;
+    case shapeType.circle:
+      area = 2;
+      break;
+  }
+  return area;
+}
+getArea(shapeType.triangle);
+```
+
+---
+
+# 将类数组转化为数组
+
+`const arrayLike = document.querySelectorAll('.item')`
+
+- ES5 语法 `Array.prototype.slice.call(arrayLike)`
+
+- ES6+语法 `Array.from(arrayLike)`
+
+---
+
+# 异步操作 async ... await
+
+- ES5 语法
+
+```js
+function getData(url) {
+  ajax(url, function (res) {
+    var data = res.data;
+    this.list = data;
+  });
+}
+```
+
+- ES6+语法
+
+```
+async function getData (url) {
+    const { data } = await axios.get(url)
+    this.list = data
+}
+```
 
 ---
 
@@ -510,7 +578,9 @@ let arr = [1, 2, 3];
 let result = arr.map((value) => value++);
 console.log(arr, result); //[ 1, 2, 3 ] [ 1, 2, 3 ]
 ```
+
 - so we can use map to create a new array
+
 ---
 
 ```js
