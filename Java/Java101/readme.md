@@ -154,3 +154,20 @@ final int myNum = 15; myNum = 20;
 - Narrowing Casting (manually) - converting a larger type to a smaller size type
   double -> float -> long -> int -> char -> short -> byte
 - `int myInt = (int) myDouble; // Manual casting: double to int`
+
+---
+
+# Java Assignment Operators
+
+```java
+&=	x &= 3	x = x & 3
+|=	x |= 3	x = x | 3
+^=	x ^= 3	x = x ^ 3
+>>=	x >>= 3	x = x >> 3
+<<=	x <<= 3	x = x << 3
+```
+
+# Java Logical Operators
+`x < 5 &&  x < 10`
+`x < 5 || x < 4`
+`!(x < 5 && x < 10)`
