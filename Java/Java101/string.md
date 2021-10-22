@@ -13,6 +13,19 @@ size: 16:9
 
 ---
 
+- `codePointAt()`
+
+```java
+String myStr = "Hello";
+int result = myStr.codePointAt(0);
+System.out.println(result);
+
+String str = "Hello World";
+int codePointAt0 = Character.codePointAt(str, 0);
+```
+
+---
+
 - `split()`
 - `toCharArray()`
 - `compareTo()`
