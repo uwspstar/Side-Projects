@@ -11,7 +11,17 @@ public class Static {
         return x < 0.0 ? -x : x;
     }
 
-    //质数除了1和本身之外没有其他约数，所以判断n是否为质数，根据定义直接判断从2到n-1是否存在n的约数即
+    public static double sqrt(double c) {
+        if (c < 0)
+            return Double.NaN;
+        double err = 1e-15;
+        double t = c;
+        while (Math.abs(t - c / t) > err * t)
+            t = (c / t + t) / 2.0;
+        return t;
+    }
+
+    // 质数除了1和本身之外没有其他约数，所以判断n是否为质数，根据定义直接判断从2到n-1是否存在n的约数即
     public static boolean isPrime(int N) {
         if (N < 2) {
             return false;
