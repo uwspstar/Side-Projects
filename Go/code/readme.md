@@ -132,6 +132,96 @@ g := 0.867 + 0.5i // complex128
 - Try changing the initial value of v in the example code and observe how its type is affected.
 
 # Constants
+
 - Constants are declared like variables, but with the `const` keyword.
 - Constants can be `character`, `string`, `boolean`, or `numeric` values.
 - Constants cannot be declared using the := syntax.
+- `iota`
+
+```go
+package main
+
+import "fmt"
+
+const pi = 3.1415
+const (
+	first = iota
+	second = iota + 6
+	third = 2 << iota // iota = 3
+	fourth
+
+)
+func main() {
+
+	var firstName * string = new (string)
+	*firstName = "Xing"
+	fmt.Println(*firstName)
+
+	lastName := "W"
+	fmt.Println(lastName)
+
+	ptr := &lastName
+	fmt.Println(ptr, *ptr)
+
+	lastName = "A"
+	fmt.Println(ptr, *ptr)
+
+
+	fmt.Println(pi)
+	fmt.Println(first, second, third, fourth)
+
+	fmt.Println("hello world")
+}
+```
+
+# Collections
+
+- `Arrays`
+- `Slices` //dynamic array
+- `Maps`
+- `Structs` // class
+
+# Slices
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	primes := [6]int{2, 3, 5, 7, 11, 13} // Array
+
+	var s []int = primes[1:4] //Slices
+	s = append(s, 100, 200, 300)
+	fmt.Println(s)
+}
+```
+
+- Slices are like references to arrays
+- A slice does not store any data, it just describes a section of an underlying array.
+- Changing the elements of a slice modifies the corresponding elements of its underlying array.
+- Other slices that share the same underlying array will see those changes.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	names := [4]string{
+		"John",
+		"Paul",
+		"George",
+		"Ringo",
+	}
+	fmt.Println(names) //[John Paul George Ringo]
+
+	a := names[0:2]
+	b := names[1:3]
+	fmt.Println(a, b) //[John Paul] [Paul George]
+
+	b[0] = "XXX"
+	fmt.Println(a, b) //[John XXX] [XXX George]
+	fmt.Println(names) //[John XXX George Ringo]
+}
+```
