@@ -73,3 +73,76 @@ func main() {
 	var myPointer *int = new(int)
 }
 ```
+
+# closest thing to ternary operator
+
+```js
+const isOddLength = array.length % 2 == 1 ? 'yes' : 'no';
+```
+
+```go
+isOddLength := "no"
+if len(array)%2 == 1 {
+	isOddLength = "yes"
+}
+```
+
+# for
+
+```go
+for i := 0; i <= 5; i++ {
+	fmt.Println(i)
+}
+// wrong
+for var i int = 0; i <= 5; i++ {
+	fmt.Println(i)
+}
+
+```
+
+# while
+
+```go
+i := 0
+for i <= 5 {
+	fmt.Println(i)
+	i++
+}
+```
+
+# switch
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	value := "b"
+
+	switch value {
+	case "a":
+		fmt.Println("A")
+	case "b":
+		fmt.Println("B")
+	case "c":
+		fmt.Println("C")
+	default:
+		fmt.Println("first default")
+	}
+
+	switch value {
+	case "a":
+		fmt.Println("A - falling through")
+		fallthrough
+	case "b":
+		fmt.Println("B - falling through")
+		fallthrough
+	case "c":
+		fmt.Println("C - falling through")
+		fallthrough
+	default:
+		fmt.Println("second default")
+	}
+}
+```

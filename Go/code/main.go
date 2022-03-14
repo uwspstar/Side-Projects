@@ -15,6 +15,14 @@ const (
 )
 func main() {
 
+	for i:= 0; i <= 5; i++ {
+		fmt.Println(i)
+	}
+
+	for i:= 0; i <= 5; i++ {
+		fmt.Println(i)
+	}
+
 	log.Println("hello world")
 
 	var firstName * string = new (string)
