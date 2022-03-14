@@ -112,6 +112,8 @@ for i <= 5 {
 
 # switch
 
+-- https://golangbyexample.com/fallthrough-keyword-golang/
+
 ```go
 package main
 
@@ -121,28 +123,87 @@ func main() {
 	value := "b"
 
 	switch value {
-	case "a":
-		fmt.Println("A")
-	case "b":
-		fmt.Println("B")
-	case "c":
-		fmt.Println("C")
-	default:
-		fmt.Println("first default")
+		case "a":
+			fmt.Println("A")
+		case "b":
+			fmt.Println("B")
+		default:
+			fmt.Println("first default")
 	}
 
-	switch value {
-	case "a":
-		fmt.Println("A - falling through")
-		fallthrough
-	case "b":
-		fmt.Println("B - falling through")
-		fallthrough
-	case "c":
-		fmt.Println("C - falling through")
-		fallthrough
-	default:
-		fmt.Println("second default")
-	}
+```
+
+- `fallthrough` keyword is used in switch statement in golang. This keyword is used in switch case block. If the fallthrough keyword is present in the case block, then it will transfer control to the next case even though the current case might have matched.
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    i := 45
+    switch {
+    case i < 10:
+        fmt.Println("i is less than 10")
+        fallthrough
+    case i < 50:
+        fmt.Println("i is less than 50")
+        fallthrough
+    case i < 100:
+        fmt.Println("i is less than 100")
+    }
 }
+//i is less than 50
+//i is less than 100
+```
+
+# arrays
+
+- https://github.com/miguelmota/golang-for-nodejs-developers?ref=morioh.com&utm_source=morioh.com#comments
+
+```js
+const array = [1, 2, 3, 4, 5];
+console.log(array);
+
+const clone = array.slice(0);
+console.log(clone);
+
+const sub = array.slice(2, 4);
+console.log(sub);
+
+const concatenated = clone.concat([6, 7]);
+console.log(concatenated);
+
+const prepended = [-2, -1, 0].concat(concatenated);
+console.log(prepended);
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+	array := []int{1, 2, 3, 4, 5}
+	fmt.Println(array)
+
+    clone := make([]int, len(array))
+    copy(clone, array)
+    fmt.Println(clone)
+
+    sub := array[2:4]
+    fmt.Println(sub)
+
+    concatenated := append(array, []int{6, 7}...)
+    fmt.Println(concatenated)
+
+    prepended := append([]int{-2, -1, 0}, concatenated...)
+    fmt.Println(prepended)
+
+}
+
+```
+
+```
+
 ```
