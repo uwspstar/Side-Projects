@@ -3,7 +3,7 @@
 # a tour of the Go programming language.
 
 - https://go.dev/tour/welcome/1
-- go run main.go
+
 
 # create a mod file
 
@@ -12,6 +12,8 @@
 # another way to run
 
 - go run github.com/uwspstar/go
+
+- go run main.go
 
 # Go's basic types are
 

@@ -7,25 +7,32 @@ import (
 
 const pi = 3.1415
 const (
-	first = iota
+	first  = iota
 	second = iota + 6
-	third = 2 << iota // iota = 3
+	third  = 2 << iota // iota = 3
 	fourth
-
 )
+
 func main() {
 
-	for i:= 0; i <= 5; i++ {
-		fmt.Println(i)
-	}
 
-	for i:= 0; i <= 5; i++ {
+	
+	fmt.Print("hello");
+
+	primes := [6]int{2, 3, 5, 7, 11, 13} // Array
+
+	var s []int = primes[1:4] //Slices
+	fmt.Println(s)            //[3 5 7]
+	s = append(s, 100, 200, 300)
+	fmt.Println(s) // [3 5 7 100 200 300]
+
+	for i := 0; i <= 5; i++ {
 		fmt.Println(i)
 	}
 
 	log.Println("hello world")
 
-	var firstName * string = new (string)
+	var firstName *string = new(string)
 	*firstName = "Xing"
 	fmt.Println(*firstName)
 
@@ -37,7 +44,6 @@ func main() {
 
 	lastName = "A"
 	fmt.Println(ptr, *ptr)
-
 
 	fmt.Println(pi)
 	fmt.Println(first, second, third, fourth)
