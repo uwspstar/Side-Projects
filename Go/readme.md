@@ -18,9 +18,9 @@
 const myBool = true;
 const myNumber = 10;
 const myString = 'foo';
-const mySymbol = Symbol('bar');
+const mySymbol = Symbol('bar'); // Symbol
 const myNull = null;
-const myUndefined = undefined;
+const myUndefined = undefined; // undefined
 
 // object types
 const myObject = {};
@@ -31,9 +31,11 @@ const myDate = new Date();
 const myRegex = /a/;
 const myMap = new Map();
 const mySet = new Set();
-const myPromise = Promise.resolve();
-const myGenerator = function* () {};
 const myClass = class {};
+
+const myPromise = Promise.resolve(); // Promise
+
+const myGenerator = function* () {};
 ```
 
 - Go
@@ -101,6 +103,8 @@ for var i int = 0; i <= 5; i++ {
 ```
 
 # while
+
+- there's no `while` keyword in Go but the same functionality is achieved by using for
 
 ```go
 i := 0
