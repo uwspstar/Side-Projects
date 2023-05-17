@@ -9,7 +9,7 @@ Here are a couple of ways to address this issue:
 
 Increase the budget: This is the simplest solution. You can increase the budget for your bundle in the angular.json file. However, be aware that this will allow your app's size to grow, which might be an issue if you're trying to keep it lightweight for performance reasons.
 
-In the angular.json file, look for a section like this:
+In the `angular.json` file, look for a section like this:
 
 ```
 "budgets": [{
