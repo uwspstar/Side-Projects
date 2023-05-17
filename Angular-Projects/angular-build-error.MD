@@ -21,7 +21,13 @@ In the `angular.json` file, look for a section like this:
 
 
 You can increase the maximumError value to a larger size, say "2mb", and adjust the maximumWarning value as needed.
-
+```
+"budgets": [{
+   "type": "initial",
+   "maximumWarning": "3mb",
+   "maximumError": "2mb"
+}] 
+```
 Optimize your code: If you don't want to increase the budget, you'll need to reduce the size of your bundle. Here are a few general strategies for that:
 
 Lazy Loading: If your Angular application is not already using lazy loading for routing, consider implementing it. Lazy loading helps reduce the initial bundle size by only loading the parts of your application that are needed for the initial view.
