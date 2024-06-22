@@ -19,7 +19,7 @@ For your Node.js application that retrieves transcriptions from a YouTube video 
    ```
 
 2. **Install necessary packages:**
-   Install `youtube-transcript-api` to fetch YouTube transcriptions and `openai` SDK for interacting with OpenAI.
+   Install `npm install youtube-transcript openai axios dotenv express` to fetch YouTube transcriptions and `openai` SDK for interacting with OpenAI.
 
 2. **安装必要的包：**
    安装 `youtube-transcript-api` 以获取 YouTube 字幕和用于与 OpenAI 交互的 `openai` SDK。
