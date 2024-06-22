@@ -134,3 +134,26 @@ For your Node.js application that retrieves transcriptions from a YouTube video 
 This setup provides a clear separation between the transcription fetching, summary generation, and server handling, making the code modular and easier to maintain.
 
 此设置在获取字幕、生成摘要和服务器处理之间提供了清晰的分离，使代码模块化，更易于维护。
+
+To test your Node.js application that retrieves YouTube video transcriptions and generates summaries using a curl command, you can use the following command. Replace `<your_server_url>` with your actual server URL and `<youtube_video_url>` with the YouTube video URL you want to summarize.
+
+要使用 curl 命令测试您的 Node.js 应用程序，该程序检索 YouTube 视频字幕并生成摘要，您可以使用以下命令。将 `<your_server_url>` 替换为您实际的服务器 URL，并将 `<youtube_video_url>` 替换为您想要总结的 YouTube 视频 URL。
+
+```bash
+curl "<your_server_url>/video-summary?videoUrl=<youtube_video_url>"
+```
+
+For example, if your server is running locally on port 3000 and you want to summarize a video with the URL `https://www.youtube.com/watch?v=dQw4w9WgXcQ`, you would use:
+
+例如，如果您的服务器在本地 3000 端口运行，您想要总结一个 URL 为 `https://www.youtube.com/watch?v=dQw4w9WgXcQ` 的视频，您将使用：
+
+```bash
+curl "http://localhost:3000/video-summary?videoUrl=https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+```
+
+This command sends a GET request to your server, which should respond with the transcription and summary of the specified YouTube video.
+
+此命令向您的服务器发送一个 GET 请求，服务器应响应指定 YouTube 视频的字幕和摘要。
+
+
+
