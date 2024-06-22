@@ -38,10 +38,9 @@ For your Node.js application that retrieves transcriptions from a YouTube video 
    将此文件命名为 `app.js`。
 
    ```javascript
-   import dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import OpenAI from "openai";
 import { YoutubeTranscript } from 'youtube-transcript';
-
 
 // Initialize environment variables
 dotenv.config();
@@ -51,7 +50,7 @@ const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
 });
 
-// Use async/await for asynchronous operations
+// Function to fetch video transcription
 async function getVideoTranscription(videoId) {
     try {
         // Fetch the transcript and join all parts into a single string
@@ -63,7 +62,7 @@ async function getVideoTranscription(videoId) {
     }
 }
 
-
+// Function to generate summary using OpenAI
 async function generateSummary(text) {
     try {
         const response = await openai.chat.completions.create({
@@ -91,7 +90,8 @@ async function generateSummary(text) {
 
 // Export functions using ES Module syntax
 export { getVideoTranscription, generateSummary };
-   ```
+```
+
 
 2. **Use environment variables to secure API keys:**
    Store the OpenAI API key in a `.env` file.
