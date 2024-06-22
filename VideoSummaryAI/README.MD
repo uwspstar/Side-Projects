@@ -141,12 +141,12 @@ To test your Node.js application that retrieves YouTube video transcriptions and
 curl "<your_server_url>/video-summary?videoUrl=<youtube_video_url>"
 ```
 
-For example, if your server is running locally on port 3000 and you want to summarize a video with the URL `https://www.youtube.com/watch?v=NTjlBBwMJgw`, you would use:
+For example, if your server is running locally on port 3000 and you want to summarize a video with the URL `https://www.youtube.com/watch?v=isYjHPgHeHY`, you would use:
 
-例如，如果您的服务器在本地 3000 端口运行，您想要总结一个 URL 为 `https://www.youtube.com/watch?v=NTjlBBwMJgw` 的视频，您将使用：
+例如，如果您的服务器在本地 3000 端口运行，您想要总结一个 URL 为 `https://www.youtube.com/watch?v=isYjHPgHeHY` 的视频，您将使用：
 
 ```bash
-curl "http://localhost:3000/video-summary?videoUrl=https://www.youtube.com/watch?v=NTjlBBwMJgw"
+curl "http://localhost:3000/video-summary?videoUrl=https://www.youtube.com/watch?v=isYjHPgHeHY"
 ```
 
 This command sends a GET request to your server, which should respond with the transcription and summary of the specified YouTube video.
