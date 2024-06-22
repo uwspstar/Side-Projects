@@ -37,62 +37,6 @@ For your Node.js application that retrieves transcriptions from a YouTube video 
 1. **创建一个用于主应用逻辑的文件：**
    将此文件命名为 `app.js`。
 
-   ```javascript
-import dotenv from 'dotenv';
-import OpenAI from "openai";
-import { YoutubeTranscript } from 'youtube-transcript';
-
-// Initialize environment variables
-dotenv.config();
-
-// Create a new instance of OpenAI with the API key from environment variables
-const openai = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-});
-
-// Function to fetch video transcription
-async function getVideoTranscription(videoId) {
-    try {
-        // Fetch the transcript and join all parts into a single string
-        const transcript = await YoutubeTranscript.fetchTranscript(videoId);
-        return transcript.map(part => part.text).join(' ');
-    } catch (error) {
-        console.error("Failed to fetch subtitles:", error);
-        return null;
-    }
-}
-
-// Function to generate summary using OpenAI
-async function generateSummary(text) {
-    try {
-        const response = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            messages: [
-                {
-                    "role": "system",
-                    "content": "Summarize content you are provided with for a second-grade student."
-                },
-                {
-                    "role": "user",
-                    "content": { text }
-                }
-            ],
-            temperature: 0.1,
-            max_tokens: 600,
-            top_p: 1,
-        });
-        return response.data.choices[0].text.trim();
-    } catch (error) {
-        console.error("Failed to generate summary:", error);
-        return null;
-    }
-}
-
-// Export functions using ES Module syntax
-export { getVideoTranscription, generateSummary };
-```
-
-
 2. **Use environment variables to secure API keys:**
    Store the OpenAI API key in a `.env` file.
 
@@ -111,33 +55,6 @@ export { getVideoTranscription, generateSummary };
 
 1. **在新文件 `server.js` 中设置 Express 服务器：**
    此服务器将处理获取字幕和摘要的请求。
-
-   ```javascript
-   const express = require('express');
-   const { getVideoTranscription, generateSummary } = require('./app');
-
-   const app = express();
-   app.use(express.json());
-
-   app.get('/video-summary', async (req, res) => {
-     const { videoUrl } = req.query;
-     const videoId = videoUrl.split('v=')[1];
-     const transcription = await getVideoTranscription(videoId);
-     if (!transcription) {
-       return res.status(500).json({ message: 'Failed to get transcription' });
-     }
-     const summary = await generateSummary(transcription);
-     if (!summary) {
-       return res.status(500).json({ message: 'Failed to generate summary' });
-     }
-     res.json({ transcription, summary });
-   });
-
-   const PORT = process.env.PORT || 3000;
-   app.listen(PORT, () => {
-     console.log(`Server running on http://localhost:${PORT}`);
-   });
-   ```
 
 2. **Start your server and test it:**
    Use Postman or a similar tool to send requests to your server.
