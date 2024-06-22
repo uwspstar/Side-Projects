@@ -38,43 +38,59 @@ For your Node.js application that retrieves transcriptions from a YouTube video 
    将此文件命名为 `app.js`。
 
    ```javascript
-   const { getSubtitles } = require('youtube-transcript-api');
-   const { Configuration, OpenAIApi } = require('openai');
-   const dotenv = require('dotenv');
-   dotenv.config();
+   import dotenv from 'dotenv';
+import OpenAI from "openai";
+import { YoutubeTranscript } from 'youtube-transcript';
 
-   const apiKey = process.env.OPENAI_API_KEY;
 
-   const configuration = new Configuration({
-     apiKey: apiKey,
-   });
-   const openai = new OpenAIApi(configuration);
+// Initialize environment variables
+dotenv.config();
 
-   async function getVideoTranscription(videoId) {
-     try {
-       const subtitles = await getSubtitles({ videoID: videoId, lang: 'en' });
-       return subtitles.map(sub => sub.text).join(' ');
-     } catch (error) {
-       console.error("Failed to fetch subtitles:", error);
-       return null;
-     }
-   }
+// Create a new instance of OpenAI with the API key from environment variables
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY,
+});
 
-   async function generateSummary(text) {
-     try {
-       const response = await openai.createCompletion({
-         model: "text-davinci-002",
-         prompt: `Summarize the following content: ${text}`,
-         max_tokens: 150,
-       });
-       return response.data.choices[0].text.trim();
-     } catch (error) {
-       console.error("Failed to generate summary:", error);
-       return null;
-     }
-   }
+// Use async/await for asynchronous operations
+async function getVideoTranscription(videoId) {
+    try {
+        // Fetch the transcript and join all parts into a single string
+        const transcript = await YoutubeTranscript.fetchTranscript(videoId);
+        return transcript.map(part => part.text).join(' ');
+    } catch (error) {
+        console.error("Failed to fetch subtitles:", error);
+        return null;
+    }
+}
 
-   module.exports = { getVideoTranscription, generateSummary };
+
+async function generateSummary(text) {
+    try {
+        const response = await openai.chat.completions.create({
+            model: "gpt-3.5-turbo",
+            messages: [
+                {
+                    "role": "system",
+                    "content": "Summarize content you are provided with for a second-grade student."
+                },
+                {
+                    "role": "user",
+                    "content": { text }
+                }
+            ],
+            temperature: 0.1,
+            max_tokens: 600,
+            top_p: 1,
+        });
+        return response.data.choices[0].text.trim();
+    } catch (error) {
+        console.error("Failed to generate summary:", error);
+        return null;
+    }
+}
+
+// Export functions using ES Module syntax
+export { getVideoTranscription, generateSummary };
    ```
 
 2. **Use environment variables to secure API keys:**
